@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated legolanguagePr -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="fr.univcotedazur.l3ia.langagecompilation.presentation.LegolanguagePrModelWizardID"
+            name="%_UI_LegolanguagePrModelWizard_label"
+            class="fr.univcotedazur.l3ia.langagecompilation.presentation.LegolanguagePrModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/LegolanguagePrModelFile.gif">
+         <description>%_UI_LegolanguagePrModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated legolanguagePr -->
+      <editor
+            id="fr.univcotedazur.l3ia.langagecompilation.presentation.LegolanguagePrEditorID"
+            name="%_UI_LegolanguagePrEditor_label"
+            icon="icons/full/obj16/LegolanguagePrModelFile.gif"
+            extensions="legolanguagepr"
+            class="fr.univcotedazur.l3ia.langagecompilation.presentation.LegolanguagePrEditor"
+            contributorClass="fr.univcotedazur.l3ia.langagecompilation.presentation.LegolanguagePrActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

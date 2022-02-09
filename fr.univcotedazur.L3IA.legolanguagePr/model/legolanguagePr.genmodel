@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/fr.univcotedazur.L3IA.legolanguagePr/src-gen"
+    creationIcons="false" editDirectory="/fr.univcotedazur.L3IA.legolanguagePr.edit/src-gen"
+    editorDirectory="/fr.univcotedazur.L3IA.legolanguagePr.editor/src-gen" modelPluginID="fr.univcotedazur.L3IA.legolanguagePr"
+    modelName="LegolanguagePr" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>legolanguagePr.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="LegolanguagePr" basePackage="fr.univcotedazur.l3ia" disposableProviderFactory="true"
+      ecorePackage="legolanguagePr.ecore#/">
+    <genClasses ecoreClass="legolanguagePr.ecore#//Program">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Program/statement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Program/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="legolanguagePr.ecore#//Statement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Statement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Variable/isConst"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="legolanguagePr.ecore#//Loop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Loop/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//WhileLoop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//WhileLoop/loopCondition"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="legolanguagePr.ecore#//Expression"/>
+    <genClasses image="false" ecoreClass="legolanguagePr.ecore#//BinaryOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//BinaryOperation/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//BinaryOperation/right"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Substarction"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Comparaison"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//GT"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Assignement"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//leInteger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//leInteger/initialeValue"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//leString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//leString/initialeValue"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//LT"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//ForLoop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//ForLoop/loopCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Print"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Variable_Proxy">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Variable_Proxy/Variable"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
