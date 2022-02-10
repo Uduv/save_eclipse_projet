@@ -599,11 +599,11 @@ public interface LegolanguagePrPackage extends EPackage {
 	int ASSIGNEMENT_OPERATION_COUNT = BINARY_OPERATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.leIntegerImpl <em>le Integer</em>}' class.
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LeIntegerImpl <em>Le Integer</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.leIntegerImpl
-	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getleInteger()
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LeIntegerImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLeInteger()
 	 * @generated
 	 */
 	int LE_INTEGER = 11;
@@ -636,7 +636,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_INTEGER__INITIALE_VALUE = VARIABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>le Integer</em>' class.
+	 * The number of structural features of the '<em>Le Integer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -645,7 +645,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_INTEGER_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>le Integer</em>' class.
+	 * The number of operations of the '<em>Le Integer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -654,11 +654,11 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_INTEGER_OPERATION_COUNT = VARIABLE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.leStringImpl <em>le String</em>}' class.
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LeStringImpl <em>Le String</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.leStringImpl
-	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getleString()
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LeStringImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLeString()
 	 * @generated
 	 */
 	int LE_STRING = 12;
@@ -691,7 +691,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_STRING__INITIALE_VALUE = VARIABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>le String</em>' class.
+	 * The number of structural features of the '<em>Le String</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -700,7 +700,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_STRING_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>le String</em>' class.
+	 * The number of operations of the '<em>Le String</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -835,7 +835,16 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRINT__NAME = EXPRESSION__NAME;
+	int PRINT__NAME = STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Statement</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT__STATEMENT = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Print</em>' class.
@@ -844,7 +853,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRINT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+	int PRINT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Print</em>' class.
@@ -853,7 +862,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRINT_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+	int PRINT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.Variable_ProxyImpl <em>Variable Proxy</em>}' class.
@@ -900,6 +909,171 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int VARIABLE_PROXY_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.EqualImpl <em>Equal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.EqualImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getEqual()
+	 * @generated
+	 */
+	int EQUAL = 17;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUAL__NAME = COMPARAISON__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUAL__LEFT = COMPARAISON__LEFT;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUAL__RIGHT = COMPARAISON__RIGHT;
+
+	/**
+	 * The number of structural features of the '<em>Equal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUAL_FEATURE_COUNT = COMPARAISON_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Equal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUAL_OPERATION_COUNT = COMPARAISON_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LeBooleanImpl <em>Le Boolean</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LeBooleanImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLeBoolean()
+	 * @generated
+	 */
+	int LE_BOOLEAN = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_BOOLEAN__NAME = VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is Const</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_BOOLEAN__IS_CONST = VARIABLE__IS_CONST;
+
+	/**
+	 * The feature id for the '<em><b>Initiale Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_BOOLEAN__INITIALE_VALUE = VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Le Boolean</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_BOOLEAN_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Le Boolean</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_BOOLEAN_OPERATION_COUNT = VARIABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LeFloatImpl <em>Le Float</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LeFloatImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLeFloat()
+	 * @generated
+	 */
+	int LE_FLOAT = 19;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_FLOAT__NAME = VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is Const</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_FLOAT__IS_CONST = VARIABLE__IS_CONST;
+
+	/**
+	 * The feature id for the '<em><b>Initiale Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_FLOAT__INITIALE_VALUE = VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Le Float</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_FLOAT_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Le Float</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_FLOAT_OPERATION_COUNT = VARIABLE_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Program <em>Program</em>}'.
@@ -1100,46 +1274,46 @@ public interface LegolanguagePrPackage extends EPackage {
 	EClass getAssignement();
 
 	/**
-	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.leInteger <em>le Integer</em>}'.
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.LeInteger <em>Le Integer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>le Integer</em>'.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.leInteger
+	 * @return the meta object for class '<em>Le Integer</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LeInteger
 	 * @generated
 	 */
-	EClass getleInteger();
+	EClass getLeInteger();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.leInteger#getInitialeValue <em>Initiale Value</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.LeInteger#getInitialeValue <em>Initiale Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Initiale Value</em>'.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.leInteger#getInitialeValue()
-	 * @see #getleInteger()
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LeInteger#getInitialeValue()
+	 * @see #getLeInteger()
 	 * @generated
 	 */
-	EAttribute getleInteger_InitialeValue();
+	EAttribute getLeInteger_InitialeValue();
 
 	/**
-	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.leString <em>le String</em>}'.
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.LeString <em>Le String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>le String</em>'.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.leString
+	 * @return the meta object for class '<em>Le String</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LeString
 	 * @generated
 	 */
-	EClass getleString();
+	EClass getLeString();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.leString#getInitialeValue <em>Initiale Value</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.LeString#getInitialeValue <em>Initiale Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Initiale Value</em>'.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.leString#getInitialeValue()
-	 * @see #getleString()
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LeString#getInitialeValue()
+	 * @see #getLeString()
 	 * @generated
 	 */
-	EAttribute getleString_InitialeValue();
+	EAttribute getLeString_InitialeValue();
 
 	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.LT <em>LT</em>}'.
@@ -1183,6 +1357,17 @@ public interface LegolanguagePrPackage extends EPackage {
 	EClass getPrint();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link fr.univcotedazur.l3ia.langagecompilation.Print#getStatement <em>Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Statement</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Print#getStatement()
+	 * @see #getPrint()
+	 * @generated
+	 */
+	EReference getPrint_Statement();
+
+	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy <em>Variable Proxy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1202,6 +1387,58 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getVariable_Proxy_Variable();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Equal <em>Equal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Equal</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Equal
+	 * @generated
+	 */
+	EClass getEqual();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.LeBoolean <em>Le Boolean</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Le Boolean</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LeBoolean
+	 * @generated
+	 */
+	EClass getLeBoolean();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.LeBoolean#isInitialeValue <em>Initiale Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initiale Value</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LeBoolean#isInitialeValue()
+	 * @see #getLeBoolean()
+	 * @generated
+	 */
+	EAttribute getLeBoolean_InitialeValue();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.LeFloat <em>Le Float</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Le Float</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LeFloat
+	 * @generated
+	 */
+	EClass getLeFloat();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.LeFloat#getInitialeValue <em>Initiale Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initiale Value</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LeFloat#getInitialeValue()
+	 * @see #getLeFloat()
+	 * @generated
+	 */
+	EAttribute getLeFloat_InitialeValue();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1401,14 +1638,14 @@ public interface LegolanguagePrPackage extends EPackage {
 		EClass ASSIGNEMENT = eINSTANCE.getAssignement();
 
 		/**
-		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.leIntegerImpl <em>le Integer</em>}' class.
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LeIntegerImpl <em>Le Integer</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.leIntegerImpl
-		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getleInteger()
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LeIntegerImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLeInteger()
 		 * @generated
 		 */
-		EClass LE_INTEGER = eINSTANCE.getleInteger();
+		EClass LE_INTEGER = eINSTANCE.getLeInteger();
 
 		/**
 		 * The meta object literal for the '<em><b>Initiale Value</b></em>' attribute feature.
@@ -1416,17 +1653,17 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LE_INTEGER__INITIALE_VALUE = eINSTANCE.getleInteger_InitialeValue();
+		EAttribute LE_INTEGER__INITIALE_VALUE = eINSTANCE.getLeInteger_InitialeValue();
 
 		/**
-		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.leStringImpl <em>le String</em>}' class.
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LeStringImpl <em>Le String</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.leStringImpl
-		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getleString()
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LeStringImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLeString()
 		 * @generated
 		 */
-		EClass LE_STRING = eINSTANCE.getleString();
+		EClass LE_STRING = eINSTANCE.getLeString();
 
 		/**
 		 * The meta object literal for the '<em><b>Initiale Value</b></em>' attribute feature.
@@ -1434,7 +1671,7 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LE_STRING__INITIALE_VALUE = eINSTANCE.getleString_InitialeValue();
+		EAttribute LE_STRING__INITIALE_VALUE = eINSTANCE.getLeString_InitialeValue();
 
 		/**
 		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LTImpl <em>LT</em>}' class.
@@ -1475,6 +1712,14 @@ public interface LegolanguagePrPackage extends EPackage {
 		EClass PRINT = eINSTANCE.getPrint();
 
 		/**
+		 * The meta object literal for the '<em><b>Statement</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRINT__STATEMENT = eINSTANCE.getPrint_Statement();
+
+		/**
 		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.Variable_ProxyImpl <em>Variable Proxy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1491,6 +1736,52 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VARIABLE_PROXY__VARIABLE = eINSTANCE.getVariable_Proxy_Variable();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.EqualImpl <em>Equal</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.EqualImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getEqual()
+		 * @generated
+		 */
+		EClass EQUAL = eINSTANCE.getEqual();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LeBooleanImpl <em>Le Boolean</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LeBooleanImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLeBoolean()
+		 * @generated
+		 */
+		EClass LE_BOOLEAN = eINSTANCE.getLeBoolean();
+
+		/**
+		 * The meta object literal for the '<em><b>Initiale Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LE_BOOLEAN__INITIALE_VALUE = eINSTANCE.getLeBoolean_InitialeValue();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LeFloatImpl <em>Le Float</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LeFloatImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLeFloat()
+		 * @generated
+		 */
+		EClass LE_FLOAT = eINSTANCE.getLeFloat();
+
+		/**
+		 * The meta object literal for the '<em><b>Initiale Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LE_FLOAT__INITIALE_VALUE = eINSTANCE.getLeFloat_InitialeValue();
 
 	}
 

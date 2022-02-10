@@ -147,10 +147,10 @@ public class BinaryOperationItemProvider extends ExpressionItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
-				LegolanguagePrFactory.eINSTANCE.createPrint()));
+				LegolanguagePrFactory.eINSTANCE.createVariable_Proxy()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
-				LegolanguagePrFactory.eINSTANCE.createVariable_Proxy()));
+				LegolanguagePrFactory.eINSTANCE.createEqual()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
@@ -165,10 +165,10 @@ public class BinaryOperationItemProvider extends ExpressionItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
-				LegolanguagePrFactory.eINSTANCE.createPrint()));
+				LegolanguagePrFactory.eINSTANCE.createVariable_Proxy()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
-				LegolanguagePrFactory.eINSTANCE.createVariable_Proxy()));
+				LegolanguagePrFactory.eINSTANCE.createEqual()));
 	}
 
 	/**

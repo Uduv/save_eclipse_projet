@@ -188,46 +188,46 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.leInteger} instances.
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.LeInteger} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected leIntegerItemProvider leIntegerItemProvider;
+	protected LeIntegerItemProvider leIntegerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.leInteger}.
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.LeInteger}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createleIntegerAdapter() {
+	public Adapter createLeIntegerAdapter() {
 		if (leIntegerItemProvider == null) {
-			leIntegerItemProvider = new leIntegerItemProvider(this);
+			leIntegerItemProvider = new LeIntegerItemProvider(this);
 		}
 
 		return leIntegerItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.leString} instances.
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.LeString} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected leStringItemProvider leStringItemProvider;
+	protected LeStringItemProvider leStringItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.leString}.
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.LeString}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createleStringAdapter() {
+	public Adapter createLeStringAdapter() {
 		if (leStringItemProvider == null) {
-			leStringItemProvider = new leStringItemProvider(this);
+			leStringItemProvider = new LeStringItemProvider(this);
 		}
 
 		return leStringItemProvider;
@@ -323,6 +323,75 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 		}
 
 		return variable_ProxyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Equal} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EqualItemProvider equalItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Equal}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEqualAdapter() {
+		if (equalItemProvider == null) {
+			equalItemProvider = new EqualItemProvider(this);
+		}
+
+		return equalItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.LeBoolean} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LeBooleanItemProvider leBooleanItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.LeBoolean}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLeBooleanAdapter() {
+		if (leBooleanItemProvider == null) {
+			leBooleanItemProvider = new LeBooleanItemProvider(this);
+		}
+
+		return leBooleanItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.LeFloat} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LeFloatItemProvider leFloatItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.LeFloat}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLeFloatAdapter() {
+		if (leFloatItemProvider == null) {
+			leFloatItemProvider = new LeFloatItemProvider(this);
+		}
+
+		return leFloatItemProvider;
 	}
 
 	/**
@@ -446,6 +515,12 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			printItemProvider.dispose();
 		if (variable_ProxyItemProvider != null)
 			variable_ProxyItemProvider.dispose();
+		if (equalItemProvider != null)
+			equalItemProvider.dispose();
+		if (leBooleanItemProvider != null)
+			leBooleanItemProvider.dispose();
+		if (leFloatItemProvider != null)
+			leFloatItemProvider.dispose();
 	}
 
 }

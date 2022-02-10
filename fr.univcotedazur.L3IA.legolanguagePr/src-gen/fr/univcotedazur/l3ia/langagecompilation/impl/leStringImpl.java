@@ -2,8 +2,8 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.impl;
 
+import fr.univcotedazur.l3ia.langagecompilation.LeString;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-import fr.univcotedazur.l3ia.langagecompilation.leString;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,18 +13,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>le String</b></em>'.
+ * An implementation of the model object '<em><b>Le String</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.leStringImpl#getInitialeValue <em>Initiale Value</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.LeStringImpl#getInitialeValue <em>Initiale Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class leStringImpl extends VariableImpl implements leString {
+public class LeStringImpl extends VariableImpl implements LeString {
 	/**
 	 * The default value of the '{@link #getInitialeValue() <em>Initiale Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public class leStringImpl extends VariableImpl implements leString {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected leStringImpl() {
+	protected LeStringImpl() {
 		super();
 	}
 
@@ -162,4 +162,4 @@ public class leStringImpl extends VariableImpl implements leString {
 		return result.toString();
 	}
 
-} //leStringImpl
+} //LeStringImpl

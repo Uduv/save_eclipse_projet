@@ -64,3 +64,43 @@
 [2022-02-10 15:24:14] Bundle org.eclipse.oomph.setup.p2 1.17.0.v20210601-0619, build=5278, branch=a397d5c292b0ea2e68079e5b704e713bfeb15d34
 [2022-02-10 15:24:14] Performing Preference /instance/org.eclipse.ant.launching/timeout = 20000
 [2022-02-10 15:24:14] 
+[2022-02-10 15:57:42] Executing startup tasks
+[2022-02-10 15:57:42] Java(TM) SE Runtime Environment 14.0.1+7
+[2022-02-10 15:57:42] Product self.product.version
+[2022-02-10 15:57:42] Workspace /Users/ulysseduvillier/runtime-EclipseXtext
+[2022-02-10 15:57:42] Bundle org.eclipse.oomph.setup 1.22.0.v20211015-0620, build=5278, branch=a397d5c292b0ea2e68079e5b704e713bfeb15d34
+[2022-02-10 15:57:42] Bundle org.eclipse.oomph.setup.core 1.22.0.v20211021-1010, build=5278, branch=a397d5c292b0ea2e68079e5b704e713bfeb15d34
+[2022-02-10 15:57:42] Bundle org.eclipse.oomph.setup.p2 1.17.0.v20210601-0619, build=5278, branch=a397d5c292b0ea2e68079e5b704e713bfeb15d34
+[2022-02-10 15:57:42] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.Background = 255,255,255
+[2022-02-10 15:57:42] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.Background.SystemDefault = true
+[2022-02-10 15:57:42] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.FindScope = 185,176,180
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.Foreground = 0,0,0
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.Foreground.SystemDefault = true
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.SelectionBackground.SystemDefault = true
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.SelectionForeground.SystemDefault = true
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/breakpointIndicationColor = 0,0,255
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/currentIPColor = 198,219,174
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/currentLineColor = 232,242,254
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/deletionIndicationColor = 0,0,0
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/filteredSearchResultIndicationColor = 237,237,252
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/hyperlinkColor = 65,156,255
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/hyperlinkColor.SystemDefault = true
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/infoIndicationColor = 130,160,190
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/lineNumberColor = 120,120,120
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/linked.slave.color = 180,215,255
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/LSP4EReadOccurrenceIndicationColor = 212,212,212
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/LSP4ETextOccurrenceIndicationColor = 212,212,212
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/LSP4EWriteOccurrenceIndicationColor = 240,216,168
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/matchingTagIndicationColor = 212,212,212
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/occurrenceIndicationColor = 212,212,212
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/overrideIndicatorColor = 180,207,205
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/printMarginColor = 176,180,185
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/searchResultHighlighting = true
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/searchResultIndication = false
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/searchResultIndicationColor = 206,204,247
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/searchResultTextStyle = NONE
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/secondaryIPColor = 219,235,204
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/spellingIndicationColor = 255,128,64
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/TextOccurrenceIndicationColor = 212,212,212
+[2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/writeOccurrenceIndicationColor = 240,216,168
+[2022-02-10 15:57:43] 

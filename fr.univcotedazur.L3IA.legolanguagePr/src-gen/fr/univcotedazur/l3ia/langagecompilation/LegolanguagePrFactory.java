@@ -67,22 +67,22 @@ public interface LegolanguagePrFactory extends EFactory {
 	Assignement createAssignement();
 
 	/**
-	 * Returns a new object of class '<em>le Integer</em>'.
+	 * Returns a new object of class '<em>Le Integer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>le Integer</em>'.
+	 * @return a new object of class '<em>Le Integer</em>'.
 	 * @generated
 	 */
-	leInteger createleInteger();
+	LeInteger createLeInteger();
 
 	/**
-	 * Returns a new object of class '<em>le String</em>'.
+	 * Returns a new object of class '<em>Le String</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>le String</em>'.
+	 * @return a new object of class '<em>Le String</em>'.
 	 * @generated
 	 */
-	leString createleString();
+	LeString createLeString();
 
 	/**
 	 * Returns a new object of class '<em>LT</em>'.
@@ -119,6 +119,33 @@ public interface LegolanguagePrFactory extends EFactory {
 	 * @generated
 	 */
 	Variable_Proxy createVariable_Proxy();
+
+	/**
+	 * Returns a new object of class '<em>Equal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Equal</em>'.
+	 * @generated
+	 */
+	Equal createEqual();
+
+	/**
+	 * Returns a new object of class '<em>Le Boolean</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Le Boolean</em>'.
+	 * @generated
+	 */
+	LeBoolean createLeBoolean();
+
+	/**
+	 * Returns a new object of class '<em>Le Float</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Le Float</em>'.
+	 * @generated
+	 */
+	LeFloat createLeFloat();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -2,8 +2,8 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.provider;
 
+import fr.univcotedazur.l3ia.langagecompilation.LeInteger;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-import fr.univcotedazur.l3ia.langagecompilation.leInteger;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,19 +17,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.leInteger} object.
+ * This is the item provider adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.LeInteger} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class leIntegerItemProvider extends VariableItemProvider {
+public class LeIntegerItemProvider extends VariableItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public leIntegerItemProvider(AdapterFactory adapterFactory) {
+	public LeIntegerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,22 +58,22 @@ public class leIntegerItemProvider extends VariableItemProvider {
 	protected void addInitialeValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_leInteger_initialeValue_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_leInteger_initialeValue_feature",
-								"_UI_leInteger_type"),
+						getResourceLocator(), getString("_UI_LeInteger_initialeValue_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_LeInteger_initialeValue_feature",
+								"_UI_LeInteger_type"),
 						LegolanguagePrPackage.Literals.LE_INTEGER__INITIALE_VALUE, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns leInteger.gif.
+	 * This returns LeInteger.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/leInteger"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/LeInteger"));
 	}
 
 	/**
@@ -94,9 +94,9 @@ public class leIntegerItemProvider extends VariableItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((leInteger) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_leInteger_type")
-				: getString("_UI_leInteger_type") + " " + label;
+		String label = ((LeInteger) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_LeInteger_type")
+				: getString("_UI_LeInteger_type") + " " + label;
 	}
 
 	/**
@@ -110,7 +110,7 @@ public class leIntegerItemProvider extends VariableItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(leInteger.class)) {
+		switch (notification.getFeatureID(LeInteger.class)) {
 		case LegolanguagePrPackage.LE_INTEGER__INITIALE_VALUE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

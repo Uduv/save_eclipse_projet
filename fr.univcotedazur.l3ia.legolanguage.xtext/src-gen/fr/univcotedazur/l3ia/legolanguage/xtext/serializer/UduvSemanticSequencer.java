@@ -9,16 +9,16 @@ import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.GT;
 import fr.univcotedazur.l3ia.langagecompilation.LT;
+import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
+import fr.univcotedazur.l3ia.langagecompilation.LeFloat;
+import fr.univcotedazur.l3ia.langagecompilation.LeInteger;
+import fr.univcotedazur.l3ia.langagecompilation.LeString;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Print;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
 import fr.univcotedazur.l3ia.langagecompilation.Substarction;
 import fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy;
 import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
-import fr.univcotedazur.l3ia.langagecompilation.leBoolean;
-import fr.univcotedazur.l3ia.langagecompilation.leFloat;
-import fr.univcotedazur.l3ia.langagecompilation.leInteger;
-import fr.univcotedazur.l3ia.langagecompilation.leString;
 import fr.univcotedazur.l3ia.legolanguage.xtext.services.UduvGrammarAccess;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -60,6 +60,18 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LegolanguagePrPackage.LT:
 				sequence_LT(context, (LT) semanticObject); 
 				return; 
+			case LegolanguagePrPackage.LE_BOOLEAN:
+				sequence_LeBoolean(context, (LeBoolean) semanticObject); 
+				return; 
+			case LegolanguagePrPackage.LE_FLOAT:
+				sequence_LeFloat(context, (LeFloat) semanticObject); 
+				return; 
+			case LegolanguagePrPackage.LE_INTEGER:
+				sequence_LeInteger(context, (LeInteger) semanticObject); 
+				return; 
+			case LegolanguagePrPackage.LE_STRING:
+				sequence_LeString(context, (LeString) semanticObject); 
+				return; 
 			case LegolanguagePrPackage.PRINT:
 				sequence_Print(context, (Print) semanticObject); 
 				return; 
@@ -74,18 +86,6 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case LegolanguagePrPackage.WHILE_LOOP:
 				sequence_WhileLoop(context, (WhileLoop) semanticObject); 
-				return; 
-			case LegolanguagePrPackage.LE_BOOLEAN:
-				sequence_leBoolean(context, (leBoolean) semanticObject); 
-				return; 
-			case LegolanguagePrPackage.LE_FLOAT:
-				sequence_leFloat(context, (leFloat) semanticObject); 
-				return; 
-			case LegolanguagePrPackage.LE_INTEGER:
-				sequence_leInteger(context, (leInteger) semanticObject); 
-				return; 
-			case LegolanguagePrPackage.LE_STRING:
-				sequence_leString(context, (leString) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -110,7 +110,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAssignementAccess().getLeftExpressionParserRuleCall_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getAssignementAccess().getRightExpressionParserRuleCall_4_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getAssignementAccess().getRightExpressionParserRuleCall_3_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -200,6 +200,60 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Variable returns LeBoolean
+	 *     LeBoolean returns LeBoolean
+	 *
+	 * Constraint:
+	 *     (name=EString initialeValue=EBoolean?)
+	 */
+	protected void sequence_LeBoolean(ISerializationContext context, LeBoolean semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Variable returns LeFloat
+	 *     LeFloat returns LeFloat
+	 *
+	 * Constraint:
+	 *     (name=EString initialeValue=EFloat?)
+	 */
+	protected void sequence_LeFloat(ISerializationContext context, LeFloat semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns LeInteger
+	 *     Variable returns LeInteger
+	 *     LeInteger returns LeInteger
+	 *
+	 * Constraint:
+	 *     (isConst?='isConst'? name=EString initialeValue=EInt?)
+	 */
+	protected void sequence_LeInteger(ISerializationContext context, LeInteger semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns LeString
+	 *     Variable returns LeString
+	 *     LeString returns LeString
+	 *
+	 * Constraint:
+	 *     (name=EString initialeValue=EString?)
+	 */
+	protected void sequence_LeString(ISerializationContext context, LeString semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Statement returns Print
 	 *     Print returns Print
 	 *
@@ -216,7 +270,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Program returns Program
 	 *
 	 * Constraint:
-	 *     (name=EString (statement+=Statement statement+=Statement*)?)
+	 *     statement+=Statement*
 	 */
 	protected void sequence_Program(ISerializationContext context, Program semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -278,60 +332,6 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     (loopCondition=Comparaison statement+=Statement*)
 	 */
 	protected void sequence_WhileLoop(ISerializationContext context, WhileLoop semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Variable returns leBoolean
-	 *     leBoolean returns leBoolean
-	 *
-	 * Constraint:
-	 *     (name=EString initialeValue=EBoolean?)
-	 */
-	protected void sequence_leBoolean(ISerializationContext context, leBoolean semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Variable returns leFloat
-	 *     leFloat returns leFloat
-	 *
-	 * Constraint:
-	 *     (name=EString initialeValue=EFloat?)
-	 */
-	protected void sequence_leFloat(ISerializationContext context, leFloat semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Statement returns leInteger
-	 *     Variable returns leInteger
-	 *     leInteger returns leInteger
-	 *
-	 * Constraint:
-	 *     (isConst?='isConst'? name=EString initialeValue=EInt?)
-	 */
-	protected void sequence_leInteger(ISerializationContext context, leInteger semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Statement returns leString
-	 *     Variable returns leString
-	 *     leString returns leString
-	 *
-	 * Constraint:
-	 *     (name=EString initialeValue=EString?)
-	 */
-	protected void sequence_leString(ISerializationContext context, leString semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

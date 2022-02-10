@@ -67,9 +67,9 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 		case LegolanguagePrPackage.ASSIGNEMENT:
 			return createAssignement();
 		case LegolanguagePrPackage.LE_INTEGER:
-			return createleInteger();
+			return createLeInteger();
 		case LegolanguagePrPackage.LE_STRING:
-			return createleString();
+			return createLeString();
 		case LegolanguagePrPackage.LT:
 			return createLT();
 		case LegolanguagePrPackage.FOR_LOOP:
@@ -78,6 +78,12 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createPrint();
 		case LegolanguagePrPackage.VARIABLE_PROXY:
 			return createVariable_Proxy();
+		case LegolanguagePrPackage.EQUAL:
+			return createEqual();
+		case LegolanguagePrPackage.LE_BOOLEAN:
+			return createLeBoolean();
+		case LegolanguagePrPackage.LE_FLOAT:
+			return createLeFloat();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -138,8 +144,8 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public leInteger createleInteger() {
-		leIntegerImpl leInteger = new leIntegerImpl();
+	public LeInteger createLeInteger() {
+		LeIntegerImpl leInteger = new LeIntegerImpl();
 		return leInteger;
 	}
 
@@ -148,8 +154,8 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public leString createleString() {
-		leStringImpl leString = new leStringImpl();
+	public LeString createLeString() {
+		LeStringImpl leString = new LeStringImpl();
 		return leString;
 	}
 
@@ -191,6 +197,36 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	public Variable_Proxy createVariable_Proxy() {
 		Variable_ProxyImpl variable_Proxy = new Variable_ProxyImpl();
 		return variable_Proxy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Equal createEqual() {
+		EqualImpl equal = new EqualImpl();
+		return equal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LeBoolean createLeBoolean() {
+		LeBooleanImpl leBoolean = new LeBooleanImpl();
+		return leBoolean;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LeFloat createLeFloat() {
+		LeFloatImpl leFloat = new LeFloatImpl();
+		return leFloat;
 	}
 
 	/**

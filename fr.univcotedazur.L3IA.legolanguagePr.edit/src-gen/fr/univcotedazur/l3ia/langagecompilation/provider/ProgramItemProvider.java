@@ -186,10 +186,10 @@ public class ProgramItemProvider extends ItemProviderAdapter implements IEditing
 				LegolanguagePrFactory.eINSTANCE.createAssignement()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PROGRAM__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createleInteger()));
+				LegolanguagePrFactory.eINSTANCE.createLeInteger()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PROGRAM__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createleString()));
+				LegolanguagePrFactory.eINSTANCE.createLeString()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PROGRAM__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createLT()));
@@ -202,6 +202,15 @@ public class ProgramItemProvider extends ItemProviderAdapter implements IEditing
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PROGRAM__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createVariable_Proxy()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PROGRAM__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PROGRAM__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createLeBoolean()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PROGRAM__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createLeFloat()));
 	}
 
 	/**

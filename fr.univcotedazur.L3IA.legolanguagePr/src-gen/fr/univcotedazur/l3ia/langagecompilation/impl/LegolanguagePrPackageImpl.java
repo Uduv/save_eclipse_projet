@@ -5,8 +5,13 @@ package fr.univcotedazur.l3ia.langagecompilation.impl;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
 import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
 import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
+import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
+import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
+import fr.univcotedazur.l3ia.langagecompilation.LeFloat;
+import fr.univcotedazur.l3ia.langagecompilation.LeInteger;
+import fr.univcotedazur.l3ia.langagecompilation.LeString;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrFactory;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Loop;
@@ -17,8 +22,6 @@ import fr.univcotedazur.l3ia.langagecompilation.Substarction;
 import fr.univcotedazur.l3ia.langagecompilation.Variable;
 import fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy;
 import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
-import fr.univcotedazur.l3ia.langagecompilation.leInteger;
-import fr.univcotedazur.l3ia.langagecompilation.leString;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -26,6 +29,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -154,6 +159,27 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	private EClass variable_ProxyEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass equalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass leBooleanEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass leFloatEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -202,6 +228,9 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 				: new LegolanguagePrPackageImpl();
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		XMLTypePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theLegolanguagePrPackage.createPackageContents();
@@ -393,7 +422,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getleInteger() {
+	public EClass getLeInteger() {
 		return leIntegerEClass;
 	}
 
@@ -402,7 +431,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getleInteger_InitialeValue() {
+	public EAttribute getLeInteger_InitialeValue() {
 		return (EAttribute) leIntegerEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -411,7 +440,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getleString() {
+	public EClass getLeString() {
 		return leStringEClass;
 	}
 
@@ -420,7 +449,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getleString_InitialeValue() {
+	public EAttribute getLeString_InitialeValue() {
 		return (EAttribute) leStringEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -465,6 +494,15 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPrint_Statement() {
+		return (EReference) printEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVariable_Proxy() {
 		return variable_ProxyEClass;
 	}
@@ -476,6 +514,51 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 */
 	public EReference getVariable_Proxy_Variable() {
 		return (EReference) variable_ProxyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEqual() {
+		return equalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLeBoolean() {
+		return leBooleanEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLeBoolean_InitialeValue() {
+		return (EAttribute) leBooleanEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLeFloat() {
+		return leFloatEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLeFloat_InitialeValue() {
+		return (EAttribute) leFloatEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -549,9 +632,18 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		createEReference(forLoopEClass, FOR_LOOP__LOOP_CONDITION);
 
 		printEClass = createEClass(PRINT);
+		createEReference(printEClass, PRINT__STATEMENT);
 
 		variable_ProxyEClass = createEClass(VARIABLE_PROXY);
 		createEReference(variable_ProxyEClass, VARIABLE_PROXY__VARIABLE);
+
+		equalEClass = createEClass(EQUAL);
+
+		leBooleanEClass = createEClass(LE_BOOLEAN);
+		createEAttribute(leBooleanEClass, LE_BOOLEAN__INITIALE_VALUE);
+
+		leFloatEClass = createEClass(LE_FLOAT);
+		createEAttribute(leFloatEClass, LE_FLOAT__INITIALE_VALUE);
 	}
 
 	/**
@@ -578,6 +670,10 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE
+				.getEPackage(XMLTypePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -596,8 +692,11 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		leStringEClass.getESuperTypes().add(this.getVariable());
 		ltEClass.getESuperTypes().add(this.getComparaison());
 		forLoopEClass.getESuperTypes().add(this.getLoop());
-		printEClass.getESuperTypes().add(this.getExpression());
+		printEClass.getESuperTypes().add(this.getStatement());
 		variable_ProxyEClass.getESuperTypes().add(this.getExpression());
+		equalEClass.getESuperTypes().add(this.getComparaison());
+		leBooleanEClass.getESuperTypes().add(this.getVariable());
+		leFloatEClass.getESuperTypes().add(this.getVariable());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -651,16 +750,16 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEClass(assignementEClass, Assignement.class, "Assignement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(leIntegerEClass, leInteger.class, "leInteger", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(leIntegerEClass, LeInteger.class, "LeInteger", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getleInteger_InitialeValue(), ecorePackage.getEInt(), "initialeValue", null, 0, 1,
-				leInteger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getLeInteger_InitialeValue(), ecorePackage.getEInt(), "initialeValue", null, 0, 1,
+				LeInteger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(leStringEClass, leString.class, "leString", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(leStringEClass, LeString.class, "LeString", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getleString_InitialeValue(), ecorePackage.getEString(), "initialeValue", null, 0, 1,
-				leString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+		initEAttribute(getLeString_InitialeValue(), ecorePackage.getEString(), "initialeValue", null, 0, 1,
+				LeString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(ltEClass, fr.univcotedazur.l3ia.langagecompilation.LT.class, "LT", !IS_ABSTRACT, !IS_INTERFACE,
@@ -672,12 +771,27 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(printEClass, Print.class, "Print", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPrint_Statement(), this.getStatement(), null, "statement", null, 0, -1, Print.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variable_ProxyEClass, Variable_Proxy.class, "Variable_Proxy", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariable_Proxy_Variable(), this.getVariable(), null, "Variable", null, 1, 1,
 				Variable_Proxy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(equalEClass, Equal.class, "Equal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(leBooleanEClass, LeBoolean.class, "LeBoolean", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLeBoolean_InitialeValue(), theXMLTypePackage.getBoolean(), "initialeValue", null, 0, 1,
+				LeBoolean.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(leFloatEClass, LeFloat.class, "LeFloat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLeFloat_InitialeValue(), ecorePackage.getEFloat(), "initialeValue", null, 0, 1, LeFloat.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

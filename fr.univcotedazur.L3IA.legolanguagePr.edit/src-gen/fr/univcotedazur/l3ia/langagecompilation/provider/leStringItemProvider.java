@@ -2,8 +2,8 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.provider;
 
+import fr.univcotedazur.l3ia.langagecompilation.LeString;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-import fr.univcotedazur.l3ia.langagecompilation.leString;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,19 +17,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.leString} object.
+ * This is the item provider adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.LeString} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class leStringItemProvider extends VariableItemProvider {
+public class LeStringItemProvider extends VariableItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public leStringItemProvider(AdapterFactory adapterFactory) {
+	public LeStringItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,22 +58,22 @@ public class leStringItemProvider extends VariableItemProvider {
 	protected void addInitialeValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_leString_initialeValue_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_leString_initialeValue_feature",
-								"_UI_leString_type"),
+						getResourceLocator(), getString("_UI_LeString_initialeValue_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_LeString_initialeValue_feature",
+								"_UI_LeString_type"),
 						LegolanguagePrPackage.Literals.LE_STRING__INITIALE_VALUE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns leString.gif.
+	 * This returns LeString.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/leString"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/LeString"));
 	}
 
 	/**
@@ -94,9 +94,9 @@ public class leStringItemProvider extends VariableItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((leString) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_leString_type")
-				: getString("_UI_leString_type") + " " + label;
+		String label = ((LeString) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_LeString_type")
+				: getString("_UI_LeString_type") + " " + label;
 	}
 
 	/**
@@ -110,7 +110,7 @@ public class leStringItemProvider extends VariableItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(leString.class)) {
+		switch (notification.getFeatureID(LeString.class)) {
 		case LegolanguagePrPackage.LE_STRING__INITIALE_VALUE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;

@@ -33,10 +33,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Comparaison" abstract="true" eSuperTypes="#//BinaryOperation"/>
   <eClassifiers xsi:type="ecore:EClass" name="GT" eSuperTypes="#//Comparaison"/>
   <eClassifiers xsi:type="ecore:EClass" name="Assignement" eSuperTypes="#//BinaryOperation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="leInteger" eSuperTypes="#//Variable">
+  <eClassifiers xsi:type="ecore:EClass" name="LeInteger" eSuperTypes="#//Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="leString" eSuperTypes="#//Variable">
+  <eClassifiers xsi:type="ecore:EClass" name="LeString" eSuperTypes="#//Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LT" eSuperTypes="#//Comparaison"/>
@@ -53,10 +53,10 @@
         eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Equal" eSuperTypes="#//Comparaison"/>
-  <eClassifiers xsi:type="ecore:EClass" name="leBoolean" eSuperTypes="#//Variable">
+  <eClassifiers xsi:type="ecore:EClass" name="LeBoolean" eSuperTypes="#//Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="leFloat" eSuperTypes="#//Variable">
+  <eClassifiers xsi:type="ecore:EClass" name="LeFloat" eSuperTypes="#//Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
   </eClassifiers>
 </ecore:EPackage>

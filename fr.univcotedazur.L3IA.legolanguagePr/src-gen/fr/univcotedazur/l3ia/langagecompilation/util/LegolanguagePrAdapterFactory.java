@@ -122,13 +122,13 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseleInteger(leInteger object) {
-			return createleIntegerAdapter();
+		public Adapter caseLeInteger(LeInteger object) {
+			return createLeIntegerAdapter();
 		}
 
 		@Override
-		public Adapter caseleString(leString object) {
-			return createleStringAdapter();
+		public Adapter caseLeString(LeString object) {
+			return createLeStringAdapter();
 		}
 
 		@Override
@@ -149,6 +149,21 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseVariable_Proxy(Variable_Proxy object) {
 			return createVariable_ProxyAdapter();
+		}
+
+		@Override
+		public Adapter caseEqual(Equal object) {
+			return createEqualAdapter();
+		}
+
+		@Override
+		public Adapter caseLeBoolean(LeBoolean object) {
+			return createLeBooleanAdapter();
+		}
+
+		@Override
+		public Adapter caseLeFloat(LeFloat object) {
+			return createLeFloatAdapter();
 		}
 
 		@Override
@@ -325,30 +340,30 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.leInteger <em>le Integer</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.LeInteger <em>Le Integer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.leInteger
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LeInteger
 	 * @generated
 	 */
-	public Adapter createleIntegerAdapter() {
+	public Adapter createLeIntegerAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.leString <em>le String</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.LeString <em>Le String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.leString
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LeString
 	 * @generated
 	 */
-	public Adapter createleStringAdapter() {
+	public Adapter createLeStringAdapter() {
 		return null;
 	}
 
@@ -405,6 +420,48 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVariable_ProxyAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Equal <em>Equal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Equal
+	 * @generated
+	 */
+	public Adapter createEqualAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.LeBoolean <em>Le Boolean</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LeBoolean
+	 * @generated
+	 */
+	public Adapter createLeBooleanAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.LeFloat <em>Le Float</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LeFloat
+	 * @generated
+	 */
+	public Adapter createLeFloatAdapter() {
 		return null;
 	}
 

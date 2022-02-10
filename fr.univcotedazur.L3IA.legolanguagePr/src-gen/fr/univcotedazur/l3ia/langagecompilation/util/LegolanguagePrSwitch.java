@@ -184,8 +184,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			return result;
 		}
 		case LegolanguagePrPackage.LE_INTEGER: {
-			leInteger leInteger = (leInteger) theEObject;
-			T result = caseleInteger(leInteger);
+			LeInteger leInteger = (LeInteger) theEObject;
+			T result = caseLeInteger(leInteger);
 			if (result == null)
 				result = caseVariable(leInteger);
 			if (result == null)
@@ -195,8 +195,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			return result;
 		}
 		case LegolanguagePrPackage.LE_STRING: {
-			leString leString = (leString) theEObject;
-			T result = caseleString(leString);
+			LeString leString = (LeString) theEObject;
+			T result = caseLeString(leString);
 			if (result == null)
 				result = caseVariable(leString);
 			if (result == null)
@@ -235,8 +235,6 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			Print print = (Print) theEObject;
 			T result = casePrint(print);
 			if (result == null)
-				result = caseExpression(print);
-			if (result == null)
 				result = caseStatement(print);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -249,6 +247,43 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 				result = caseExpression(variable_Proxy);
 			if (result == null)
 				result = caseStatement(variable_Proxy);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.EQUAL: {
+			Equal equal = (Equal) theEObject;
+			T result = caseEqual(equal);
+			if (result == null)
+				result = caseComparaison(equal);
+			if (result == null)
+				result = caseBinaryOperation(equal);
+			if (result == null)
+				result = caseExpression(equal);
+			if (result == null)
+				result = caseStatement(equal);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.LE_BOOLEAN: {
+			LeBoolean leBoolean = (LeBoolean) theEObject;
+			T result = caseLeBoolean(leBoolean);
+			if (result == null)
+				result = caseVariable(leBoolean);
+			if (result == null)
+				result = caseStatement(leBoolean);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.LE_FLOAT: {
+			LeFloat leFloat = (LeFloat) theEObject;
+			T result = caseLeFloat(leFloat);
+			if (result == null)
+				result = caseVariable(leFloat);
+			if (result == null)
+				result = caseStatement(leFloat);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -424,32 +459,32 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>le Integer</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Le Integer</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>le Integer</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Le Integer</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseleInteger(leInteger object) {
+	public T caseLeInteger(LeInteger object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>le String</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Le String</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>le String</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Le String</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseleString(leString object) {
+	public T caseLeString(LeString object) {
 		return null;
 	}
 
@@ -510,6 +545,51 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVariable_Proxy(Variable_Proxy object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Equal</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Equal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEqual(Equal object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Le Boolean</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Le Boolean</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLeBoolean(LeBoolean object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Le Float</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Le Float</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLeFloat(LeFloat object) {
 		return null;
 	}
 

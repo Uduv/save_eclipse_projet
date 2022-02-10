@@ -2,8 +2,8 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.impl;
 
+import fr.univcotedazur.l3ia.langagecompilation.LeInteger;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-import fr.univcotedazur.l3ia.langagecompilation.leInteger;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,18 +13,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>le Integer</b></em>'.
+ * An implementation of the model object '<em><b>Le Integer</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.leIntegerImpl#getInitialeValue <em>Initiale Value</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.LeIntegerImpl#getInitialeValue <em>Initiale Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class leIntegerImpl extends VariableImpl implements leInteger {
+public class LeIntegerImpl extends VariableImpl implements LeInteger {
 	/**
 	 * The default value of the '{@link #getInitialeValue() <em>Initiale Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public class leIntegerImpl extends VariableImpl implements leInteger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected leIntegerImpl() {
+	protected LeIntegerImpl() {
 		super();
 	}
 
@@ -161,4 +161,4 @@ public class leIntegerImpl extends VariableImpl implements leInteger {
 		return result.toString();
 	}
 
-} //leIntegerImpl
+} //LeIntegerImpl

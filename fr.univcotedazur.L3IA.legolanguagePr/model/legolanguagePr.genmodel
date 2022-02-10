@@ -36,11 +36,11 @@
     <genClasses ecoreClass="legolanguagePr.ecore#//Comparaison"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//GT"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//Assignement"/>
-    <genClasses ecoreClass="legolanguagePr.ecore#//leInteger">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//leInteger/initialeValue"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//LeInteger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//LeInteger/initialeValue"/>
     </genClasses>
-    <genClasses ecoreClass="legolanguagePr.ecore#//leString">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//leString/initialeValue"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//LeString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//LeString/initialeValue"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//LT"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//ForLoop">
@@ -53,11 +53,11 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Variable_Proxy/Variable"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//Equal"/>
-    <genClasses ecoreClass="legolanguagePr.ecore#//leBoolean">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//leBoolean/initialeValue"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//LeBoolean">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//LeBoolean/initialeValue"/>
     </genClasses>
-    <genClasses ecoreClass="legolanguagePr.ecore#//leFloat">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//leFloat/initialeValue"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//LeFloat">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//LeFloat/initialeValue"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
