@@ -50,14 +50,13 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLeBooleanAccess().getGroup(), "rule__LeBoolean__Group__0");
 			builder.put(grammarAccess.getLeFloatAccess().getGroup(), "rule__LeFloat__Group__0");
 			builder.put(grammarAccess.getPrintAccess().getGroup(), "rule__Print__Group__0");
-			builder.put(grammarAccess.getVariable_ProxyAccess().getGroup(), "rule__Variable_Proxy__Group__0");
 			builder.put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 			builder.put(grammarAccess.getEFloatAccess().getGroup(), "rule__EFloat__Group__0");
 			builder.put(grammarAccess.getProgramAccess().getStatementAssignment_1(), "rule__Program__StatementAssignment_1");
-			builder.put(grammarAccess.getWhileLoopAccess().getLoopConditionAssignment_2(), "rule__WhileLoop__LoopConditionAssignment_2");
-			builder.put(grammarAccess.getWhileLoopAccess().getStatementAssignment_5(), "rule__WhileLoop__StatementAssignment_5");
-			builder.put(grammarAccess.getForLoopAccess().getLoopConditionAssignment_2(), "rule__ForLoop__LoopConditionAssignment_2");
-			builder.put(grammarAccess.getForLoopAccess().getStatementAssignment_5(), "rule__ForLoop__StatementAssignment_5");
+			builder.put(grammarAccess.getWhileLoopAccess().getLoopConditionAssignment_1(), "rule__WhileLoop__LoopConditionAssignment_1");
+			builder.put(grammarAccess.getWhileLoopAccess().getStatementAssignment_3(), "rule__WhileLoop__StatementAssignment_3");
+			builder.put(grammarAccess.getForLoopAccess().getLoopConditionAssignment_1(), "rule__ForLoop__LoopConditionAssignment_1");
+			builder.put(grammarAccess.getForLoopAccess().getStatementAssignment_3(), "rule__ForLoop__StatementAssignment_3");
 			builder.put(grammarAccess.getSubstarctionAccess().getLeftAssignment_1(), "rule__Substarction__LeftAssignment_1");
 			builder.put(grammarAccess.getSubstarctionAccess().getRightAssignment_3(), "rule__Substarction__RightAssignment_3");
 			builder.put(grammarAccess.getGTAccess().getLeftAssignment_1(), "rule__GT__LeftAssignment_1");
@@ -79,8 +78,7 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLeFloatAccess().getInitialeValueAssignment_4(), "rule__LeFloat__InitialeValueAssignment_4");
 			builder.put(grammarAccess.getPrintAccess().getStatementAssignment_2(), "rule__Print__StatementAssignment_2");
 			builder.put(grammarAccess.getPrintAccess().getNameAssignment_4(), "rule__Print__NameAssignment_4");
-			builder.put(grammarAccess.getVariable_ProxyAccess().getNameAssignment_1(), "rule__Variable_Proxy__NameAssignment_1");
-			builder.put(grammarAccess.getVariable_ProxyAccess().getVariableAssignment_4(), "rule__Variable_Proxy__VariableAssignment_4");
+			builder.put(grammarAccess.getVariable_ProxyAccess().getVariableAssignment(), "rule__Variable_Proxy__VariableAssignment");
 		}
 	}
 	

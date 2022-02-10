@@ -186,25 +186,23 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.WhileLoop");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWhileKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cLoopConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLoopConditionComparaisonParserRuleCall_2_0 = (RuleCall)cLoopConditionAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cStatementAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cStatementStatementParserRuleCall_5_0 = (RuleCall)cStatementAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cLoopConditionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLoopConditionComparaisonParserRuleCall_1_0 = (RuleCall)cLoopConditionAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cStatementAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStatementStatementParserRuleCall_3_0 = (RuleCall)cStatementAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//WhileLoop returns WhileLoop:
 		//    'while'
-		//    '(' loopCondition=Comparaison')'
+		//     loopCondition=Comparaison
 		//    '{'
 		//        (statement+=Statement)*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'while'
-		//'(' loopCondition=Comparaison')'
+		// loopCondition=Comparaison
 		//'{'
 		//    (statement+=Statement)*
 		//'}'
@@ -213,53 +211,45 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'while'
 		public Keyword getWhileKeyword_0() { return cWhileKeyword_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
 		//loopCondition=Comparaison
-		public Assignment getLoopConditionAssignment_2() { return cLoopConditionAssignment_2; }
+		public Assignment getLoopConditionAssignment_1() { return cLoopConditionAssignment_1; }
 		
 		//Comparaison
-		public RuleCall getLoopConditionComparaisonParserRuleCall_2_0() { return cLoopConditionComparaisonParserRuleCall_2_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public RuleCall getLoopConditionComparaisonParserRuleCall_1_0() { return cLoopConditionComparaisonParserRuleCall_1_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(statement+=Statement)*
-		public Assignment getStatementAssignment_5() { return cStatementAssignment_5; }
+		public Assignment getStatementAssignment_3() { return cStatementAssignment_3; }
 		
 		//Statement
-		public RuleCall getStatementStatementParserRuleCall_5_0() { return cStatementStatementParserRuleCall_5_0; }
+		public RuleCall getStatementStatementParserRuleCall_3_0() { return cStatementStatementParserRuleCall_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class ForLoopElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.ForLoop");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cForKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cLoopConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLoopConditionComparaisonParserRuleCall_2_0 = (RuleCall)cLoopConditionAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cStatementAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cStatementStatementParserRuleCall_5_0 = (RuleCall)cStatementAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cLoopConditionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cLoopConditionComparaisonParserRuleCall_1_0 = (RuleCall)cLoopConditionAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cStatementAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStatementStatementParserRuleCall_3_0 = (RuleCall)cStatementAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ForLoop returns ForLoop:
 		//    'for'
-		//    '(' loopCondition=Comparaison')'
+		//    loopCondition=Comparaison
 		//    '{'
 		//        (statement+=Statement)*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'for'
-		//'(' loopCondition=Comparaison')'
+		//loopCondition=Comparaison
 		//'{'
 		//    (statement+=Statement)*
 		//'}'
@@ -268,29 +258,23 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'for'
 		public Keyword getForKeyword_0() { return cForKeyword_0; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
-		
 		//loopCondition=Comparaison
-		public Assignment getLoopConditionAssignment_2() { return cLoopConditionAssignment_2; }
+		public Assignment getLoopConditionAssignment_1() { return cLoopConditionAssignment_1; }
 		
 		//Comparaison
-		public RuleCall getLoopConditionComparaisonParserRuleCall_2_0() { return cLoopConditionComparaisonParserRuleCall_2_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public RuleCall getLoopConditionComparaisonParserRuleCall_1_0() { return cLoopConditionComparaisonParserRuleCall_1_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//(statement+=Statement)*
-		public Assignment getStatementAssignment_5() { return cStatementAssignment_5; }
+		public Assignment getStatementAssignment_3() { return cStatementAssignment_3; }
 		
 		//Statement
-		public RuleCall getStatementStatementParserRuleCall_5_0() { return cStatementStatementParserRuleCall_5_0; }
+		public RuleCall getStatementStatementParserRuleCall_3_0() { return cStatementStatementParserRuleCall_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class SubstarctionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Substarction");
@@ -602,7 +586,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//    'string'
 		//    name=EString
 		//    '='
-		//        ( initialeValue=EString)?
+		//        (initialeValue=EString)?
 		//        ;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -610,7 +594,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'string'
 		//name=EString
 		//'='
-		//    ( initialeValue=EString)?
+		//    (initialeValue=EString)?
 		public Group getGroup() { return cGroup; }
 		
 		//{LeString}
@@ -628,7 +612,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'='
 		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
 		
-		//( initialeValue=EString)?
+		//(initialeValue=EString)?
 		public Assignment getInitialeValueAssignment_4() { return cInitialeValueAssignment_4; }
 		
 		//EString
@@ -775,58 +759,23 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	public class Variable_ProxyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Variable_Proxy");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cVariable_ProxyKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cVariableKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cVariableAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cVariableVariableCrossReference_4_0 = (CrossReference)cVariableAssignment_4.eContents().get(0);
-		private final RuleCall cVariableVariableEStringParserRuleCall_4_0_1 = (RuleCall)cVariableVariableCrossReference_4_0.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cVariableAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cVariableVariableCrossReference_0 = (CrossReference)cVariableAssignment.eContents().get(0);
+		private final RuleCall cVariableVariableEStringParserRuleCall_0_1 = (RuleCall)cVariableVariableCrossReference_0.eContents().get(1);
 		
 		//Variable_Proxy returns Variable_Proxy:
-		//    'Variable_Proxy'
-		//    name=EString
-		//    '{'
-		//        'Variable' Variable=[Variable|EString]
-		//    '}';
+		//    Variable=[Variable|EString]
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Variable_Proxy'
-		//name=EString
-		//'{'
-		//    'Variable' Variable=[Variable|EString]
-		//'}'
-		public Group getGroup() { return cGroup; }
-		
-		//'Variable_Proxy'
-		public Keyword getVariable_ProxyKeyword_0() { return cVariable_ProxyKeyword_0; }
-		
-		//name=EString
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//'Variable'
-		public Keyword getVariableKeyword_3() { return cVariableKeyword_3; }
-		
 		//Variable=[Variable|EString]
-		public Assignment getVariableAssignment_4() { return cVariableAssignment_4; }
+		public Assignment getVariableAssignment() { return cVariableAssignment; }
 		
 		//[Variable|EString]
-		public CrossReference getVariableVariableCrossReference_4_0() { return cVariableVariableCrossReference_4_0; }
+		public CrossReference getVariableVariableCrossReference_0() { return cVariableVariableCrossReference_0; }
 		
 		//EString
-		public RuleCall getVariableVariableEStringParserRuleCall_4_0_1() { return cVariableVariableEStringParserRuleCall_4_0_1; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public RuleCall getVariableVariableEStringParserRuleCall_0_1() { return cVariableVariableEStringParserRuleCall_0_1; }
 	}
 	public class EBooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EBoolean");
@@ -1047,7 +996,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	//WhileLoop returns WhileLoop:
 	//    'while'
-	//    '(' loopCondition=Comparaison')'
+	//     loopCondition=Comparaison
 	//    '{'
 	//        (statement+=Statement)*
 	//    '}';
@@ -1061,7 +1010,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	//ForLoop returns ForLoop:
 	//    'for'
-	//    '(' loopCondition=Comparaison')'
+	//    loopCondition=Comparaison
 	//    '{'
 	//        (statement+=Statement)*
 	//    '}';
@@ -1165,7 +1114,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	//    'string'
 	//    name=EString
 	//    '='
-	//        ( initialeValue=EString)?
+	//        (initialeValue=EString)?
 	//        ;
 	public LeStringElements getLeStringAccess() {
 		return pLeString;
@@ -1218,11 +1167,8 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Variable_Proxy returns Variable_Proxy:
-	//    'Variable_Proxy'
-	//    name=EString
-	//    '{'
-	//        'Variable' Variable=[Variable|EString]
-	//    '}';
+	//    Variable=[Variable|EString]
+	//    ;
 	public Variable_ProxyElements getVariable_ProxyAccess() {
 		return pVariable_Proxy;
 	}

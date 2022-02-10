@@ -307,18 +307,15 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Variable_Proxy returns Variable_Proxy
 	 *
 	 * Constraint:
-	 *     (name=EString Variable=[Variable|EString])
+	 *     Variable=[Variable|EString]
 	 */
 	protected void sequence_Variable_Proxy(ISerializationContext context, Variable_Proxy semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.VARIABLE_PROXY__VARIABLE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.VARIABLE_PROXY__VARIABLE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVariable_ProxyAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getVariable_ProxyAccess().getVariableVariableEStringParserRuleCall_4_0_1(), semanticObject.eGet(LegolanguagePrPackage.Literals.VARIABLE_PROXY__VARIABLE, false));
+		feeder.accept(grammarAccess.getVariable_ProxyAccess().getVariableVariableEStringParserRuleCall_0_1(), semanticObject.eGet(LegolanguagePrPackage.Literals.VARIABLE_PROXY__VARIABLE, false));
 		feeder.finish();
 	}
 	

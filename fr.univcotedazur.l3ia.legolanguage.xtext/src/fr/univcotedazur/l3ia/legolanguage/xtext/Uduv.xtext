@@ -26,7 +26,7 @@ Variable returns Variable:
 WhileLoop returns WhileLoop:
 	'while'
 
-	'(' loopCondition=Comparaison')'
+	 loopCondition=Comparaison
 	'{'
 		(statement+=Statement)*
 		
@@ -34,7 +34,7 @@ WhileLoop returns WhileLoop:
 
 ForLoop returns ForLoop:
 	'for'
-	'(' loopCondition=Comparaison')'
+	loopCondition=Comparaison
 	'{'
 		(statement+=Statement)*
 		
@@ -94,7 +94,7 @@ LeString returns LeString:
 	'string'
 	name=EString
 	'='
-		( initialeValue=EString)?
+		(initialeValue=EString)?
 		;
 
 LeBoolean returns LeBoolean:
@@ -120,11 +120,9 @@ Print returns Print:
 	name=EString;
 
 Variable_Proxy returns Variable_Proxy:
-	'Variable_Proxy'
-	name=EString
-	'{'
-		'Variable' Variable=[Variable|EString]
-	'}';
+	Variable=[Variable|EString]
+	;
+
 
 EBoolean returns ecore::EBoolean:
 	'true' | 'false';
