@@ -87,21 +87,18 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Assignement returns Assignement
 	 *
 	 * Constraint:
-	 *     (name=EString left=Expression right=Expression)
+	 *     (left=Expression right=Expression)
 	 */
 	protected void sequence_Assignement(ISerializationContext context, Assignement semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT));
 			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAssignementAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getAssignementAccess().getLeftExpressionParserRuleCall_4_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getAssignementAccess().getRightExpressionParserRuleCall_6_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getAssignementAccess().getLeftExpressionParserRuleCall_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getAssignementAccess().getRightExpressionParserRuleCall_4_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -112,7 +109,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ForLoop returns ForLoop
 	 *
 	 * Constraint:
-	 *     (name=EString (statement+=Statement statement+=Statement*)? loopCondition=Comparaison)
+	 *     (loopCondition=Comparaison statement+=Statement*)
 	 */
 	protected void sequence_ForLoop(ISerializationContext context, ForLoop semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -127,21 +124,18 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     GT returns GT
 	 *
 	 * Constraint:
-	 *     (name=EString left=Expression right=Expression)
+	 *     (left=Expression right=Expression)
 	 */
 	protected void sequence_GT(ISerializationContext context, GT semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT));
 			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGTAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getGTAccess().getLeftExpressionParserRuleCall_4_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getGTAccess().getRightExpressionParserRuleCall_6_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getGTAccess().getLeftExpressionParserRuleCall_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getGTAccess().getRightExpressionParserRuleCall_3_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -154,21 +148,18 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LT returns LT
 	 *
 	 * Constraint:
-	 *     (name=EString left=Expression right=Expression)
+	 *     (left=Expression right=Expression)
 	 */
 	protected void sequence_LT(ISerializationContext context, LT semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT));
 			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLTAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getLTAccess().getLeftExpressionParserRuleCall_4_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getLTAccess().getRightExpressionParserRuleCall_6_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getLTAccess().getLeftExpressionParserRuleCall_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getLTAccess().getRightExpressionParserRuleCall_3_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -212,21 +203,18 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Substarction returns Substarction
 	 *
 	 * Constraint:
-	 *     (name=EString left=Expression right=Expression)
+	 *     (left=Expression right=Expression)
 	 */
 	protected void sequence_Substarction(ISerializationContext context, Substarction semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT));
 			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSubstarctionAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSubstarctionAccess().getLeftExpressionParserRuleCall_4_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getSubstarctionAccess().getRightExpressionParserRuleCall_6_0(), semanticObject.getRight());
+		feeder.accept(grammarAccess.getSubstarctionAccess().getLeftExpressionParserRuleCall_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getSubstarctionAccess().getRightExpressionParserRuleCall_3_0(), semanticObject.getRight());
 		feeder.finish();
 	}
 	
@@ -260,7 +248,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     WhileLoop returns WhileLoop
 	 *
 	 * Constraint:
-	 *     (name=EString (statement+=Statement statement+=Statement*)? loopCondition=Comparaison)
+	 *     (loopCondition=Comparaison statement+=Statement*)
 	 */
 	protected void sequence_WhileLoop(ISerializationContext context, WhileLoop semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -288,7 +276,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     leString returns leString
 	 *
 	 * Constraint:
-	 *     (isConst?='isConst'? name=EString initialeValue=EString?)
+	 *     (name=EString initialeValue=EString?)
 	 */
 	protected void sequence_leString(ISerializationContext context, leString semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

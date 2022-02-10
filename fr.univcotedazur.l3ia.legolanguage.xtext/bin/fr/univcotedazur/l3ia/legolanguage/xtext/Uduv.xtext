@@ -24,78 +24,76 @@ Expression returns Expression:
 Variable returns Variable:
 	leInteger | leString;
 
-EString returns ecore::EString:
-	STRING | ID;
 
 WhileLoop returns WhileLoop:
-	'WhileLoop'
-	name=EString
+	'while'
+
+	'(' loopCondition=Comparaison')'
 	'{'
-		('statement' '{' statement+=Statement ( "," statement+=Statement)* '}' )?
-		'loopCondition' loopCondition=Comparaison
+		(statement+=Statement)*
+		
 	'}';
+
+ForLoop returns ForLoop:
+	'For'
+	'(' loopCondition=Comparaison')'
+	'{'
+		(statement+=Statement)*
+		
+	'}';
+
 
 Substarction returns Substarction:
-	'Substarction'
-	name=EString
-	'{'
-		'left' left=Expression
-		'right' right=Expression
-	'}';
+
+	'('
+		left=Expression
+		'-'
+		right=Expression
+	')';
 
 GT returns GT:
-	'GT'
-	name=EString
-	'{'
-		'left' left=Expression
-		'right' right=Expression
-	'}';
+	'('
+		left=Expression
+		'>'
+		right=Expression
+	')';
 
+LT returns LT:
+	'('
+		left=Expression
+		'<'
+		right=Expression
+	')';
+	
+	
 Assignement returns Assignement:
-	'Assignement'
-	name=EString
-	'{'
+	
+	
 		'left' left=Expression
+		'='
 		'right' right=Expression
-	'}';
+	;
 
 leInteger returns leInteger:
 	{leInteger}
 	(isConst?='isConst')?
-	'leInteger'
+	'int'
 	name=EString
-	'{'
 		('initialeValue' initialeValue=EInt)?
-	'}';
+		;
 
 leString returns leString:
 	{leString}
-	(isConst?='isConst')?
-	'leString'
+	'String'
 	name=EString
 	'{'
 		('initialeValue' initialeValue=EString)?
 	'}';
 
-LT returns LT:
-	'LT'
-	name=EString
-	'{'
-		'left' left=Expression
-		'right' right=Expression
-	'}';
-
-ForLoop returns ForLoop:
-	'ForLoop'
-	name=EString
-	'{'
-		('statement' '{' statement+=Statement ( "," statement+=Statement)* '}' )?
-		'loopCondition' loopCondition=Comparaison
-	'}';
 
 Print returns Print:
 	{Print}
-	'Print'
+	'print(' ')'
 	name=EString;
 
 Variable_Proxy returns Variable_Proxy:
@@ -107,6 +105,9 @@ Variable_Proxy returns Variable_Proxy:
 
 EBoolean returns ecore::EBoolean:
 	'true' | 'false';
+	
+EString returns ecore::EString:
+	STRING | ID;
 
 EInt returns ecore::EInt:
 	'-'? INT;
