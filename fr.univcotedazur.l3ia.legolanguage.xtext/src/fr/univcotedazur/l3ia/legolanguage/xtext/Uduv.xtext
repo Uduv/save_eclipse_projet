@@ -13,16 +13,16 @@ Program returns Program:
 	'}';
 
 Statement returns Statement:
-	WhileLoop | Substarction | GT | Assignement | leInteger | leString | LT | ForLoop | Print | Variable_Proxy;
+	WhileLoop | Substarction | GT | Assignement | leInteger | leString | LT | ForLoop | Variable_Proxy | Print;
 
 Comparaison returns Comparaison:
-	GT | LT;
+	GT | LT | Equal;
 
 Expression returns Expression:
-	Substarction | GT | Assignement | LT | Print | Variable_Proxy;
+	Substarction | GT | Assignement | LT  | Variable_Proxy;
 
 Variable returns Variable:
-	leInteger | leString;
+	leInteger | leString | leFloat | leBoolean;
 
 
 WhileLoop returns WhileLoop:
@@ -35,7 +35,7 @@ WhileLoop returns WhileLoop:
 	'}';
 
 ForLoop returns ForLoop:
-	'For'
+	'for'
 	'(' loopCondition=Comparaison')'
 	'{'
 		(statement+=Statement)*
@@ -64,6 +64,13 @@ LT returns LT:
 		'<'
 		right=Expression
 	')';
+
+Equal returns Equal:
+	'('
+		left=Expression
+		'=='
+		right=Expression
+	')';
 	
 	
 Assignement returns Assignement:
@@ -79,21 +86,34 @@ leInteger returns leInteger:
 	(isConst?='isConst')?
 	'int'
 	name=EString
-		('initialeValue' initialeValue=EInt)?
+		(initialeValue=EInt)?
 		;
 
 leString returns leString:
 	{leString}
-	'String'
+	'string'
 	name=EString
-	'{'
-		('initialeValue' initialeValue=EString)?
-	'}';
+		( initialeValue=EString)?
+		;
+
+leBoolean returns leBoolean:
+	{leBoolean}
+	'boolean'
+	name=EString
+		( initialeValue=EBoolean)?
+		;
+
+leFloat returns leFloat:
+	{leFloat}
+	'float'
+	name=EString
+		( initialeValue= EFloat )?
+		;
 
 
 Print returns Print:
 	{Print}
-	'print(' ')'
+	'print(' (statement+=Statement)? ')'
 	name=EString;
 
 Variable_Proxy returns Variable_Proxy:
@@ -111,3 +131,7 @@ EString returns ecore::EString:
 
 EInt returns ecore::EInt:
 	'-'? INT;
+
+EFloat returns ecore::EFloat: 
+	INT '.' INT
+;

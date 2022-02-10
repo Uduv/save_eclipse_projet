@@ -46,9 +46,18 @@
     <genClasses ecoreClass="legolanguagePr.ecore#//ForLoop">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//ForLoop/loopCondition"/>
     </genClasses>
-    <genClasses ecoreClass="legolanguagePr.ecore#//Print"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Print">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Print/statement"/>
+    </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//Variable_Proxy">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Variable_Proxy/Variable"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Equal"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//leBoolean">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//leBoolean/initialeValue"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//leFloat">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//leFloat/initialeValue"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
