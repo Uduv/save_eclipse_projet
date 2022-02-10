@@ -2,19 +2,7 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.util;
 
-import fr.univcotedazur.l3ia.langagecompilation.Assignement;
-import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
-import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
-import fr.univcotedazur.l3ia.langagecompilation.Expression;
-import fr.univcotedazur.l3ia.langagecompilation.GT;
-import fr.univcotedazur.l3ia.langagecompilation.LT;
-import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-import fr.univcotedazur.l3ia.langagecompilation.Loop;
-import fr.univcotedazur.l3ia.langagecompilation.Program;
-import fr.univcotedazur.l3ia.langagecompilation.Statement;
-import fr.univcotedazur.l3ia.langagecompilation.Substarction;
-import fr.univcotedazur.l3ia.langagecompilation.Variable;
-import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
+import fr.univcotedazur.l3ia.langagecompilation.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -195,24 +183,24 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case LegolanguagePrPackage.INTEGER: {
-			fr.univcotedazur.l3ia.langagecompilation.Integer integer = (fr.univcotedazur.l3ia.langagecompilation.Integer) theEObject;
-			T result = caseInteger(integer);
+		case LegolanguagePrPackage.LE_INTEGER: {
+			leInteger leInteger = (leInteger) theEObject;
+			T result = caseleInteger(leInteger);
 			if (result == null)
-				result = caseVariable(integer);
+				result = caseVariable(leInteger);
 			if (result == null)
-				result = caseStatement(integer);
+				result = caseStatement(leInteger);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case LegolanguagePrPackage.STRING: {
-			fr.univcotedazur.l3ia.langagecompilation.String string = (fr.univcotedazur.l3ia.langagecompilation.String) theEObject;
-			T result = caseString(string);
+		case LegolanguagePrPackage.LE_STRING: {
+			leString leString = (leString) theEObject;
+			T result = caseleString(leString);
 			if (result == null)
-				result = caseVariable(string);
+				result = caseVariable(leString);
 			if (result == null)
-				result = caseStatement(string);
+				result = caseStatement(leString);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -228,6 +216,39 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 				result = caseExpression(lt);
 			if (result == null)
 				result = caseStatement(lt);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.FOR_LOOP: {
+			ForLoop forLoop = (ForLoop) theEObject;
+			T result = caseForLoop(forLoop);
+			if (result == null)
+				result = caseLoop(forLoop);
+			if (result == null)
+				result = caseStatement(forLoop);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.PRINT: {
+			Print print = (Print) theEObject;
+			T result = casePrint(print);
+			if (result == null)
+				result = caseExpression(print);
+			if (result == null)
+				result = caseStatement(print);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.VARIABLE_PROXY: {
+			Variable_Proxy variable_Proxy = (Variable_Proxy) theEObject;
+			T result = caseVariable_Proxy(variable_Proxy);
+			if (result == null)
+				result = caseExpression(variable_Proxy);
+			if (result == null)
+				result = caseStatement(variable_Proxy);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -403,32 +424,32 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Integer</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>le Integer</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Integer</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>le Integer</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseInteger(fr.univcotedazur.l3ia.langagecompilation.Integer object) {
+	public T caseleInteger(leInteger object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>String</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>le String</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>String</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>le String</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseString(fr.univcotedazur.l3ia.langagecompilation.String object) {
+	public T caseleString(leString object) {
 		return null;
 	}
 
@@ -444,6 +465,51 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLT(LT object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>For Loop</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>For Loop</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseForLoop(ForLoop object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Print</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Print</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePrint(Print object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Variable Proxy</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Variable Proxy</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVariable_Proxy(Variable_Proxy object) {
 		return null;
 	}
 

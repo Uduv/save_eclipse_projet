@@ -2,8 +2,6 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation;
 
-import java.lang.String;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**

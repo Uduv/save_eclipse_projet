@@ -188,49 +188,49 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Integer} instances.
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.leInteger} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IntegerItemProvider integerItemProvider;
+	protected leIntegerItemProvider leIntegerItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Integer}.
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.leInteger}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createIntegerAdapter() {
-		if (integerItemProvider == null) {
-			integerItemProvider = new IntegerItemProvider(this);
+	public Adapter createleIntegerAdapter() {
+		if (leIntegerItemProvider == null) {
+			leIntegerItemProvider = new leIntegerItemProvider(this);
 		}
 
-		return integerItemProvider;
+		return leIntegerItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.String} instances.
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.leString} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StringItemProvider stringItemProvider;
+	protected leStringItemProvider leStringItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.String}.
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.leString}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createStringAdapter() {
-		if (stringItemProvider == null) {
-			stringItemProvider = new StringItemProvider(this);
+	public Adapter createleStringAdapter() {
+		if (leStringItemProvider == null) {
+			leStringItemProvider = new leStringItemProvider(this);
 		}
 
-		return stringItemProvider;
+		return leStringItemProvider;
 	}
 
 	/**
@@ -254,6 +254,75 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 		}
 
 		return ltItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.ForLoop} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ForLoopItemProvider forLoopItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ForLoop}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createForLoopAdapter() {
+		if (forLoopItemProvider == null) {
+			forLoopItemProvider = new ForLoopItemProvider(this);
+		}
+
+		return forLoopItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Print} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PrintItemProvider printItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Print}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPrintAdapter() {
+		if (printItemProvider == null) {
+			printItemProvider = new PrintItemProvider(this);
+		}
+
+		return printItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Variable_ProxyItemProvider variable_ProxyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createVariable_ProxyAdapter() {
+		if (variable_ProxyItemProvider == null) {
+			variable_ProxyItemProvider = new Variable_ProxyItemProvider(this);
+		}
+
+		return variable_ProxyItemProvider;
 	}
 
 	/**
@@ -365,12 +434,18 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			gtItemProvider.dispose();
 		if (assignementItemProvider != null)
 			assignementItemProvider.dispose();
-		if (integerItemProvider != null)
-			integerItemProvider.dispose();
-		if (stringItemProvider != null)
-			stringItemProvider.dispose();
+		if (leIntegerItemProvider != null)
+			leIntegerItemProvider.dispose();
+		if (leStringItemProvider != null)
+			leStringItemProvider.dispose();
 		if (ltItemProvider != null)
 			ltItemProvider.dispose();
+		if (forLoopItemProvider != null)
+			forLoopItemProvider.dispose();
+		if (printItemProvider != null)
+			printItemProvider.dispose();
+		if (variable_ProxyItemProvider != null)
+			variable_ProxyItemProvider.dispose();
 	}
 
 }

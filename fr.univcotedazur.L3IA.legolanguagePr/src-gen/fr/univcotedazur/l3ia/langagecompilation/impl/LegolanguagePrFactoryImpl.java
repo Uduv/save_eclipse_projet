@@ -2,14 +2,7 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.impl;
 
-import fr.univcotedazur.l3ia.langagecompilation.Assignement;
-import fr.univcotedazur.l3ia.langagecompilation.GT;
-import fr.univcotedazur.l3ia.langagecompilation.LT;
-import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrFactory;
-import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-import fr.univcotedazur.l3ia.langagecompilation.Program;
-import fr.univcotedazur.l3ia.langagecompilation.Substarction;
-import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
+import fr.univcotedazur.l3ia.langagecompilation.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -73,12 +66,18 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createGT();
 		case LegolanguagePrPackage.ASSIGNEMENT:
 			return createAssignement();
-		case LegolanguagePrPackage.INTEGER:
-			return createInteger();
-		case LegolanguagePrPackage.STRING:
-			return createString();
+		case LegolanguagePrPackage.LE_INTEGER:
+			return createleInteger();
+		case LegolanguagePrPackage.LE_STRING:
+			return createleString();
 		case LegolanguagePrPackage.LT:
 			return createLT();
+		case LegolanguagePrPackage.FOR_LOOP:
+			return createForLoop();
+		case LegolanguagePrPackage.PRINT:
+			return createPrint();
+		case LegolanguagePrPackage.VARIABLE_PROXY:
+			return createVariable_Proxy();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -139,9 +138,9 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public fr.univcotedazur.l3ia.langagecompilation.Integer createInteger() {
-		IntegerImpl integer = new IntegerImpl();
-		return integer;
+	public leInteger createleInteger() {
+		leIntegerImpl leInteger = new leIntegerImpl();
+		return leInteger;
 	}
 
 	/**
@@ -149,9 +148,9 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public fr.univcotedazur.l3ia.langagecompilation.String createString() {
-		StringImpl string = new StringImpl();
-		return string;
+	public leString createleString() {
+		leStringImpl leString = new leStringImpl();
+		return leString;
 	}
 
 	/**
@@ -162,6 +161,36 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	public LT createLT() {
 		LTImpl lt = new LTImpl();
 		return lt;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ForLoop createForLoop() {
+		ForLoopImpl forLoop = new ForLoopImpl();
+		return forLoop;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Print createPrint() {
+		PrintImpl print = new PrintImpl();
+		return print;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Variable_Proxy createVariable_Proxy() {
+		Variable_ProxyImpl variable_Proxy = new Variable_ProxyImpl();
+		return variable_Proxy;
 	}
 
 	/**

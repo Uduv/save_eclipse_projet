@@ -2,7 +2,7 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.impl;
 
-import fr.univcotedazur.l3ia.langagecompilation.Expression;
+import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
 
@@ -36,7 +36,7 @@ public class WhileLoopImpl extends LoopImpl implements WhileLoop {
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression loopCondition;
+	protected Comparaison loopCondition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +62,7 @@ public class WhileLoopImpl extends LoopImpl implements WhileLoop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getLoopCondition() {
+	public Comparaison getLoopCondition() {
 		return loopCondition;
 	}
 
@@ -71,8 +71,8 @@ public class WhileLoopImpl extends LoopImpl implements WhileLoop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLoopCondition(Expression newLoopCondition, NotificationChain msgs) {
-		Expression oldLoopCondition = loopCondition;
+	public NotificationChain basicSetLoopCondition(Comparaison newLoopCondition, NotificationChain msgs) {
+		Comparaison oldLoopCondition = loopCondition;
 		loopCondition = newLoopCondition;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -90,7 +90,7 @@ public class WhileLoopImpl extends LoopImpl implements WhileLoop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLoopCondition(Expression newLoopCondition) {
+	public void setLoopCondition(Comparaison newLoopCondition) {
 		if (newLoopCondition != loopCondition) {
 			NotificationChain msgs = null;
 			if (loopCondition != null)
@@ -144,7 +144,7 @@ public class WhileLoopImpl extends LoopImpl implements WhileLoop {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case LegolanguagePrPackage.WHILE_LOOP__LOOP_CONDITION:
-			setLoopCondition((Expression) newValue);
+			setLoopCondition((Comparaison) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -159,7 +159,7 @@ public class WhileLoopImpl extends LoopImpl implements WhileLoop {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case LegolanguagePrPackage.WHILE_LOOP__LOOP_CONDITION:
-			setLoopCondition((Expression) null);
+			setLoopCondition((Comparaison) null);
 			return;
 		}
 		super.eUnset(featureID);

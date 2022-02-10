@@ -2,19 +2,7 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.util;
 
-import fr.univcotedazur.l3ia.langagecompilation.Assignement;
-import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
-import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
-import fr.univcotedazur.l3ia.langagecompilation.Expression;
-import fr.univcotedazur.l3ia.langagecompilation.GT;
-import fr.univcotedazur.l3ia.langagecompilation.LT;
-import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-import fr.univcotedazur.l3ia.langagecompilation.Loop;
-import fr.univcotedazur.l3ia.langagecompilation.Program;
-import fr.univcotedazur.l3ia.langagecompilation.Statement;
-import fr.univcotedazur.l3ia.langagecompilation.Substarction;
-import fr.univcotedazur.l3ia.langagecompilation.Variable;
-import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
+import fr.univcotedazur.l3ia.langagecompilation.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -134,18 +122,33 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseInteger(fr.univcotedazur.l3ia.langagecompilation.Integer object) {
-			return createIntegerAdapter();
+		public Adapter caseleInteger(leInteger object) {
+			return createleIntegerAdapter();
 		}
 
 		@Override
-		public Adapter caseString(fr.univcotedazur.l3ia.langagecompilation.String object) {
-			return createStringAdapter();
+		public Adapter caseleString(leString object) {
+			return createleStringAdapter();
 		}
 
 		@Override
 		public Adapter caseLT(LT object) {
 			return createLTAdapter();
+		}
+
+		@Override
+		public Adapter caseForLoop(ForLoop object) {
+			return createForLoopAdapter();
+		}
+
+		@Override
+		public Adapter casePrint(Print object) {
+			return createPrintAdapter();
+		}
+
+		@Override
+		public Adapter caseVariable_Proxy(Variable_Proxy object) {
+			return createVariable_ProxyAdapter();
 		}
 
 		@Override
@@ -322,30 +325,30 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Integer <em>Integer</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.leInteger <em>le Integer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.Integer
+	 * @see fr.univcotedazur.l3ia.langagecompilation.leInteger
 	 * @generated
 	 */
-	public Adapter createIntegerAdapter() {
+	public Adapter createleIntegerAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.String <em>String</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.leString <em>le String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.String
+	 * @see fr.univcotedazur.l3ia.langagecompilation.leString
 	 * @generated
 	 */
-	public Adapter createStringAdapter() {
+	public Adapter createleStringAdapter() {
 		return null;
 	}
 
@@ -360,6 +363,48 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLTAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.ForLoop <em>For Loop</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ForLoop
+	 * @generated
+	 */
+	public Adapter createForLoopAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Print <em>Print</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Print
+	 * @generated
+	 */
+	public Adapter createPrintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy <em>Variable Proxy</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy
+	 * @generated
+	 */
+	public Adapter createVariable_ProxyAdapter() {
 		return null;
 	}
 

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: fr.univcotedazur.l3ia.legolanguage.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.univcotedazur.l3ia.legolanguage.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fr.univcotedazur.l3ia.legolanguage.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: fr.univcotedazur.L3IA.legolanguagePr,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: fr.univcotedazur.l3ia.legolanguage.xtext,
+ fr.univcotedazur.l3ia.legolanguage.xtext.formatting2,
+ fr.univcotedazur.l3ia.legolanguage.xtext.parser.antlr.internal,
+ fr.univcotedazur.l3ia.legolanguage.xtext.services,
+ fr.univcotedazur.l3ia.legolanguage.xtext.serializer,
+ fr.univcotedazur.l3ia.legolanguage.xtext.validation,
+ fr.univcotedazur.l3ia.legolanguage.xtext.generator,
+ fr.univcotedazur.l3ia.legolanguage.xtext.scoping,
+ fr.univcotedazur.l3ia.legolanguage.xtext.parser.antlr
+Import-Package: org.apache.log4j

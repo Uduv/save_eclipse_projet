@@ -144,13 +144,7 @@ public class WhileLoopItemProvider extends LoopItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.WHILE_LOOP__LOOP_CONDITION,
-				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.WHILE_LOOP__LOOP_CONDITION,
 				LegolanguagePrFactory.eINSTANCE.createGT()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.WHILE_LOOP__LOOP_CONDITION,
-				LegolanguagePrFactory.eINSTANCE.createAssignement()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.WHILE_LOOP__LOOP_CONDITION,
 				LegolanguagePrFactory.eINSTANCE.createLT()));

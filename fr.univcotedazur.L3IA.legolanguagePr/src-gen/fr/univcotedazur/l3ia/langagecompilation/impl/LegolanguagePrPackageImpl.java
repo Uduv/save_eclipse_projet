@@ -6,14 +6,19 @@ import fr.univcotedazur.l3ia.langagecompilation.Assignement;
 import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
 import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
+import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrFactory;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Loop;
+import fr.univcotedazur.l3ia.langagecompilation.Print;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
 import fr.univcotedazur.l3ia.langagecompilation.Statement;
 import fr.univcotedazur.l3ia.langagecompilation.Substarction;
 import fr.univcotedazur.l3ia.langagecompilation.Variable;
+import fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy;
 import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
+import fr.univcotedazur.l3ia.langagecompilation.leInteger;
+import fr.univcotedazur.l3ia.langagecompilation.leString;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -111,14 +116,14 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass integerEClass = null;
+	private EClass leIntegerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass stringEClass = null;
+	private EClass leStringEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -126,6 +131,27 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * @generated
 	 */
 	private EClass ltEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass forLoopEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass printEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass variable_ProxyEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -367,8 +393,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getInteger() {
-		return integerEClass;
+	public EClass getleInteger() {
+		return leIntegerEClass;
 	}
 
 	/**
@@ -376,8 +402,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInteger_InitialeValue() {
-		return (EAttribute) integerEClass.getEStructuralFeatures().get(0);
+	public EAttribute getleInteger_InitialeValue() {
+		return (EAttribute) leIntegerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -385,8 +411,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getString() {
-		return stringEClass;
+	public EClass getleString() {
+		return leStringEClass;
 	}
 
 	/**
@@ -394,8 +420,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getString_InitialeValue() {
-		return (EAttribute) stringEClass.getEStructuralFeatures().get(0);
+	public EAttribute getleString_InitialeValue() {
+		return (EAttribute) leStringEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -405,6 +431,51 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 */
 	public EClass getLT() {
 		return ltEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getForLoop() {
+		return forLoopEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getForLoop_LoopCondition() {
+		return (EReference) forLoopEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPrint() {
+		return printEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getVariable_Proxy() {
+		return variable_ProxyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVariable_Proxy_Variable() {
+		return (EReference) variable_ProxyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -466,13 +537,21 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		assignementEClass = createEClass(ASSIGNEMENT);
 
-		integerEClass = createEClass(INTEGER);
-		createEAttribute(integerEClass, INTEGER__INITIALE_VALUE);
+		leIntegerEClass = createEClass(LE_INTEGER);
+		createEAttribute(leIntegerEClass, LE_INTEGER__INITIALE_VALUE);
 
-		stringEClass = createEClass(STRING);
-		createEAttribute(stringEClass, STRING__INITIALE_VALUE);
+		leStringEClass = createEClass(LE_STRING);
+		createEAttribute(leStringEClass, LE_STRING__INITIALE_VALUE);
 
 		ltEClass = createEClass(LT);
+
+		forLoopEClass = createEClass(FOR_LOOP);
+		createEReference(forLoopEClass, FOR_LOOP__LOOP_CONDITION);
+
+		printEClass = createEClass(PRINT);
+
+		variable_ProxyEClass = createEClass(VARIABLE_PROXY);
+		createEReference(variable_ProxyEClass, VARIABLE_PROXY__VARIABLE);
 	}
 
 	/**
@@ -513,9 +592,12 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		comparaisonEClass.getESuperTypes().add(this.getBinaryOperation());
 		gtEClass.getESuperTypes().add(this.getComparaison());
 		assignementEClass.getESuperTypes().add(this.getBinaryOperation());
-		integerEClass.getESuperTypes().add(this.getVariable());
-		stringEClass.getESuperTypes().add(this.getVariable());
+		leIntegerEClass.getESuperTypes().add(this.getVariable());
+		leStringEClass.getESuperTypes().add(this.getVariable());
 		ltEClass.getESuperTypes().add(this.getComparaison());
+		forLoopEClass.getESuperTypes().add(this.getLoop());
+		printEClass.getESuperTypes().add(this.getExpression());
+		variable_ProxyEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -541,7 +623,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		initEClass(whileLoopEClass, WhileLoop.class, "WhileLoop", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWhileLoop_LoopCondition(), this.getExpression(), null, "loopCondition", null, 1, 1,
+		initEReference(getWhileLoop_LoopCondition(), this.getComparaison(), null, "loopCondition", null, 1, 1,
 				WhileLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -569,20 +651,33 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEClass(assignementEClass, Assignement.class, "Assignement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(integerEClass, fr.univcotedazur.l3ia.langagecompilation.Integer.class, "Integer", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInteger_InitialeValue(), ecorePackage.getEInt(), "initialeValue", null, 0, 1,
-				fr.univcotedazur.l3ia.langagecompilation.Integer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(leIntegerEClass, leInteger.class, "leInteger", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getleInteger_InitialeValue(), ecorePackage.getEInt(), "initialeValue", null, 0, 1,
+				leInteger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(stringEClass, fr.univcotedazur.l3ia.langagecompilation.String.class, "String", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getString_InitialeValue(), ecorePackage.getEString(), "initialeValue", null, 0, 1,
-				fr.univcotedazur.l3ia.langagecompilation.String.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(leStringEClass, leString.class, "leString", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getleString_InitialeValue(), ecorePackage.getEString(), "initialeValue", null, 0, 1,
+				leString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(ltEClass, fr.univcotedazur.l3ia.langagecompilation.LT.class, "LT", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(forLoopEClass, ForLoop.class, "ForLoop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getForLoop_LoopCondition(), this.getComparaison(), null, "loopCondition", null, 1, 1,
+				ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(printEClass, Print.class, "Print", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(variable_ProxyEClass, Variable_Proxy.class, "Variable_Proxy", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVariable_Proxy_Variable(), this.getVariable(), null, "Variable", null, 1, 1,
+				Variable_Proxy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -67,22 +67,22 @@ public interface LegolanguagePrFactory extends EFactory {
 	Assignement createAssignement();
 
 	/**
-	 * Returns a new object of class '<em>Integer</em>'.
+	 * Returns a new object of class '<em>le Integer</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Integer</em>'.
+	 * @return a new object of class '<em>le Integer</em>'.
 	 * @generated
 	 */
-	Integer createInteger();
+	leInteger createleInteger();
 
 	/**
-	 * Returns a new object of class '<em>String</em>'.
+	 * Returns a new object of class '<em>le String</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>String</em>'.
+	 * @return a new object of class '<em>le String</em>'.
 	 * @generated
 	 */
-	String createString();
+	leString createleString();
 
 	/**
 	 * Returns a new object of class '<em>LT</em>'.
@@ -92,6 +92,33 @@ public interface LegolanguagePrFactory extends EFactory {
 	 * @generated
 	 */
 	LT createLT();
+
+	/**
+	 * Returns a new object of class '<em>For Loop</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>For Loop</em>'.
+	 * @generated
+	 */
+	ForLoop createForLoop();
+
+	/**
+	 * Returns a new object of class '<em>Print</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Print</em>'.
+	 * @generated
+	 */
+	Print createPrint();
+
+	/**
+	 * Returns a new object of class '<em>Variable Proxy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Variable Proxy</em>'.
+	 * @generated
+	 */
+	Variable_Proxy createVariable_Proxy();
 
 	/**
 	 * Returns the package supported by this factory.
