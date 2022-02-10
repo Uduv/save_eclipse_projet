@@ -102,6 +102,7 @@ LeBoolean returns LeBoolean:
 	'boolean'
 	name=EString
 	'='
+	
 		( initialeValue=EBoolean)?
 		;
 
@@ -116,7 +117,7 @@ LeFloat returns LeFloat:
 
 Print returns Print:
 	{Print}
-	'print(' (statement+=Statement)? ')'
+	'print' '(' (statement+=Statement)? ')'
 	name=EString;
 
 Variable_Proxy returns Variable_Proxy:
