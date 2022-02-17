@@ -1076,6 +1076,61 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_FLOAT_OPERATION_COUNT = VARIABLE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.AdditionImpl <em>Addition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.AdditionImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getAddition()
+	 * @generated
+	 */
+	int ADDITION = 20;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDITION__NAME = BINARY_OPERATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDITION__LEFT = BINARY_OPERATION__LEFT;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDITION__RIGHT = BINARY_OPERATION__RIGHT;
+
+	/**
+	 * The number of structural features of the '<em>Addition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDITION_FEATURE_COUNT = BINARY_OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Addition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDITION_OPERATION_COUNT = BINARY_OPERATION_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Program <em>Program</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1441,6 +1496,16 @@ public interface LegolanguagePrPackage extends EPackage {
 	EAttribute getLeFloat_InitialeValue();
 
 	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Addition <em>Addition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Addition</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Addition
+	 * @generated
+	 */
+	EClass getAddition();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1782,6 +1847,16 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LE_FLOAT__INITIALE_VALUE = eINSTANCE.getLeFloat_InitialeValue();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.AdditionImpl <em>Addition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.AdditionImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getAddition()
+		 * @generated
+		 */
+		EClass ADDITION = eINSTANCE.getAddition();
 
 	}
 

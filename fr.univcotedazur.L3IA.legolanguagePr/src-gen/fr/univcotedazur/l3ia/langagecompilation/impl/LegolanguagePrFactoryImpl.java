@@ -84,6 +84,8 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createLeBoolean();
 		case LegolanguagePrPackage.LE_FLOAT:
 			return createLeFloat();
+		case LegolanguagePrPackage.ADDITION:
+			return createAddition();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -227,6 +229,16 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	public LeFloat createLeFloat() {
 		LeFloatImpl leFloat = new LeFloatImpl();
 		return leFloat;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Addition createAddition() {
+		AdditionImpl addition = new AdditionImpl();
+		return addition;
 	}
 
 	/**

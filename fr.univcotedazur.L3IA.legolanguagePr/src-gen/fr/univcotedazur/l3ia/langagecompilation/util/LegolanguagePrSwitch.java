@@ -84,6 +84,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			Variable variable = (Variable) theEObject;
 			T result = caseVariable(variable);
 			if (result == null)
+				result = caseExpression(variable);
+			if (result == null)
 				result = caseStatement(variable);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -189,6 +191,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseVariable(leInteger);
 			if (result == null)
+				result = caseExpression(leInteger);
+			if (result == null)
 				result = caseStatement(leInteger);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -199,6 +203,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			T result = caseLeString(leString);
 			if (result == null)
 				result = caseVariable(leString);
+			if (result == null)
+				result = caseExpression(leString);
 			if (result == null)
 				result = caseStatement(leString);
 			if (result == null)
@@ -272,6 +278,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseVariable(leBoolean);
 			if (result == null)
+				result = caseExpression(leBoolean);
+			if (result == null)
 				result = caseStatement(leBoolean);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -283,7 +291,22 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseVariable(leFloat);
 			if (result == null)
+				result = caseExpression(leFloat);
+			if (result == null)
 				result = caseStatement(leFloat);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.ADDITION: {
+			Addition addition = (Addition) theEObject;
+			T result = caseAddition(addition);
+			if (result == null)
+				result = caseBinaryOperation(addition);
+			if (result == null)
+				result = caseExpression(addition);
+			if (result == null)
+				result = caseStatement(addition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -590,6 +613,21 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLeFloat(LeFloat object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Addition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Addition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAddition(Addition object) {
 		return null;
 	}
 

@@ -395,6 +395,29 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Addition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AdditionItemProvider additionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Addition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAdditionAdapter() {
+		if (additionItemProvider == null) {
+			additionItemProvider = new AdditionItemProvider(this);
+		}
+
+		return additionItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -521,6 +544,8 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			leBooleanItemProvider.dispose();
 		if (leFloatItemProvider != null)
 			leFloatItemProvider.dispose();
+		if (additionItemProvider != null)
+			additionItemProvider.dispose();
 	}
 
 }

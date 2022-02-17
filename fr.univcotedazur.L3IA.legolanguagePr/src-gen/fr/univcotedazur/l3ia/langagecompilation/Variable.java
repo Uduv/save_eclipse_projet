@@ -18,7 +18,7 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @model abstract="true"
  * @generated
  */
-public interface Variable extends Statement {
+public interface Variable extends Statement, Expression {
 	/**
 	 * Returns the value of the '<em><b>Is Const</b></em>' attribute.
 	 * The default value is <code>"false"</code>.

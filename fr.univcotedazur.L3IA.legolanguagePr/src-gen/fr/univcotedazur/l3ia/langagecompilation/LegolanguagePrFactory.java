@@ -148,6 +148,15 @@ public interface LegolanguagePrFactory extends EFactory {
 	LeFloat createLeFloat();
 
 	/**
+	 * Returns a new object of class '<em>Addition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Addition</em>'.
+	 * @generated
+	 */
+	Addition createAddition();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

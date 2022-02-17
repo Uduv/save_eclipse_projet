@@ -158,11 +158,11 @@ ruleStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getStatementAccess().getGTParserRuleCall_2());
+			newCompositeNode(grammarAccess.getStatementAccess().getAdditionParserRuleCall_2());
 		}
-		this_GT_2=ruleGT
+		this_Addition_2=ruleAddition
 		{
-			$current = $this_GT_2.current;
+			$current = $this_Addition_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -170,11 +170,11 @@ ruleStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getStatementAccess().getAssignementParserRuleCall_3());
+			newCompositeNode(grammarAccess.getStatementAccess().getGTParserRuleCall_3());
 		}
-		this_Assignement_3=ruleAssignement
+		this_GT_3=ruleGT
 		{
-			$current = $this_Assignement_3.current;
+			$current = $this_GT_3.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -182,11 +182,11 @@ ruleStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getStatementAccess().getLeIntegerParserRuleCall_4());
+			newCompositeNode(grammarAccess.getStatementAccess().getAssignementParserRuleCall_4());
 		}
-		this_LeInteger_4=ruleLeInteger
+		this_Assignement_4=ruleAssignement
 		{
-			$current = $this_LeInteger_4.current;
+			$current = $this_Assignement_4.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -194,11 +194,11 @@ ruleStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getStatementAccess().getLeStringParserRuleCall_5());
+			newCompositeNode(grammarAccess.getStatementAccess().getLeIntegerParserRuleCall_5());
 		}
-		this_LeString_5=ruleLeString
+		this_LeInteger_5=ruleLeInteger
 		{
-			$current = $this_LeString_5.current;
+			$current = $this_LeInteger_5.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -206,11 +206,11 @@ ruleStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getStatementAccess().getLTParserRuleCall_6());
+			newCompositeNode(grammarAccess.getStatementAccess().getLeStringParserRuleCall_6());
 		}
-		this_LT_6=ruleLT
+		this_LeString_6=ruleLeString
 		{
-			$current = $this_LT_6.current;
+			$current = $this_LeString_6.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -218,11 +218,11 @@ ruleStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getStatementAccess().getForLoopParserRuleCall_7());
+			newCompositeNode(grammarAccess.getStatementAccess().getLTParserRuleCall_7());
 		}
-		this_ForLoop_7=ruleForLoop
+		this_LT_7=ruleLT
 		{
-			$current = $this_ForLoop_7.current;
+			$current = $this_LT_7.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -230,11 +230,11 @@ ruleStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getStatementAccess().getVariable_ProxyParserRuleCall_8());
+			newCompositeNode(grammarAccess.getStatementAccess().getForLoopParserRuleCall_8());
 		}
-		this_Variable_Proxy_8=ruleVariable_Proxy
+		this_ForLoop_8=ruleForLoop
 		{
-			$current = $this_Variable_Proxy_8.current;
+			$current = $this_ForLoop_8.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -242,11 +242,35 @@ ruleStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getStatementAccess().getPrintParserRuleCall_9());
+			newCompositeNode(grammarAccess.getStatementAccess().getVariable_ProxyParserRuleCall_9());
 		}
-		this_Print_9=rulePrint
+		this_Variable_Proxy_9=ruleVariable_Proxy
 		{
-			$current = $this_Print_9.current;
+			$current = $this_Variable_Proxy_9.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getStatementAccess().getPrintParserRuleCall_10());
+		}
+		this_Print_10=rulePrint
+		{
+			$current = $this_Print_10.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getStatementAccess().getExpressionParserRuleCall_11());
+		}
+		this_Expression_11=ruleExpression
+		{
+			$current = $this_Expression_11.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -338,11 +362,11 @@ ruleExpression returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getGTParserRuleCall_1());
+			newCompositeNode(grammarAccess.getExpressionAccess().getAdditionParserRuleCall_1());
 		}
-		this_GT_1=ruleGT
+		this_Addition_1=ruleAddition
 		{
-			$current = $this_GT_1.current;
+			$current = $this_Addition_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -350,11 +374,11 @@ ruleExpression returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getAssignementParserRuleCall_2());
+			newCompositeNode(grammarAccess.getExpressionAccess().getGTParserRuleCall_2());
 		}
-		this_Assignement_2=ruleAssignement
+		this_GT_2=ruleGT
 		{
-			$current = $this_Assignement_2.current;
+			$current = $this_GT_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -362,11 +386,11 @@ ruleExpression returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getLTParserRuleCall_3());
+			newCompositeNode(grammarAccess.getExpressionAccess().getAssignementParserRuleCall_3());
 		}
-		this_LT_3=ruleLT
+		this_Assignement_3=ruleAssignement
 		{
-			$current = $this_LT_3.current;
+			$current = $this_Assignement_3.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -374,11 +398,101 @@ ruleExpression returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getVariable_ProxyParserRuleCall_4());
+			newCompositeNode(grammarAccess.getExpressionAccess().getLTParserRuleCall_4());
 		}
-		this_Variable_Proxy_4=ruleVariable_Proxy
+		this_LT_4=ruleLT
 		{
-			$current = $this_Variable_Proxy_4.current;
+			$current = $this_LT_4.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getExpressionAccess().getVariable_ProxyParserRuleCall_5());
+		}
+		this_Variable_Proxy_5=ruleVariable_Proxy
+		{
+			$current = $this_Variable_Proxy_5.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getExpressionAccess().getVariableParserRuleCall_6());
+		}
+		this_Variable_6=ruleVariable
+		{
+			$current = $this_Variable_6.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleVariable
+entryRuleVariable returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVariableRule()); }
+	iv_ruleVariable=ruleVariable
+	{ $current=$iv_ruleVariable.current; }
+	EOF;
+
+// Rule Variable
+ruleVariable returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getVariableAccess().getLeIntegerParserRuleCall_0());
+		}
+		this_LeInteger_0=ruleLeInteger
+		{
+			$current = $this_LeInteger_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getVariableAccess().getLeStringParserRuleCall_1());
+		}
+		this_LeString_1=ruleLeString
+		{
+			$current = $this_LeString_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getVariableAccess().getLeFloatParserRuleCall_2());
+		}
+		this_LeFloat_2=ruleLeFloat
+		{
+			$current = $this_LeFloat_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getVariableAccess().getLeBooleanParserRuleCall_3());
+		}
+		this_LeBoolean_3=ruleLeBoolean
+		{
+			$current = $this_LeBoolean_3.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -518,6 +632,75 @@ ruleForLoop returns [EObject current=null]
 		otherlv_4='}'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getForLoopAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleAddition
+entryRuleAddition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAdditionRule()); }
+	iv_ruleAddition=ruleAddition
+	{ $current=$iv_ruleAddition.current; }
+	EOF;
+
+// Rule Addition
+ruleAddition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='('
+		{
+			newLeafNode(otherlv_0, grammarAccess.getAdditionAccess().getLeftParenthesisKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAdditionAccess().getLeftExpressionParserRuleCall_1_0());
+				}
+				lv_left_1_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAdditionRule());
+					}
+					set(
+						$current,
+						"left",
+						lv_left_1_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='+'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getAdditionAccess().getPlusSignKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAdditionAccess().getRightExpressionParserRuleCall_3_0());
+				}
+				lv_right_3_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAdditionRule());
+					}
+					set(
+						$current,
+						"right",
+						lv_right_3_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4=')'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getAdditionAccess().getRightParenthesisKeyword_4());
 		}
 	)
 ;
@@ -907,10 +1090,12 @@ ruleLeInteger returns [EObject current=null]
 				}
 			)
 		)?
-		otherlv_2='int'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getLeIntegerAccess().getIntKeyword_2());
-		}
+		(
+			otherlv_2='int'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getLeIntegerAccess().getIntKeyword_2());
+			}
+		)?
 		(
 			(
 				{
@@ -982,10 +1167,12 @@ ruleLeString returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='string'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getLeStringAccess().getStringKeyword_1());
-		}
+		(
+			otherlv_1='string'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getLeStringAccess().getStringKeyword_1());
+			}
+		)?
 		(
 			(
 				{
@@ -1057,10 +1244,12 @@ ruleLeBoolean returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='boolean'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getLeBooleanAccess().getBooleanKeyword_1());
-		}
+		(
+			otherlv_1='boolean'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getLeBooleanAccess().getBooleanKeyword_1());
+			}
+		)?
 		(
 			(
 				{
@@ -1132,10 +1321,12 @@ ruleLeFloat returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='float'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getLeFloatAccess().getFloatKeyword_1());
-		}
+		(
+			otherlv_1='float'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getLeFloatAccess().getFloatKeyword_1());
+			}
+		)?
 		(
 			(
 				{
@@ -1207,16 +1398,20 @@ rulePrint returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='print('
+		otherlv_1='print'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getPrintAccess().getPrintKeyword_1());
+		}
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getPrintAccess().getLeftParenthesisKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPrintAccess().getStatementStatementParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getPrintAccess().getStatementStatementParserRuleCall_3_0());
 				}
-				lv_statement_2_0=ruleStatement
+				lv_statement_3_0=ruleStatement
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPrintRule());
@@ -1224,22 +1419,22 @@ rulePrint returns [EObject current=null]
 					add(
 						$current,
 						"statement",
-						lv_statement_2_0,
+						lv_statement_3_0,
 						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Statement");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)?
-		otherlv_3=')'
+		otherlv_4=')'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getPrintAccess().getRightParenthesisKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getPrintAccess().getRightParenthesisKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPrintAccess().getNameEStringParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getPrintAccess().getNameEStringParserRuleCall_5_0());
 				}
-				lv_name_4_0=ruleEString
+				lv_name_5_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPrintRule());
@@ -1247,7 +1442,7 @@ rulePrint returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_4_0,
+						lv_name_5_0,
 						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EString");
 					afterParserOrEnumRuleCall();
 				}

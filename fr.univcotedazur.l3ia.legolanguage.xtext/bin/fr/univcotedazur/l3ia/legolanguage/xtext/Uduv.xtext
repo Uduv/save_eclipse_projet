@@ -11,13 +11,13 @@ Program returns Program:
 ;
 
 Statement returns Statement:
-	WhileLoop | Substarction | GT | Assignement | LeInteger | LeString | LT | ForLoop | Variable_Proxy | Print;
+	WhileLoop | Substarction | Addition | GT | Assignement | LeInteger | LeString | LT | ForLoop | Variable_Proxy | Print | Expression;
 
 Comparaison returns Comparaison:
 	GT | LT | Equal;
 
 Expression returns Expression:
-	Substarction | GT | Assignement | LT  | Variable_Proxy;
+	Substarction | Addition | GT | Assignement | LT  | Variable_Proxy | Variable;
 
 Variable returns Variable:
 	LeInteger | LeString | LeFloat | LeBoolean;
@@ -40,7 +40,13 @@ ForLoop returns ForLoop:
 		
 	'}';
 
+Addition returns Addition:
 
+	'('
+		left=Expression
+		'+'
+		right=Expression
+	')';
 Substarction returns Substarction:
 
 	'('
@@ -83,7 +89,7 @@ Assignement returns Assignement:
 LeInteger returns LeInteger:
 	{LeInteger}
 	(isConst?='isConst')?
-	'int'
+	('int')?
 	name=EString
 	'='
 		(initialeValue=EInt)?
@@ -91,7 +97,7 @@ LeInteger returns LeInteger:
 
 LeString returns LeString:
 	{LeString}
-	'string'
+	('string')?
 	name=EString
 	'='
 		(initialeValue=EString)?
@@ -99,7 +105,7 @@ LeString returns LeString:
 
 LeBoolean returns LeBoolean:
 	{LeBoolean}
-	'boolean'
+	('boolean')?
 	name=EString
 	'='
 	
@@ -108,7 +114,7 @@ LeBoolean returns LeBoolean:
 
 LeFloat returns LeFloat:
 	{LeFloat}
-	'float'
+	('float')?
 	name=EString
 	'='
 		( initialeValue= EFloat )?
