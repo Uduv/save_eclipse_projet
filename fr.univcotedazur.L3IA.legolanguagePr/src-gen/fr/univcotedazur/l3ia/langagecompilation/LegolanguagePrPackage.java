@@ -1131,6 +1131,52 @@ public interface LegolanguagePrPackage extends EPackage {
 	int ADDITION_OPERATION_COUNT = BINARY_OPERATION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.CommentaryImpl <em>Commentary</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.CommentaryImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getCommentary()
+	 * @generated
+	 */
+	int COMMENTARY = 21;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENTARY__NAME = STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Statement</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENTARY__STATEMENT = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Commentary</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENTARY_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Commentary</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENTARY_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Program <em>Program</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1506,6 +1552,27 @@ public interface LegolanguagePrPackage extends EPackage {
 	EClass getAddition();
 
 	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Commentary <em>Commentary</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Commentary</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Commentary
+	 * @generated
+	 */
+	EClass getCommentary();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.univcotedazur.l3ia.langagecompilation.Commentary#getStatement <em>Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Statement</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Commentary#getStatement()
+	 * @see #getCommentary()
+	 * @generated
+	 */
+	EReference getCommentary_Statement();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1857,6 +1924,24 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ADDITION = eINSTANCE.getAddition();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.CommentaryImpl <em>Commentary</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.CommentaryImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getCommentary()
+		 * @generated
+		 */
+		EClass COMMENTARY = eINSTANCE.getCommentary();
+
+		/**
+		 * The meta object literal for the '<em><b>Statement</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMMENTARY__STATEMENT = eINSTANCE.getCommentary_Statement();
 
 	}
 

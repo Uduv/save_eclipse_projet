@@ -11,7 +11,7 @@ Program returns Program:
 ;
 
 Statement returns Statement:
-	WhileLoop | Substarction | Addition | GT | Assignement | LeInteger | LeString | LT | ForLoop | Variable_Proxy | Print | Expression;
+	WhileLoop | Substarction | Addition | GT | Assignement | LeInteger | LeString | LT | ForLoop | Variable_Proxy | Print | Expression| Commentary;
 
 Comparaison returns Comparaison:
 	GT | LT | Equal;
@@ -22,6 +22,12 @@ Expression returns Expression:
 Variable returns Variable:
 	LeInteger | LeString | LeFloat | LeBoolean;
 
+Commentary returns Commentary:
+	{Commentary}
+	'\'\'\''
+		(statement+=Statement)*
+		
+	'\'\'\'';
 
 WhileLoop returns WhileLoop:
 	'while'
@@ -90,7 +96,7 @@ LeInteger returns LeInteger:
 	{LeInteger}
 	(isConst?='isConst')?
 	('int')?
-	name=EString
+	(name=EString)?
 	'='
 		(initialeValue=EInt)?
 		;
@@ -124,7 +130,7 @@ LeFloat returns LeFloat:
 Print returns Print:
 	{Print}
 	'print' '(' (statement+=Statement)? ')'
-	name=EString;
+	;
 
 Variable_Proxy returns Variable_Proxy:
 	Variable=[Variable|EString]

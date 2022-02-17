@@ -6,6 +6,7 @@ package fr.univcotedazur.l3ia.legolanguage.xtext.serializer;
 import com.google.inject.Inject;
 import fr.univcotedazur.l3ia.langagecompilation.Addition;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
+import fr.univcotedazur.l3ia.langagecompilation.Commentary;
 import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.GT;
@@ -51,6 +52,9 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case LegolanguagePrPackage.ASSIGNEMENT:
 				sequence_Assignement(context, (Assignement) semanticObject); 
+				return; 
+			case LegolanguagePrPackage.COMMENTARY:
+				sequence_Commentary(context, (Commentary) semanticObject); 
 				return; 
 			case LegolanguagePrPackage.EQUAL:
 				sequence_Equal(context, (Equal) semanticObject); 
@@ -139,6 +143,19 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getAssignementAccess().getLeftExpressionParserRuleCall_1_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getAssignementAccess().getRightExpressionParserRuleCall_3_0(), semanticObject.getRight());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns Commentary
+	 *     Commentary returns Commentary
+	 *
+	 * Constraint:
+	 *     statement+=Statement*
+	 */
+	protected void sequence_Commentary(ISerializationContext context, Commentary semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -263,7 +280,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LeInteger returns LeInteger
 	 *
 	 * Constraint:
-	 *     (isConst?='isConst'? name=EString initialeValue=EInt?)
+	 *     (isConst?='isConst'? name=EString? initialeValue=EInt?)
 	 */
 	protected void sequence_LeInteger(ISerializationContext context, LeInteger semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -291,7 +308,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Print returns Print
 	 *
 	 * Constraint:
-	 *     (statement+=Statement? name=EString)
+	 *     statement+=Statement?
 	 */
 	protected void sequence_Print(ISerializationContext context, Print semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

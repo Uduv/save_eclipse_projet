@@ -60,5 +60,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//LeFloat/initialeValue"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//Addition"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Commentary">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Commentary/statement"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

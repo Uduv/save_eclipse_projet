@@ -5,6 +5,7 @@ package fr.univcotedazur.l3ia.langagecompilation.impl;
 import fr.univcotedazur.l3ia.langagecompilation.Addition;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
 import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
+import fr.univcotedazur.l3ia.langagecompilation.Commentary;
 import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
 import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
@@ -186,6 +187,13 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * @generated
 	 */
 	private EClass additionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass commentaryEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -583,6 +591,24 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCommentary() {
+		return commentaryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCommentary_Statement() {
+		return (EReference) commentaryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public LegolanguagePrFactory getLegolanguagePrFactory() {
 		return (LegolanguagePrFactory) getEFactoryInstance();
 	}
@@ -663,6 +689,9 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		createEAttribute(leFloatEClass, LE_FLOAT__INITIALE_VALUE);
 
 		additionEClass = createEClass(ADDITION);
+
+		commentaryEClass = createEClass(COMMENTARY);
+		createEReference(commentaryEClass, COMMENTARY__STATEMENT);
 	}
 
 	/**
@@ -718,6 +747,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		leBooleanEClass.getESuperTypes().add(this.getVariable());
 		leFloatEClass.getESuperTypes().add(this.getVariable());
 		additionEClass.getESuperTypes().add(this.getBinaryOperation());
+		commentaryEClass.getESuperTypes().add(this.getStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -816,6 +846,12 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		initEClass(additionEClass, Addition.class, "Addition", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(commentaryEClass, Commentary.class, "Commentary", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCommentary_Statement(), this.getStatement(), null, "statement", null, 0, -1, Commentary.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

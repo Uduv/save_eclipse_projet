@@ -85,7 +85,11 @@ public class UduvSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'int'?
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '=' (rule start)
+	 *     (rule start) (ambiguity) '=' initialeValue=EInt
 	 *     (rule start) (ambiguity) name=EString
+	 *     isConst?='isConst' (ambiguity) '=' (rule end)
+	 *     isConst?='isConst' (ambiguity) '=' initialeValue=EInt
 	 *     isConst?='isConst' (ambiguity) name=EString
 	 */
 	protected void emit_LeInteger_IntKeyword_2_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {

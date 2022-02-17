@@ -418,6 +418,29 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Commentary} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CommentaryItemProvider commentaryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Commentary}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCommentaryAdapter() {
+		if (commentaryItemProvider == null) {
+			commentaryItemProvider = new CommentaryItemProvider(this);
+		}
+
+		return commentaryItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -546,6 +569,8 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			leFloatItemProvider.dispose();
 		if (additionItemProvider != null)
 			additionItemProvider.dispose();
+		if (commentaryItemProvider != null)
+			commentaryItemProvider.dispose();
 	}
 
 }

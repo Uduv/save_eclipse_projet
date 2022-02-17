@@ -157,6 +157,15 @@ public interface LegolanguagePrFactory extends EFactory {
 	Addition createAddition();
 
 	/**
+	 * Returns a new object of class '<em>Commentary</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Commentary</em>'.
+	 * @generated
+	 */
+	Commentary createCommentary();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
