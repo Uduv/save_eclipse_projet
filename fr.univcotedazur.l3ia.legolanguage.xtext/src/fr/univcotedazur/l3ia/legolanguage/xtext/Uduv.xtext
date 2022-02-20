@@ -11,24 +11,31 @@ Program returns Program:
 ;
 
 Statement returns Statement:
-	WhileLoop | Substarction | Addition | GT | Assignement | LeInteger | LeString | LT | ForLoop | Variable_Proxy | Print | Expression| Commentary;
+	Loop  | Comparaison | Calcul | Assignement | Variable_Proxy | Print | Expression | Commentary;
+
+Expression returns Expression:
+	 Assignement | Variable_Proxy | Variable | Calcul | Comparaison ;
+	
+Calcul returns Calcul : 
+	Substarction | Addition | Division | Exponential | Multiplication ;
 
 Comparaison returns Comparaison:
 	GT | LT | Equal;
 
-Expression returns Expression:
-	Substarction | Addition | GT | Assignement | LT  | Variable_Proxy | Variable;
-
 Variable returns Variable:
 	LeInteger | LeString | LeFloat | LeBoolean;
-
+	
+	
 Commentary returns Commentary:
 	{Commentary}
 	'\'\'\''
-		(statement+=Statement)*
+		initialeValue=EString
 		
 	'\'\'\'';
 
+Loop returns Loop : 
+	WhileLoop | ForLoop  ;
+	
 WhileLoop returns WhileLoop:
 	'while'
 
@@ -58,6 +65,30 @@ Substarction returns Substarction:
 	'('
 		left=Expression
 		'-'
+		right=Expression
+	')';
+	
+Division returns Division:
+
+	'('
+		left=Expression
+		'/'
+		right=Expression
+	')';
+
+Exponential returns Exponential:
+
+	'('
+		left=Expression
+		'^'
+		right=Expression
+	')';
+
+Multiplication returns Multiplication:
+
+	'('
+		left=Expression
+		'*'
 		right=Expression
 	')';
 
@@ -95,35 +126,27 @@ Assignement returns Assignement:
 LeInteger returns LeInteger:
 	{LeInteger}
 	(isConst?='isConst')?
-	('int')?
-	(name=EString)?
-	'='
-		(initialeValue=EInt)?
+	('int' name=EString '=')?
+		initialeValue=EInt
 		;
 
 LeString returns LeString:
 	{LeString}
-	('string')?
-	name=EString
-	'='
-		(initialeValue=EString)?
+	('string' name=EString '=')?
+		initialeValue=EString
 		;
 
 LeBoolean returns LeBoolean:
 	{LeBoolean}
-	('boolean')?
-	name=EString
-	'='
+	('boolean' name=EString '=')?
 	
-		( initialeValue=EBoolean)?
+		 initialeValue=EBoolean
 		;
 
 LeFloat returns LeFloat:
 	{LeFloat}
-	('float')?
-	name=EString
-	'='
-		( initialeValue= EFloat )?
+	('float' name=EString '=')?
+		 initialeValue= EFloat 
 		;
 
 

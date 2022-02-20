@@ -62,6 +62,11 @@
     <genClasses ecoreClass="legolanguagePr.ecore#//Addition"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//Commentary">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Commentary/statement"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Commentary/initialeValue"/>
     </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Division"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Exponential"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Calcul"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Multiplication"/>
   </genPackages>
 </genmodel:GenModel>

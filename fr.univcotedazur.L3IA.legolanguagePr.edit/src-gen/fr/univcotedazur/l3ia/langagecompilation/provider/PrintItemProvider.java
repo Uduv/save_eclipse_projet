@@ -187,6 +187,15 @@ public class PrintItemProvider extends StatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createCommentary()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createDivision()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createExponential()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createMultiplication()));
 	}
 
 }

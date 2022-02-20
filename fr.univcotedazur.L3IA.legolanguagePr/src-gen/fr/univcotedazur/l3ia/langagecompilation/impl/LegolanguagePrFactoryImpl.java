@@ -88,6 +88,12 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createAddition();
 		case LegolanguagePrPackage.COMMENTARY:
 			return createCommentary();
+		case LegolanguagePrPackage.DIVISION:
+			return createDivision();
+		case LegolanguagePrPackage.EXPONENTIAL:
+			return createExponential();
+		case LegolanguagePrPackage.MULTIPLICATION:
+			return createMultiplication();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -251,6 +257,36 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	public Commentary createCommentary() {
 		CommentaryImpl commentary = new CommentaryImpl();
 		return commentary;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Division createDivision() {
+		DivisionImpl division = new DivisionImpl();
+		return division;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Exponential createExponential() {
+		ExponentialImpl exponential = new ExponentialImpl();
+		return exponential;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Multiplication createMultiplication() {
+		MultiplicationImpl multiplication = new MultiplicationImpl();
+		return multiplication;
 	}
 
 	/**

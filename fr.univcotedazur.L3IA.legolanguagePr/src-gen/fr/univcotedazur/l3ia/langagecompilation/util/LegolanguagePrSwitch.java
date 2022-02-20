@@ -135,6 +135,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			Substarction substarction = (Substarction) theEObject;
 			T result = caseSubstarction(substarction);
 			if (result == null)
+				result = caseCalcul(substarction);
+			if (result == null)
 				result = caseBinaryOperation(substarction);
 			if (result == null)
 				result = caseExpression(substarction);
@@ -302,6 +304,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			Addition addition = (Addition) theEObject;
 			T result = caseAddition(addition);
 			if (result == null)
+				result = caseCalcul(addition);
+			if (result == null)
 				result = caseBinaryOperation(addition);
 			if (result == null)
 				result = caseExpression(addition);
@@ -316,6 +320,64 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			T result = caseCommentary(commentary);
 			if (result == null)
 				result = caseStatement(commentary);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.DIVISION: {
+			Division division = (Division) theEObject;
+			T result = caseDivision(division);
+			if (result == null)
+				result = caseCalcul(division);
+			if (result == null)
+				result = caseBinaryOperation(division);
+			if (result == null)
+				result = caseExpression(division);
+			if (result == null)
+				result = caseStatement(division);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.EXPONENTIAL: {
+			Exponential exponential = (Exponential) theEObject;
+			T result = caseExponential(exponential);
+			if (result == null)
+				result = caseCalcul(exponential);
+			if (result == null)
+				result = caseBinaryOperation(exponential);
+			if (result == null)
+				result = caseExpression(exponential);
+			if (result == null)
+				result = caseStatement(exponential);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.CALCUL: {
+			Calcul calcul = (Calcul) theEObject;
+			T result = caseCalcul(calcul);
+			if (result == null)
+				result = caseBinaryOperation(calcul);
+			if (result == null)
+				result = caseExpression(calcul);
+			if (result == null)
+				result = caseStatement(calcul);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.MULTIPLICATION: {
+			Multiplication multiplication = (Multiplication) theEObject;
+			T result = caseMultiplication(multiplication);
+			if (result == null)
+				result = caseCalcul(multiplication);
+			if (result == null)
+				result = caseBinaryOperation(multiplication);
+			if (result == null)
+				result = caseExpression(multiplication);
+			if (result == null)
+				result = caseStatement(multiplication);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -652,6 +714,66 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommentary(Commentary object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Division</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Division</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDivision(Division object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Exponential</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Exponential</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExponential(Exponential object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Calcul</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Calcul</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCalcul(Calcul object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Multiplication</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Multiplication</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMultiplication(Multiplication object) {
 		return null;
 	}
 

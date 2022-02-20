@@ -32,9 +32,11 @@ public class UduvParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, UduvGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
-			builder.put(grammarAccess.getComparaisonAccess().getAlternatives(), "rule__Comparaison__Alternatives");
 			builder.put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
+			builder.put(grammarAccess.getCalculAccess().getAlternatives(), "rule__Calcul__Alternatives");
+			builder.put(grammarAccess.getComparaisonAccess().getAlternatives(), "rule__Comparaison__Alternatives");
 			builder.put(grammarAccess.getVariableAccess().getAlternatives(), "rule__Variable__Alternatives");
+			builder.put(grammarAccess.getLoopAccess().getAlternatives(), "rule__Loop__Alternatives");
 			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
@@ -43,19 +45,26 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getForLoopAccess().getGroup(), "rule__ForLoop__Group__0");
 			builder.put(grammarAccess.getAdditionAccess().getGroup(), "rule__Addition__Group__0");
 			builder.put(grammarAccess.getSubstarctionAccess().getGroup(), "rule__Substarction__Group__0");
+			builder.put(grammarAccess.getDivisionAccess().getGroup(), "rule__Division__Group__0");
+			builder.put(grammarAccess.getExponentialAccess().getGroup(), "rule__Exponential__Group__0");
+			builder.put(grammarAccess.getMultiplicationAccess().getGroup(), "rule__Multiplication__Group__0");
 			builder.put(grammarAccess.getGTAccess().getGroup(), "rule__GT__Group__0");
 			builder.put(grammarAccess.getLTAccess().getGroup(), "rule__LT__Group__0");
 			builder.put(grammarAccess.getEqualAccess().getGroup(), "rule__Equal__Group__0");
 			builder.put(grammarAccess.getAssignementAccess().getGroup(), "rule__Assignement__Group__0");
 			builder.put(grammarAccess.getLeIntegerAccess().getGroup(), "rule__LeInteger__Group__0");
+			builder.put(grammarAccess.getLeIntegerAccess().getGroup_2(), "rule__LeInteger__Group_2__0");
 			builder.put(grammarAccess.getLeStringAccess().getGroup(), "rule__LeString__Group__0");
+			builder.put(grammarAccess.getLeStringAccess().getGroup_1(), "rule__LeString__Group_1__0");
 			builder.put(grammarAccess.getLeBooleanAccess().getGroup(), "rule__LeBoolean__Group__0");
+			builder.put(grammarAccess.getLeBooleanAccess().getGroup_1(), "rule__LeBoolean__Group_1__0");
 			builder.put(grammarAccess.getLeFloatAccess().getGroup(), "rule__LeFloat__Group__0");
+			builder.put(grammarAccess.getLeFloatAccess().getGroup_1(), "rule__LeFloat__Group_1__0");
 			builder.put(grammarAccess.getPrintAccess().getGroup(), "rule__Print__Group__0");
 			builder.put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 			builder.put(grammarAccess.getEFloatAccess().getGroup(), "rule__EFloat__Group__0");
 			builder.put(grammarAccess.getProgramAccess().getStatementAssignment_1(), "rule__Program__StatementAssignment_1");
-			builder.put(grammarAccess.getCommentaryAccess().getStatementAssignment_2(), "rule__Commentary__StatementAssignment_2");
+			builder.put(grammarAccess.getCommentaryAccess().getInitialeValueAssignment_2(), "rule__Commentary__InitialeValueAssignment_2");
 			builder.put(grammarAccess.getWhileLoopAccess().getLoopConditionAssignment_1(), "rule__WhileLoop__LoopConditionAssignment_1");
 			builder.put(grammarAccess.getWhileLoopAccess().getStatementAssignment_3(), "rule__WhileLoop__StatementAssignment_3");
 			builder.put(grammarAccess.getForLoopAccess().getLoopConditionAssignment_1(), "rule__ForLoop__LoopConditionAssignment_1");
@@ -64,6 +73,12 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAdditionAccess().getRightAssignment_3(), "rule__Addition__RightAssignment_3");
 			builder.put(grammarAccess.getSubstarctionAccess().getLeftAssignment_1(), "rule__Substarction__LeftAssignment_1");
 			builder.put(grammarAccess.getSubstarctionAccess().getRightAssignment_3(), "rule__Substarction__RightAssignment_3");
+			builder.put(grammarAccess.getDivisionAccess().getLeftAssignment_1(), "rule__Division__LeftAssignment_1");
+			builder.put(grammarAccess.getDivisionAccess().getRightAssignment_3(), "rule__Division__RightAssignment_3");
+			builder.put(grammarAccess.getExponentialAccess().getLeftAssignment_1(), "rule__Exponential__LeftAssignment_1");
+			builder.put(grammarAccess.getExponentialAccess().getRightAssignment_3(), "rule__Exponential__RightAssignment_3");
+			builder.put(grammarAccess.getMultiplicationAccess().getLeftAssignment_1(), "rule__Multiplication__LeftAssignment_1");
+			builder.put(grammarAccess.getMultiplicationAccess().getRightAssignment_3(), "rule__Multiplication__RightAssignment_3");
 			builder.put(grammarAccess.getGTAccess().getLeftAssignment_1(), "rule__GT__LeftAssignment_1");
 			builder.put(grammarAccess.getGTAccess().getRightAssignment_3(), "rule__GT__RightAssignment_3");
 			builder.put(grammarAccess.getLTAccess().getLeftAssignment_1(), "rule__LT__LeftAssignment_1");
@@ -73,14 +88,14 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAssignementAccess().getLeftAssignment_1(), "rule__Assignement__LeftAssignment_1");
 			builder.put(grammarAccess.getAssignementAccess().getRightAssignment_3(), "rule__Assignement__RightAssignment_3");
 			builder.put(grammarAccess.getLeIntegerAccess().getIsConstAssignment_1(), "rule__LeInteger__IsConstAssignment_1");
-			builder.put(grammarAccess.getLeIntegerAccess().getNameAssignment_3(), "rule__LeInteger__NameAssignment_3");
-			builder.put(grammarAccess.getLeIntegerAccess().getInitialeValueAssignment_5(), "rule__LeInteger__InitialeValueAssignment_5");
-			builder.put(grammarAccess.getLeStringAccess().getNameAssignment_2(), "rule__LeString__NameAssignment_2");
-			builder.put(grammarAccess.getLeStringAccess().getInitialeValueAssignment_4(), "rule__LeString__InitialeValueAssignment_4");
-			builder.put(grammarAccess.getLeBooleanAccess().getNameAssignment_2(), "rule__LeBoolean__NameAssignment_2");
-			builder.put(grammarAccess.getLeBooleanAccess().getInitialeValueAssignment_4(), "rule__LeBoolean__InitialeValueAssignment_4");
-			builder.put(grammarAccess.getLeFloatAccess().getNameAssignment_2(), "rule__LeFloat__NameAssignment_2");
-			builder.put(grammarAccess.getLeFloatAccess().getInitialeValueAssignment_4(), "rule__LeFloat__InitialeValueAssignment_4");
+			builder.put(grammarAccess.getLeIntegerAccess().getNameAssignment_2_1(), "rule__LeInteger__NameAssignment_2_1");
+			builder.put(grammarAccess.getLeIntegerAccess().getInitialeValueAssignment_3(), "rule__LeInteger__InitialeValueAssignment_3");
+			builder.put(grammarAccess.getLeStringAccess().getNameAssignment_1_1(), "rule__LeString__NameAssignment_1_1");
+			builder.put(grammarAccess.getLeStringAccess().getInitialeValueAssignment_2(), "rule__LeString__InitialeValueAssignment_2");
+			builder.put(grammarAccess.getLeBooleanAccess().getNameAssignment_1_1(), "rule__LeBoolean__NameAssignment_1_1");
+			builder.put(grammarAccess.getLeBooleanAccess().getInitialeValueAssignment_2(), "rule__LeBoolean__InitialeValueAssignment_2");
+			builder.put(grammarAccess.getLeFloatAccess().getNameAssignment_1_1(), "rule__LeFloat__NameAssignment_1_1");
+			builder.put(grammarAccess.getLeFloatAccess().getInitialeValueAssignment_2(), "rule__LeFloat__InitialeValueAssignment_2");
 			builder.put(grammarAccess.getPrintAccess().getStatementAssignment_3(), "rule__Print__StatementAssignment_3");
 			builder.put(grammarAccess.getVariable_ProxyAccess().getVariableAssignment(), "rule__Variable_Proxy__VariableAssignment");
 		}

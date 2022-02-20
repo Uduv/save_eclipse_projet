@@ -441,6 +441,75 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Division} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DivisionItemProvider divisionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Division}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDivisionAdapter() {
+		if (divisionItemProvider == null) {
+			divisionItemProvider = new DivisionItemProvider(this);
+		}
+
+		return divisionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Exponential} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ExponentialItemProvider exponentialItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Exponential}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createExponentialAdapter() {
+		if (exponentialItemProvider == null) {
+			exponentialItemProvider = new ExponentialItemProvider(this);
+		}
+
+		return exponentialItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Multiplication} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MultiplicationItemProvider multiplicationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Multiplication}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMultiplicationAdapter() {
+		if (multiplicationItemProvider == null) {
+			multiplicationItemProvider = new MultiplicationItemProvider(this);
+		}
+
+		return multiplicationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -571,6 +640,12 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			additionItemProvider.dispose();
 		if (commentaryItemProvider != null)
 			commentaryItemProvider.dispose();
+		if (divisionItemProvider != null)
+			divisionItemProvider.dispose();
+		if (exponentialItemProvider != null)
+			exponentialItemProvider.dispose();
+		if (multiplicationItemProvider != null)
+			multiplicationItemProvider.dispose();
 	}
 
 }

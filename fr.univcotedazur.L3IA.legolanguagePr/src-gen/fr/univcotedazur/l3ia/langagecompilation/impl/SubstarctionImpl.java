@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SubstarctionImpl extends BinaryOperationImpl implements Substarction {
+public class SubstarctionImpl extends CalculImpl implements Substarction {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

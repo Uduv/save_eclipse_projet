@@ -176,6 +176,15 @@ public class LoopItemProvider extends StatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createCommentary()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createDivision()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createExponential()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createMultiplication()));
 	}
 
 }

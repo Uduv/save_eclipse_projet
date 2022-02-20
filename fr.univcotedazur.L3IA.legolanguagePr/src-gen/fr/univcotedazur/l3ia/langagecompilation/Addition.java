@@ -12,5 +12,5 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @model
  * @generated
  */
-public interface Addition extends BinaryOperation {
+public interface Addition extends Calcul {
 } // Addition

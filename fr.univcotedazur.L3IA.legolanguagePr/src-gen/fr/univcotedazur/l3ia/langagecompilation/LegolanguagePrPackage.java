@@ -379,6 +379,61 @@ public interface LegolanguagePrPackage extends EPackage {
 	int BINARY_OPERATION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.CalculImpl <em>Calcul</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.CalculImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getCalcul()
+	 * @generated
+	 */
+	int CALCUL = 24;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALCUL__NAME = BINARY_OPERATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALCUL__LEFT = BINARY_OPERATION__LEFT;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALCUL__RIGHT = BINARY_OPERATION__RIGHT;
+
+	/**
+	 * The number of structural features of the '<em>Calcul</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALCUL_FEATURE_COUNT = BINARY_OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Calcul</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALCUL_OPERATION_COUNT = BINARY_OPERATION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.SubstarctionImpl <em>Substarction</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -395,7 +450,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSTARCTION__NAME = BINARY_OPERATION__NAME;
+	int SUBSTARCTION__NAME = CALCUL__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -404,7 +459,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSTARCTION__LEFT = BINARY_OPERATION__LEFT;
+	int SUBSTARCTION__LEFT = CALCUL__LEFT;
 
 	/**
 	 * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -413,7 +468,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSTARCTION__RIGHT = BINARY_OPERATION__RIGHT;
+	int SUBSTARCTION__RIGHT = CALCUL__RIGHT;
 
 	/**
 	 * The number of structural features of the '<em>Substarction</em>' class.
@@ -422,7 +477,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSTARCTION_FEATURE_COUNT = BINARY_OPERATION_FEATURE_COUNT + 0;
+	int SUBSTARCTION_FEATURE_COUNT = CALCUL_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Substarction</em>' class.
@@ -431,7 +486,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBSTARCTION_OPERATION_COUNT = BINARY_OPERATION_OPERATION_COUNT + 0;
+	int SUBSTARCTION_OPERATION_COUNT = CALCUL_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ComparaisonImpl <em>Comparaison</em>}' class.
@@ -1092,7 +1147,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDITION__NAME = BINARY_OPERATION__NAME;
+	int ADDITION__NAME = CALCUL__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1101,7 +1156,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDITION__LEFT = BINARY_OPERATION__LEFT;
+	int ADDITION__LEFT = CALCUL__LEFT;
 
 	/**
 	 * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1110,7 +1165,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDITION__RIGHT = BINARY_OPERATION__RIGHT;
+	int ADDITION__RIGHT = CALCUL__RIGHT;
 
 	/**
 	 * The number of structural features of the '<em>Addition</em>' class.
@@ -1119,7 +1174,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDITION_FEATURE_COUNT = BINARY_OPERATION_FEATURE_COUNT + 0;
+	int ADDITION_FEATURE_COUNT = CALCUL_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Addition</em>' class.
@@ -1128,7 +1183,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADDITION_OPERATION_COUNT = BINARY_OPERATION_OPERATION_COUNT + 0;
+	int ADDITION_OPERATION_COUNT = CALCUL_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.CommentaryImpl <em>Commentary</em>}' class.
@@ -1159,13 +1214,22 @@ public interface LegolanguagePrPackage extends EPackage {
 	int COMMENTARY__STATEMENT = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Initiale Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENTARY__INITIALE_VALUE = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Commentary</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENTARY_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+	int COMMENTARY_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Commentary</em>' class.
@@ -1175,6 +1239,171 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMENTARY_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.DivisionImpl <em>Division</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.DivisionImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getDivision()
+	 * @generated
+	 */
+	int DIVISION = 22;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVISION__NAME = CALCUL__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVISION__LEFT = CALCUL__LEFT;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVISION__RIGHT = CALCUL__RIGHT;
+
+	/**
+	 * The number of structural features of the '<em>Division</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVISION_FEATURE_COUNT = CALCUL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Division</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVISION_OPERATION_COUNT = CALCUL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ExponentialImpl <em>Exponential</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ExponentialImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getExponential()
+	 * @generated
+	 */
+	int EXPONENTIAL = 23;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL__NAME = CALCUL__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL__LEFT = CALCUL__LEFT;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL__RIGHT = CALCUL__RIGHT;
+
+	/**
+	 * The number of structural features of the '<em>Exponential</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_FEATURE_COUNT = CALCUL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Exponential</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL_OPERATION_COUNT = CALCUL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.MultiplicationImpl <em>Multiplication</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.MultiplicationImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getMultiplication()
+	 * @generated
+	 */
+	int MULTIPLICATION = 25;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICATION__NAME = CALCUL__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICATION__LEFT = CALCUL__LEFT;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICATION__RIGHT = CALCUL__RIGHT;
+
+	/**
+	 * The number of structural features of the '<em>Multiplication</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICATION_FEATURE_COUNT = CALCUL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Multiplication</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICATION_OPERATION_COUNT = CALCUL_OPERATION_COUNT + 0;
 
 	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Program <em>Program</em>}'.
@@ -1573,6 +1802,57 @@ public interface LegolanguagePrPackage extends EPackage {
 	EReference getCommentary_Statement();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.Commentary#getInitialeValue <em>Initiale Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initiale Value</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Commentary#getInitialeValue()
+	 * @see #getCommentary()
+	 * @generated
+	 */
+	EAttribute getCommentary_InitialeValue();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Division <em>Division</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Division</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Division
+	 * @generated
+	 */
+	EClass getDivision();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Exponential <em>Exponential</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Exponential</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Exponential
+	 * @generated
+	 */
+	EClass getExponential();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Calcul <em>Calcul</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Calcul</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Calcul
+	 * @generated
+	 */
+	EClass getCalcul();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Multiplication <em>Multiplication</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Multiplication</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Multiplication
+	 * @generated
+	 */
+	EClass getMultiplication();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1942,6 +2222,54 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMMENTARY__STATEMENT = eINSTANCE.getCommentary_Statement();
+
+		/**
+		 * The meta object literal for the '<em><b>Initiale Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMMENTARY__INITIALE_VALUE = eINSTANCE.getCommentary_InitialeValue();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.DivisionImpl <em>Division</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.DivisionImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getDivision()
+		 * @generated
+		 */
+		EClass DIVISION = eINSTANCE.getDivision();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ExponentialImpl <em>Exponential</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ExponentialImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getExponential()
+		 * @generated
+		 */
+		EClass EXPONENTIAL = eINSTANCE.getExponential();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.CalculImpl <em>Calcul</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.CalculImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getCalcul()
+		 * @generated
+		 */
+		EClass CALCUL = eINSTANCE.getCalcul();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.MultiplicationImpl <em>Multiplication</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.MultiplicationImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getMultiplication()
+		 * @generated
+		 */
+		EClass MULTIPLICATION = eINSTANCE.getMultiplication();
 
 	}
 

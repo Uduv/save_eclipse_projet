@@ -166,6 +166,33 @@ public interface LegolanguagePrFactory extends EFactory {
 	Commentary createCommentary();
 
 	/**
+	 * Returns a new object of class '<em>Division</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Division</em>'.
+	 * @generated
+	 */
+	Division createDivision();
+
+	/**
+	 * Returns a new object of class '<em>Exponential</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Exponential</em>'.
+	 * @generated
+	 */
+	Exponential createExponential();
+
+	/**
+	 * Returns a new object of class '<em>Multiplication</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Multiplication</em>'.
+	 * @generated
+	 */
+	Multiplication createMultiplication();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

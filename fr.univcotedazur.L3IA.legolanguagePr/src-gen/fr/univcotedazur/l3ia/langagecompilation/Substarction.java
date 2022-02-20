@@ -12,5 +12,5 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @model
  * @generated
  */
-public interface Substarction extends BinaryOperation {
+public interface Substarction extends Calcul {
 } // Substarction

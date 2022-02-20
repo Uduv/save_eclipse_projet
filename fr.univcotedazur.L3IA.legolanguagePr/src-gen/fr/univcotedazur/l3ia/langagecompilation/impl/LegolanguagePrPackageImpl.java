@@ -5,9 +5,12 @@ package fr.univcotedazur.l3ia.langagecompilation.impl;
 import fr.univcotedazur.l3ia.langagecompilation.Addition;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
 import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
+import fr.univcotedazur.l3ia.langagecompilation.Calcul;
 import fr.univcotedazur.l3ia.langagecompilation.Commentary;
 import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
+import fr.univcotedazur.l3ia.langagecompilation.Division;
 import fr.univcotedazur.l3ia.langagecompilation.Equal;
+import fr.univcotedazur.l3ia.langagecompilation.Exponential;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
@@ -17,6 +20,7 @@ import fr.univcotedazur.l3ia.langagecompilation.LeString;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrFactory;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Loop;
+import fr.univcotedazur.l3ia.langagecompilation.Multiplication;
 import fr.univcotedazur.l3ia.langagecompilation.Print;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
 import fr.univcotedazur.l3ia.langagecompilation.Statement;
@@ -194,6 +198,34 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * @generated
 	 */
 	private EClass commentaryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass divisionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass exponentialEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass calculEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass multiplicationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -609,6 +641,51 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCommentary_InitialeValue() {
+		return (EAttribute) commentaryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDivision() {
+		return divisionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getExponential() {
+		return exponentialEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCalcul() {
+		return calculEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMultiplication() {
+		return multiplicationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public LegolanguagePrFactory getLegolanguagePrFactory() {
 		return (LegolanguagePrFactory) getEFactoryInstance();
 	}
@@ -692,6 +769,15 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		commentaryEClass = createEClass(COMMENTARY);
 		createEReference(commentaryEClass, COMMENTARY__STATEMENT);
+		createEAttribute(commentaryEClass, COMMENTARY__INITIALE_VALUE);
+
+		divisionEClass = createEClass(DIVISION);
+
+		exponentialEClass = createEClass(EXPONENTIAL);
+
+		calculEClass = createEClass(CALCUL);
+
+		multiplicationEClass = createEClass(MULTIPLICATION);
 	}
 
 	/**
@@ -733,7 +819,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		whileLoopEClass.getESuperTypes().add(this.getLoop());
 		expressionEClass.getESuperTypes().add(this.getStatement());
 		binaryOperationEClass.getESuperTypes().add(this.getExpression());
-		substarctionEClass.getESuperTypes().add(this.getBinaryOperation());
+		substarctionEClass.getESuperTypes().add(this.getCalcul());
 		comparaisonEClass.getESuperTypes().add(this.getBinaryOperation());
 		gtEClass.getESuperTypes().add(this.getComparaison());
 		assignementEClass.getESuperTypes().add(this.getBinaryOperation());
@@ -746,8 +832,12 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		equalEClass.getESuperTypes().add(this.getComparaison());
 		leBooleanEClass.getESuperTypes().add(this.getVariable());
 		leFloatEClass.getESuperTypes().add(this.getVariable());
-		additionEClass.getESuperTypes().add(this.getBinaryOperation());
+		additionEClass.getESuperTypes().add(this.getCalcul());
 		commentaryEClass.getESuperTypes().add(this.getStatement());
+		divisionEClass.getESuperTypes().add(this.getCalcul());
+		exponentialEClass.getESuperTypes().add(this.getCalcul());
+		calculEClass.getESuperTypes().add(this.getBinaryOperation());
+		multiplicationEClass.getESuperTypes().add(this.getCalcul());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -852,6 +942,20 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEReference(getCommentary_Statement(), this.getStatement(), null, "statement", null, 0, -1, Commentary.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCommentary_InitialeValue(), ecorePackage.getEString(), "initialeValue", null, 0, 1,
+				Commentary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(divisionEClass, Division.class, "Division", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(exponentialEClass, Exponential.class, "Exponential", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(calculEClass, Calcul.class, "Calcul", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(multiplicationEClass, Multiplication.class, "Multiplication", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

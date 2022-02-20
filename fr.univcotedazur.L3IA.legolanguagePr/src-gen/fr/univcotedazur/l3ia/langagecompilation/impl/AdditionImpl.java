@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class AdditionImpl extends BinaryOperationImpl implements Addition {
+public class AdditionImpl extends CalculImpl implements Addition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
