@@ -5,7 +5,7 @@
     <semanticResources>legolanguagePr.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Wd2QoIjfEeyvpJt1YElzLQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_WfdaMIjfEeyvpJt1YElzLQ" name="legolanguagePr" repPath="#_We0hAIjfEeyvpJt1YElzLQ" changeId="36b0bb5c-3a3c-42ae-935d-f1342859fcb0">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_WfdaMIjfEeyvpJt1YElzLQ" name="legolanguagePr" repPath="#_We0hAIjfEeyvpJt1YElzLQ" changeId="9accd2d5-174b-4716-bc00-d0fc3b715ca3">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="legolanguagePr.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -34,7 +34,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_mFpE44jfEey6E_WkB7-9vA"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_mFod0YjfEey6E_WkB7-9vA" fontColor="2697711" fontName=".AppleSystemUIFont" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mFod0ojfEey6E_WkB7-9vA" x="491" y="-244"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mFod0ojfEey6E_WkB7-9vA" x="563" y="-244"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_mFpr8IjfEey6E_WkB7-9vA" type="2003" element="_mE4P4IjfEey6E_WkB7-9vA">
           <children xmi:type="notation:Node" xmi:id="_mFpr84jfEey6E_WkB7-9vA" type="5007"/>
@@ -292,17 +292,17 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_WfoZUojfEeyvpJt1YElzLQ"/>
         <edges xmi:type="notation:Edge" xmi:id="_mFxnwIjfEey6E_WkB7-9vA" type="4001" element="_mFYmMIjfEey6E_WkB7-9vA" source="_mFod0IjfEey6E_WkB7-9vA" target="_mFpr8IjfEey6E_WkB7-9vA">
           <children xmi:type="notation:Node" xmi:id="_mFyO0IjfEey6E_WkB7-9vA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mFyO0YjfEey6E_WkB7-9vA" x="93" y="-22"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mFyO0YjfEey6E_WkB7-9vA" x="57" y="-22"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_mFyO0ojfEey6E_WkB7-9vA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mFyO04jfEey6E_WkB7-9vA" x="-2" y="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mFyO04jfEey6E_WkB7-9vA" x="-5" y="14"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_mFyO1IjfEey6E_WkB7-9vA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mFyO1YjfEey6E_WkB7-9vA" x="-98" y="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mFyO1YjfEey6E_WkB7-9vA" x="-109" y="8"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_mFxnwYjfEey6E_WkB7-9vA" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_mFxnwojfEey6E_WkB7-9vA" fontColor="7490599" fontName=".AppleSystemUIFont" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mFxnw4jfEey6E_WkB7-9vA" points="[58, 35, -259, -239]$[257, 35, -60, -239]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mFxnw4jfEey6E_WkB7-9vA" points="[58, 35, -187, -239]$[86, 35, -159, -239]$[86, 183, -159, -91]$[185, 183, -60, -91]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mF3uYIjfEey6E_WkB7-9vA" id="(0.5084745762711864,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mF3uYYjfEey6E_WkB7-9vA" id="(0.5084745762711864,1.0)"/>
         </edges>
