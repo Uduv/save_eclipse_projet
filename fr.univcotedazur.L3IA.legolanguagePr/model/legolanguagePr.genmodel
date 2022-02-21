@@ -68,5 +68,9 @@
     <genClasses ecoreClass="legolanguagePr.ecore#//Exponential"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//Calcul"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//Multiplication"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//If">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//If/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//If/statement"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

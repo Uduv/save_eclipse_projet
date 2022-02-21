@@ -11,7 +11,7 @@ Program returns Program:
 ;
 
 Statement returns Statement:
-	Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary;
+	If | Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary;
 
 Expression returns Expression:
 	 Assignement | VariableProxy | Variable | Calcul | Comparaison ;
@@ -35,7 +35,17 @@ Commentary returns Commentary:
 
 Loop returns Loop : 
 	WhileLoop | ForLoop  ;
+
+
+If returns If :
+	'if'
+	condition=Comparaison
+	'{'
+		(statement+=Statement)*
+		
+	'}';
 	
+
 WhileLoop returns WhileLoop:
 	'while'
 
@@ -161,7 +171,7 @@ VariableProxy returns VariableProxy:
 
 
 EBoolean returns ecore::EBoolean:
-	'true' | 'false';
+	'True' | 'False';
 	
 EString returns ecore::EString:
 	STRING | ID;

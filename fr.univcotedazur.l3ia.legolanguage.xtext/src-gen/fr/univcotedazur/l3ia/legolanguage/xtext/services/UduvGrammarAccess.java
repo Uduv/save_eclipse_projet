@@ -53,45 +53,49 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	public class StatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Statement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cLoopParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cComparaisonParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cCalculParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cAssignementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cVariableProxyParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cPrintParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cExpressionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cCommentaryParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cIfParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cLoopParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cComparaisonParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cCalculParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cAssignementParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cVariableProxyParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cPrintParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cExpressionParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cCommentaryParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		
 		//Statement returns Statement:
-		//    Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary;
+		//    If | Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary
+		//If | Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//If
+		public RuleCall getIfParserRuleCall_0() { return cIfParserRuleCall_0; }
+		
 		//Loop
-		public RuleCall getLoopParserRuleCall_0() { return cLoopParserRuleCall_0; }
+		public RuleCall getLoopParserRuleCall_1() { return cLoopParserRuleCall_1; }
 		
 		//Comparaison
-		public RuleCall getComparaisonParserRuleCall_1() { return cComparaisonParserRuleCall_1; }
+		public RuleCall getComparaisonParserRuleCall_2() { return cComparaisonParserRuleCall_2; }
 		
 		//Calcul
-		public RuleCall getCalculParserRuleCall_2() { return cCalculParserRuleCall_2; }
+		public RuleCall getCalculParserRuleCall_3() { return cCalculParserRuleCall_3; }
 		
 		//Assignement
-		public RuleCall getAssignementParserRuleCall_3() { return cAssignementParserRuleCall_3; }
+		public RuleCall getAssignementParserRuleCall_4() { return cAssignementParserRuleCall_4; }
 		
 		//VariableProxy
-		public RuleCall getVariableProxyParserRuleCall_4() { return cVariableProxyParserRuleCall_4; }
+		public RuleCall getVariableProxyParserRuleCall_5() { return cVariableProxyParserRuleCall_5; }
 		
 		//Print
-		public RuleCall getPrintParserRuleCall_5() { return cPrintParserRuleCall_5; }
+		public RuleCall getPrintParserRuleCall_6() { return cPrintParserRuleCall_6; }
 		
 		//Expression
-		public RuleCall getExpressionParserRuleCall_6() { return cExpressionParserRuleCall_6; }
+		public RuleCall getExpressionParserRuleCall_7() { return cExpressionParserRuleCall_7; }
 		
 		//Commentary
-		public RuleCall getCommentaryParserRuleCall_7() { return cCommentaryParserRuleCall_7; }
+		public RuleCall getCommentaryParserRuleCall_8() { return cCommentaryParserRuleCall_8; }
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
@@ -260,6 +264,53 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//ForLoop
 		public RuleCall getForLoopParserRuleCall_1() { return cForLoopParserRuleCall_1; }
+	}
+	public class IfElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.If");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cConditionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cConditionComparaisonParserRuleCall_1_0 = (RuleCall)cConditionAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cStatementAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStatementStatementParserRuleCall_3_0 = (RuleCall)cStatementAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//If returns If :
+		//    'if'
+		//    condition=Comparaison
+		//    '{'
+		//        (statement+=Statement)*
+		//    '}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'if'
+		//condition=Comparaison
+		//'{'
+		//    (statement+=Statement)*
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//'if'
+		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
+		
+		//condition=Comparaison
+		public Assignment getConditionAssignment_1() { return cConditionAssignment_1; }
+		
+		//Comparaison
+		public RuleCall getConditionComparaisonParserRuleCall_1_0() { return cConditionComparaisonParserRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//(statement+=Statement)*
+		public Assignment getStatementAssignment_3() { return cStatementAssignment_3; }
+		
+		//Statement
+		public RuleCall getStatementStatementParserRuleCall_3_0() { return cStatementStatementParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class WhileLoopElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.WhileLoop");
@@ -1046,16 +1097,16 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
 		//EBoolean returns ecore::EBoolean:
-		//    'true' | 'false';
+		//    'True' | 'False';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'true' | 'false'
+		//'True' | 'False'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'true'
+		//'True'
 		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
 		
-		//'false'
+		//'False'
 		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
@@ -1129,6 +1180,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	private final VariableElements pVariable;
 	private final CommentaryElements pCommentary;
 	private final LoopElements pLoop;
+	private final IfElements pIf;
 	private final WhileLoopElements pWhileLoop;
 	private final ForLoopElements pForLoop;
 	private final AdditionElements pAddition;
@@ -1168,6 +1220,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.pVariable = new VariableElements();
 		this.pCommentary = new CommentaryElements();
 		this.pLoop = new LoopElements();
+		this.pIf = new IfElements();
 		this.pWhileLoop = new WhileLoopElements();
 		this.pForLoop = new ForLoopElements();
 		this.pAddition = new AdditionElements();
@@ -1231,7 +1284,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Statement returns Statement:
-	//    Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary;
+	//    If | Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
@@ -1301,6 +1354,20 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getLoopRule() {
 		return getLoopAccess().getRule();
+	}
+	
+	//If returns If :
+	//    'if'
+	//    condition=Comparaison
+	//    '{'
+	//        (statement+=Statement)*
+	//    '}';
+	public IfElements getIfAccess() {
+		return pIf;
+	}
+	
+	public ParserRule getIfRule() {
+		return getIfAccess().getRule();
 	}
 	
 	//WhileLoop returns WhileLoop:
@@ -1535,7 +1602,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//EBoolean returns ecore::EBoolean:
-	//    'true' | 'false';
+	//    'True' | 'False';
 	public EBooleanElements getEBooleanAccess() {
 		return pEBoolean;
 	}

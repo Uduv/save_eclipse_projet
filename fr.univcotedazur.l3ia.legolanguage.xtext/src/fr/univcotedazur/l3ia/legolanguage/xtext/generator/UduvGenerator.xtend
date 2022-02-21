@@ -34,6 +34,7 @@ import fr.univcotedazur.l3ia.langagecompilation.ForLoop
 import fr.univcotedazur.l3ia.langagecompilation.WhileLoop
 import fr.univcotedazur.l3ia.langagecompilation.Print
 import fr.univcotedazur.l3ia.langagecompilation.Commentary
+import fr.univcotedazur.l3ia.langagecompilation.If
 
 /**
  * Generates code from your model files on save.
@@ -62,7 +63,7 @@ class UduvGenerator extends AbstractGenerator {
 
 # Import library
 import math
-import time' + fileContent )
+import time\n\n' + fileContent )
 	}
 	
 	def String StatementToString(Statement s) {
@@ -78,12 +79,19 @@ import time' + fileContent )
 		if(s instanceof Loop){
 			res += LoopToString(s as Loop)
 		}
+		if(s instanceof If){
+			res += 'if' + ' ('+ s.condition + ') ' +':' + '\n'
+			for ( state : s.statement ) {
+				res += '\t' + StatementToString(state as Statement)
+			}
+		}
 		if(s instanceof Print){
 			res += 'print'+'('+ s.statement+ ')' 
 		}
 		if(s instanceof Commentary){
-			res += '\'\'\'' s.initialeValue + '\'\'\''
+			res += '\'\'\'' + s.initialeValue + '\'\'\''
 		}
+		res +=  '\n'
 		return res
 	}
 	
@@ -122,10 +130,16 @@ import time' + fileContent )
 	def String LoopToString(Loop l){
 		var res = ''
 		if(l instanceof ForLoop){
-			res += 'for' + l.loopCondition + ':' + '\n\tab'
+			res += 'for'+ ' (' + l.loopCondition + ') ' +':' + '\n'
+			for ( s : l.statement ) {
+				res += '\t' + StatementToString(s as Statement)
+			}  
 		}
 		if(l instanceof WhileLoop){
-			res += 'while' + l.loopCondition + ':' + '\n\tab'
+			res += 'while' + ' ('+ l.loopCondition + ') ' +':' + '\n'
+			for ( s : l.statement ) {
+				res += '\t' + StatementToString(s as Statement)
+			}
 		}
 		return res 
 	}

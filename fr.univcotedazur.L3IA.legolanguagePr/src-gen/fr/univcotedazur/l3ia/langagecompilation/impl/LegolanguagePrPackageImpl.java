@@ -13,6 +13,7 @@ import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.Exponential;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
+import fr.univcotedazur.l3ia.langagecompilation.If;
 import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
 import fr.univcotedazur.l3ia.langagecompilation.LeFloat;
 import fr.univcotedazur.l3ia.langagecompilation.LeInteger;
@@ -226,6 +227,13 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * @generated
 	 */
 	private EClass multiplicationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ifEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -686,6 +694,33 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getIf() {
+		return ifEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIf_Condition() {
+		return (EReference) ifEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIf_Statement() {
+		return (EReference) ifEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public LegolanguagePrFactory getLegolanguagePrFactory() {
 		return (LegolanguagePrFactory) getEFactoryInstance();
 	}
@@ -778,6 +813,10 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		calculEClass = createEClass(CALCUL);
 
 		multiplicationEClass = createEClass(MULTIPLICATION);
+
+		ifEClass = createEClass(IF);
+		createEReference(ifEClass, IF__CONDITION);
+		createEReference(ifEClass, IF__STATEMENT);
 	}
 
 	/**
@@ -838,6 +877,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		exponentialEClass.getESuperTypes().add(this.getCalcul());
 		calculEClass.getESuperTypes().add(this.getBinaryOperation());
 		multiplicationEClass.getESuperTypes().add(this.getCalcul());
+		ifEClass.getESuperTypes().add(this.getStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -956,6 +996,14 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		initEClass(multiplicationEClass, Multiplication.class, "Multiplication", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIf_Condition(), this.getComparaison(), null, "condition", null, 1, 1, If.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getIf_Statement(), this.getStatement(), null, "statement", null, 0, -1, If.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

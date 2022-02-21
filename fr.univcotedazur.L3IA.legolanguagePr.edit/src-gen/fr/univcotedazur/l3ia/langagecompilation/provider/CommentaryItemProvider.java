@@ -217,6 +217,9 @@ public class CommentaryItemProvider extends StatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createMultiplication()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createIf()));
 	}
 
 }

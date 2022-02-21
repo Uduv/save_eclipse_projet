@@ -15,6 +15,7 @@ import fr.univcotedazur.l3ia.langagecompilation.Exponential;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.GT;
+import fr.univcotedazur.l3ia.langagecompilation.If;
 import fr.univcotedazur.l3ia.langagecompilation.LT;
 import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
 import fr.univcotedazur.l3ia.langagecompilation.LeFloat;
@@ -57,7 +58,7 @@ public class UduvGenerator extends AbstractGenerator {
     }
     String _name = prog.getName();
     String _plus = (_name + ".py");
-    fsa.generateFile(_plus, ("#!/usr/bin/env python3\n\n# Import library\nimport math\nimport time" + fileContent));
+    fsa.generateFile(_plus, ("#!/usr/bin/env python3\n\n# Import library\nimport math\nimport time\n\n" + fileContent));
   }
   
   public String StatementToString(final Statement s) {
@@ -78,19 +79,38 @@ public class UduvGenerator extends AbstractGenerator {
       String _LoopToString = this.LoopToString(((Loop) s));
       res = (_res_2 + _LoopToString);
     }
-    if ((s instanceof Print)) {
+    if ((s instanceof If)) {
       String _res_3 = res;
-      EList<Statement> _statement = ((Print)s).getStatement();
-      String _plus = (("print" + "(") + _statement);
-      String _plus_1 = (_plus + ")");
-      res = (_res_3 + _plus_1);
+      Comparaison _condition = ((If)s).getCondition();
+      String _plus = (("if" + " (") + _condition);
+      String _plus_1 = (_plus + ") ");
+      String _plus_2 = (_plus_1 + ":");
+      String _plus_3 = (_plus_2 + "\n");
+      res = (_res_3 + _plus_3);
+      EList<Statement> _statement = ((If)s).getStatement();
+      for (final Statement state : _statement) {
+        String _res_4 = res;
+        String _StatementToString = this.StatementToString(((Statement) state));
+        String _plus_4 = ("\t" + _StatementToString);
+        res = (_res_4 + _plus_4);
+      }
+    }
+    if ((s instanceof Print)) {
+      String _res_5 = res;
+      EList<Statement> _statement_1 = ((Print)s).getStatement();
+      String _plus_5 = (("print" + "(") + _statement_1);
+      String _plus_6 = (_plus_5 + ")");
+      res = (_res_5 + _plus_6);
     }
     if ((s instanceof Commentary)) {
-      String _res_4 = res;
-      res = (_res_4 + "\'\'\'");
+      String _res_6 = res;
       String _initialeValue = ((Commentary)s).getInitialeValue();
-      /* (_initialeValue + "\'\'\'"); */
+      String _plus_7 = ("\'\'\'" + _initialeValue);
+      String _plus_8 = (_plus_7 + "\'\'\'");
+      res = (_res_6 + _plus_8);
     }
+    String _res_7 = res;
+    res = (_res_7 + "\n");
     return res;
   }
   
@@ -161,18 +181,34 @@ public class UduvGenerator extends AbstractGenerator {
     if ((l instanceof ForLoop)) {
       String _res = res;
       Comparaison _loopCondition = ((ForLoop)l).getLoopCondition();
-      String _plus = ("for" + _loopCondition);
-      String _plus_1 = (_plus + ":");
-      String _plus_2 = (_plus_1 + "\n\tab");
-      res = (_res + _plus_2);
+      String _plus = (("for" + " (") + _loopCondition);
+      String _plus_1 = (_plus + ") ");
+      String _plus_2 = (_plus_1 + ":");
+      String _plus_3 = (_plus_2 + "\n");
+      res = (_res + _plus_3);
+      EList<Statement> _statement = ((ForLoop)l).getStatement();
+      for (final Statement s : _statement) {
+        String _res_1 = res;
+        String _StatementToString = this.StatementToString(((Statement) s));
+        String _plus_4 = ("\t" + _StatementToString);
+        res = (_res_1 + _plus_4);
+      }
     }
     if ((l instanceof WhileLoop)) {
-      String _res_1 = res;
+      String _res_2 = res;
       Comparaison _loopCondition_1 = ((WhileLoop)l).getLoopCondition();
-      String _plus_3 = ("while" + _loopCondition_1);
-      String _plus_4 = (_plus_3 + ":");
-      String _plus_5 = (_plus_4 + "\n\tab");
-      res = (_res_1 + _plus_5);
+      String _plus_5 = (("while" + " (") + _loopCondition_1);
+      String _plus_6 = (_plus_5 + ") ");
+      String _plus_7 = (_plus_6 + ":");
+      String _plus_8 = (_plus_7 + "\n");
+      res = (_res_2 + _plus_8);
+      EList<Statement> _statement_1 = ((WhileLoop)l).getStatement();
+      for (final Statement s_1 : _statement_1) {
+        String _res_3 = res;
+        String _StatementToString_1 = this.StatementToString(((Statement) s_1));
+        String _plus_9 = ("\t" + _StatementToString_1);
+        res = (_res_3 + _plus_9);
+      }
     }
     return res;
   }

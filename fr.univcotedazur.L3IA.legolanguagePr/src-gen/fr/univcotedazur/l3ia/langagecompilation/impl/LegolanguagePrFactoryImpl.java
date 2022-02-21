@@ -94,6 +94,8 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createExponential();
 		case LegolanguagePrPackage.MULTIPLICATION:
 			return createMultiplication();
+		case LegolanguagePrPackage.IF:
+			return createIf();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -287,6 +289,16 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	public Multiplication createMultiplication() {
 		MultiplicationImpl multiplication = new MultiplicationImpl();
 		return multiplication;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public If createIf() {
+		IfImpl if_ = new IfImpl();
+		return if_;
 	}
 
 	/**

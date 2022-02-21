@@ -104,3 +104,19 @@
 [2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/TextOccurrenceIndicationColor = 212,212,212
 [2022-02-10 15:57:43] Performing Preference /instance/org.eclipse.ui.editors/writeOccurrenceIndicationColor = 240,216,168
 [2022-02-10 15:57:43] 
+[2022-02-21 17:41:44] Executing startup tasks
+[2022-02-21 17:41:44] Java(TM) SE Runtime Environment 14.0.1+7
+[2022-02-21 17:41:44] Product self.product.version
+[2022-02-21 17:41:44] Workspace /Users/ulysseduvillier/runtime-EclipseXtext
+[2022-02-21 17:41:44] Bundle org.eclipse.oomph.setup 1.22.0.v20211015-0620, build=5278, branch=a397d5c292b0ea2e68079e5b704e713bfeb15d34
+[2022-02-21 17:41:44] Bundle org.eclipse.oomph.setup.core 1.22.0.v20211021-1010, build=5278, branch=a397d5c292b0ea2e68079e5b704e713bfeb15d34
+[2022-02-21 17:41:44] Bundle org.eclipse.oomph.setup.p2 1.17.0.v20210601-0619, build=5278, branch=a397d5c292b0ea2e68079e5b704e713bfeb15d34
+[2022-02-21 17:41:44] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.changedDebugElement
+[2022-02-21 17:41:44] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.consoleBackground
+[2022-02-21 17:41:44] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.errorColor
+[2022-02-21 17:41:44] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.inColor
+[2022-02-21 17:41:44] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.MemoryHistoryKnownColor
+[2022-02-21 17:41:45] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.MemoryHistoryUnknownColor
+[2022-02-21 17:41:45] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.outColor
+[2022-02-21 17:41:45] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.PREF_CHANGED_VALUE_BACKGROUND
+[2022-02-21 17:41:45] 

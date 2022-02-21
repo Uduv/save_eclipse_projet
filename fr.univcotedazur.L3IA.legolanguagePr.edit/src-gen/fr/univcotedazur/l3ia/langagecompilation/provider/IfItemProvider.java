@@ -2,9 +2,9 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.provider;
 
+import fr.univcotedazur.l3ia.langagecompilation.If;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrFactory;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-import fr.univcotedazur.l3ia.langagecompilation.Loop;
 
 import java.util.Collection;
 import java.util.List;
@@ -18,19 +18,19 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Loop} object.
+ * This is the item provider adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.If} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class LoopItemProvider extends StatementItemProvider {
+public class IfItemProvider extends StatementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public LoopItemProvider(AdapterFactory adapterFactory) {
+	public IfItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,7 +61,8 @@ public class LoopItemProvider extends StatementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(LegolanguagePrPackage.Literals.LOOP__STATEMENT);
+			childrenFeatures.add(LegolanguagePrPackage.Literals.IF__CONDITION);
+			childrenFeatures.add(LegolanguagePrPackage.Literals.IF__STATEMENT);
 		}
 		return childrenFeatures;
 	}
@@ -77,6 +78,17 @@ public class LoopItemProvider extends StatementItemProvider {
 		// adding (see {@link AddCommand}) it as a child.
 
 		return super.getChildFeature(object, child);
+	}
+
+	/**
+	 * This returns If.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/If"));
 	}
 
 	/**
@@ -97,9 +109,8 @@ public class LoopItemProvider extends StatementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Loop) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Loop_type")
-				: getString("_UI_Loop_type") + " " + label;
+		String label = ((If) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_If_type") : getString("_UI_If_type") + " " + label;
 	}
 
 	/**
@@ -113,8 +124,9 @@ public class LoopItemProvider extends StatementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Loop.class)) {
-		case LegolanguagePrPackage.LOOP__STATEMENT:
+		switch (notification.getFeatureID(If.class)) {
+		case LegolanguagePrPackage.IF__CONDITION:
+		case LegolanguagePrPackage.IF__STATEMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -132,62 +144,92 @@ public class LoopItemProvider extends StatementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createWhileLoop()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__CONDITION,
 				LegolanguagePrFactory.eINSTANCE.createGT()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createAssignement()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createLeInteger()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createLeString()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__CONDITION,
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createForLoop()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createPrint()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createVariableProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__CONDITION,
 				LegolanguagePrFactory.eINSTANCE.createEqual()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createWhileLoop()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createGT()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createAssignement()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createLeInteger()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createLeString()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createLT()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createForLoop()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createPrint()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createVariableProxy()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createLeBoolean()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createLeFloat()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createAddition()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createCommentary()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createDivision()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createExponential()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createMultiplication()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createIf()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == LegolanguagePrPackage.Literals.IF__CONDITION
+				|| childFeature == LegolanguagePrPackage.Literals.IF__STATEMENT;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

@@ -12,6 +12,7 @@ import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.Exponential;
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.GT;
+import fr.univcotedazur.l3ia.langagecompilation.If;
 import fr.univcotedazur.l3ia.langagecompilation.LT;
 import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
 import fr.univcotedazur.l3ia.langagecompilation.LeFloat;
@@ -73,6 +74,9 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case LegolanguagePrPackage.GT:
 				sequence_GT(context, (GT) semanticObject); 
+				return; 
+			case LegolanguagePrPackage.IF:
+				sequence_If(context, (If) semanticObject); 
 				return; 
 			case LegolanguagePrPackage.LT:
 				sequence_LT(context, (LT) semanticObject); 
@@ -285,6 +289,19 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getGTAccess().getLeftExpressionParserRuleCall_1_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getGTAccess().getRightExpressionParserRuleCall_3_0(), semanticObject.getRight());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns If
+	 *     If returns If
+	 *
+	 * Constraint:
+	 *     (condition=Comparaison statement+=Statement*)
+	 */
+	protected void sequence_If(ISerializationContext context, If semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

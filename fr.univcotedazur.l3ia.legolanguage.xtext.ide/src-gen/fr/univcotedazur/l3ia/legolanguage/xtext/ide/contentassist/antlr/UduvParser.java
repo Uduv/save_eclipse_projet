@@ -41,6 +41,7 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
 			builder.put(grammarAccess.getCommentaryAccess().getGroup(), "rule__Commentary__Group__0");
+			builder.put(grammarAccess.getIfAccess().getGroup(), "rule__If__Group__0");
 			builder.put(grammarAccess.getWhileLoopAccess().getGroup(), "rule__WhileLoop__Group__0");
 			builder.put(grammarAccess.getForLoopAccess().getGroup(), "rule__ForLoop__Group__0");
 			builder.put(grammarAccess.getAdditionAccess().getGroup(), "rule__Addition__Group__0");
@@ -65,6 +66,8 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEFloatAccess().getGroup(), "rule__EFloat__Group__0");
 			builder.put(grammarAccess.getProgramAccess().getStatementAssignment_1(), "rule__Program__StatementAssignment_1");
 			builder.put(grammarAccess.getCommentaryAccess().getInitialeValueAssignment_2(), "rule__Commentary__InitialeValueAssignment_2");
+			builder.put(grammarAccess.getIfAccess().getConditionAssignment_1(), "rule__If__ConditionAssignment_1");
+			builder.put(grammarAccess.getIfAccess().getStatementAssignment_3(), "rule__If__StatementAssignment_3");
 			builder.put(grammarAccess.getWhileLoopAccess().getLoopConditionAssignment_1(), "rule__WhileLoop__LoopConditionAssignment_1");
 			builder.put(grammarAccess.getWhileLoopAccess().getStatementAssignment_3(), "rule__WhileLoop__StatementAssignment_3");
 			builder.put(grammarAccess.getForLoopAccess().getLoopConditionAssignment_1(), "rule__ForLoop__LoopConditionAssignment_1");

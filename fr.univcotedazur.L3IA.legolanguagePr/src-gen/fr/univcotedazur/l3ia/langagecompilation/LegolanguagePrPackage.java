@@ -1406,6 +1406,61 @@ public interface LegolanguagePrPackage extends EPackage {
 	int MULTIPLICATION_OPERATION_COUNT = CALCUL_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.IfImpl <em>If</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.IfImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getIf()
+	 * @generated
+	 */
+	int IF = 26;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF__NAME = STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF__CONDITION = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Statement</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF__STATEMENT = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>If</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>If</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Program <em>Program</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1853,6 +1908,38 @@ public interface LegolanguagePrPackage extends EPackage {
 	EClass getMultiplication();
 
 	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.If <em>If</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>If</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.If
+	 * @generated
+	 */
+	EClass getIf();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link fr.univcotedazur.l3ia.langagecompilation.If#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.If#getCondition()
+	 * @see #getIf()
+	 * @generated
+	 */
+	EReference getIf_Condition();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.univcotedazur.l3ia.langagecompilation.If#getStatement <em>Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Statement</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.If#getStatement()
+	 * @see #getIf()
+	 * @generated
+	 */
+	EReference getIf_Statement();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2270,6 +2357,32 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * @generated
 		 */
 		EClass MULTIPLICATION = eINSTANCE.getMultiplication();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.IfImpl <em>If</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.IfImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getIf()
+		 * @generated
+		 */
+		EClass IF = eINSTANCE.getIf();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF__CONDITION = eINSTANCE.getIf_Condition();
+
+		/**
+		 * The meta object literal for the '<em><b>Statement</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF__STATEMENT = eINSTANCE.getIf_Statement();
 
 	}
 

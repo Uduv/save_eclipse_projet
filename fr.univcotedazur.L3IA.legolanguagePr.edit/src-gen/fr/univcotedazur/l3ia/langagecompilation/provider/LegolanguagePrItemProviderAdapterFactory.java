@@ -510,6 +510,29 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.If} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IfItemProvider ifItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.If}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIfAdapter() {
+		if (ifItemProvider == null) {
+			ifItemProvider = new IfItemProvider(this);
+		}
+
+		return ifItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -646,6 +669,8 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			exponentialItemProvider.dispose();
 		if (multiplicationItemProvider != null)
 			multiplicationItemProvider.dispose();
+		if (ifItemProvider != null)
+			ifItemProvider.dispose();
 	}
 
 }
