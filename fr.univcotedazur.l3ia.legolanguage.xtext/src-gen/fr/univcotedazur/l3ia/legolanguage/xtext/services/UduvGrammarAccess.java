@@ -57,16 +57,16 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cComparaisonParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cCalculParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cAssignementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cVariable_ProxyParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cVariableProxyParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cPrintParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cExpressionParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cCommentaryParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//Statement returns Statement:
-		//    Loop  | Comparaison | Calcul | Assignement | Variable_Proxy | Print | Expression | Commentary;
+		//    Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Loop  | Comparaison | Calcul | Assignement | Variable_Proxy | Print | Expression | Commentary
+		//Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Loop
@@ -81,8 +81,8 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//Assignement
 		public RuleCall getAssignementParserRuleCall_3() { return cAssignementParserRuleCall_3; }
 		
-		//Variable_Proxy
-		public RuleCall getVariable_ProxyParserRuleCall_4() { return cVariable_ProxyParserRuleCall_4; }
+		//VariableProxy
+		public RuleCall getVariableProxyParserRuleCall_4() { return cVariableProxyParserRuleCall_4; }
 		
 		//Print
 		public RuleCall getPrintParserRuleCall_5() { return cPrintParserRuleCall_5; }
@@ -97,23 +97,23 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cAssignementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cVariable_ProxyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cVariableProxyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cVariableParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cCalculParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cComparaisonParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Expression returns Expression:
-		//     Assignement | Variable_Proxy | Variable | Calcul | Comparaison ;
+		//     Assignement | VariableProxy | Variable | Calcul | Comparaison ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Assignement | Variable_Proxy | Variable | Calcul | Comparaison
+		//Assignement | VariableProxy | Variable | Calcul | Comparaison
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Assignement
 		public RuleCall getAssignementParserRuleCall_0() { return cAssignementParserRuleCall_0; }
 		
-		//Variable_Proxy
-		public RuleCall getVariable_ProxyParserRuleCall_1() { return cVariable_ProxyParserRuleCall_1; }
+		//VariableProxy
+		public RuleCall getVariableProxyParserRuleCall_1() { return cVariableProxyParserRuleCall_1; }
 		
 		//Variable
 		public RuleCall getVariableParserRuleCall_2() { return cVariableParserRuleCall_2; }
@@ -1019,13 +1019,13 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
-	public class Variable_ProxyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Variable_Proxy");
+	public class VariableProxyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.VariableProxy");
 		private final Assignment cVariableAssignment = (Assignment)rule.eContents().get(1);
 		private final CrossReference cVariableVariableCrossReference_0 = (CrossReference)cVariableAssignment.eContents().get(0);
 		private final RuleCall cVariableVariableEStringParserRuleCall_0_1 = (RuleCall)cVariableVariableCrossReference_0.eContents().get(1);
 		
-		//Variable_Proxy returns Variable_Proxy:
+		//VariableProxy returns VariableProxy:
 		//    Variable=[Variable|EString]
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
@@ -1145,7 +1145,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	private final LeBooleanElements pLeBoolean;
 	private final LeFloatElements pLeFloat;
 	private final PrintElements pPrint;
-	private final Variable_ProxyElements pVariable_Proxy;
+	private final VariableProxyElements pVariableProxy;
 	private final EBooleanElements pEBoolean;
 	private final EStringElements pEString;
 	private final EIntElements pEInt;
@@ -1184,7 +1184,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.pLeBoolean = new LeBooleanElements();
 		this.pLeFloat = new LeFloatElements();
 		this.pPrint = new PrintElements();
-		this.pVariable_Proxy = new Variable_ProxyElements();
+		this.pVariableProxy = new VariableProxyElements();
 		this.pEBoolean = new EBooleanElements();
 		this.pEString = new EStringElements();
 		this.pEInt = new EIntElements();
@@ -1231,7 +1231,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Statement returns Statement:
-	//    Loop  | Comparaison | Calcul | Assignement | Variable_Proxy | Print | Expression | Commentary;
+	//    Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
@@ -1241,7 +1241,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Expression returns Expression:
-	//     Assignement | Variable_Proxy | Variable | Calcul | Comparaison ;
+	//     Assignement | VariableProxy | Variable | Calcul | Comparaison ;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -1523,15 +1523,15 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getPrintAccess().getRule();
 	}
 	
-	//Variable_Proxy returns Variable_Proxy:
+	//VariableProxy returns VariableProxy:
 	//    Variable=[Variable|EString]
 	//    ;
-	public Variable_ProxyElements getVariable_ProxyAccess() {
-		return pVariable_Proxy;
+	public VariableProxyElements getVariableProxyAccess() {
+		return pVariableProxy;
 	}
 	
-	public ParserRule getVariable_ProxyRule() {
-		return getVariable_ProxyAccess().getRule();
+	public ParserRule getVariableProxyRule() {
+		return getVariableProxyAccess().getRule();
 	}
 	
 	//EBoolean returns ecore::EBoolean:

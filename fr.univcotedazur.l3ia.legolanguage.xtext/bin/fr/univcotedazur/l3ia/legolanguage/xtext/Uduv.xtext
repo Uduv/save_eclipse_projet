@@ -11,10 +11,10 @@ Program returns Program:
 ;
 
 Statement returns Statement:
-	Loop  | Comparaison | Calcul | Assignement | Variable_Proxy | Print | Expression | Commentary;
+	Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary;
 
 Expression returns Expression:
-	 Assignement | Variable_Proxy | Variable | Calcul | Comparaison ;
+	 Assignement | VariableProxy | Variable | Calcul | Comparaison ;
 	
 Calcul returns Calcul : 
 	Substarction | Addition | Division | Exponential | Multiplication ;
@@ -155,7 +155,7 @@ Print returns Print:
 	'print' '(' (statement+=Statement)? ')'
 	;
 
-Variable_Proxy returns Variable_Proxy:
+VariableProxy returns VariableProxy:
 	Variable=[Variable|EString]
 	;
 

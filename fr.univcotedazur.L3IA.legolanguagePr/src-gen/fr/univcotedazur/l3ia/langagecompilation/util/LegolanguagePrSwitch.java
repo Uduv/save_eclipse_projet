@@ -249,12 +249,12 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			return result;
 		}
 		case LegolanguagePrPackage.VARIABLE_PROXY: {
-			Variable_Proxy variable_Proxy = (Variable_Proxy) theEObject;
-			T result = caseVariable_Proxy(variable_Proxy);
+			VariableProxy variableProxy = (VariableProxy) theEObject;
+			T result = caseVariableProxy(variableProxy);
 			if (result == null)
-				result = caseExpression(variable_Proxy);
+				result = caseExpression(variableProxy);
 			if (result == null)
-				result = caseStatement(variable_Proxy);
+				result = caseStatement(variableProxy);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -638,7 +638,7 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVariable_Proxy(Variable_Proxy object) {
+	public T caseVariableProxy(VariableProxy object) {
 		return null;
 	}
 

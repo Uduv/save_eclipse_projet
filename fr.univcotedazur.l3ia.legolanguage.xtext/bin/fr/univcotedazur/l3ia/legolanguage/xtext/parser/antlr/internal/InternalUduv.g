@@ -182,11 +182,11 @@ ruleStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getStatementAccess().getVariable_ProxyParserRuleCall_4());
+			newCompositeNode(grammarAccess.getStatementAccess().getVariableProxyParserRuleCall_4());
 		}
-		this_Variable_Proxy_4=ruleVariable_Proxy
+		this_VariableProxy_4=ruleVariableProxy
 		{
-			$current = $this_Variable_Proxy_4.current;
+			$current = $this_VariableProxy_4.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -260,11 +260,11 @@ ruleExpression returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getVariable_ProxyParserRuleCall_1());
+			newCompositeNode(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_1());
 		}
-		this_Variable_Proxy_1=ruleVariable_Proxy
+		this_VariableProxy_1=ruleVariableProxy
 		{
-			$current = $this_Variable_Proxy_1.current;
+			$current = $this_VariableProxy_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -1743,15 +1743,15 @@ rulePrint returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleVariable_Proxy
-entryRuleVariable_Proxy returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getVariable_ProxyRule()); }
-	iv_ruleVariable_Proxy=ruleVariable_Proxy
-	{ $current=$iv_ruleVariable_Proxy.current; }
+// Entry rule entryRuleVariableProxy
+entryRuleVariableProxy returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVariableProxyRule()); }
+	iv_ruleVariableProxy=ruleVariableProxy
+	{ $current=$iv_ruleVariableProxy.current; }
 	EOF;
 
-// Rule Variable_Proxy
-ruleVariable_Proxy returns [EObject current=null]
+// Rule VariableProxy
+ruleVariableProxy returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1765,11 +1765,11 @@ ruleVariable_Proxy returns [EObject current=null]
 			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getVariable_ProxyRule());
+					$current = createModelElement(grammarAccess.getVariableProxyRule());
 				}
 			}
 			{
-				newCompositeNode(grammarAccess.getVariable_ProxyAccess().getVariableVariableCrossReference_0());
+				newCompositeNode(grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0());
 			}
 			ruleEString
 			{

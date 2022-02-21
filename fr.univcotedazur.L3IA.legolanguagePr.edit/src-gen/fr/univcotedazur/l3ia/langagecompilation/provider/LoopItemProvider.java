@@ -160,7 +160,7 @@ public class LoopItemProvider extends StatementItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createPrint()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createVariable_Proxy()));
+				LegolanguagePrFactory.eINSTANCE.createVariableProxy()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createEqual()));

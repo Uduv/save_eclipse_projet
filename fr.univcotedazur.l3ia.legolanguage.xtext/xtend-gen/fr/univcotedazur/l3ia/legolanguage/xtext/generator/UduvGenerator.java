@@ -3,10 +3,39 @@
  */
 package fr.univcotedazur.l3ia.legolanguage.xtext.generator;
 
+import fr.univcotedazur.l3ia.langagecompilation.Addition;
+import fr.univcotedazur.l3ia.langagecompilation.Assignement;
+import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
+import fr.univcotedazur.l3ia.langagecompilation.Calcul;
+import fr.univcotedazur.l3ia.langagecompilation.Commentary;
+import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
+import fr.univcotedazur.l3ia.langagecompilation.Division;
+import fr.univcotedazur.l3ia.langagecompilation.Equal;
+import fr.univcotedazur.l3ia.langagecompilation.Exponential;
+import fr.univcotedazur.l3ia.langagecompilation.Expression;
+import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
+import fr.univcotedazur.l3ia.langagecompilation.GT;
+import fr.univcotedazur.l3ia.langagecompilation.LT;
+import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
+import fr.univcotedazur.l3ia.langagecompilation.LeFloat;
+import fr.univcotedazur.l3ia.langagecompilation.LeInteger;
+import fr.univcotedazur.l3ia.langagecompilation.LeString;
+import fr.univcotedazur.l3ia.langagecompilation.Loop;
+import fr.univcotedazur.l3ia.langagecompilation.Multiplication;
+import fr.univcotedazur.l3ia.langagecompilation.Print;
+import fr.univcotedazur.l3ia.langagecompilation.Program;
+import fr.univcotedazur.l3ia.langagecompilation.Statement;
+import fr.univcotedazur.l3ia.langagecompilation.Substarction;
+import fr.univcotedazur.l3ia.langagecompilation.Variable;
+import fr.univcotedazur.l3ia.langagecompilation.VariableProxy;
+import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -17,5 +46,244 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class UduvGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    EObject _head = IteratorExtensions.<EObject>head(resource.getAllContents());
+    Program prog = ((Program) _head);
+    String fileContent = "";
+    EList<Statement> _statement = prog.getStatement();
+    for (final Statement s : _statement) {
+      String _fileContent = fileContent;
+      String _StatementToString = this.StatementToString(s);
+      fileContent = (_fileContent + _StatementToString);
+    }
+    String _name = prog.getName();
+    String _plus = (_name + ".py");
+    fsa.generateFile(_plus, ("#!/usr/bin/env python3\n\n# Import library\nimport math\nimport time" + fileContent));
+  }
+  
+  public String StatementToString(final Statement s) {
+    String res = "";
+    if ((s instanceof Variable)) {
+      String _res = res;
+      String _VariableToString = this.VariableToString(((Variable) s));
+      res = (_res + _VariableToString);
+    } else {
+      if ((s instanceof Expression)) {
+        String _res_1 = res;
+        String _ExpressionToString = this.ExpressionToString(((Expression) s));
+        res = (_res_1 + _ExpressionToString);
+      }
+    }
+    if ((s instanceof Loop)) {
+      String _res_2 = res;
+      String _LoopToString = this.LoopToString(((Loop) s));
+      res = (_res_2 + _LoopToString);
+    }
+    if ((s instanceof Print)) {
+      String _res_3 = res;
+      EList<Statement> _statement = ((Print)s).getStatement();
+      String _plus = (("print" + "(") + _statement);
+      String _plus_1 = (_plus + ")");
+      res = (_res_3 + _plus_1);
+    }
+    if ((s instanceof Commentary)) {
+      String _res_4 = res;
+      res = (_res_4 + "\'\'\'");
+      String _initialeValue = ((Commentary)s).getInitialeValue();
+      /* (_initialeValue + "\'\'\'"); */
+    }
+    return res;
+  }
+  
+  public String VariableToString(final Variable v) {
+    String res = "";
+    if ((v instanceof LeInteger)) {
+      String _res = res;
+      String _name = ((LeInteger)v).getName();
+      String _plus = (_name + ":int = ");
+      int _initialeValue = ((LeInteger)v).getInitialeValue();
+      String _plus_1 = (_plus + Integer.valueOf(_initialeValue));
+      res = (_res + _plus_1);
+    } else {
+      if ((v instanceof LeFloat)) {
+        String _res_1 = res;
+        String _name_1 = ((LeFloat)v).getName();
+        String _plus_2 = (_name_1 + ":float = ");
+        float _initialeValue_1 = ((LeFloat)v).getInitialeValue();
+        String _plus_3 = (_plus_2 + Float.valueOf(_initialeValue_1));
+        res = (_res_1 + _plus_3);
+      } else {
+        if ((v instanceof LeString)) {
+          String _res_2 = res;
+          String _name_2 = ((LeString)v).getName();
+          String _plus_4 = (_name_2 + ":str = ");
+          String _initialeValue_2 = ((LeString)v).getInitialeValue();
+          String _plus_5 = (_plus_4 + _initialeValue_2);
+          res = (_res_2 + _plus_5);
+        } else {
+          if ((v instanceof LeBoolean)) {
+            String _res_3 = res;
+            String _name_3 = ((LeBoolean)v).getName();
+            String _plus_6 = (_name_3 + ":bool = ");
+            boolean _isInitialeValue = ((LeBoolean)v).isInitialeValue();
+            String _plus_7 = (_plus_6 + Boolean.valueOf(_isInitialeValue));
+            res = (_res_3 + _plus_7);
+          }
+        }
+      }
+    }
+    return res;
+  }
+  
+  public String ExpressionToString(final Expression e) {
+    String res = "";
+    if ((e instanceof BinaryOperation)) {
+      String _res = res;
+      String _BinaryOperationToString = this.BinaryOperationToString(((BinaryOperation) e));
+      res = (_res + _BinaryOperationToString);
+    } else {
+      if ((e instanceof Variable)) {
+        String _res_1 = res;
+        String _VariableToString = this.VariableToString(((Variable) e));
+        res = (_res_1 + _VariableToString);
+      } else {
+        if ((e instanceof VariableProxy)) {
+          String _res_2 = res;
+          String _VariableProxyToString = this.VariableProxyToString(((VariableProxy) e));
+          res = (_res_2 + _VariableProxyToString);
+        }
+      }
+    }
+    return res;
+  }
+  
+  public String LoopToString(final Loop l) {
+    String res = "";
+    if ((l instanceof ForLoop)) {
+      String _res = res;
+      Comparaison _loopCondition = ((ForLoop)l).getLoopCondition();
+      String _plus = ("for" + _loopCondition);
+      String _plus_1 = (_plus + ":");
+      String _plus_2 = (_plus_1 + "\n\tab");
+      res = (_res + _plus_2);
+    }
+    if ((l instanceof WhileLoop)) {
+      String _res_1 = res;
+      Comparaison _loopCondition_1 = ((WhileLoop)l).getLoopCondition();
+      String _plus_3 = ("while" + _loopCondition_1);
+      String _plus_4 = (_plus_3 + ":");
+      String _plus_5 = (_plus_4 + "\n\tab");
+      res = (_res_1 + _plus_5);
+    }
+    return res;
+  }
+  
+  public String VariableProxyToString(final VariableProxy vp) {
+    String res = "";
+    return res;
+  }
+  
+  public String BinaryOperationToString(final BinaryOperation b) {
+    String res = "";
+    if ((b instanceof Assignement)) {
+      String _res = res;
+      Expression _left = ((Assignement)b).getLeft();
+      String _plus = (_left + " = ");
+      Expression _right = ((Assignement)b).getRight();
+      String _plus_1 = (_plus + _right);
+      res = (_res + _plus_1);
+    } else {
+      if ((b instanceof Calcul)) {
+        String _res_1 = res;
+        String _CalculToString = this.CalculToString(((Calcul) b));
+        res = (_res_1 + _CalculToString);
+      } else {
+        if ((b instanceof Comparaison)) {
+          String _res_2 = res;
+          String _ComparaisonToString = this.ComparaisonToString(((Comparaison) b));
+          res = (_res_2 + _ComparaisonToString);
+        }
+      }
+    }
+    return res;
+  }
+  
+  public String CalculToString(final Calcul c) {
+    String res = "";
+    if ((c instanceof Addition)) {
+      String _res = res;
+      Expression _left = ((Addition)c).getLeft();
+      String _plus = (_left + "+");
+      Expression _right = ((Addition)c).getRight();
+      String _plus_1 = (_plus + _right);
+      res = (_res + _plus_1);
+    } else {
+      if ((c instanceof Substarction)) {
+        String _res_1 = res;
+        Expression _left_1 = ((Substarction)c).getLeft();
+        String _plus_2 = (_left_1 + "-");
+        Expression _right_1 = ((Substarction)c).getRight();
+        String _plus_3 = (_plus_2 + _right_1);
+        res = (_res_1 + _plus_3);
+      } else {
+        if ((c instanceof Exponential)) {
+          String _res_2 = res;
+          Expression _left_2 = ((Exponential)c).getLeft();
+          String _plus_4 = (_left_2 + "^");
+          Expression _right_2 = ((Exponential)c).getRight();
+          String _plus_5 = (_plus_4 + _right_2);
+          res = (_res_2 + _plus_5);
+        } else {
+          if ((c instanceof Multiplication)) {
+            String _res_3 = res;
+            Expression _left_3 = ((Multiplication)c).getLeft();
+            String _plus_6 = (_left_3 + "*");
+            Expression _right_3 = ((Multiplication)c).getRight();
+            String _plus_7 = (_plus_6 + _right_3);
+            res = (_res_3 + _plus_7);
+          } else {
+            if ((c instanceof Division)) {
+              String _res_4 = res;
+              Expression _left_4 = ((Division)c).getLeft();
+              String _plus_8 = (_left_4 + "/");
+              Expression _right_4 = ((Division)c).getRight();
+              String _plus_9 = (_plus_8 + _right_4);
+              res = (_res_4 + _plus_9);
+            }
+          }
+        }
+      }
+    }
+    return res;
+  }
+  
+  public String ComparaisonToString(final Comparaison c) {
+    String res = "";
+    if ((c instanceof GT)) {
+      String _res = res;
+      Expression _left = ((GT)c).getLeft();
+      String _plus = (_left + ">");
+      Expression _right = ((GT)c).getRight();
+      String _plus_1 = (_plus + _right);
+      res = (_res + _plus_1);
+    } else {
+      if ((c instanceof LT)) {
+        String _res_1 = res;
+        Expression _left_1 = ((LT)c).getLeft();
+        String _plus_2 = (_left_1 + "<");
+        Expression _right_1 = ((LT)c).getRight();
+        String _plus_3 = (_plus_2 + _right_1);
+        res = (_res_1 + _plus_3);
+      } else {
+        if ((c instanceof Equal)) {
+          String _res_2 = res;
+          Expression _left_2 = ((Equal)c).getLeft();
+          String _plus_4 = (_left_2 + "==");
+          Expression _right_2 = ((Equal)c).getRight();
+          String _plus_5 = (_plus_4 + _right_2);
+          res = (_res_2 + _plus_5);
+        }
+      }
+    }
+    return res;
   }
 }

@@ -296,7 +296,7 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStatement"
-    // InternalUduv.g:125:1: ruleStatement returns [EObject current=null] : (this_Loop_0= ruleLoop | this_Comparaison_1= ruleComparaison | this_Calcul_2= ruleCalcul | this_Assignement_3= ruleAssignement | this_Variable_Proxy_4= ruleVariable_Proxy | this_Print_5= rulePrint | this_Expression_6= ruleExpression | this_Commentary_7= ruleCommentary ) ;
+    // InternalUduv.g:125:1: ruleStatement returns [EObject current=null] : (this_Loop_0= ruleLoop | this_Comparaison_1= ruleComparaison | this_Calcul_2= ruleCalcul | this_Assignement_3= ruleAssignement | this_VariableProxy_4= ruleVariableProxy | this_Print_5= rulePrint | this_Expression_6= ruleExpression | this_Commentary_7= ruleCommentary ) ;
     public final EObject ruleStatement() throws RecognitionException {
         EObject current = null;
 
@@ -308,7 +308,7 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
 
         EObject this_Assignement_3 = null;
 
-        EObject this_Variable_Proxy_4 = null;
+        EObject this_VariableProxy_4 = null;
 
         EObject this_Print_5 = null;
 
@@ -321,10 +321,10 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalUduv.g:131:2: ( (this_Loop_0= ruleLoop | this_Comparaison_1= ruleComparaison | this_Calcul_2= ruleCalcul | this_Assignement_3= ruleAssignement | this_Variable_Proxy_4= ruleVariable_Proxy | this_Print_5= rulePrint | this_Expression_6= ruleExpression | this_Commentary_7= ruleCommentary ) )
-            // InternalUduv.g:132:2: (this_Loop_0= ruleLoop | this_Comparaison_1= ruleComparaison | this_Calcul_2= ruleCalcul | this_Assignement_3= ruleAssignement | this_Variable_Proxy_4= ruleVariable_Proxy | this_Print_5= rulePrint | this_Expression_6= ruleExpression | this_Commentary_7= ruleCommentary )
+            // InternalUduv.g:131:2: ( (this_Loop_0= ruleLoop | this_Comparaison_1= ruleComparaison | this_Calcul_2= ruleCalcul | this_Assignement_3= ruleAssignement | this_VariableProxy_4= ruleVariableProxy | this_Print_5= rulePrint | this_Expression_6= ruleExpression | this_Commentary_7= ruleCommentary ) )
+            // InternalUduv.g:132:2: (this_Loop_0= ruleLoop | this_Comparaison_1= ruleComparaison | this_Calcul_2= ruleCalcul | this_Assignement_3= ruleAssignement | this_VariableProxy_4= ruleVariableProxy | this_Print_5= rulePrint | this_Expression_6= ruleExpression | this_Commentary_7= ruleCommentary )
             {
-            // InternalUduv.g:132:2: (this_Loop_0= ruleLoop | this_Comparaison_1= ruleComparaison | this_Calcul_2= ruleCalcul | this_Assignement_3= ruleAssignement | this_Variable_Proxy_4= ruleVariable_Proxy | this_Print_5= rulePrint | this_Expression_6= ruleExpression | this_Commentary_7= ruleCommentary )
+            // InternalUduv.g:132:2: (this_Loop_0= ruleLoop | this_Comparaison_1= ruleComparaison | this_Calcul_2= ruleCalcul | this_Assignement_3= ruleAssignement | this_VariableProxy_4= ruleVariableProxy | this_Print_5= rulePrint | this_Expression_6= ruleExpression | this_Commentary_7= ruleCommentary )
             int alt2=8;
             alt2 = dfa2.predict(input);
             switch (alt2) {
@@ -437,7 +437,7 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalUduv.g:181:3: this_Variable_Proxy_4= ruleVariable_Proxy
+                    // InternalUduv.g:181:3: this_VariableProxy_4= ruleVariableProxy
                     {
                     if ( state.backtracking==0 ) {
 
@@ -446,17 +446,17 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
                     }
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getStatementAccess().getVariable_ProxyParserRuleCall_4());
+                      			newCompositeNode(grammarAccess.getStatementAccess().getVariableProxyParserRuleCall_4());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_Variable_Proxy_4=ruleVariable_Proxy();
+                    this_VariableProxy_4=ruleVariableProxy();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_Variable_Proxy_4;
+                      			current = this_VariableProxy_4;
                       			afterParserOrEnumRuleCall();
                       		
                     }
@@ -609,13 +609,13 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // InternalUduv.g:239:1: ruleExpression returns [EObject current=null] : (this_Assignement_0= ruleAssignement | this_Variable_Proxy_1= ruleVariable_Proxy | this_Variable_2= ruleVariable | this_Calcul_3= ruleCalcul | this_Comparaison_4= ruleComparaison ) ;
+    // InternalUduv.g:239:1: ruleExpression returns [EObject current=null] : (this_Assignement_0= ruleAssignement | this_VariableProxy_1= ruleVariableProxy | this_Variable_2= ruleVariable | this_Calcul_3= ruleCalcul | this_Comparaison_4= ruleComparaison ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
         EObject this_Assignement_0 = null;
 
-        EObject this_Variable_Proxy_1 = null;
+        EObject this_VariableProxy_1 = null;
 
         EObject this_Variable_2 = null;
 
@@ -628,10 +628,10 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalUduv.g:245:2: ( (this_Assignement_0= ruleAssignement | this_Variable_Proxy_1= ruleVariable_Proxy | this_Variable_2= ruleVariable | this_Calcul_3= ruleCalcul | this_Comparaison_4= ruleComparaison ) )
-            // InternalUduv.g:246:2: (this_Assignement_0= ruleAssignement | this_Variable_Proxy_1= ruleVariable_Proxy | this_Variable_2= ruleVariable | this_Calcul_3= ruleCalcul | this_Comparaison_4= ruleComparaison )
+            // InternalUduv.g:245:2: ( (this_Assignement_0= ruleAssignement | this_VariableProxy_1= ruleVariableProxy | this_Variable_2= ruleVariable | this_Calcul_3= ruleCalcul | this_Comparaison_4= ruleComparaison ) )
+            // InternalUduv.g:246:2: (this_Assignement_0= ruleAssignement | this_VariableProxy_1= ruleVariableProxy | this_Variable_2= ruleVariable | this_Calcul_3= ruleCalcul | this_Comparaison_4= ruleComparaison )
             {
-            // InternalUduv.g:246:2: (this_Assignement_0= ruleAssignement | this_Variable_Proxy_1= ruleVariable_Proxy | this_Variable_2= ruleVariable | this_Calcul_3= ruleCalcul | this_Comparaison_4= ruleComparaison )
+            // InternalUduv.g:246:2: (this_Assignement_0= ruleAssignement | this_VariableProxy_1= ruleVariableProxy | this_Variable_2= ruleVariable | this_Calcul_3= ruleCalcul | this_Comparaison_4= ruleComparaison )
             int alt3=5;
             alt3 = dfa3.predict(input);
             switch (alt3) {
@@ -663,7 +663,7 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalUduv.g:259:3: this_Variable_Proxy_1= ruleVariable_Proxy
+                    // InternalUduv.g:259:3: this_VariableProxy_1= ruleVariableProxy
                     {
                     if ( state.backtracking==0 ) {
 
@@ -672,17 +672,17 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
                     }
                     if ( state.backtracking==0 ) {
 
-                      			newCompositeNode(grammarAccess.getExpressionAccess().getVariable_ProxyParserRuleCall_1());
+                      			newCompositeNode(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_1());
                       		
                     }
                     pushFollow(FOLLOW_2);
-                    this_Variable_Proxy_1=ruleVariable_Proxy();
+                    this_VariableProxy_1=ruleVariableProxy();
 
                     state._fsp--;
                     if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
-                      			current = this_Variable_Proxy_1;
+                      			current = this_VariableProxy_1;
                       			afterParserOrEnumRuleCall();
                       		
                     }
@@ -4780,28 +4780,28 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
     // $ANTLR end "rulePrint"
 
 
-    // $ANTLR start "entryRuleVariable_Proxy"
-    // InternalUduv.g:1747:1: entryRuleVariable_Proxy returns [EObject current=null] : iv_ruleVariable_Proxy= ruleVariable_Proxy EOF ;
-    public final EObject entryRuleVariable_Proxy() throws RecognitionException {
+    // $ANTLR start "entryRuleVariableProxy"
+    // InternalUduv.g:1747:1: entryRuleVariableProxy returns [EObject current=null] : iv_ruleVariableProxy= ruleVariableProxy EOF ;
+    public final EObject entryRuleVariableProxy() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleVariable_Proxy = null;
+        EObject iv_ruleVariableProxy = null;
 
 
         try {
-            // InternalUduv.g:1747:55: (iv_ruleVariable_Proxy= ruleVariable_Proxy EOF )
-            // InternalUduv.g:1748:2: iv_ruleVariable_Proxy= ruleVariable_Proxy EOF
+            // InternalUduv.g:1747:54: (iv_ruleVariableProxy= ruleVariableProxy EOF )
+            // InternalUduv.g:1748:2: iv_ruleVariableProxy= ruleVariableProxy EOF
             {
             if ( state.backtracking==0 ) {
-               newCompositeNode(grammarAccess.getVariable_ProxyRule()); 
+               newCompositeNode(grammarAccess.getVariableProxyRule()); 
             }
             pushFollow(FOLLOW_1);
-            iv_ruleVariable_Proxy=ruleVariable_Proxy();
+            iv_ruleVariableProxy=ruleVariableProxy();
 
             state._fsp--;
             if (state.failed) return current;
             if ( state.backtracking==0 ) {
-               current =iv_ruleVariable_Proxy; 
+               current =iv_ruleVariableProxy; 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return current;
 
@@ -4817,12 +4817,12 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleVariable_Proxy"
+    // $ANTLR end "entryRuleVariableProxy"
 
 
-    // $ANTLR start "ruleVariable_Proxy"
-    // InternalUduv.g:1754:1: ruleVariable_Proxy returns [EObject current=null] : ( ( ruleEString ) ) ;
-    public final EObject ruleVariable_Proxy() throws RecognitionException {
+    // $ANTLR start "ruleVariableProxy"
+    // InternalUduv.g:1754:1: ruleVariableProxy returns [EObject current=null] : ( ( ruleEString ) ) ;
+    public final EObject ruleVariableProxy() throws RecognitionException {
         EObject current = null;
 
 
@@ -4846,13 +4846,13 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
             if ( state.backtracking==0 ) {
 
               				if (current==null) {
-              					current = createModelElement(grammarAccess.getVariable_ProxyRule());
+              					current = createModelElement(grammarAccess.getVariableProxyRule());
               				}
               			
             }
             if ( state.backtracking==0 ) {
 
-              				newCompositeNode(grammarAccess.getVariable_ProxyAccess().getVariableVariableCrossReference_0());
+              				newCompositeNode(grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0());
               			
             }
             pushFollow(FOLLOW_2);
@@ -4889,7 +4889,7 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleVariable_Proxy"
+    // $ANTLR end "ruleVariableProxy"
 
 
     // $ANTLR start "entryRuleEBoolean"
@@ -5444,11 +5444,11 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred6_InternalUduv
     public final void synpred6_InternalUduv_fragment() throws RecognitionException {   
-        EObject this_Variable_Proxy_4 = null;
+        EObject this_VariableProxy_4 = null;
 
 
-        // InternalUduv.g:181:3: (this_Variable_Proxy_4= ruleVariable_Proxy )
-        // InternalUduv.g:181:3: this_Variable_Proxy_4= ruleVariable_Proxy
+        // InternalUduv.g:181:3: (this_VariableProxy_4= ruleVariableProxy )
+        // InternalUduv.g:181:3: this_VariableProxy_4= ruleVariableProxy
         {
         if ( state.backtracking==0 ) {
 
@@ -5456,7 +5456,7 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
           		
         }
         pushFollow(FOLLOW_2);
-        this_Variable_Proxy_4=ruleVariable_Proxy();
+        this_VariableProxy_4=ruleVariableProxy();
 
         state._fsp--;
         if (state.failed) return ;
@@ -5513,11 +5513,11 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
 
     // $ANTLR start synpred10_InternalUduv
     public final void synpred10_InternalUduv_fragment() throws RecognitionException {   
-        EObject this_Variable_Proxy_1 = null;
+        EObject this_VariableProxy_1 = null;
 
 
-        // InternalUduv.g:259:3: (this_Variable_Proxy_1= ruleVariable_Proxy )
-        // InternalUduv.g:259:3: this_Variable_Proxy_1= ruleVariable_Proxy
+        // InternalUduv.g:259:3: (this_VariableProxy_1= ruleVariableProxy )
+        // InternalUduv.g:259:3: this_VariableProxy_1= ruleVariableProxy
         {
         if ( state.backtracking==0 ) {
 
@@ -5525,7 +5525,7 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
           		
         }
         pushFollow(FOLLOW_2);
-        this_Variable_Proxy_1=ruleVariable_Proxy();
+        this_VariableProxy_1=ruleVariableProxy();
 
         state._fsp--;
         if (state.failed) return ;
@@ -5984,7 +5984,7 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
             this.transition = dfa_6;
         }
         public String getDescription() {
-            return "132:2: (this_Loop_0= ruleLoop | this_Comparaison_1= ruleComparaison | this_Calcul_2= ruleCalcul | this_Assignement_3= ruleAssignement | this_Variable_Proxy_4= ruleVariable_Proxy | this_Print_5= rulePrint | this_Expression_6= ruleExpression | this_Commentary_7= ruleCommentary )";
+            return "132:2: (this_Loop_0= ruleLoop | this_Comparaison_1= ruleComparaison | this_Calcul_2= ruleCalcul | this_Assignement_3= ruleAssignement | this_VariableProxy_4= ruleVariableProxy | this_Print_5= rulePrint | this_Expression_6= ruleExpression | this_Commentary_7= ruleCommentary )";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -6093,7 +6093,7 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
             this.transition = dfa_12;
         }
         public String getDescription() {
-            return "246:2: (this_Assignement_0= ruleAssignement | this_Variable_Proxy_1= ruleVariable_Proxy | this_Variable_2= ruleVariable | this_Calcul_3= ruleCalcul | this_Comparaison_4= ruleComparaison )";
+            return "246:2: (this_Assignement_0= ruleAssignement | this_VariableProxy_1= ruleVariableProxy | this_Variable_2= ruleVariable | this_Calcul_3= ruleCalcul | this_Comparaison_4= ruleComparaison )";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;

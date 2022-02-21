@@ -153,7 +153,7 @@ public class BinaryOperationItemProvider extends ExpressionItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
-				LegolanguagePrFactory.eINSTANCE.createVariable_Proxy()));
+				LegolanguagePrFactory.eINSTANCE.createVariableProxy()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
 				LegolanguagePrFactory.eINSTANCE.createEqual()));
@@ -195,7 +195,7 @@ public class BinaryOperationItemProvider extends ExpressionItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
-				LegolanguagePrFactory.eINSTANCE.createVariable_Proxy()));
+				LegolanguagePrFactory.eINSTANCE.createVariableProxy()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
 				LegolanguagePrFactory.eINSTANCE.createEqual()));

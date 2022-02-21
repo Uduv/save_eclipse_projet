@@ -920,11 +920,11 @@ public interface LegolanguagePrPackage extends EPackage {
 	int PRINT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.Variable_ProxyImpl <em>Variable Proxy</em>}' class.
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.VariableProxyImpl <em>Variable Proxy</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.Variable_ProxyImpl
-	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getVariable_Proxy()
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.VariableProxyImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getVariableProxy()
 	 * @generated
 	 */
 	int VARIABLE_PROXY = 16;
@@ -1698,25 +1698,25 @@ public interface LegolanguagePrPackage extends EPackage {
 	EReference getPrint_Statement();
 
 	/**
-	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy <em>Variable Proxy</em>}'.
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.VariableProxy <em>Variable Proxy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Variable Proxy</em>'.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy
+	 * @see fr.univcotedazur.l3ia.langagecompilation.VariableProxy
 	 * @generated
 	 */
-	EClass getVariable_Proxy();
+	EClass getVariableProxy();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy#getVariable <em>Variable</em>}'.
+	 * Returns the meta object for the reference '{@link fr.univcotedazur.l3ia.langagecompilation.VariableProxy#getVariable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Variable</em>'.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy#getVariable()
-	 * @see #getVariable_Proxy()
+	 * @see fr.univcotedazur.l3ia.langagecompilation.VariableProxy#getVariable()
+	 * @see #getVariableProxy()
 	 * @generated
 	 */
-	EReference getVariable_Proxy_Variable();
+	EReference getVariableProxy_Variable();
 
 	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Equal <em>Equal</em>}'.
@@ -2132,14 +2132,14 @@ public interface LegolanguagePrPackage extends EPackage {
 		EReference PRINT__STATEMENT = eINSTANCE.getPrint_Statement();
 
 		/**
-		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.Variable_ProxyImpl <em>Variable Proxy</em>}' class.
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.VariableProxyImpl <em>Variable Proxy</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.Variable_ProxyImpl
-		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getVariable_Proxy()
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.VariableProxyImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getVariableProxy()
 		 * @generated
 		 */
-		EClass VARIABLE_PROXY = eINSTANCE.getVariable_Proxy();
+		EClass VARIABLE_PROXY = eINSTANCE.getVariableProxy();
 
 		/**
 		 * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
@@ -2147,7 +2147,7 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VARIABLE_PROXY__VARIABLE = eINSTANCE.getVariable_Proxy_Variable();
+		EReference VARIABLE_PROXY__VARIABLE = eINSTANCE.getVariableProxy_Variable();
 
 		/**
 		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.EqualImpl <em>Equal</em>}' class.

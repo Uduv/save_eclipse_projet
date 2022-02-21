@@ -303,26 +303,26 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy} instances.
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.VariableProxy} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected Variable_ProxyItemProvider variable_ProxyItemProvider;
+	protected VariableProxyItemProvider variableProxyItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy}.
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.VariableProxy}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createVariable_ProxyAdapter() {
-		if (variable_ProxyItemProvider == null) {
-			variable_ProxyItemProvider = new Variable_ProxyItemProvider(this);
+	public Adapter createVariableProxyAdapter() {
+		if (variableProxyItemProvider == null) {
+			variableProxyItemProvider = new VariableProxyItemProvider(this);
 		}
 
-		return variable_ProxyItemProvider;
+		return variableProxyItemProvider;
 	}
 
 	/**
@@ -628,8 +628,8 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			forLoopItemProvider.dispose();
 		if (printItemProvider != null)
 			printItemProvider.dispose();
-		if (variable_ProxyItemProvider != null)
-			variable_ProxyItemProvider.dispose();
+		if (variableProxyItemProvider != null)
+			variableProxyItemProvider.dispose();
 		if (equalItemProvider != null)
 			equalItemProvider.dispose();
 		if (leBooleanItemProvider != null)

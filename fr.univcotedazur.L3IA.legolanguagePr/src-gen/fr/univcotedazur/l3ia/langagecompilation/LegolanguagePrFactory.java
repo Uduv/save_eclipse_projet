@@ -118,7 +118,7 @@ public interface LegolanguagePrFactory extends EFactory {
 	 * @return a new object of class '<em>Variable Proxy</em>'.
 	 * @generated
 	 */
-	Variable_Proxy createVariable_Proxy();
+	VariableProxy createVariableProxy();
 
 	/**
 	 * Returns a new object of class '<em>Equal</em>'.

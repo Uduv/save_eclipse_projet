@@ -77,7 +77,7 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 		case LegolanguagePrPackage.PRINT:
 			return createPrint();
 		case LegolanguagePrPackage.VARIABLE_PROXY:
-			return createVariable_Proxy();
+			return createVariableProxy();
 		case LegolanguagePrPackage.EQUAL:
 			return createEqual();
 		case LegolanguagePrPackage.LE_BOOLEAN:
@@ -204,9 +204,9 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Variable_Proxy createVariable_Proxy() {
-		Variable_ProxyImpl variable_Proxy = new Variable_ProxyImpl();
-		return variable_Proxy;
+	public VariableProxy createVariableProxy() {
+		VariableProxyImpl variableProxy = new VariableProxyImpl();
+		return variableProxy;
 	}
 
 	/**

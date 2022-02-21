@@ -650,25 +650,25 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleVariable_Proxy
-entryRuleVariable_Proxy
+// Entry rule entryRuleVariableProxy
+entryRuleVariableProxy
 :
-{ before(grammarAccess.getVariable_ProxyRule()); }
-	 ruleVariable_Proxy
-{ after(grammarAccess.getVariable_ProxyRule()); } 
+{ before(grammarAccess.getVariableProxyRule()); }
+	 ruleVariableProxy
+{ after(grammarAccess.getVariableProxyRule()); } 
 	 EOF 
 ;
 
-// Rule Variable_Proxy
-ruleVariable_Proxy 
+// Rule VariableProxy
+ruleVariableProxy 
 	@init {
 		int stackSize = keepStackSize();
 	}
 	:
 	(
-		{ before(grammarAccess.getVariable_ProxyAccess().getVariableAssignment()); }
-		(rule__Variable_Proxy__VariableAssignment)
-		{ after(grammarAccess.getVariable_ProxyAccess().getVariableAssignment()); }
+		{ before(grammarAccess.getVariableProxyAccess().getVariableAssignment()); }
+		(rule__VariableProxy__VariableAssignment)
+		{ after(grammarAccess.getVariableProxyAccess().getVariableAssignment()); }
 	)
 ;
 finally {
@@ -805,9 +805,9 @@ rule__Statement__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getStatementAccess().getVariable_ProxyParserRuleCall_4()); }
-		ruleVariable_Proxy
-		{ after(grammarAccess.getStatementAccess().getVariable_ProxyParserRuleCall_4()); }
+		{ before(grammarAccess.getStatementAccess().getVariableProxyParserRuleCall_4()); }
+		ruleVariableProxy
+		{ after(grammarAccess.getStatementAccess().getVariableProxyParserRuleCall_4()); }
 	)
 	|
 	(
@@ -844,9 +844,9 @@ rule__Expression__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getExpressionAccess().getVariable_ProxyParserRuleCall_1()); }
-		ruleVariable_Proxy
-		{ after(grammarAccess.getExpressionAccess().getVariable_ProxyParserRuleCall_1()); }
+		{ before(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_1()); }
+		ruleVariableProxy
+		{ after(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_1()); }
 	)
 	|
 	(
@@ -4139,19 +4139,19 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Variable_Proxy__VariableAssignment
+rule__VariableProxy__VariableAssignment
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getVariable_ProxyAccess().getVariableVariableCrossReference_0()); }
+		{ before(grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0()); }
 		(
-			{ before(grammarAccess.getVariable_ProxyAccess().getVariableVariableEStringParserRuleCall_0_1()); }
+			{ before(grammarAccess.getVariableProxyAccess().getVariableVariableEStringParserRuleCall_0_1()); }
 			ruleEString
-			{ after(grammarAccess.getVariable_ProxyAccess().getVariableVariableEStringParserRuleCall_0_1()); }
+			{ after(grammarAccess.getVariableProxyAccess().getVariableVariableEStringParserRuleCall_0_1()); }
 		)
-		{ after(grammarAccess.getVariable_ProxyAccess().getVariableVariableCrossReference_0()); }
+		{ after(grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0()); }
 	)
 ;
 finally {

@@ -8,6 +8,33 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 
+import fr.univcotedazur.l3ia.langagecompilation.Program
+import fr.univcotedazur.l3ia.langagecompilation.Statement
+import fr.univcotedazur.l3ia.langagecompilation.Addition
+import fr.univcotedazur.l3ia.langagecompilation.Expression
+import fr.univcotedazur.l3ia.langagecompilation.LeInteger
+import fr.univcotedazur.l3ia.langagecompilation.Variable
+import fr.univcotedazur.l3ia.langagecompilation.LeFloat
+import fr.univcotedazur.l3ia.langagecompilation.LeString
+import fr.univcotedazur.l3ia.langagecompilation.LeBoolean
+import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation
+import fr.univcotedazur.l3ia.langagecompilation.Assignement
+import fr.univcotedazur.l3ia.langagecompilation.Calcul
+import fr.univcotedazur.l3ia.langagecompilation.Division
+import fr.univcotedazur.l3ia.langagecompilation.Substarction
+import fr.univcotedazur.l3ia.langagecompilation.Exponential
+import fr.univcotedazur.l3ia.langagecompilation.Multiplication
+import fr.univcotedazur.l3ia.langagecompilation.Comparaison
+import fr.univcotedazur.l3ia.langagecompilation.GT
+import fr.univcotedazur.l3ia.langagecompilation.LT
+import fr.univcotedazur.l3ia.langagecompilation.Equal
+import fr.univcotedazur.l3ia.langagecompilation.VariableProxy
+import fr.univcotedazur.l3ia.langagecompilation.Loop
+import fr.univcotedazur.l3ia.langagecompilation.ForLoop
+import fr.univcotedazur.l3ia.langagecompilation.WhileLoop
+import fr.univcotedazur.l3ia.langagecompilation.Print
+import fr.univcotedazur.l3ia.langagecompilation.Commentary
+
 /**
  * Generates code from your model files on save.
  * 
@@ -21,5 +48,161 @@ class UduvGenerator extends AbstractGenerator {
 //				.filter(Greeting)
 //				.map[name]
 //				.join(', '))
+
+
+
+	var Program prog = resource.allContents.head as Program 
+	var String fileContent = ''
+	//fileContent += CodeToString(prog.statement)
+	for (s : prog.statement) {
+		fileContent += StatementToString(s)
 	}
+	
+	fsa.generateFile(prog.name + '.py', '#!/usr/bin/env python3
+
+# Import library
+import math
+import time' + fileContent )
+	}
+	
+	def String StatementToString(Statement s) {
+		var res = ''
+		// not work 
+		// check before if variable is a "variable expression" and after a variable flottante
+		if (s instanceof Variable) {
+			res += VariableToString(s as Variable)
+		}else
+		if (s instanceof Expression) {
+			res += ExpressionToString(s as Expression)
+		}
+		if(s instanceof Loop){
+			res += LoopToString(s as Loop)
+		}
+		if(s instanceof Print){
+			res += 'print'+'('+ s.statement+ ')' 
+		}
+		if(s instanceof Commentary){
+			res += '\'\'\'' s.initialeValue + '\'\'\''
+		}
+		return res
+	}
+	
+	def String VariableToString(Variable v) {
+		var res = ''
+		if (v instanceof LeInteger) {
+			res += v.name + ':int = '+ v.initialeValue
+		}else
+		if (v instanceof LeFloat) {
+			res += v.name + ':float = '+ v.initialeValue
+		}else
+		if (v instanceof LeString) {
+			res += v.name + ':str = '+ v.initialeValue
+		}else
+		if (v instanceof LeBoolean) {
+			res += v.name + ':bool = '+ v.initialeValue
+		}
+		
+		return res
+	}
+	
+	def String ExpressionToString(Expression e) {
+		var res = ''
+		if (e instanceof BinaryOperation) {
+			res += BinaryOperationToString(e as BinaryOperation)
+		}else 
+		if (e instanceof Variable) {
+			res += VariableToString(e as Variable)
+		}else
+		if (e instanceof VariableProxy){
+			res += VariableProxyToString(e as VariableProxy)
+		}
+		return res 
+	}
+	
+	def String LoopToString(Loop l){
+		var res = ''
+		if(l instanceof ForLoop){
+			res += 'for' + l.loopCondition + ':' + '\n\tab'
+		}
+		if(l instanceof WhileLoop){
+			res += 'while' + l.loopCondition + ':' + '\n\tab'
+		}
+		return res 
+	}
+	
+	def String VariableProxyToString(VariableProxy vp){
+		var res = ''
+		// to do 
+		return res
+	}
+	
+	def String BinaryOperationToString(BinaryOperation b){
+		var res = ''
+		if (b instanceof Assignement) {
+			res += b.left + ' = ' + b.right
+		}else
+		if (b instanceof Calcul) {
+			res += CalculToString(b as Calcul)
+		}else 
+		if (b instanceof Comparaison){
+			res += ComparaisonToString(b as Comparaison)
+		}
+		
+		return res
+	} 
+	
+	def String CalculToString(Calcul c){
+		var res = ''
+		if (c instanceof Addition){
+			res += c.left + '+' + c.right
+		}else
+		if (c instanceof Substarction){
+			res += c.left + '-' + c.right
+		}else
+		if (c instanceof Exponential){
+			res += c.left + '^' + c.right
+		}else
+		if (c instanceof Multiplication){
+			res += c.left + '*' + c.right
+		}else
+		if (c instanceof Division){
+			res += c.left + '/' + c.right
+		}
+		
+		
+		return res
+	}
+	
+	def String ComparaisonToString(Comparaison c){
+		var res = ''
+		if (c instanceof GT){
+			res += c.left + '>' + c.right
+		}else
+		if (c instanceof LT){
+			res += c.left + '<' + c.right
+		}else
+		if (c instanceof Equal){
+			res += c.left + '==' + c.right
+		}
+		
+		
+		return res
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

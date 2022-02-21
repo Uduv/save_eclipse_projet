@@ -2134,23 +2134,23 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rulePrint"
 
 
-    // $ANTLR start "entryRuleVariable_Proxy"
-    // InternalUduv.g:654:1: entryRuleVariable_Proxy : ruleVariable_Proxy EOF ;
-    public final void entryRuleVariable_Proxy() throws RecognitionException {
+    // $ANTLR start "entryRuleVariableProxy"
+    // InternalUduv.g:654:1: entryRuleVariableProxy : ruleVariableProxy EOF ;
+    public final void entryRuleVariableProxy() throws RecognitionException {
         try {
-            // InternalUduv.g:655:1: ( ruleVariable_Proxy EOF )
-            // InternalUduv.g:656:1: ruleVariable_Proxy EOF
+            // InternalUduv.g:655:1: ( ruleVariableProxy EOF )
+            // InternalUduv.g:656:1: ruleVariableProxy EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariable_ProxyRule()); 
+               before(grammarAccess.getVariableProxyRule()); 
             }
             pushFollow(FOLLOW_1);
-            ruleVariable_Proxy();
+            ruleVariableProxy();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariable_ProxyRule()); 
+               after(grammarAccess.getVariableProxyRule()); 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return ;
 
@@ -2165,30 +2165,30 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleVariable_Proxy"
+    // $ANTLR end "entryRuleVariableProxy"
 
 
-    // $ANTLR start "ruleVariable_Proxy"
-    // InternalUduv.g:663:1: ruleVariable_Proxy : ( ( rule__Variable_Proxy__VariableAssignment ) ) ;
-    public final void ruleVariable_Proxy() throws RecognitionException {
+    // $ANTLR start "ruleVariableProxy"
+    // InternalUduv.g:663:1: ruleVariableProxy : ( ( rule__VariableProxy__VariableAssignment ) ) ;
+    public final void ruleVariableProxy() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUduv.g:667:2: ( ( ( rule__Variable_Proxy__VariableAssignment ) ) )
-            // InternalUduv.g:668:2: ( ( rule__Variable_Proxy__VariableAssignment ) )
+            // InternalUduv.g:667:2: ( ( ( rule__VariableProxy__VariableAssignment ) ) )
+            // InternalUduv.g:668:2: ( ( rule__VariableProxy__VariableAssignment ) )
             {
-            // InternalUduv.g:668:2: ( ( rule__Variable_Proxy__VariableAssignment ) )
-            // InternalUduv.g:669:3: ( rule__Variable_Proxy__VariableAssignment )
+            // InternalUduv.g:668:2: ( ( rule__VariableProxy__VariableAssignment ) )
+            // InternalUduv.g:669:3: ( rule__VariableProxy__VariableAssignment )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariable_ProxyAccess().getVariableAssignment()); 
+               before(grammarAccess.getVariableProxyAccess().getVariableAssignment()); 
             }
-            // InternalUduv.g:670:3: ( rule__Variable_Proxy__VariableAssignment )
-            // InternalUduv.g:670:4: rule__Variable_Proxy__VariableAssignment
+            // InternalUduv.g:670:3: ( rule__VariableProxy__VariableAssignment )
+            // InternalUduv.g:670:4: rule__VariableProxy__VariableAssignment
             {
             pushFollow(FOLLOW_2);
-            rule__Variable_Proxy__VariableAssignment();
+            rule__VariableProxy__VariableAssignment();
 
             state._fsp--;
             if (state.failed) return ;
@@ -2196,7 +2196,7 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariable_ProxyAccess().getVariableAssignment()); 
+               after(grammarAccess.getVariableProxyAccess().getVariableAssignment()); 
             }
 
             }
@@ -2216,7 +2216,7 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleVariable_Proxy"
+    // $ANTLR end "ruleVariableProxy"
 
 
     // $ANTLR start "entryRuleEBoolean"
@@ -2560,13 +2560,13 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Statement__Alternatives"
-    // InternalUduv.g:778:1: rule__Statement__Alternatives : ( ( ruleLoop ) | ( ruleComparaison ) | ( ruleCalcul ) | ( ruleAssignement ) | ( ruleVariable_Proxy ) | ( rulePrint ) | ( ruleExpression ) | ( ruleCommentary ) );
+    // InternalUduv.g:778:1: rule__Statement__Alternatives : ( ( ruleLoop ) | ( ruleComparaison ) | ( ruleCalcul ) | ( ruleAssignement ) | ( ruleVariableProxy ) | ( rulePrint ) | ( ruleExpression ) | ( ruleCommentary ) );
     public final void rule__Statement__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUduv.g:782:1: ( ( ruleLoop ) | ( ruleComparaison ) | ( ruleCalcul ) | ( ruleAssignement ) | ( ruleVariable_Proxy ) | ( rulePrint ) | ( ruleExpression ) | ( ruleCommentary ) )
+            // InternalUduv.g:782:1: ( ( ruleLoop ) | ( ruleComparaison ) | ( ruleCalcul ) | ( ruleAssignement ) | ( ruleVariableProxy ) | ( rulePrint ) | ( ruleExpression ) | ( ruleCommentary ) )
             int alt1=8;
             alt1 = dfa1.predict(input);
             switch (alt1) {
@@ -2663,21 +2663,21 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalUduv.g:807:2: ( ruleVariable_Proxy )
+                    // InternalUduv.g:807:2: ( ruleVariableProxy )
                     {
-                    // InternalUduv.g:807:2: ( ruleVariable_Proxy )
-                    // InternalUduv.g:808:3: ruleVariable_Proxy
+                    // InternalUduv.g:807:2: ( ruleVariableProxy )
+                    // InternalUduv.g:808:3: ruleVariableProxy
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getStatementAccess().getVariable_ProxyParserRuleCall_4()); 
+                       before(grammarAccess.getStatementAccess().getVariableProxyParserRuleCall_4()); 
                     }
                     pushFollow(FOLLOW_2);
-                    ruleVariable_Proxy();
+                    ruleVariableProxy();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getStatementAccess().getVariable_ProxyParserRuleCall_4()); 
+                       after(grammarAccess.getStatementAccess().getVariableProxyParserRuleCall_4()); 
                     }
 
                     }
@@ -2772,13 +2772,13 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Alternatives"
-    // InternalUduv.g:835:1: rule__Expression__Alternatives : ( ( ruleAssignement ) | ( ruleVariable_Proxy ) | ( ruleVariable ) | ( ruleCalcul ) | ( ruleComparaison ) );
+    // InternalUduv.g:835:1: rule__Expression__Alternatives : ( ( ruleAssignement ) | ( ruleVariableProxy ) | ( ruleVariable ) | ( ruleCalcul ) | ( ruleComparaison ) );
     public final void rule__Expression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUduv.g:839:1: ( ( ruleAssignement ) | ( ruleVariable_Proxy ) | ( ruleVariable ) | ( ruleCalcul ) | ( ruleComparaison ) )
+            // InternalUduv.g:839:1: ( ( ruleAssignement ) | ( ruleVariableProxy ) | ( ruleVariable ) | ( ruleCalcul ) | ( ruleComparaison ) )
             int alt2=5;
             alt2 = dfa2.predict(input);
             switch (alt2) {
@@ -2806,21 +2806,21 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalUduv.g:846:2: ( ruleVariable_Proxy )
+                    // InternalUduv.g:846:2: ( ruleVariableProxy )
                     {
-                    // InternalUduv.g:846:2: ( ruleVariable_Proxy )
-                    // InternalUduv.g:847:3: ruleVariable_Proxy
+                    // InternalUduv.g:846:2: ( ruleVariableProxy )
+                    // InternalUduv.g:847:3: ruleVariableProxy
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getExpressionAccess().getVariable_ProxyParserRuleCall_1()); 
+                       before(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_1()); 
                     }
                     pushFollow(FOLLOW_2);
-                    ruleVariable_Proxy();
+                    ruleVariableProxy();
 
                     state._fsp--;
                     if (state.failed) return ;
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getExpressionAccess().getVariable_ProxyParserRuleCall_1()); 
+                       after(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_1()); 
                     }
 
                     }
@@ -13156,9 +13156,9 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Print__StatementAssignment_3"
 
 
-    // $ANTLR start "rule__Variable_Proxy__VariableAssignment"
-    // InternalUduv.g:4142:1: rule__Variable_Proxy__VariableAssignment : ( ( ruleEString ) ) ;
-    public final void rule__Variable_Proxy__VariableAssignment() throws RecognitionException {
+    // $ANTLR start "rule__VariableProxy__VariableAssignment"
+    // InternalUduv.g:4142:1: rule__VariableProxy__VariableAssignment : ( ( ruleEString ) ) ;
+    public final void rule__VariableProxy__VariableAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -13170,13 +13170,13 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
             // InternalUduv.g:4148:3: ( ruleEString )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariable_ProxyAccess().getVariableVariableCrossReference_0()); 
+               before(grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0()); 
             }
             // InternalUduv.g:4149:3: ( ruleEString )
             // InternalUduv.g:4150:4: ruleEString
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getVariable_ProxyAccess().getVariableVariableEStringParserRuleCall_0_1()); 
+               before(grammarAccess.getVariableProxyAccess().getVariableVariableEStringParserRuleCall_0_1()); 
             }
             pushFollow(FOLLOW_2);
             ruleEString();
@@ -13184,13 +13184,13 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariable_ProxyAccess().getVariableVariableEStringParserRuleCall_0_1()); 
+               after(grammarAccess.getVariableProxyAccess().getVariableVariableEStringParserRuleCall_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getVariable_ProxyAccess().getVariableVariableCrossReference_0()); 
+               after(grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0()); 
             }
 
             }
@@ -13210,7 +13210,7 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variable_Proxy__VariableAssignment"
+    // $ANTLR end "rule__VariableProxy__VariableAssignment"
 
     // $ANTLR start synpred2_InternalUduv
     public final void synpred2_InternalUduv_fragment() throws RecognitionException {   
@@ -13286,17 +13286,17 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
 
     // $ANTLR start synpred5_InternalUduv
     public final void synpred5_InternalUduv_fragment() throws RecognitionException {   
-        // InternalUduv.g:807:2: ( ( ruleVariable_Proxy ) )
-        // InternalUduv.g:807:2: ( ruleVariable_Proxy )
+        // InternalUduv.g:807:2: ( ( ruleVariableProxy ) )
+        // InternalUduv.g:807:2: ( ruleVariableProxy )
         {
-        // InternalUduv.g:807:2: ( ruleVariable_Proxy )
-        // InternalUduv.g:808:3: ruleVariable_Proxy
+        // InternalUduv.g:807:2: ( ruleVariableProxy )
+        // InternalUduv.g:808:3: ruleVariableProxy
         {
         if ( state.backtracking==0 ) {
-           before(grammarAccess.getStatementAccess().getVariable_ProxyParserRuleCall_4()); 
+           before(grammarAccess.getStatementAccess().getVariableProxyParserRuleCall_4()); 
         }
         pushFollow(FOLLOW_2);
-        ruleVariable_Proxy();
+        ruleVariableProxy();
 
         state._fsp--;
         if (state.failed) return ;
@@ -13358,17 +13358,17 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
 
     // $ANTLR start synpred9_InternalUduv
     public final void synpred9_InternalUduv_fragment() throws RecognitionException {   
-        // InternalUduv.g:846:2: ( ( ruleVariable_Proxy ) )
-        // InternalUduv.g:846:2: ( ruleVariable_Proxy )
+        // InternalUduv.g:846:2: ( ( ruleVariableProxy ) )
+        // InternalUduv.g:846:2: ( ruleVariableProxy )
         {
-        // InternalUduv.g:846:2: ( ruleVariable_Proxy )
-        // InternalUduv.g:847:3: ruleVariable_Proxy
+        // InternalUduv.g:846:2: ( ruleVariableProxy )
+        // InternalUduv.g:847:3: ruleVariableProxy
         {
         if ( state.backtracking==0 ) {
-           before(grammarAccess.getExpressionAccess().getVariable_ProxyParserRuleCall_1()); 
+           before(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_1()); 
         }
         pushFollow(FOLLOW_2);
-        ruleVariable_Proxy();
+        ruleVariableProxy();
 
         state._fsp--;
         if (state.failed) return ;
@@ -13838,7 +13838,7 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_6;
         }
         public String getDescription() {
-            return "778:1: rule__Statement__Alternatives : ( ( ruleLoop ) | ( ruleComparaison ) | ( ruleCalcul ) | ( ruleAssignement ) | ( ruleVariable_Proxy ) | ( rulePrint ) | ( ruleExpression ) | ( ruleCommentary ) );";
+            return "778:1: rule__Statement__Alternatives : ( ( ruleLoop ) | ( ruleComparaison ) | ( ruleCalcul ) | ( ruleAssignement ) | ( ruleVariableProxy ) | ( rulePrint ) | ( ruleExpression ) | ( ruleCommentary ) );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;
@@ -13947,7 +13947,7 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_12;
         }
         public String getDescription() {
-            return "835:1: rule__Expression__Alternatives : ( ( ruleAssignement ) | ( ruleVariable_Proxy ) | ( ruleVariable ) | ( ruleCalcul ) | ( ruleComparaison ) );";
+            return "835:1: rule__Expression__Alternatives : ( ( ruleAssignement ) | ( ruleVariableProxy ) | ( ruleVariable ) | ( ruleCalcul ) | ( ruleComparaison ) );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TokenStream input = (TokenStream)_input;

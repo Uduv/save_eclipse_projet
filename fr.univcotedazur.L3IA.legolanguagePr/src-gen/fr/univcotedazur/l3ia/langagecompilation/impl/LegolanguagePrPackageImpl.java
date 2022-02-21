@@ -26,7 +26,7 @@ import fr.univcotedazur.l3ia.langagecompilation.Program;
 import fr.univcotedazur.l3ia.langagecompilation.Statement;
 import fr.univcotedazur.l3ia.langagecompilation.Substarction;
 import fr.univcotedazur.l3ia.langagecompilation.Variable;
-import fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy;
+import fr.univcotedazur.l3ia.langagecompilation.VariableProxy;
 import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -162,7 +162,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass variable_ProxyEClass = null;
+	private EClass variableProxyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -551,8 +551,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getVariable_Proxy() {
-		return variable_ProxyEClass;
+	public EClass getVariableProxy() {
+		return variableProxyEClass;
 	}
 
 	/**
@@ -560,8 +560,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVariable_Proxy_Variable() {
-		return (EReference) variable_ProxyEClass.getEStructuralFeatures().get(0);
+	public EReference getVariableProxy_Variable() {
+		return (EReference) variableProxyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -754,8 +754,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		printEClass = createEClass(PRINT);
 		createEReference(printEClass, PRINT__STATEMENT);
 
-		variable_ProxyEClass = createEClass(VARIABLE_PROXY);
-		createEReference(variable_ProxyEClass, VARIABLE_PROXY__VARIABLE);
+		variableProxyEClass = createEClass(VARIABLE_PROXY);
+		createEReference(variableProxyEClass, VARIABLE_PROXY__VARIABLE);
 
 		equalEClass = createEClass(EQUAL);
 
@@ -828,7 +828,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		ltEClass.getESuperTypes().add(this.getComparaison());
 		forLoopEClass.getESuperTypes().add(this.getLoop());
 		printEClass.getESuperTypes().add(this.getStatement());
-		variable_ProxyEClass.getESuperTypes().add(this.getExpression());
+		variableProxyEClass.getESuperTypes().add(this.getExpression());
 		equalEClass.getESuperTypes().add(this.getComparaison());
 		leBooleanEClass.getESuperTypes().add(this.getVariable());
 		leFloatEClass.getESuperTypes().add(this.getVariable());
@@ -916,10 +916,10 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(variable_ProxyEClass, Variable_Proxy.class, "Variable_Proxy", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(variableProxyEClass, VariableProxy.class, "VariableProxy", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariable_Proxy_Variable(), this.getVariable(), null, "Variable", null, 1, 1,
-				Variable_Proxy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEReference(getVariableProxy_Variable(), this.getVariable(), null, "Variable", null, 1, 1,
+				VariableProxy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(equalEClass, Equal.class, "Equal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

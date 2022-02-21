@@ -147,8 +147,8 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseVariable_Proxy(Variable_Proxy object) {
-			return createVariable_ProxyAdapter();
+		public Adapter caseVariableProxy(VariableProxy object) {
+			return createVariableProxyAdapter();
 		}
 
 		@Override
@@ -440,16 +440,16 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy <em>Variable Proxy</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.VariableProxy <em>Variable Proxy</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy
+	 * @see fr.univcotedazur.l3ia.langagecompilation.VariableProxy
 	 * @generated
 	 */
-	public Adapter createVariable_ProxyAdapter() {
+	public Adapter createVariableProxyAdapter() {
 		return null;
 	}
 

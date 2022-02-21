@@ -97,7 +97,7 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLeFloatAccess().getNameAssignment_1_1(), "rule__LeFloat__NameAssignment_1_1");
 			builder.put(grammarAccess.getLeFloatAccess().getInitialeValueAssignment_2(), "rule__LeFloat__InitialeValueAssignment_2");
 			builder.put(grammarAccess.getPrintAccess().getStatementAssignment_3(), "rule__Print__StatementAssignment_3");
-			builder.put(grammarAccess.getVariable_ProxyAccess().getVariableAssignment(), "rule__Variable_Proxy__VariableAssignment");
+			builder.put(grammarAccess.getVariableProxyAccess().getVariableAssignment(), "rule__VariableProxy__VariableAssignment");
 		}
 	}
 	
