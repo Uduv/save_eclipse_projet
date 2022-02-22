@@ -99,26 +99,30 @@ public class UduvGenerator extends AbstractGenerator {
           } else {
             if ((s instanceof Print)) {
               String _res_5 = res;
+              res = (_res_5 + "print(\'");
               EList<Statement> _statement_1 = ((Print)s).getStatement();
-              String _ExpressionToString_2 = this.ExpressionToString(((Expression) _statement_1));
-              String _plus_5 = (("print" + "(") + _ExpressionToString_2);
-              String _plus_6 = (_plus_5 + ")");
-              res = (_res_5 + _plus_6);
+              for (final Statement state_1 : _statement_1) {
+                String _res_6 = res;
+                String _StatementToString_1 = this.StatementToString(((Statement) state_1));
+                res = (_res_6 + _StatementToString_1);
+              }
+              String _res_7 = res;
+              res = (_res_7 + "\')");
             } else {
               if ((s instanceof Commentary)) {
-                String _res_6 = res;
+                String _res_8 = res;
                 String _initialeValue = ((Commentary)s).getInitialeValue();
-                String _plus_7 = ("\'\'\'" + _initialeValue);
-                String _plus_8 = (_plus_7 + "\'\'\'");
-                res = (_res_6 + _plus_8);
+                String _plus_5 = ("\'\'\'" + _initialeValue);
+                String _plus_6 = (_plus_5 + "\'\'\'");
+                res = (_res_8 + _plus_6);
               }
             }
           }
         }
       }
     }
-    String _res_7 = res;
-    res = (_res_7 + "\n");
+    String _res_9 = res;
+    res = (_res_9 + "\n");
     return res;
   }
   
@@ -158,7 +162,7 @@ public class UduvGenerator extends AbstractGenerator {
           res = (_res_3 + _plus_7);
         } else {
           if ((v instanceof LeBoolean)) {
-            boolean _equals = Boolean.valueOf(((LeBoolean)v).isInitialeValue()).equals("True");
+            boolean _equals = Boolean.valueOf(((LeBoolean)v).isInitialeValue()).equals(Boolean.valueOf(true));
             if (_equals) {
               String _res_4 = res;
               String _name_3 = ((LeBoolean)v).getName();

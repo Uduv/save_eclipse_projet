@@ -87,7 +87,11 @@ import time\n\n' + fileContent )
 			}
 		}else
 		if(s instanceof Print){
-			res += 'print'+'('+ ExpressionToString(s.statement as Expression) + ')' 
+			res += 'print(\''
+			for ( state : s.statement ) {
+				res += StatementToString(state as Statement)
+			}  
+			res += '\')'
 		}else
 		if(s instanceof Commentary){
 			res += '\'\'\'' + s.initialeValue + '\'\'\''
@@ -116,7 +120,7 @@ import time\n\n' + fileContent )
 		}else
 		if (v instanceof LeBoolean) {
 		
-			if ( v.initialeValue.equals('True') ){
+			if ( v.initialeValue.equals(true) ){
 				res += v.name + ':bool = ' + "True"
 			}else 
 			{

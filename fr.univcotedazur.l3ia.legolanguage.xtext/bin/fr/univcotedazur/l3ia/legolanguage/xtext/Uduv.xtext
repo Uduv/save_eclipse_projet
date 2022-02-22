@@ -34,7 +34,7 @@ Commentary returns Commentary:
 	'\'\'\'';
 
 Loop returns Loop : 
-	WhileLoop | ForLoop  ;
+	WhileLoop | ForLoop  ; 
 
 
 If returns If :
