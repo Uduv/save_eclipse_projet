@@ -4,15 +4,20 @@ package fr.univcotedazur.l3ia.langagecompilation.impl;
 
 import fr.univcotedazur.l3ia.langagecompilation.Commentary;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-
 import fr.univcotedazur.l3ia.langagecompilation.Statement;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -50,6 +55,7 @@ public class CommentaryImpl extends StatementImpl implements Commentary {
 	 * @ordered
 	 */
 	protected static final String INITIALE_VALUE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getInitialeValue() <em>Initiale Value</em>}' attribute.
 	 * <!-- begin-user-doc -->

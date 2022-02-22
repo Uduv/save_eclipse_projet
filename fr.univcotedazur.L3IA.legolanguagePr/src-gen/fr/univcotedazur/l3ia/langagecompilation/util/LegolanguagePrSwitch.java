@@ -421,6 +421,184 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case LegolanguagePrPackage.ROBOT: {
+			Robot robot = (Robot) theEObject;
+			T result = caseRobot(robot);
+			if (result == null)
+				result = caseStatement(robot);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.ACTIVATOR: {
+			Activator activator = (Activator) theEObject;
+			T result = caseActivator(activator);
+			if (result == null)
+				result = caseModuleRobot(activator);
+			if (result == null)
+				result = caseExpression(activator);
+			if (result == null)
+				result = caseStatement(activator);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.SENSOR: {
+			Sensor sensor = (Sensor) theEObject;
+			T result = caseSensor(sensor);
+			if (result == null)
+				result = caseModuleRobot(sensor);
+			if (result == null)
+				result = caseExpression(sensor);
+			if (result == null)
+				result = caseStatement(sensor);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.MODULE_ROBOT: {
+			ModuleRobot moduleRobot = (ModuleRobot) theEObject;
+			T result = caseModuleRobot(moduleRobot);
+			if (result == null)
+				result = caseExpression(moduleRobot);
+			if (result == null)
+				result = caseStatement(moduleRobot);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.COLOR_DECTOR: {
+			ColorDector colorDector = (ColorDector) theEObject;
+			T result = caseColorDector(colorDector);
+			if (result == null)
+				result = caseSensor(colorDector);
+			if (result == null)
+				result = caseModuleRobot(colorDector);
+			if (result == null)
+				result = caseExpression(colorDector);
+			if (result == null)
+				result = caseStatement(colorDector);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.LASER: {
+			Laser laser = (Laser) theEObject;
+			T result = caseLaser(laser);
+			if (result == null)
+				result = caseSensor(laser);
+			if (result == null)
+				result = caseModuleRobot(laser);
+			if (result == null)
+				result = caseExpression(laser);
+			if (result == null)
+				result = caseStatement(laser);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.ROTATION: {
+			Rotation rotation = (Rotation) theEObject;
+			T result = caseRotation(rotation);
+			if (result == null)
+				result = caseMotor(rotation);
+			if (result == null)
+				result = caseActivator(rotation);
+			if (result == null)
+				result = caseModuleRobot(rotation);
+			if (result == null)
+				result = caseExpression(rotation);
+			if (result == null)
+				result = caseStatement(rotation);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.SHOOT_LAUNCHER: {
+			ShootLauncher shootLauncher = (ShootLauncher) theEObject;
+			T result = caseShootLauncher(shootLauncher);
+			if (result == null)
+				result = caseMotor(shootLauncher);
+			if (result == null)
+				result = caseActivator(shootLauncher);
+			if (result == null)
+				result = caseModuleRobot(shootLauncher);
+			if (result == null)
+				result = caseExpression(shootLauncher);
+			if (result == null)
+				result = caseStatement(shootLauncher);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.LED: {
+			Led led = (Led) theEObject;
+			T result = caseLed(led);
+			if (result == null)
+				result = caseActivator(led);
+			if (result == null)
+				result = caseModuleRobot(led);
+			if (result == null)
+				result = caseExpression(led);
+			if (result == null)
+				result = caseStatement(led);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.MOTOR: {
+			Motor motor = (Motor) theEObject;
+			T result = caseMotor(motor);
+			if (result == null)
+				result = caseActivator(motor);
+			if (result == null)
+				result = caseModuleRobot(motor);
+			if (result == null)
+				result = caseExpression(motor);
+			if (result == null)
+				result = caseStatement(motor);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.WHEEL: {
+			Wheel wheel = (Wheel) theEObject;
+			T result = caseWheel(wheel);
+			if (result == null)
+				result = caseRotation(wheel);
+			if (result == null)
+				result = caseMotor(wheel);
+			if (result == null)
+				result = caseActivator(wheel);
+			if (result == null)
+				result = caseModuleRobot(wheel);
+			if (result == null)
+				result = caseExpression(wheel);
+			if (result == null)
+				result = caseStatement(wheel);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.ARM: {
+			Arm arm = (Arm) theEObject;
+			T result = caseArm(arm);
+			if (result == null)
+				result = caseRotation(arm);
+			if (result == null)
+				result = caseMotor(arm);
+			if (result == null)
+				result = caseActivator(arm);
+			if (result == null)
+				result = caseModuleRobot(arm);
+			if (result == null)
+				result = caseExpression(arm);
+			if (result == null)
+				result = caseStatement(arm);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -858,6 +1036,186 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLTEqual(LTEqual object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Robot</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Robot</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRobot(Robot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Activator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Activator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseActivator(Activator object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSensor(Sensor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Module Robot</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Module Robot</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseModuleRobot(ModuleRobot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Color Dector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Color Dector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseColorDector(ColorDector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Laser</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Laser</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLaser(Laser object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rotation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rotation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRotation(Rotation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Shoot Launcher</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Shoot Launcher</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseShootLauncher(ShootLauncher object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Led</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Led</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLed(Led object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Motor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Motor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMotor(Motor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Wheel</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Wheel</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseWheel(Wheel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Arm</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Arm</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArm(Arm object) {
 		return null;
 	}
 

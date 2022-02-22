@@ -194,6 +194,27 @@ public class LoopItemProvider extends StatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createRobot()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createColorDector()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createLaser()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createShootLauncher()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createLed()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createWheel()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.LOOP__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createArm()));
 	}
 
 }

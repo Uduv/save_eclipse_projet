@@ -579,6 +579,167 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Robot} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RobotItemProvider robotItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Robot}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRobotAdapter() {
+		if (robotItemProvider == null) {
+			robotItemProvider = new RobotItemProvider(this);
+		}
+
+		return robotItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.ColorDector} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ColorDectorItemProvider colorDectorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ColorDector}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createColorDectorAdapter() {
+		if (colorDectorItemProvider == null) {
+			colorDectorItemProvider = new ColorDectorItemProvider(this);
+		}
+
+		return colorDectorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Laser} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LaserItemProvider laserItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Laser}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLaserAdapter() {
+		if (laserItemProvider == null) {
+			laserItemProvider = new LaserItemProvider(this);
+		}
+
+		return laserItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.ShootLauncher} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ShootLauncherItemProvider shootLauncherItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ShootLauncher}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createShootLauncherAdapter() {
+		if (shootLauncherItemProvider == null) {
+			shootLauncherItemProvider = new ShootLauncherItemProvider(this);
+		}
+
+		return shootLauncherItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Led} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LedItemProvider ledItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Led}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLedAdapter() {
+		if (ledItemProvider == null) {
+			ledItemProvider = new LedItemProvider(this);
+		}
+
+		return ledItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Wheel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WheelItemProvider wheelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Wheel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWheelAdapter() {
+		if (wheelItemProvider == null) {
+			wheelItemProvider = new WheelItemProvider(this);
+		}
+
+		return wheelItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Arm} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArmItemProvider armItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Arm}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createArmAdapter() {
+		if (armItemProvider == null) {
+			armItemProvider = new ArmItemProvider(this);
+		}
+
+		return armItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -721,6 +882,20 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			gtEqualItemProvider.dispose();
 		if (ltEqualItemProvider != null)
 			ltEqualItemProvider.dispose();
+		if (robotItemProvider != null)
+			robotItemProvider.dispose();
+		if (colorDectorItemProvider != null)
+			colorDectorItemProvider.dispose();
+		if (laserItemProvider != null)
+			laserItemProvider.dispose();
+		if (shootLauncherItemProvider != null)
+			shootLauncherItemProvider.dispose();
+		if (ledItemProvider != null)
+			ledItemProvider.dispose();
+		if (wheelItemProvider != null)
+			wheelItemProvider.dispose();
+		if (armItemProvider != null)
+			armItemProvider.dispose();
 	}
 
 }

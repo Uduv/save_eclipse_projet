@@ -75,5 +75,33 @@
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//GTEqual"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//LTEqual"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Robot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Robot/sensor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Robot/activator"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Activator"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Sensor"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//ModuleRobot">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//ModuleRobot/side"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//ColorDector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//ColorDector/color"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Laser">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Laser/distance"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Rotation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Rotation/speed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Rotation/angle"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//ShootLauncher">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//ShootLauncher/armed"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Led">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Led/bright"/>
+    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Motor"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Wheel"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Arm"/>
   </genPackages>
 </genmodel:GenModel>

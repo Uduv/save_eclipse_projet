@@ -3,9 +3,9 @@
 package fr.univcotedazur.l3ia.langagecompilation.provider;
 
 import fr.univcotedazur.l3ia.langagecompilation.Commentary;
-
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrFactory;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -226,6 +227,27 @@ public class CommentaryItemProvider extends StatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createRobot()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createColorDector()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createLaser()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createShootLauncher()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createLed()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createWheel()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createArm()));
 	}
 
 }

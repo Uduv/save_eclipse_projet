@@ -66,6 +66,7 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPrintAccess().getGroup(), "rule__Print__Group__0");
 			builder.put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 			builder.put(grammarAccess.getEFloatAccess().getGroup(), "rule__EFloat__Group__0");
+			builder.put(grammarAccess.getWheelAccess().getGroup(), "rule__Wheel__Group__0");
 			builder.put(grammarAccess.getProgramAccess().getStatementAssignment_1(), "rule__Program__StatementAssignment_1");
 			builder.put(grammarAccess.getCommentaryAccess().getInitialeValueAssignment_2(), "rule__Commentary__InitialeValueAssignment_2");
 			builder.put(grammarAccess.getIfAccess().getConditionAssignment_1(), "rule__If__ConditionAssignment_1");
@@ -106,6 +107,8 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLeFloatAccess().getInitialeValueAssignment_2(), "rule__LeFloat__InitialeValueAssignment_2");
 			builder.put(grammarAccess.getPrintAccess().getStatementAssignment_3(), "rule__Print__StatementAssignment_3");
 			builder.put(grammarAccess.getVariableProxyAccess().getVariableAssignment(), "rule__VariableProxy__VariableAssignment");
+			builder.put(grammarAccess.getWheelAccess().getSideAssignment_2(), "rule__Wheel__SideAssignment_2");
+			builder.put(grammarAccess.getWheelAccess().getSpeedAssignment_4(), "rule__Wheel__SpeedAssignment_4");
 		}
 	}
 	

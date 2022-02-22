@@ -78,4 +78,44 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GTEqual" eSuperTypes="#//Comparaison"/>
   <eClassifiers xsi:type="ecore:EClass" name="LTEqual" eSuperTypes="#//Comparaison"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Robot" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sensor" upperBound="4"
+        eType="#//Sensor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activator" upperBound="4"
+        eType="#//Activator" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Activator" abstract="true" eSuperTypes="#//ModuleRobot"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" abstract="true" eSuperTypes="#//ModuleRobot"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleRobot" abstract="true" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="side" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="left"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColorDector" eSuperTypes="#//Sensor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Laser" eSuperTypes="#//Sensor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="distance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rotation" abstract="true" eSuperTypes="#//Motor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ShootLauncher" eSuperTypes="#//Motor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="armed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Led" eSuperTypes="#//Activator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bright" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Motor" abstract="true" eSuperTypes="#//Activator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Wheel" eSuperTypes="#//Rotation">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Role"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arm" eSuperTypes="#//Rotation"/>
 </ecore:EPackage>

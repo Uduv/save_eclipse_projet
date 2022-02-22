@@ -22,7 +22,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Commentary extends Statement {
-
 	/**
 	 * Returns the value of the '<em><b>Statement</b></em>' containment reference list.
 	 * The list contents are of type {@link fr.univcotedazur.l3ia.langagecompilation.Statement}.
@@ -56,4 +55,5 @@ public interface Commentary extends Statement {
 	 * @generated
 	 */
 	void setInitialeValue(String value);
+
 } // Commentary

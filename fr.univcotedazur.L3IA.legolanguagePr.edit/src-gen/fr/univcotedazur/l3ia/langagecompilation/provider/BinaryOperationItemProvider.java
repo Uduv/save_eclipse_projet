@@ -182,6 +182,24 @@ public class BinaryOperationItemProvider extends ExpressionItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
 
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
+				LegolanguagePrFactory.eINSTANCE.createColorDector()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
+				LegolanguagePrFactory.eINSTANCE.createLaser()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
+				LegolanguagePrFactory.eINSTANCE.createShootLauncher()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
+				LegolanguagePrFactory.eINSTANCE.createLed()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
+				LegolanguagePrFactory.eINSTANCE.createWheel()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
+				LegolanguagePrFactory.eINSTANCE.createArm()));
+
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -229,6 +247,24 @@ public class BinaryOperationItemProvider extends ExpressionItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
+				LegolanguagePrFactory.eINSTANCE.createColorDector()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
+				LegolanguagePrFactory.eINSTANCE.createLaser()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
+				LegolanguagePrFactory.eINSTANCE.createShootLauncher()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
+				LegolanguagePrFactory.eINSTANCE.createLed()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
+				LegolanguagePrFactory.eINSTANCE.createWheel()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
+				LegolanguagePrFactory.eINSTANCE.createArm()));
 	}
 
 	/**

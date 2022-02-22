@@ -1823,6 +1823,765 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LT_EQUAL_OPERATION_COUNT = COMPARAISON_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.RobotImpl <em>Robot</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.RobotImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getRobot()
+	 * @generated
+	 */
+	int ROBOT = 29;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROBOT__NAME = STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROBOT__IS_IN_CONDITIONIAL = STATEMENT__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Sensor</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROBOT__SENSOR = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Activator</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROBOT__ACTIVATOR = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Robot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROBOT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Robot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROBOT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ModuleRobotImpl <em>Module Robot</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ModuleRobotImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getModuleRobot()
+	 * @generated
+	 */
+	int MODULE_ROBOT = 32;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE_ROBOT__NAME = EXPRESSION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE_ROBOT__IS_IN_CONDITIONIAL = EXPRESSION__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Side</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE_ROBOT__SIDE = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Module Robot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE_ROBOT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Module Robot</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULE_ROBOT_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ActivatorImpl <em>Activator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ActivatorImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getActivator()
+	 * @generated
+	 */
+	int ACTIVATOR = 30;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVATOR__NAME = MODULE_ROBOT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVATOR__IS_IN_CONDITIONIAL = MODULE_ROBOT__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Side</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVATOR__SIDE = MODULE_ROBOT__SIDE;
+
+	/**
+	 * The number of structural features of the '<em>Activator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVATOR_FEATURE_COUNT = MODULE_ROBOT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Activator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTIVATOR_OPERATION_COUNT = MODULE_ROBOT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.SensorImpl <em>Sensor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.SensorImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getSensor()
+	 * @generated
+	 */
+	int SENSOR = 31;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR__NAME = MODULE_ROBOT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR__IS_IN_CONDITIONIAL = MODULE_ROBOT__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Side</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR__SIDE = MODULE_ROBOT__SIDE;
+
+	/**
+	 * The number of structural features of the '<em>Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_FEATURE_COUNT = MODULE_ROBOT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Sensor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_OPERATION_COUNT = MODULE_ROBOT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ColorDectorImpl <em>Color Dector</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ColorDectorImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getColorDector()
+	 * @generated
+	 */
+	int COLOR_DECTOR = 33;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLOR_DECTOR__NAME = SENSOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLOR_DECTOR__IS_IN_CONDITIONIAL = SENSOR__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Side</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLOR_DECTOR__SIDE = SENSOR__SIDE;
+
+	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLOR_DECTOR__COLOR = SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Color Dector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLOR_DECTOR_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Color Dector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLOR_DECTOR_OPERATION_COUNT = SENSOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LaserImpl <em>Laser</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LaserImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLaser()
+	 * @generated
+	 */
+	int LASER = 34;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LASER__NAME = SENSOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LASER__IS_IN_CONDITIONIAL = SENSOR__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Side</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LASER__SIDE = SENSOR__SIDE;
+
+	/**
+	 * The feature id for the '<em><b>Distance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LASER__DISTANCE = SENSOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Laser</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LASER_FEATURE_COUNT = SENSOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Laser</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LASER_OPERATION_COUNT = SENSOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.MotorImpl <em>Motor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.MotorImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getMotor()
+	 * @generated
+	 */
+	int MOTOR = 38;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOTOR__NAME = ACTIVATOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOTOR__IS_IN_CONDITIONIAL = ACTIVATOR__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Side</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOTOR__SIDE = ACTIVATOR__SIDE;
+
+	/**
+	 * The number of structural features of the '<em>Motor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOTOR_FEATURE_COUNT = ACTIVATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Motor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOTOR_OPERATION_COUNT = ACTIVATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.RotationImpl <em>Rotation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.RotationImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getRotation()
+	 * @generated
+	 */
+	int ROTATION = 35;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATION__NAME = MOTOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATION__IS_IN_CONDITIONIAL = MOTOR__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Side</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATION__SIDE = MOTOR__SIDE;
+
+	/**
+	 * The feature id for the '<em><b>Speed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATION__SPEED = MOTOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Angle</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATION__ANGLE = MOTOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Rotation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATION_FEATURE_COUNT = MOTOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Rotation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROTATION_OPERATION_COUNT = MOTOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ShootLauncherImpl <em>Shoot Launcher</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ShootLauncherImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getShootLauncher()
+	 * @generated
+	 */
+	int SHOOT_LAUNCHER = 36;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHOOT_LAUNCHER__NAME = MOTOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHOOT_LAUNCHER__IS_IN_CONDITIONIAL = MOTOR__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Side</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHOOT_LAUNCHER__SIDE = MOTOR__SIDE;
+
+	/**
+	 * The feature id for the '<em><b>Armed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHOOT_LAUNCHER__ARMED = MOTOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Shoot Launcher</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHOOT_LAUNCHER_FEATURE_COUNT = MOTOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Shoot Launcher</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHOOT_LAUNCHER_OPERATION_COUNT = MOTOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LedImpl <em>Led</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LedImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLed()
+	 * @generated
+	 */
+	int LED = 37;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LED__NAME = ACTIVATOR__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LED__IS_IN_CONDITIONIAL = ACTIVATOR__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Side</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LED__SIDE = ACTIVATOR__SIDE;
+
+	/**
+	 * The feature id for the '<em><b>Bright</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LED__BRIGHT = ACTIVATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Led</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LED_FEATURE_COUNT = ACTIVATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Led</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LED_OPERATION_COUNT = ACTIVATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.WheelImpl <em>Wheel</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.WheelImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getWheel()
+	 * @generated
+	 */
+	int WHEEL = 39;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHEEL__NAME = ROTATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHEEL__IS_IN_CONDITIONIAL = ROTATION__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Side</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHEEL__SIDE = ROTATION__SIDE;
+
+	/**
+	 * The feature id for the '<em><b>Speed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHEEL__SPEED = ROTATION__SPEED;
+
+	/**
+	 * The feature id for the '<em><b>Angle</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHEEL__ANGLE = ROTATION__ANGLE;
+
+	/**
+	 * The number of structural features of the '<em>Wheel</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHEEL_FEATURE_COUNT = ROTATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Wheel</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHEEL_OPERATION_COUNT = ROTATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ArmImpl <em>Arm</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ArmImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getArm()
+	 * @generated
+	 */
+	int ARM = 40;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARM__NAME = ROTATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARM__IS_IN_CONDITIONIAL = ROTATION__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Side</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARM__SIDE = ROTATION__SIDE;
+
+	/**
+	 * The feature id for the '<em><b>Speed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARM__SPEED = ROTATION__SPEED;
+
+	/**
+	 * The feature id for the '<em><b>Angle</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARM__ANGLE = ROTATION__ANGLE;
+
+	/**
+	 * The number of structural features of the '<em>Arm</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARM_FEATURE_COUNT = ROTATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Arm</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARM_OPERATION_COUNT = ROTATION_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Program <em>Program</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2333,6 +3092,225 @@ public interface LegolanguagePrPackage extends EPackage {
 	EClass getLTEqual();
 
 	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Robot <em>Robot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Robot</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Robot
+	 * @generated
+	 */
+	EClass getRobot();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.univcotedazur.l3ia.langagecompilation.Robot#getSensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Sensor</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Robot#getSensor()
+	 * @see #getRobot()
+	 * @generated
+	 */
+	EReference getRobot_Sensor();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fr.univcotedazur.l3ia.langagecompilation.Robot#getActivator <em>Activator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Activator</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Robot#getActivator()
+	 * @see #getRobot()
+	 * @generated
+	 */
+	EReference getRobot_Activator();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Activator <em>Activator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Activator</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Activator
+	 * @generated
+	 */
+	EClass getActivator();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Sensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sensor</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Sensor
+	 * @generated
+	 */
+	EClass getSensor();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.ModuleRobot <em>Module Robot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Module Robot</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ModuleRobot
+	 * @generated
+	 */
+	EClass getModuleRobot();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.ModuleRobot#getSide <em>Side</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Side</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ModuleRobot#getSide()
+	 * @see #getModuleRobot()
+	 * @generated
+	 */
+	EAttribute getModuleRobot_Side();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.ColorDector <em>Color Dector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Color Dector</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ColorDector
+	 * @generated
+	 */
+	EClass getColorDector();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.ColorDector#getColor <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Color</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ColorDector#getColor()
+	 * @see #getColorDector()
+	 * @generated
+	 */
+	EAttribute getColorDector_Color();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Laser <em>Laser</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Laser</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Laser
+	 * @generated
+	 */
+	EClass getLaser();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.Laser#getDistance <em>Distance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Distance</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Laser#getDistance()
+	 * @see #getLaser()
+	 * @generated
+	 */
+	EAttribute getLaser_Distance();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Rotation <em>Rotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rotation</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Rotation
+	 * @generated
+	 */
+	EClass getRotation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.Rotation#getSpeed <em>Speed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Speed</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Rotation#getSpeed()
+	 * @see #getRotation()
+	 * @generated
+	 */
+	EAttribute getRotation_Speed();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.Rotation#getAngle <em>Angle</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Angle</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Rotation#getAngle()
+	 * @see #getRotation()
+	 * @generated
+	 */
+	EAttribute getRotation_Angle();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.ShootLauncher <em>Shoot Launcher</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Shoot Launcher</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ShootLauncher
+	 * @generated
+	 */
+	EClass getShootLauncher();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.ShootLauncher#isArmed <em>Armed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Armed</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ShootLauncher#isArmed()
+	 * @see #getShootLauncher()
+	 * @generated
+	 */
+	EAttribute getShootLauncher_Armed();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Led <em>Led</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Led</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Led
+	 * @generated
+	 */
+	EClass getLed();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.Led#isBright <em>Bright</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Bright</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Led#isBright()
+	 * @see #getLed()
+	 * @generated
+	 */
+	EAttribute getLed_Bright();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Motor <em>Motor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Motor</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Motor
+	 * @generated
+	 */
+	EClass getMotor();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Wheel <em>Wheel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Wheel</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Wheel
+	 * @generated
+	 */
+	EClass getWheel();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Arm <em>Arm</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Arm</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Arm
+	 * @generated
+	 */
+	EClass getArm();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2804,6 +3782,198 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * @generated
 		 */
 		EClass LT_EQUAL = eINSTANCE.getLTEqual();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.RobotImpl <em>Robot</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.RobotImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getRobot()
+		 * @generated
+		 */
+		EClass ROBOT = eINSTANCE.getRobot();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensor</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROBOT__SENSOR = eINSTANCE.getRobot_Sensor();
+
+		/**
+		 * The meta object literal for the '<em><b>Activator</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROBOT__ACTIVATOR = eINSTANCE.getRobot_Activator();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ActivatorImpl <em>Activator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ActivatorImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getActivator()
+		 * @generated
+		 */
+		EClass ACTIVATOR = eINSTANCE.getActivator();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.SensorImpl <em>Sensor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.SensorImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getSensor()
+		 * @generated
+		 */
+		EClass SENSOR = eINSTANCE.getSensor();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ModuleRobotImpl <em>Module Robot</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ModuleRobotImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getModuleRobot()
+		 * @generated
+		 */
+		EClass MODULE_ROBOT = eINSTANCE.getModuleRobot();
+
+		/**
+		 * The meta object literal for the '<em><b>Side</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODULE_ROBOT__SIDE = eINSTANCE.getModuleRobot_Side();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ColorDectorImpl <em>Color Dector</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ColorDectorImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getColorDector()
+		 * @generated
+		 */
+		EClass COLOR_DECTOR = eINSTANCE.getColorDector();
+
+		/**
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COLOR_DECTOR__COLOR = eINSTANCE.getColorDector_Color();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LaserImpl <em>Laser</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LaserImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLaser()
+		 * @generated
+		 */
+		EClass LASER = eINSTANCE.getLaser();
+
+		/**
+		 * The meta object literal for the '<em><b>Distance</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LASER__DISTANCE = eINSTANCE.getLaser_Distance();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.RotationImpl <em>Rotation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.RotationImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getRotation()
+		 * @generated
+		 */
+		EClass ROTATION = eINSTANCE.getRotation();
+
+		/**
+		 * The meta object literal for the '<em><b>Speed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROTATION__SPEED = eINSTANCE.getRotation_Speed();
+
+		/**
+		 * The meta object literal for the '<em><b>Angle</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROTATION__ANGLE = eINSTANCE.getRotation_Angle();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ShootLauncherImpl <em>Shoot Launcher</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ShootLauncherImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getShootLauncher()
+		 * @generated
+		 */
+		EClass SHOOT_LAUNCHER = eINSTANCE.getShootLauncher();
+
+		/**
+		 * The meta object literal for the '<em><b>Armed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SHOOT_LAUNCHER__ARMED = eINSTANCE.getShootLauncher_Armed();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LedImpl <em>Led</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LedImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLed()
+		 * @generated
+		 */
+		EClass LED = eINSTANCE.getLed();
+
+		/**
+		 * The meta object literal for the '<em><b>Bright</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LED__BRIGHT = eINSTANCE.getLed_Bright();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.MotorImpl <em>Motor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.MotorImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getMotor()
+		 * @generated
+		 */
+		EClass MOTOR = eINSTANCE.getMotor();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.WheelImpl <em>Wheel</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.WheelImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getWheel()
+		 * @generated
+		 */
+		EClass WHEEL = eINSTANCE.getWheel();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ArmImpl <em>Arm</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ArmImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getArm()
+		 * @generated
+		 */
+		EClass ARM = eINSTANCE.getArm();
 
 	}
 

@@ -2,8 +2,7 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.provider;
 
-import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-import fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy;
+import fr.univcotedazur.l3ia.langagecompilation.Wheel;
 
 import java.util.Collection;
 import java.util.List;
@@ -11,23 +10,22 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Variable_Proxy} object.
+ * This is the item provider adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Wheel} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class Variable_ProxyItemProvider extends ExpressionItemProvider {
+public class WheelItemProvider extends RotationItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Variable_ProxyItemProvider(AdapterFactory adapterFactory) {
+	public WheelItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -42,35 +40,19 @@ public class Variable_ProxyItemProvider extends ExpressionItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addVariablePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Variable feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addVariablePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Variable_Proxy_Variable_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Variable_Proxy_Variable_feature",
-								"_UI_Variable_Proxy_type"),
-						LegolanguagePrPackage.Literals.VARIABLE_PROXY__VARIABLE, true, false, true, null, null, null));
-	}
-
-	/**
-	 * This returns Variable_Proxy.gif.
+	 * This returns Wheel.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Variable_Proxy"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Wheel"));
 	}
 
 	/**
@@ -91,9 +73,9 @@ public class Variable_ProxyItemProvider extends ExpressionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Variable_Proxy) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_Variable_Proxy_type")
-				: getString("_UI_Variable_Proxy_type") + " " + label;
+		String label = ((Wheel) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_Wheel_type")
+				: getString("_UI_Wheel_type") + " " + label;
 	}
 
 	/**

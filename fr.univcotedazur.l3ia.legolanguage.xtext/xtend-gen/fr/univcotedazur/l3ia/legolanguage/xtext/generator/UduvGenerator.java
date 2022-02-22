@@ -60,7 +60,7 @@ public class UduvGenerator extends AbstractGenerator {
     }
     String _name = prog.getName();
     String _plus = (_name + ".py");
-    fsa.generateFile(_plus, ("#!/usr/bin/env python3\n# Import library\nimport math\nimport time\n\n" + fileContent));
+    fsa.generateFile(_plus, ("#!/usr/bin/env python3\n# Import Libraries\nimport time\nimport math\nfrom ev3dev2.motor import *\nfrom ev3dev2.sound import Sound\nfrom ev3dev2.button import Button\nfrom ev3dev2.sensor import *\nfrom ev3dev2.sensor.lego import *\nfrom ev3dev2.sensor.virtual import *\n\n" + fileContent));
   }
   
   public String StatementToString(final Statement s) {

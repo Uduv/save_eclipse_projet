@@ -2,10 +2,13 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.impl;
 
+import fr.univcotedazur.l3ia.langagecompilation.Activator;
 import fr.univcotedazur.l3ia.langagecompilation.Addition;
+import fr.univcotedazur.l3ia.langagecompilation.Arm;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
 import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
 import fr.univcotedazur.l3ia.langagecompilation.Calcul;
+import fr.univcotedazur.l3ia.langagecompilation.ColorDector;
 import fr.univcotedazur.l3ia.langagecompilation.Commentary;
 import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
 import fr.univcotedazur.l3ia.langagecompilation.Division;
@@ -16,20 +19,29 @@ import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.GTEqual;
 import fr.univcotedazur.l3ia.langagecompilation.If;
 import fr.univcotedazur.l3ia.langagecompilation.LTEqual;
+import fr.univcotedazur.l3ia.langagecompilation.Laser;
 import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
 import fr.univcotedazur.l3ia.langagecompilation.LeFloat;
 import fr.univcotedazur.l3ia.langagecompilation.LeInteger;
 import fr.univcotedazur.l3ia.langagecompilation.LeString;
+import fr.univcotedazur.l3ia.langagecompilation.Led;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrFactory;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Loop;
+import fr.univcotedazur.l3ia.langagecompilation.ModuleRobot;
+import fr.univcotedazur.l3ia.langagecompilation.Motor;
 import fr.univcotedazur.l3ia.langagecompilation.Multiplication;
 import fr.univcotedazur.l3ia.langagecompilation.Print;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
+import fr.univcotedazur.l3ia.langagecompilation.Robot;
+import fr.univcotedazur.l3ia.langagecompilation.Rotation;
+import fr.univcotedazur.l3ia.langagecompilation.Sensor;
+import fr.univcotedazur.l3ia.langagecompilation.ShootLauncher;
 import fr.univcotedazur.l3ia.langagecompilation.Statement;
 import fr.univcotedazur.l3ia.langagecompilation.Substarction;
 import fr.univcotedazur.l3ia.langagecompilation.Variable;
 import fr.univcotedazur.l3ia.langagecompilation.VariableProxy;
+import fr.univcotedazur.l3ia.langagecompilation.Wheel;
 import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -250,6 +262,90 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * @generated
 	 */
 	private EClass ltEqualEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass robotEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass activatorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sensorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass moduleRobotEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass colorDectorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass laserEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rotationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass shootLauncherEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ledEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass motorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass wheelEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass armEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -764,6 +860,195 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getRobot() {
+		return robotEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRobot_Sensor() {
+		return (EReference) robotEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRobot_Activator() {
+		return (EReference) robotEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getActivator() {
+		return activatorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSensor() {
+		return sensorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getModuleRobot() {
+		return moduleRobotEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getModuleRobot_Side() {
+		return (EAttribute) moduleRobotEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getColorDector() {
+		return colorDectorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getColorDector_Color() {
+		return (EAttribute) colorDectorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLaser() {
+		return laserEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLaser_Distance() {
+		return (EAttribute) laserEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRotation() {
+		return rotationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRotation_Speed() {
+		return (EAttribute) rotationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRotation_Angle() {
+		return (EAttribute) rotationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getShootLauncher() {
+		return shootLauncherEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getShootLauncher_Armed() {
+		return (EAttribute) shootLauncherEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLed() {
+		return ledEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLed_Bright() {
+		return (EAttribute) ledEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMotor() {
+		return motorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getWheel() {
+		return wheelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getArm() {
+		return armEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public LegolanguagePrFactory getLegolanguagePrFactory() {
 		return (LegolanguagePrFactory) getEFactoryInstance();
 	}
@@ -865,6 +1150,39 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		gtEqualEClass = createEClass(GT_EQUAL);
 
 		ltEqualEClass = createEClass(LT_EQUAL);
+
+		robotEClass = createEClass(ROBOT);
+		createEReference(robotEClass, ROBOT__SENSOR);
+		createEReference(robotEClass, ROBOT__ACTIVATOR);
+
+		activatorEClass = createEClass(ACTIVATOR);
+
+		sensorEClass = createEClass(SENSOR);
+
+		moduleRobotEClass = createEClass(MODULE_ROBOT);
+		createEAttribute(moduleRobotEClass, MODULE_ROBOT__SIDE);
+
+		colorDectorEClass = createEClass(COLOR_DECTOR);
+		createEAttribute(colorDectorEClass, COLOR_DECTOR__COLOR);
+
+		laserEClass = createEClass(LASER);
+		createEAttribute(laserEClass, LASER__DISTANCE);
+
+		rotationEClass = createEClass(ROTATION);
+		createEAttribute(rotationEClass, ROTATION__SPEED);
+		createEAttribute(rotationEClass, ROTATION__ANGLE);
+
+		shootLauncherEClass = createEClass(SHOOT_LAUNCHER);
+		createEAttribute(shootLauncherEClass, SHOOT_LAUNCHER__ARMED);
+
+		ledEClass = createEClass(LED);
+		createEAttribute(ledEClass, LED__BRIGHT);
+
+		motorEClass = createEClass(MOTOR);
+
+		wheelEClass = createEClass(WHEEL);
+
+		armEClass = createEClass(ARM);
 	}
 
 	/**
@@ -928,6 +1246,18 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		ifEClass.getESuperTypes().add(this.getStatement());
 		gtEqualEClass.getESuperTypes().add(this.getComparaison());
 		ltEqualEClass.getESuperTypes().add(this.getComparaison());
+		robotEClass.getESuperTypes().add(this.getStatement());
+		activatorEClass.getESuperTypes().add(this.getModuleRobot());
+		sensorEClass.getESuperTypes().add(this.getModuleRobot());
+		moduleRobotEClass.getESuperTypes().add(this.getExpression());
+		colorDectorEClass.getESuperTypes().add(this.getSensor());
+		laserEClass.getESuperTypes().add(this.getSensor());
+		rotationEClass.getESuperTypes().add(this.getMotor());
+		shootLauncherEClass.getESuperTypes().add(this.getMotor());
+		ledEClass.getESuperTypes().add(this.getActivator());
+		motorEClass.getESuperTypes().add(this.getActivator());
+		wheelEClass.getESuperTypes().add(this.getRotation());
+		armEClass.getESuperTypes().add(this.getRotation());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1063,8 +1393,72 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		initEClass(ltEqualEClass, LTEqual.class, "LTEqual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(robotEClass, Robot.class, "Robot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRobot_Sensor(), this.getSensor(), null, "sensor", null, 0, 4, Robot.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getRobot_Activator(), this.getActivator(), null, "activator", null, 0, 4, Robot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(activatorEClass, Activator.class, "Activator", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(sensorEClass, Sensor.class, "Sensor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(moduleRobotEClass, ModuleRobot.class, "ModuleRobot", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getModuleRobot_Side(), ecorePackage.getEString(), "side", "left", 1, 1, ModuleRobot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(colorDectorEClass, ColorDector.class, "ColorDector", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getColorDector_Color(), ecorePackage.getEString(), "color", null, 0, 1, ColorDector.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(laserEClass, Laser.class, "Laser", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLaser_Distance(), ecorePackage.getEInt(), "distance", "0", 0, 1, Laser.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rotationEClass, Rotation.class, "Rotation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRotation_Speed(), ecorePackage.getEInt(), "speed", "0", 0, 1, Rotation.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRotation_Angle(), ecorePackage.getEInt(), "angle", "0", 0, 1, Rotation.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(shootLauncherEClass, ShootLauncher.class, "ShootLauncher", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getShootLauncher_Armed(), ecorePackage.getEBoolean(), "armed", "false", 0, 1,
+				ShootLauncher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(ledEClass, Led.class, "Led", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLed_Bright(), ecorePackage.getEBoolean(), "bright", "false", 0, 1, Led.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(motorEClass, Motor.class, "Motor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(wheelEClass, Wheel.class, "Wheel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(armEClass, Arm.class, "Arm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.obeo.fr/dsl/dnc/archetype
+		createArchetypeAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.obeo.fr/dsl/dnc/archetype</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createArchetypeAnnotations() {
+		String source = "http://www.obeo.fr/dsl/dnc/archetype";
+		addAnnotation(wheelEClass, source, new String[] { "archetype", "Role" });
 	}
 
 } //LegolanguagePrPackageImpl

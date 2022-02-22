@@ -1262,6 +1262,54 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//INT
 		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
 	}
+	public class WheelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Wheel");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cWheelAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cWheelKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cSideAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSideEStringParserRuleCall_2_0 = (RuleCall)cSideAssignment_2.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cSpeedAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cSpeedEIntParserRuleCall_4_0 = (RuleCall)cSpeedAssignment_4.eContents().get(0);
+		
+		//Wheel returns Wheel :
+		//    {Wheel}
+		//    'wheel'
+		//    side=EString
+		//    "="
+		//    (speed=EInt)?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Wheel}
+		//'wheel'
+		//side=EString
+		//"="
+		//(speed=EInt)?
+		public Group getGroup() { return cGroup; }
+		
+		//{Wheel}
+		public Action getWheelAction_0() { return cWheelAction_0; }
+		
+		//'wheel'
+		public Keyword getWheelKeyword_1() { return cWheelKeyword_1; }
+		
+		//side=EString
+		public Assignment getSideAssignment_2() { return cSideAssignment_2; }
+		
+		//EString
+		public RuleCall getSideEStringParserRuleCall_2_0() { return cSideEStringParserRuleCall_2_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
+		
+		//(speed=EInt)?
+		public Assignment getSpeedAssignment_4() { return cSpeedAssignment_4; }
+		
+		//EInt
+		public RuleCall getSpeedEIntParserRuleCall_4_0() { return cSpeedEIntParserRuleCall_4_0; }
+	}
 	
 	
 	private final ProgramElements pProgram;
@@ -1296,6 +1344,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	private final EStringElements pEString;
 	private final EIntElements pEInt;
 	private final EFloatElements pEFloat;
+	private final WheelElements pWheel;
 	
 	private final Grammar grammar;
 	
@@ -1338,6 +1387,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.pEString = new EStringElements();
 		this.pEInt = new EIntElements();
 		this.pEFloat = new EFloatElements();
+		this.pWheel = new WheelElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1762,6 +1812,21 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getEFloatRule() {
 		return getEFloatAccess().getRule();
+	}
+	
+	//Wheel returns Wheel :
+	//    {Wheel}
+	//    'wheel'
+	//    side=EString
+	//    "="
+	//    (speed=EInt)?
+	//;
+	public WheelElements getWheelAccess() {
+		return pWheel;
+	}
+	
+	public ParserRule getWheelRule() {
+		return getWheelAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

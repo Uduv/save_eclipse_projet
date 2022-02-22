@@ -220,6 +220,69 @@ public interface LegolanguagePrFactory extends EFactory {
 	LTEqual createLTEqual();
 
 	/**
+	 * Returns a new object of class '<em>Robot</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Robot</em>'.
+	 * @generated
+	 */
+	Robot createRobot();
+
+	/**
+	 * Returns a new object of class '<em>Color Dector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Color Dector</em>'.
+	 * @generated
+	 */
+	ColorDector createColorDector();
+
+	/**
+	 * Returns a new object of class '<em>Laser</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Laser</em>'.
+	 * @generated
+	 */
+	Laser createLaser();
+
+	/**
+	 * Returns a new object of class '<em>Shoot Launcher</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Shoot Launcher</em>'.
+	 * @generated
+	 */
+	ShootLauncher createShootLauncher();
+
+	/**
+	 * Returns a new object of class '<em>Led</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Led</em>'.
+	 * @generated
+	 */
+	Led createLed();
+
+	/**
+	 * Returns a new object of class '<em>Wheel</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Wheel</em>'.
+	 * @generated
+	 */
+	Wheel createWheel();
+
+	/**
+	 * Returns a new object of class '<em>Arm</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Arm</em>'.
+	 * @generated
+	 */
+	Arm createArm();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

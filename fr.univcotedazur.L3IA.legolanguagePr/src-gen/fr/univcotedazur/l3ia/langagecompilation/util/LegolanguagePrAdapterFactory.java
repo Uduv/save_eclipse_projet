@@ -212,6 +212,66 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseRobot(Robot object) {
+			return createRobotAdapter();
+		}
+
+		@Override
+		public Adapter caseActivator(Activator object) {
+			return createActivatorAdapter();
+		}
+
+		@Override
+		public Adapter caseSensor(Sensor object) {
+			return createSensorAdapter();
+		}
+
+		@Override
+		public Adapter caseModuleRobot(ModuleRobot object) {
+			return createModuleRobotAdapter();
+		}
+
+		@Override
+		public Adapter caseColorDector(ColorDector object) {
+			return createColorDectorAdapter();
+		}
+
+		@Override
+		public Adapter caseLaser(Laser object) {
+			return createLaserAdapter();
+		}
+
+		@Override
+		public Adapter caseRotation(Rotation object) {
+			return createRotationAdapter();
+		}
+
+		@Override
+		public Adapter caseShootLauncher(ShootLauncher object) {
+			return createShootLauncherAdapter();
+		}
+
+		@Override
+		public Adapter caseLed(Led object) {
+			return createLedAdapter();
+		}
+
+		@Override
+		public Adapter caseMotor(Motor object) {
+			return createMotorAdapter();
+		}
+
+		@Override
+		public Adapter caseWheel(Wheel object) {
+			return createWheelAdapter();
+		}
+
+		@Override
+		public Adapter caseArm(Arm object) {
+			return createArmAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -633,6 +693,174 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLTEqualAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Robot <em>Robot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Robot
+	 * @generated
+	 */
+	public Adapter createRobotAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Activator <em>Activator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Activator
+	 * @generated
+	 */
+	public Adapter createActivatorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Sensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Sensor
+	 * @generated
+	 */
+	public Adapter createSensorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.ModuleRobot <em>Module Robot</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ModuleRobot
+	 * @generated
+	 */
+	public Adapter createModuleRobotAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.ColorDector <em>Color Dector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ColorDector
+	 * @generated
+	 */
+	public Adapter createColorDectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Laser <em>Laser</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Laser
+	 * @generated
+	 */
+	public Adapter createLaserAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Rotation <em>Rotation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Rotation
+	 * @generated
+	 */
+	public Adapter createRotationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.ShootLauncher <em>Shoot Launcher</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ShootLauncher
+	 * @generated
+	 */
+	public Adapter createShootLauncherAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Led <em>Led</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Led
+	 * @generated
+	 */
+	public Adapter createLedAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Motor <em>Motor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Motor
+	 * @generated
+	 */
+	public Adapter createMotorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Wheel <em>Wheel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Wheel
+	 * @generated
+	 */
+	public Adapter createWheelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Arm <em>Arm</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Arm
+	 * @generated
+	 */
+	public Adapter createArmAdapter() {
 		return null;
 	}
 

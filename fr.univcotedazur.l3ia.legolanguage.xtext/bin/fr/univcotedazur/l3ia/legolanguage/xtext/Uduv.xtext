@@ -25,6 +25,8 @@ Comparaison returns Comparaison:
 Variable returns Variable:
 	LeInteger | LeString | LeFloat | LeBoolean;
 	
+
+	
 	
 Commentary returns Commentary:
 	{Commentary}
@@ -64,12 +66,12 @@ ForLoop returns ForLoop:
 	'}';
 
 Addition returns Addition:
-
 	'('
 		left=Expression
 		'+'
 		right=Expression
 	')';
+	
 Substarction returns Substarction:
 
 	'('
@@ -195,3 +197,13 @@ EInt returns ecore::EInt:
 
 EFloat returns ecore::EFloat: 
 	INT '.' INT;
+	
+	
+	
+Wheel returns Wheel : 
+	{Wheel}
+	'wheel'
+	side=EString 
+	"="
+	(speed=EInt)?
+;

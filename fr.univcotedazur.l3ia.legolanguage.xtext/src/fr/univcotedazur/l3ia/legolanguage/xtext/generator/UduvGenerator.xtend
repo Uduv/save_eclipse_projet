@@ -46,25 +46,23 @@ import fr.univcotedazur.l3ia.langagecompilation.VariableProxy
 class UduvGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
-
-
 
 	var Program prog = resource.allContents.head as Program 
 	var String fileContent = ''
-	//fileContent += CodeToString(prog.statement)
 	for (s : prog.statement) {
 		fileContent += StatementToString(s)
 	}
 	
 	fsa.generateFile(prog.name + '.py', '#!/usr/bin/env python3
-# Import library
+# Import Libraries
+import time
 import math
-import time\n\n' + fileContent )
+from ev3dev2.motor import *
+from ev3dev2.sound import Sound
+from ev3dev2.button import Button
+from ev3dev2.sensor import *
+from ev3dev2.sensor.lego import *
+from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 	}
 	
 	def String StatementToString(Statement s) {

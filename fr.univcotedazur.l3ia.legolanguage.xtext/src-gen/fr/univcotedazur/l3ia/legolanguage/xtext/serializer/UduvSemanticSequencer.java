@@ -26,6 +26,7 @@ import fr.univcotedazur.l3ia.langagecompilation.Print;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
 import fr.univcotedazur.l3ia.langagecompilation.Substarction;
 import fr.univcotedazur.l3ia.langagecompilation.VariableProxy;
+import fr.univcotedazur.l3ia.langagecompilation.Wheel;
 import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
 import fr.univcotedazur.l3ia.legolanguage.xtext.services.UduvGrammarAccess;
 import java.util.Set;
@@ -115,6 +116,9 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case LegolanguagePrPackage.VARIABLE_PROXY:
 				sequence_VariableProxy(context, (VariableProxy) semanticObject); 
+				return; 
+			case LegolanguagePrPackage.WHEEL:
+				sequence_Wheel(context, (Wheel) semanticObject); 
 				return; 
 			case LegolanguagePrPackage.WHILE_LOOP:
 				sequence_WhileLoop(context, (WhileLoop) semanticObject); 
@@ -535,6 +539,18 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getVariableProxyAccess().getVariableVariableEStringParserRuleCall_0_1(), semanticObject.eGet(LegolanguagePrPackage.Literals.VARIABLE_PROXY__VARIABLE, false));
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Wheel returns Wheel
+	 *
+	 * Constraint:
+	 *     (side=EString speed=EInt?)
+	 */
+	protected void sequence_Wheel(ISerializationContext context, Wheel semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

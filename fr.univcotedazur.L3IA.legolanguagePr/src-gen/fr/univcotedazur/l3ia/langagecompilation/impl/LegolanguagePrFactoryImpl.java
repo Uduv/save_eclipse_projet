@@ -100,6 +100,20 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createGTEqual();
 		case LegolanguagePrPackage.LT_EQUAL:
 			return createLTEqual();
+		case LegolanguagePrPackage.ROBOT:
+			return createRobot();
+		case LegolanguagePrPackage.COLOR_DECTOR:
+			return createColorDector();
+		case LegolanguagePrPackage.LASER:
+			return createLaser();
+		case LegolanguagePrPackage.SHOOT_LAUNCHER:
+			return createShootLauncher();
+		case LegolanguagePrPackage.LED:
+			return createLed();
+		case LegolanguagePrPackage.WHEEL:
+			return createWheel();
+		case LegolanguagePrPackage.ARM:
+			return createArm();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -323,6 +337,76 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	public LTEqual createLTEqual() {
 		LTEqualImpl ltEqual = new LTEqualImpl();
 		return ltEqual;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Robot createRobot() {
+		RobotImpl robot = new RobotImpl();
+		return robot;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ColorDector createColorDector() {
+		ColorDectorImpl colorDector = new ColorDectorImpl();
+		return colorDector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Laser createLaser() {
+		LaserImpl laser = new LaserImpl();
+		return laser;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShootLauncher createShootLauncher() {
+		ShootLauncherImpl shootLauncher = new ShootLauncherImpl();
+		return shootLauncher;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Led createLed() {
+		LedImpl led = new LedImpl();
+		return led;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Wheel createWheel() {
+		WheelImpl wheel = new WheelImpl();
+		return wheel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Arm createArm() {
+		ArmImpl arm = new ArmImpl();
+		return arm;
 	}
 
 	/**
