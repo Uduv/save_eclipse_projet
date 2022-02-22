@@ -202,6 +202,24 @@ public interface LegolanguagePrFactory extends EFactory {
 	If createIf();
 
 	/**
+	 * Returns a new object of class '<em>GT Equal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>GT Equal</em>'.
+	 * @generated
+	 */
+	GTEqual createGTEqual();
+
+	/**
+	 * Returns a new object of class '<em>LT Equal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>LT Equal</em>'.
+	 * @generated
+	 */
+	LTEqual createLTEqual();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

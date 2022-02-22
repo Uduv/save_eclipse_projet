@@ -96,6 +96,10 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createMultiplication();
 		case LegolanguagePrPackage.IF:
 			return createIf();
+		case LegolanguagePrPackage.GT_EQUAL:
+			return createGTEqual();
+		case LegolanguagePrPackage.LT_EQUAL:
+			return createLTEqual();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -299,6 +303,26 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	public If createIf() {
 		IfImpl if_ = new IfImpl();
 		return if_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GTEqual createGTEqual() {
+		GTEqualImpl gtEqual = new GTEqualImpl();
+		return gtEqual;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LTEqual createLTEqual() {
+		LTEqualImpl ltEqual = new LTEqualImpl();
+		return ltEqual;
 	}
 
 	/**

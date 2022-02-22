@@ -20,7 +20,7 @@ Calcul returns Calcul :
 	Substarction | Addition | Division | Exponential | Multiplication ;
 
 Comparaison returns Comparaison:
-	GT | LT | Equal;
+	GT | LT | Equal | GTEqual | LTEqual ;
 
 Variable returns Variable:
 	LeInteger | LeString | LeFloat | LeBoolean;
@@ -108,11 +108,26 @@ GT returns GT:
 		'>'
 		right=Expression
 	')';
+	
+GTEqual returns GTEqual:
+	'('
+		left=Expression
+		'>='
+		right=Expression
+	')';
+
 
 LT returns LT:
 	'('
 		left=Expression
 		'<'
+		right=Expression
+	')';
+
+LTEqual returns LTEqual:
+	'('
+		left=Expression
+		'<='
 		right=Expression
 	')';
 
@@ -135,7 +150,6 @@ Assignement returns Assignement:
 
 LeInteger returns LeInteger:
 	{LeInteger}
-	(isConst?='isConst')?
 	('int' name=EString '=')?
 		initialeValue=EInt
 		;
@@ -166,7 +180,7 @@ Print returns Print:
 	;
 
 VariableProxy returns VariableProxy:
-	Variable=[Variable|EString]
+	variable=[Variable|EString]
 	;
 
 

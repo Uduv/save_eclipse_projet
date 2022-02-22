@@ -533,6 +533,52 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.GTEqual} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GTEqualItemProvider gtEqualItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.GTEqual}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGTEqualAdapter() {
+		if (gtEqualItemProvider == null) {
+			gtEqualItemProvider = new GTEqualItemProvider(this);
+		}
+
+		return gtEqualItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.LTEqual} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LTEqualItemProvider ltEqualItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.LTEqual}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLTEqualAdapter() {
+		if (ltEqualItemProvider == null) {
+			ltEqualItemProvider = new LTEqualItemProvider(this);
+		}
+
+		return ltEqualItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -671,6 +717,10 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			multiplicationItemProvider.dispose();
 		if (ifItemProvider != null)
 			ifItemProvider.dispose();
+		if (gtEqualItemProvider != null)
+			gtEqualItemProvider.dispose();
+		if (ltEqualItemProvider != null)
+			ltEqualItemProvider.dispose();
 	}
 
 }

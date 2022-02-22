@@ -13,7 +13,9 @@ import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.Exponential;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
+import fr.univcotedazur.l3ia.langagecompilation.GTEqual;
 import fr.univcotedazur.l3ia.langagecompilation.If;
+import fr.univcotedazur.l3ia.langagecompilation.LTEqual;
 import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
 import fr.univcotedazur.l3ia.langagecompilation.LeFloat;
 import fr.univcotedazur.l3ia.langagecompilation.LeInteger;
@@ -236,6 +238,20 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	private EClass ifEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass gtEqualEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ltEqualEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -361,7 +377,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVariable_IsConst() {
+	public EAttribute getVariable_IsInExpression() {
 		return (EAttribute) variableEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -721,6 +737,24 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getGTEqual() {
+		return gtEqualEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLTEqual() {
+		return ltEqualEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public LegolanguagePrFactory getLegolanguagePrFactory() {
 		return (LegolanguagePrFactory) getEFactoryInstance();
 	}
@@ -753,7 +787,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		createEAttribute(statementEClass, STATEMENT__NAME);
 
 		variableEClass = createEClass(VARIABLE);
-		createEAttribute(variableEClass, VARIABLE__IS_CONST);
+		createEAttribute(variableEClass, VARIABLE__IS_IN_EXPRESSION);
 
 		loopEClass = createEClass(LOOP);
 		createEReference(loopEClass, LOOP__STATEMENT);
@@ -817,6 +851,10 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		ifEClass = createEClass(IF);
 		createEReference(ifEClass, IF__CONDITION);
 		createEReference(ifEClass, IF__STATEMENT);
+
+		gtEqualEClass = createEClass(GT_EQUAL);
+
+		ltEqualEClass = createEClass(LT_EQUAL);
 	}
 
 	/**
@@ -878,6 +916,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		calculEClass.getESuperTypes().add(this.getBinaryOperation());
 		multiplicationEClass.getESuperTypes().add(this.getCalcul());
 		ifEClass.getESuperTypes().add(this.getStatement());
+		gtEqualEClass.getESuperTypes().add(this.getComparaison());
+		ltEqualEClass.getESuperTypes().add(this.getComparaison());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -893,8 +933,9 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariable_IsConst(), ecorePackage.getEBoolean(), "isConst", "false", 0, 1, Variable.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariable_IsInExpression(), ecorePackage.getEBoolean(), "isInExpression", "false", 0, 1,
+				Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(loopEClass, Loop.class, "Loop", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLoop_Statement(), this.getStatement(), null, "statement", null, 0, -1, Loop.class,
@@ -958,7 +999,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		initEClass(variableProxyEClass, VariableProxy.class, "VariableProxy", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariableProxy_Variable(), this.getVariable(), null, "Variable", null, 1, 1,
+		initEReference(getVariableProxy_Variable(), this.getVariable(), null, "variable", null, 1, 1,
 				VariableProxy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1004,6 +1045,10 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEReference(getIf_Statement(), this.getStatement(), null, "statement", null, 0, -1, If.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+
+		initEClass(gtEqualEClass, GTEqual.class, "GTEqual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(ltEqualEClass, LTEqual.class, "LTEqual", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

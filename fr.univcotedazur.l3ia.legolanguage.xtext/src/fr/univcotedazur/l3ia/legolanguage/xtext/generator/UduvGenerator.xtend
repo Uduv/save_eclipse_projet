@@ -28,13 +28,15 @@ import fr.univcotedazur.l3ia.langagecompilation.Comparaison
 import fr.univcotedazur.l3ia.langagecompilation.GT
 import fr.univcotedazur.l3ia.langagecompilation.LT
 import fr.univcotedazur.l3ia.langagecompilation.Equal
-import fr.univcotedazur.l3ia.langagecompilation.VariableProxy
 import fr.univcotedazur.l3ia.langagecompilation.Loop
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop
 import fr.univcotedazur.l3ia.langagecompilation.WhileLoop
 import fr.univcotedazur.l3ia.langagecompilation.Print
 import fr.univcotedazur.l3ia.langagecompilation.Commentary
 import fr.univcotedazur.l3ia.langagecompilation.If
+import fr.univcotedazur.l3ia.langagecompilation.GTEqual
+import fr.univcotedazur.l3ia.langagecompilation.LTEqual
+import fr.univcotedazur.l3ia.langagecompilation.VariableProxy
 
 /**
  * Generates code from your model files on save.
@@ -60,7 +62,6 @@ class UduvGenerator extends AbstractGenerator {
 	}
 	
 	fsa.generateFile(prog.name + '.py', '#!/usr/bin/env python3
-
 # Import library
 import math
 import time\n\n' + fileContent )
@@ -75,19 +76,19 @@ import time\n\n' + fileContent )
 		}else
 		if (s instanceof Expression) {
 			res += ExpressionToString(s as Expression)
-		}
+		}else
 		if(s instanceof Loop){
 			res += LoopToString(s as Loop)
-		}
+		}else
 		if(s instanceof If){
-			res += 'if' + ' ('+ s.condition + ') ' +':' + '\n'
+			res += 'if' + ' ('+ ExpressionToString(s.condition as Expression) + ') ' +':' + '\n'
 			for ( state : s.statement ) {
 				res += '\t' + StatementToString(state as Statement)
 			}
-		}
+		}else
 		if(s instanceof Print){
-			res += 'print'+'('+ s.statement+ ')' 
-		}
+			res += 'print'+'('+ ExpressionToString(s.statement as Expression) + ')' 
+		}else
 		if(s instanceof Commentary){
 			res += '\'\'\'' + s.initialeValue + '\'\'\''
 		}
@@ -97,19 +98,34 @@ import time\n\n' + fileContent )
 	
 	def String VariableToString(Variable v) {
 		var res = ''
+		
 		if (v instanceof LeInteger) {
+			if (v.isInExpression){ 
+			res += v.initialeValue
+			}else{
+				
 			res += v.name + ':int = '+ v.initialeValue
+			}
 		}else
 		if (v instanceof LeFloat) {
 			res += v.name + ':float = '+ v.initialeValue
 		}else
 		if (v instanceof LeString) {
-			res += v.name + ':str = '+ v.initialeValue
+			res += v.name + ':str = '+ '\'' + v.initialeValue + '\'' 
+
 		}else
 		if (v instanceof LeBoolean) {
-			res += v.name + ':bool = '+ v.initialeValue
-		}
 		
+			if ( v.initialeValue.equals('True') ){
+				res += v.name + ':bool = ' + "True"
+			}else 
+			{
+				res += v.name + ':bool = ' + "False"
+				
+			}
+		}
+				
+			
 		return res
 	}
 	
@@ -119,10 +135,11 @@ import time\n\n' + fileContent )
 			res += BinaryOperationToString(e as BinaryOperation)
 		}else 
 		if (e instanceof Variable) {
+			e.isInExpression = true
 			res += VariableToString(e as Variable)
-		}else
+		} 
 		if (e instanceof VariableProxy){
-			res += VariableProxyToString(e as VariableProxy)
+			res += e.variable.name
 		}
 		return res 
 	}
@@ -130,13 +147,13 @@ import time\n\n' + fileContent )
 	def String LoopToString(Loop l){
 		var res = ''
 		if(l instanceof ForLoop){
-			res += 'for'+ ' (' + l.loopCondition + ') ' +':' + '\n'
+			res += 'for' + ' (' + ExpressionToString(l.loopCondition as Expression) + ') ' +':' + '\n'
 			for ( s : l.statement ) {
 				res += '\t' + StatementToString(s as Statement)
 			}  
 		}
 		if(l instanceof WhileLoop){
-			res += 'while' + ' ('+ l.loopCondition + ') ' +':' + '\n'
+			res += 'while' + ' ('+ ExpressionToString(l.loopCondition as Expression) + ') ' +':' + '\n'
 			for ( s : l.statement ) {
 				res += '\t' + StatementToString(s as Statement)
 			}
@@ -144,16 +161,11 @@ import time\n\n' + fileContent )
 		return res 
 	}
 	
-	def String VariableProxyToString(VariableProxy vp){
-		var res = ''
-		// to do 
-		return res
-	}
 	
 	def String BinaryOperationToString(BinaryOperation b){
 		var res = ''
 		if (b instanceof Assignement) {
-			res += b.left + ' = ' + b.right
+			res += ExpressionToString(b.left) + '=' + ExpressionToString(b.right)
 		}else
 		if (b instanceof Calcul) {
 			res += CalculToString(b as Calcul)
@@ -165,22 +177,23 @@ import time\n\n' + fileContent )
 		return res
 	} 
 	
+	
 	def String CalculToString(Calcul c){
 		var res = ''
 		if (c instanceof Addition){
-			res += c.left + '+' + c.right
+			res += ExpressionToString(c.left) + '+' + ExpressionToString(c.right)
 		}else
 		if (c instanceof Substarction){
-			res += c.left + '-' + c.right
+			res += ExpressionToString(c.left) + '-' + ExpressionToString(c.right)
 		}else
 		if (c instanceof Exponential){
-			res += c.left + '^' + c.right
+			res += ExpressionToString(c.left) + '^' + ExpressionToString(c.right)
 		}else
 		if (c instanceof Multiplication){
-			res += c.left + '*' + c.right
+			res += ExpressionToString(c.left) + '*' + ExpressionToString(c.right)
 		}else
 		if (c instanceof Division){
-			res += c.left + '/' + c.right
+			res += ExpressionToString(c.left) + '/' + ExpressionToString(c.right)
 		}
 		
 		
@@ -190,14 +203,21 @@ import time\n\n' + fileContent )
 	def String ComparaisonToString(Comparaison c){
 		var res = ''
 		if (c instanceof GT){
-			res += c.left + '>' + c.right
+			res += ExpressionToString(c.left) + '>' + ExpressionToString(c.right)
 		}else
 		if (c instanceof LT){
-			res += c.left + '<' + c.right
+			res += ExpressionToString(c.left) + '<' + ExpressionToString(c.right)
 		}else
 		if (c instanceof Equal){
-			res += c.left + '==' + c.right
+			res += ExpressionToString(c.left) + '==' + ExpressionToString(c.right)
+		}else
+		if (c instanceof GTEqual){
+			res += ExpressionToString(c.left) + '>=' + ExpressionToString(c.right)
+		}else
+		if (c instanceof LTEqual){
+			res += ExpressionToString(c.left) + '<=' + ExpressionToString(c.right)
 		}
+		
 		
 		
 		return res

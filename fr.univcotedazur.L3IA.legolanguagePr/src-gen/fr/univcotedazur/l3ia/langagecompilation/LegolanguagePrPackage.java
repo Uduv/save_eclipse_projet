@@ -159,13 +159,13 @@ public interface LegolanguagePrPackage extends EPackage {
 	int VARIABLE__NAME = STATEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Is Const</b></em>' attribute.
+	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE__IS_CONST = STATEMENT_FEATURE_COUNT + 0;
+	int VARIABLE__IS_IN_EXPRESSION = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
@@ -673,13 +673,13 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_INTEGER__NAME = VARIABLE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Is Const</b></em>' attribute.
+	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LE_INTEGER__IS_CONST = VARIABLE__IS_CONST;
+	int LE_INTEGER__IS_IN_EXPRESSION = VARIABLE__IS_IN_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Initiale Value</b></em>' attribute.
@@ -728,13 +728,13 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_STRING__NAME = VARIABLE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Is Const</b></em>' attribute.
+	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LE_STRING__IS_CONST = VARIABLE__IS_CONST;
+	int LE_STRING__IS_IN_EXPRESSION = VARIABLE__IS_IN_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Initiale Value</b></em>' attribute.
@@ -1040,13 +1040,13 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_BOOLEAN__NAME = VARIABLE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Is Const</b></em>' attribute.
+	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LE_BOOLEAN__IS_CONST = VARIABLE__IS_CONST;
+	int LE_BOOLEAN__IS_IN_EXPRESSION = VARIABLE__IS_IN_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Initiale Value</b></em>' attribute.
@@ -1095,13 +1095,13 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_FLOAT__NAME = VARIABLE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Is Const</b></em>' attribute.
+	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LE_FLOAT__IS_CONST = VARIABLE__IS_CONST;
+	int LE_FLOAT__IS_IN_EXPRESSION = VARIABLE__IS_IN_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Initiale Value</b></em>' attribute.
@@ -1461,6 +1461,116 @@ public interface LegolanguagePrPackage extends EPackage {
 	int IF_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.GTEqualImpl <em>GT Equal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.GTEqualImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getGTEqual()
+	 * @generated
+	 */
+	int GT_EQUAL = 27;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GT_EQUAL__NAME = COMPARAISON__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GT_EQUAL__LEFT = COMPARAISON__LEFT;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GT_EQUAL__RIGHT = COMPARAISON__RIGHT;
+
+	/**
+	 * The number of structural features of the '<em>GT Equal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GT_EQUAL_FEATURE_COUNT = COMPARAISON_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>GT Equal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GT_EQUAL_OPERATION_COUNT = COMPARAISON_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LTEqualImpl <em>LT Equal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LTEqualImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLTEqual()
+	 * @generated
+	 */
+	int LT_EQUAL = 28;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LT_EQUAL__NAME = COMPARAISON__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LT_EQUAL__LEFT = COMPARAISON__LEFT;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LT_EQUAL__RIGHT = COMPARAISON__RIGHT;
+
+	/**
+	 * The number of structural features of the '<em>LT Equal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LT_EQUAL_FEATURE_COUNT = COMPARAISON_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>LT Equal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LT_EQUAL_OPERATION_COUNT = COMPARAISON_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Program <em>Program</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1524,15 +1634,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	EClass getVariable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.Variable#isIsConst <em>Is Const</em>}'.
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.Variable#isIsInExpression <em>Is In Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Const</em>'.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.Variable#isIsConst()
+	 * @return the meta object for the attribute '<em>Is In Expression</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Variable#isIsInExpression()
 	 * @see #getVariable()
 	 * @generated
 	 */
-	EAttribute getVariable_IsConst();
+	EAttribute getVariable_IsInExpression();
 
 	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Loop <em>Loop</em>}'.
@@ -1940,6 +2050,26 @@ public interface LegolanguagePrPackage extends EPackage {
 	EReference getIf_Statement();
 
 	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.GTEqual <em>GT Equal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>GT Equal</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.GTEqual
+	 * @generated
+	 */
+	EClass getGTEqual();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.LTEqual <em>LT Equal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>LT Equal</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LTEqual
+	 * @generated
+	 */
+	EClass getLTEqual();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2017,12 +2147,12 @@ public interface LegolanguagePrPackage extends EPackage {
 		EClass VARIABLE = eINSTANCE.getVariable();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Const</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Is In Expression</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VARIABLE__IS_CONST = eINSTANCE.getVariable_IsConst();
+		EAttribute VARIABLE__IS_IN_EXPRESSION = eINSTANCE.getVariable_IsInExpression();
 
 		/**
 		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LoopImpl <em>Loop</em>}' class.
@@ -2383,6 +2513,26 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IF__STATEMENT = eINSTANCE.getIf_Statement();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.GTEqualImpl <em>GT Equal</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.GTEqualImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getGTEqual()
+		 * @generated
+		 */
+		EClass GT_EQUAL = eINSTANCE.getGTEqual();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LTEqualImpl <em>LT Equal</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LTEqualImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getLTEqual()
+		 * @generated
+		 */
+		EClass LT_EQUAL = eINSTANCE.getLTEqual();
 
 	}
 

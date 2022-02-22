@@ -56,8 +56,8 @@ public class VariableProxyItemProvider extends ExpressionItemProvider {
 	protected void addVariablePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_VariableProxy_Variable_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_VariableProxy_Variable_feature",
+						getResourceLocator(), getString("_UI_VariableProxy_variable_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_VariableProxy_variable_feature",
 								"_UI_VariableProxy_type"),
 						LegolanguagePrPackage.Literals.VARIABLE_PROXY__VARIABLE, true, false, true, null, null, null));
 	}

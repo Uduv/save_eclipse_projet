@@ -153,6 +153,12 @@ public class IfItemProvider extends StatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__CONDITION,
 				LegolanguagePrFactory.eINSTANCE.createEqual()));
 
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__CONDITION,
+				LegolanguagePrFactory.eINSTANCE.createGTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__CONDITION,
+				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
+
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createWhileLoop()));
 
@@ -209,6 +215,12 @@ public class IfItemProvider extends StatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createIf()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createGTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
 	}
 
 	/**

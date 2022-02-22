@@ -391,6 +391,36 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case LegolanguagePrPackage.GT_EQUAL: {
+			GTEqual gtEqual = (GTEqual) theEObject;
+			T result = caseGTEqual(gtEqual);
+			if (result == null)
+				result = caseComparaison(gtEqual);
+			if (result == null)
+				result = caseBinaryOperation(gtEqual);
+			if (result == null)
+				result = caseExpression(gtEqual);
+			if (result == null)
+				result = caseStatement(gtEqual);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.LT_EQUAL: {
+			LTEqual ltEqual = (LTEqual) theEObject;
+			T result = caseLTEqual(ltEqual);
+			if (result == null)
+				result = caseComparaison(ltEqual);
+			if (result == null)
+				result = caseBinaryOperation(ltEqual);
+			if (result == null)
+				result = caseExpression(ltEqual);
+			if (result == null)
+				result = caseStatement(ltEqual);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -798,6 +828,36 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIf(If object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>GT Equal</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>GT Equal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGTEqual(GTEqual object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>LT Equal</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>LT Equal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLTEqual(LTEqual object) {
 		return null;
 	}
 

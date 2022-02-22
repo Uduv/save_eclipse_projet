@@ -12,8 +12,10 @@ import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.Exponential;
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.GT;
+import fr.univcotedazur.l3ia.langagecompilation.GTEqual;
 import fr.univcotedazur.l3ia.langagecompilation.If;
 import fr.univcotedazur.l3ia.langagecompilation.LT;
+import fr.univcotedazur.l3ia.langagecompilation.LTEqual;
 import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
 import fr.univcotedazur.l3ia.langagecompilation.LeFloat;
 import fr.univcotedazur.l3ia.langagecompilation.LeInteger;
@@ -75,11 +77,17 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LegolanguagePrPackage.GT:
 				sequence_GT(context, (GT) semanticObject); 
 				return; 
+			case LegolanguagePrPackage.GT_EQUAL:
+				sequence_GTEqual(context, (GTEqual) semanticObject); 
+				return; 
 			case LegolanguagePrPackage.IF:
 				sequence_If(context, (If) semanticObject); 
 				return; 
 			case LegolanguagePrPackage.LT:
 				sequence_LT(context, (LT) semanticObject); 
+				return; 
+			case LegolanguagePrPackage.LT_EQUAL:
+				sequence_LTEqual(context, (LTEqual) semanticObject); 
 				return; 
 			case LegolanguagePrPackage.LE_BOOLEAN:
 				sequence_LeBoolean(context, (LeBoolean) semanticObject); 
@@ -270,6 +278,30 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Statement returns GTEqual
+	 *     Expression returns GTEqual
+	 *     Comparaison returns GTEqual
+	 *     GTEqual returns GTEqual
+	 *
+	 * Constraint:
+	 *     (left=Expression right=Expression)
+	 */
+	protected void sequence_GTEqual(ISerializationContext context, GTEqual semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGTEqualAccess().getLeftExpressionParserRuleCall_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getGTEqualAccess().getRightExpressionParserRuleCall_3_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Statement returns GT
 	 *     Expression returns GT
 	 *     Comparaison returns GT
@@ -302,6 +334,30 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_If(ISerializationContext context, If semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns LTEqual
+	 *     Expression returns LTEqual
+	 *     Comparaison returns LTEqual
+	 *     LTEqual returns LTEqual
+	 *
+	 * Constraint:
+	 *     (left=Expression right=Expression)
+	 */
+	protected void sequence_LTEqual(ISerializationContext context, LTEqual semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLTEqualAccess().getLeftExpressionParserRuleCall_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getLTEqualAccess().getRightExpressionParserRuleCall_3_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
@@ -367,7 +423,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     LeInteger returns LeInteger
 	 *
 	 * Constraint:
-	 *     (isConst?='isConst'? name=EString? initialeValue=EInt)
+	 *     (name=EString? initialeValue=EInt)
 	 */
 	protected void sequence_LeInteger(ISerializationContext context, LeInteger semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -469,7 +525,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     VariableProxy returns VariableProxy
 	 *
 	 * Constraint:
-	 *     Variable=[Variable|EString]
+	 *     variable=[Variable|EString]
 	 */
 	protected void sequence_VariableProxy(ISerializationContext context, VariableProxy semanticObject) {
 		if (errorAcceptor != null) {

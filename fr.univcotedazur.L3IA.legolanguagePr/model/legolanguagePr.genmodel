@@ -19,7 +19,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Statement/name"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//Variable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Variable/isConst"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Variable/isInExpression"/>
     </genClasses>
     <genClasses image="false" ecoreClass="legolanguagePr.ecore#//Loop">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Loop/statement"/>
@@ -50,7 +50,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Print/statement"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//VariableProxy">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//VariableProxy/Variable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//VariableProxy/variable"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//Equal"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//LeBoolean">
@@ -72,5 +72,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//If/condition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//If/statement"/>
     </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//GTEqual"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//LTEqual"/>
   </genPackages>
 </genmodel:GenModel>

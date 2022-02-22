@@ -11,7 +11,7 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Variable#isIsConst <em>Is Const</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Variable#isIsInExpression <em>Is In Expression</em>}</li>
  * </ul>
  *
  * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getVariable()
@@ -20,26 +20,26 @@ package fr.univcotedazur.l3ia.langagecompilation;
  */
 public interface Variable extends Statement, Expression {
 	/**
-	 * Returns the value of the '<em><b>Is Const</b></em>' attribute.
+	 * Returns the value of the '<em><b>Is In Expression</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Const</em>' attribute.
-	 * @see #setIsConst(boolean)
-	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getVariable_IsConst()
+	 * @return the value of the '<em>Is In Expression</em>' attribute.
+	 * @see #setIsInExpression(boolean)
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getVariable_IsInExpression()
 	 * @model default="false"
 	 * @generated
 	 */
-	boolean isIsConst();
+	boolean isIsInExpression();
 
 	/**
-	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.Variable#isIsConst <em>Is Const</em>}' attribute.
+	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.Variable#isIsInExpression <em>Is In Expression</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Const</em>' attribute.
-	 * @see #isIsConst()
+	 * @param value the new value of the '<em>Is In Expression</em>' attribute.
+	 * @see #isIsInExpression()
 	 * @generated
 	 */
-	void setIsConst(boolean value);
+	void setIsInExpression(boolean value);
 
 } // Variable

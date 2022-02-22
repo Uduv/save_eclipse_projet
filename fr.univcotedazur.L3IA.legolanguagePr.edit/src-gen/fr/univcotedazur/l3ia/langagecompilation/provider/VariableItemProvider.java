@@ -44,24 +44,24 @@ public class VariableItemProvider extends StatementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIsConstPropertyDescriptor(object);
+			addIsInExpressionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Const feature.
+	 * This adds a property descriptor for the Is In Expression feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIsConstPropertyDescriptor(Object object) {
+	protected void addIsInExpressionPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Variable_isConst_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Variable_isConst_feature",
+						getResourceLocator(), getString("_UI_Variable_isInExpression_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Variable_isInExpression_feature",
 								"_UI_Variable_type"),
-						LegolanguagePrPackage.Literals.VARIABLE__IS_CONST, true, false, false,
+						LegolanguagePrPackage.Literals.VARIABLE__IS_IN_EXPRESSION, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
@@ -111,7 +111,7 @@ public class VariableItemProvider extends StatementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Variable.class)) {
-		case LegolanguagePrPackage.VARIABLE__IS_CONST:
+		case LegolanguagePrPackage.VARIABLE__IS_IN_EXPRESSION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
