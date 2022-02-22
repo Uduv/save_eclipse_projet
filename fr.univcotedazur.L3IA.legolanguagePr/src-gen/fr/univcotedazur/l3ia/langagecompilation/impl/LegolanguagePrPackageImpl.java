@@ -368,6 +368,15 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getStatement_IsInConditionial() {
+		return (EAttribute) statementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVariable() {
 		return variableEClass;
 	}
@@ -785,6 +794,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		statementEClass = createEClass(STATEMENT);
 		createEAttribute(statementEClass, STATEMENT__NAME);
+		createEAttribute(statementEClass, STATEMENT__IS_IN_CONDITIONIAL);
 
 		variableEClass = createEClass(VARIABLE);
 		createEAttribute(variableEClass, VARIABLE__IS_IN_EXPRESSION);
@@ -931,6 +941,9 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatement_Name(), ecorePackage.getEString(), "name", null, 0, 1, Statement.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStatement_IsInConditionial(), theXMLTypePackage.getBoolean(), "isInConditionial", null, 0, 1,
+				Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariable_IsInExpression(), ecorePackage.getEBoolean(), "isInExpression", "false", 0, 1,

@@ -9,6 +9,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInConditionial" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Boolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable" abstract="true" eSuperTypes="#//Statement #//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isInExpression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"

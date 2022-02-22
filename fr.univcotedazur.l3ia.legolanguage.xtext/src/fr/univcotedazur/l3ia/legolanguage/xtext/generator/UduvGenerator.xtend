@@ -71,6 +71,9 @@ import time\n\n' + fileContent )
 		var res = ''
 		// not work 
 		// check before if variable is a "variable expression" and after a variable flottante
+		if (s.isInConditionial){
+			res += '\t'
+		}
 		if (s instanceof Variable) {
 			res += VariableToString(s as Variable)
 		}else
@@ -83,15 +86,16 @@ import time\n\n' + fileContent )
 		if(s instanceof If){
 			res += 'if' + ' ('+ ExpressionToString(s.condition as Expression) + ') ' +':' + '\n'
 			for ( state : s.statement ) {
+				state.isInConditionial = true
 				res += '\t' + StatementToString(state as Statement)
 			}
 		}else
 		if(s instanceof Print){
-			res += 'print(\''
+			res += 'print('
 			for ( state : s.statement ) {
 				res += StatementToString(state as Statement)
 			}  
-			res += '\')'
+			res += ')'
 		}else
 		if(s instanceof Commentary){
 			res += '\'\'\'' + s.initialeValue + '\'\'\''
@@ -105,7 +109,7 @@ import time\n\n' + fileContent )
 		
 		if (v instanceof LeInteger) {
 			if (v.isInExpression){ 
-			res += v.initialeValue
+				res += v.initialeValue
 			}else{
 				
 			res += v.name + ':int = '+ v.initialeValue

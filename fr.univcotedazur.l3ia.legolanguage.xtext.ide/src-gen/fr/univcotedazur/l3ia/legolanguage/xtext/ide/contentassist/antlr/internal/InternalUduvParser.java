@@ -3568,11 +3568,11 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
                 {
                 int LA5_2 = input.LA(2);
 
-                if ( (LA5_2==EOF||(LA5_2>=RULE_STRING && LA5_2<=RULE_INT)||(LA5_2>=11 && LA5_2<=14)||(LA5_2>=16 && LA5_2<=36)) ) {
-                    alt5=1;
-                }
-                else if ( (LA5_2==37) ) {
+                if ( (LA5_2==37) ) {
                     alt5=3;
+                }
+                else if ( (LA5_2==EOF||(LA5_2>=RULE_STRING && LA5_2<=RULE_INT)||(LA5_2>=11 && LA5_2<=14)||(LA5_2>=16 && LA5_2<=36)) ) {
+                    alt5=1;
                 }
                 else {
                     if (state.backtracking>0) {state.failed=true; return ;}
@@ -12560,42 +12560,49 @@ public class InternalUduvParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Print__Group__3__Impl"
-    // InternalUduv.g:3922:1: rule__Print__Group__3__Impl : ( ( rule__Print__StatementAssignment_3 )? ) ;
+    // InternalUduv.g:3922:1: rule__Print__Group__3__Impl : ( ( rule__Print__StatementAssignment_3 )* ) ;
     public final void rule__Print__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalUduv.g:3926:1: ( ( ( rule__Print__StatementAssignment_3 )? ) )
-            // InternalUduv.g:3927:1: ( ( rule__Print__StatementAssignment_3 )? )
+            // InternalUduv.g:3926:1: ( ( ( rule__Print__StatementAssignment_3 )* ) )
+            // InternalUduv.g:3927:1: ( ( rule__Print__StatementAssignment_3 )* )
             {
-            // InternalUduv.g:3927:1: ( ( rule__Print__StatementAssignment_3 )? )
-            // InternalUduv.g:3928:2: ( rule__Print__StatementAssignment_3 )?
+            // InternalUduv.g:3927:1: ( ( rule__Print__StatementAssignment_3 )* )
+            // InternalUduv.g:3928:2: ( rule__Print__StatementAssignment_3 )*
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getPrintAccess().getStatementAssignment_3()); 
             }
-            // InternalUduv.g:3929:2: ( rule__Print__StatementAssignment_3 )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // InternalUduv.g:3929:2: ( rule__Print__StatementAssignment_3 )*
+            loop17:
+            do {
+                int alt17=2;
+                int LA17_0 = input.LA(1);
 
-            if ( ((LA17_0>=RULE_STRING && LA17_0<=RULE_INT)||(LA17_0>=11 && LA17_0<=14)||(LA17_0>=17 && LA17_0<=19)||LA17_0==22||(LA17_0>=32 && LA17_0<=36)) ) {
-                alt17=1;
-            }
-            switch (alt17) {
-                case 1 :
-                    // InternalUduv.g:3929:3: rule__Print__StatementAssignment_3
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Print__StatementAssignment_3();
+                if ( ((LA17_0>=RULE_STRING && LA17_0<=RULE_INT)||(LA17_0>=11 && LA17_0<=14)||(LA17_0>=17 && LA17_0<=19)||LA17_0==22||(LA17_0>=32 && LA17_0<=36)) ) {
+                    alt17=1;
+                }
 
-                    state._fsp--;
-                    if (state.failed) return ;
 
-                    }
-                    break;
+                switch (alt17) {
+            	case 1 :
+            	    // InternalUduv.g:3929:3: rule__Print__StatementAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_4);
+            	    rule__Print__StatementAssignment_3();
 
-            }
+            	    state._fsp--;
+            	    if (state.failed) return ;
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop17;
+                }
+            } while (true);
 
             if ( state.backtracking==0 ) {
                after(grammarAccess.getPrintAccess().getStatementAssignment_3()); 

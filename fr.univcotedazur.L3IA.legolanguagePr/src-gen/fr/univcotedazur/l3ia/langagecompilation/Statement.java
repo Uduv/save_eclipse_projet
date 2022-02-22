@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Statement#getName <em>Name</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Statement#isIsInConditionial <em>Is In Conditionial</em>}</li>
  * </ul>
  *
  * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getStatement()
@@ -42,5 +43,27 @@ public interface Statement extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is In Conditionial</em>' attribute.
+	 * @see #setIsInConditionial(boolean)
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getStatement_IsInConditionial()
+	 * @model dataType="org.eclipse.emf.ecore.xml.type.Boolean"
+	 * @generated
+	 */
+	boolean isIsInConditionial();
+
+	/**
+	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.Statement#isIsInConditionial <em>Is In Conditionial</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is In Conditionial</em>' attribute.
+	 * @see #isIsInConditionial()
+	 * @generated
+	 */
+	void setIsInConditionial(boolean value);
 
 } // Statement

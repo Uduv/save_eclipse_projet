@@ -475,7 +475,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Print returns Print
 	 *
 	 * Constraint:
-	 *     statement+=Statement?
+	 *     statement+=Statement*
 	 */
 	protected void sequence_Print(ISerializationContext context, Print semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -1136,12 +1136,12 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//Print returns Print:
 		//    {Print}
-		//    'print' '(' (statement+=Statement)? ')'
+		//    'print' '(' (statement+=Statement)* ')'
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Print}
-		//'print' '(' (statement+=Statement)? ')'
+		//'print' '(' (statement+=Statement)* ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{Print}
@@ -1153,7 +1153,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//(statement+=Statement)?
+		//(statement+=Statement)*
 		public Assignment getStatementAssignment_3() { return cStatementAssignment_3; }
 		
 		//Statement
@@ -1703,7 +1703,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	//Print returns Print:
 	//    {Print}
-	//    'print' '(' (statement+=Statement)? ')'
+	//    'print' '(' (statement+=Statement)* ')'
 	//    ;
 	public PrintElements getPrintAccess() {
 		return pPrint;

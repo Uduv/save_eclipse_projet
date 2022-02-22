@@ -65,56 +65,64 @@ public class UduvGenerator extends AbstractGenerator {
   
   public String StatementToString(final Statement s) {
     String res = "";
-    if ((s instanceof Variable)) {
+    boolean _isIsInConditionial = s.isIsInConditionial();
+    if (_isIsInConditionial) {
       String _res = res;
+      res = (_res + "\t");
+    }
+    if ((s instanceof Variable)) {
+      String _res_1 = res;
       String _VariableToString = this.VariableToString(((Variable) s));
-      res = (_res + _VariableToString);
+      res = (_res_1 + _VariableToString);
     } else {
       if ((s instanceof Expression)) {
-        String _res_1 = res;
+        String _res_2 = res;
         String _ExpressionToString = this.ExpressionToString(((Expression) s));
-        res = (_res_1 + _ExpressionToString);
+        res = (_res_2 + _ExpressionToString);
       } else {
         if ((s instanceof Loop)) {
-          String _res_2 = res;
+          String _res_3 = res;
           String _LoopToString = this.LoopToString(((Loop) s));
-          res = (_res_2 + _LoopToString);
+          res = (_res_3 + _LoopToString);
         } else {
           if ((s instanceof If)) {
-            String _res_3 = res;
+            String _res_4 = res;
             Comparaison _condition = ((If)s).getCondition();
             String _ExpressionToString_1 = this.ExpressionToString(((Expression) _condition));
             String _plus = (("if" + " (") + _ExpressionToString_1);
             String _plus_1 = (_plus + ") ");
             String _plus_2 = (_plus_1 + ":");
             String _plus_3 = (_plus_2 + "\n");
-            res = (_res_3 + _plus_3);
+            res = (_res_4 + _plus_3);
             EList<Statement> _statement = ((If)s).getStatement();
             for (final Statement state : _statement) {
-              String _res_4 = res;
-              String _StatementToString = this.StatementToString(((Statement) state));
-              String _plus_4 = ("\t" + _StatementToString);
-              res = (_res_4 + _plus_4);
+              {
+                state.setIsInConditionial(true);
+                String _res_5 = res;
+                String _StatementToString = this.StatementToString(((Statement) state));
+                String _plus_4 = ("\t" + _StatementToString);
+                res = (_res_5 + _plus_4);
+              }
             }
           } else {
             if ((s instanceof Print)) {
               String _res_5 = res;
-              res = (_res_5 + "print(\'");
+              res = (_res_5 + "print(");
               EList<Statement> _statement_1 = ((Print)s).getStatement();
               for (final Statement state_1 : _statement_1) {
                 String _res_6 = res;
-                String _StatementToString_1 = this.StatementToString(((Statement) state_1));
-                res = (_res_6 + _StatementToString_1);
+                String _StatementToString = this.StatementToString(((Statement) state_1));
+                res = (_res_6 + _StatementToString);
               }
               String _res_7 = res;
-              res = (_res_7 + "\')");
+              res = (_res_7 + ")");
             } else {
               if ((s instanceof Commentary)) {
                 String _res_8 = res;
                 String _initialeValue = ((Commentary)s).getInitialeValue();
-                String _plus_5 = ("\'\'\'" + _initialeValue);
-                String _plus_6 = (_plus_5 + "\'\'\'");
-                res = (_res_8 + _plus_6);
+                String _plus_4 = ("\'\'\'" + _initialeValue);
+                String _plus_5 = (_plus_4 + "\'\'\'");
+                res = (_res_8 + _plus_5);
               }
             }
           }

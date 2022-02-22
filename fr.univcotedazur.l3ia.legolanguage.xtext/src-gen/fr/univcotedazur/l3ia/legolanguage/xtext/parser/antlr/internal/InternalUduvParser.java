@@ -5253,7 +5253,7 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrint"
-    // InternalUduv.g:1923:1: rulePrint returns [EObject current=null] : ( () otherlv_1= 'print' otherlv_2= '(' ( (lv_statement_3_0= ruleStatement ) )? otherlv_4= ')' ) ;
+    // InternalUduv.g:1923:1: rulePrint returns [EObject current=null] : ( () otherlv_1= 'print' otherlv_2= '(' ( (lv_statement_3_0= ruleStatement ) )* otherlv_4= ')' ) ;
     public final EObject rulePrint() throws RecognitionException {
         EObject current = null;
 
@@ -5267,11 +5267,11 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalUduv.g:1929:2: ( ( () otherlv_1= 'print' otherlv_2= '(' ( (lv_statement_3_0= ruleStatement ) )? otherlv_4= ')' ) )
-            // InternalUduv.g:1930:2: ( () otherlv_1= 'print' otherlv_2= '(' ( (lv_statement_3_0= ruleStatement ) )? otherlv_4= ')' )
+            // InternalUduv.g:1929:2: ( ( () otherlv_1= 'print' otherlv_2= '(' ( (lv_statement_3_0= ruleStatement ) )* otherlv_4= ')' ) )
+            // InternalUduv.g:1930:2: ( () otherlv_1= 'print' otherlv_2= '(' ( (lv_statement_3_0= ruleStatement ) )* otherlv_4= ')' )
             {
-            // InternalUduv.g:1930:2: ( () otherlv_1= 'print' otherlv_2= '(' ( (lv_statement_3_0= ruleStatement ) )? otherlv_4= ')' )
-            // InternalUduv.g:1931:3: () otherlv_1= 'print' otherlv_2= '(' ( (lv_statement_3_0= ruleStatement ) )? otherlv_4= ')'
+            // InternalUduv.g:1930:2: ( () otherlv_1= 'print' otherlv_2= '(' ( (lv_statement_3_0= ruleStatement ) )* otherlv_4= ')' )
+            // InternalUduv.g:1931:3: () otherlv_1= 'print' otherlv_2= '(' ( (lv_statement_3_0= ruleStatement ) )* otherlv_4= ')'
             {
             // InternalUduv.g:1931:3: ()
             // InternalUduv.g:1932:4: 
@@ -5303,51 +5303,58 @@ public class InternalUduvParser extends AbstractInternalAntlrParser {
               			newLeafNode(otherlv_2, grammarAccess.getPrintAccess().getLeftParenthesisKeyword_2());
               		
             }
-            // InternalUduv.g:1949:3: ( (lv_statement_3_0= ruleStatement ) )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // InternalUduv.g:1949:3: ( (lv_statement_3_0= ruleStatement ) )*
+            loop15:
+            do {
+                int alt15=2;
+                int LA15_0 = input.LA(1);
 
-            if ( ((LA15_0>=RULE_STRING && LA15_0<=RULE_INT)||(LA15_0>=11 && LA15_0<=12)||(LA15_0>=15 && LA15_0<=17)||LA15_0==20||(LA15_0>=30 && LA15_0<=36)) ) {
-                alt15=1;
-            }
-            switch (alt15) {
-                case 1 :
-                    // InternalUduv.g:1950:4: (lv_statement_3_0= ruleStatement )
-                    {
-                    // InternalUduv.g:1950:4: (lv_statement_3_0= ruleStatement )
-                    // InternalUduv.g:1951:5: lv_statement_3_0= ruleStatement
-                    {
-                    if ( state.backtracking==0 ) {
-
-                      					newCompositeNode(grammarAccess.getPrintAccess().getStatementStatementParserRuleCall_3_0());
-                      				
-                    }
-                    pushFollow(FOLLOW_11);
-                    lv_statement_3_0=ruleStatement();
-
-                    state._fsp--;
-                    if (state.failed) return current;
-                    if ( state.backtracking==0 ) {
-
-                      					if (current==null) {
-                      						current = createModelElementForParent(grammarAccess.getPrintRule());
-                      					}
-                      					add(
-                      						current,
-                      						"statement",
-                      						lv_statement_3_0,
-                      						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Statement");
-                      					afterParserOrEnumRuleCall();
-                      				
-                    }
-
-                    }
+                if ( ((LA15_0>=RULE_STRING && LA15_0<=RULE_INT)||(LA15_0>=11 && LA15_0<=12)||(LA15_0>=15 && LA15_0<=17)||LA15_0==20||(LA15_0>=30 && LA15_0<=36)) ) {
+                    alt15=1;
+                }
 
 
-                    }
-                    break;
+                switch (alt15) {
+            	case 1 :
+            	    // InternalUduv.g:1950:4: (lv_statement_3_0= ruleStatement )
+            	    {
+            	    // InternalUduv.g:1950:4: (lv_statement_3_0= ruleStatement )
+            	    // InternalUduv.g:1951:5: lv_statement_3_0= ruleStatement
+            	    {
+            	    if ( state.backtracking==0 ) {
 
-            }
+            	      					newCompositeNode(grammarAccess.getPrintAccess().getStatementStatementParserRuleCall_3_0());
+            	      				
+            	    }
+            	    pushFollow(FOLLOW_25);
+            	    lv_statement_3_0=ruleStatement();
+
+            	    state._fsp--;
+            	    if (state.failed) return current;
+            	    if ( state.backtracking==0 ) {
+
+            	      					if (current==null) {
+            	      						current = createModelElementForParent(grammarAccess.getPrintRule());
+            	      					}
+            	      					add(
+            	      						current,
+            	      						"statement",
+            	      						lv_statement_3_0,
+            	      						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Statement");
+            	      					afterParserOrEnumRuleCall();
+            	      				
+            	    }
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop15;
+                }
+            } while (true);
 
             otherlv_4=(Token)match(input,19,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {

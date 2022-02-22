@@ -17,6 +17,7 @@
     </genClasses>
     <genClasses image="false" ecoreClass="legolanguagePr.ecore#//Statement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Statement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Statement/isInConditionial"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//Variable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Variable/isInExpression"/>

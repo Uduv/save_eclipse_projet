@@ -1964,7 +1964,7 @@ rulePrint returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)?
+		)*
 		otherlv_4=')'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getPrintAccess().getRightParenthesisKeyword_4());

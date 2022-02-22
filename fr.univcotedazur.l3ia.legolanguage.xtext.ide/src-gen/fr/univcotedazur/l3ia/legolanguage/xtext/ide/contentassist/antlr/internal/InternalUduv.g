@@ -3926,7 +3926,7 @@ rule__Print__Group__3__Impl
 :
 (
 	{ before(grammarAccess.getPrintAccess().getStatementAssignment_3()); }
-	(rule__Print__StatementAssignment_3)?
+	(rule__Print__StatementAssignment_3)*
 	{ after(grammarAccess.getPrintAccess().getStatementAssignment_3()); }
 )
 ;

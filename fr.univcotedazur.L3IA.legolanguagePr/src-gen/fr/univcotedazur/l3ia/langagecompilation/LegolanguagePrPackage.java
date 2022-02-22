@@ -122,13 +122,22 @@ public interface LegolanguagePrPackage extends EPackage {
 	int STATEMENT__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEMENT__IS_IN_CONDITIONIAL = 1;
+
+	/**
 	 * The number of structural features of the '<em>Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATEMENT_FEATURE_COUNT = 1;
+	int STATEMENT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Statement</em>' class.
@@ -157,6 +166,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int VARIABLE__NAME = STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__IS_IN_CONDITIONIAL = STATEMENT__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
@@ -205,6 +223,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LOOP__NAME = STATEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOOP__IS_IN_CONDITIONIAL = STATEMENT__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Statement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -249,6 +276,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int WHILE_LOOP__NAME = LOOP__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_LOOP__IS_IN_CONDITIONIAL = LOOP__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Statement</b></em>' containment reference list.
@@ -306,6 +342,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int EXPRESSION__NAME = STATEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION__IS_IN_CONDITIONIAL = STATEMENT__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -341,6 +386,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int BINARY_OPERATION__NAME = EXPRESSION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OPERATION__IS_IN_CONDITIONIAL = EXPRESSION__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -398,6 +452,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int CALCUL__NAME = BINARY_OPERATION__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CALCUL__IS_IN_CONDITIONIAL = BINARY_OPERATION__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -451,6 +514,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int SUBSTARCTION__NAME = CALCUL__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBSTARCTION__IS_IN_CONDITIONIAL = CALCUL__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -508,6 +580,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int COMPARAISON__NAME = BINARY_OPERATION__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPARAISON__IS_IN_CONDITIONIAL = BINARY_OPERATION__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -561,6 +642,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int GT__NAME = COMPARAISON__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GT__IS_IN_CONDITIONIAL = COMPARAISON__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -618,6 +708,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int ASSIGNEMENT__NAME = BINARY_OPERATION__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNEMENT__IS_IN_CONDITIONIAL = BINARY_OPERATION__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -671,6 +770,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int LE_INTEGER__NAME = VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_INTEGER__IS_IN_CONDITIONIAL = VARIABLE__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
@@ -728,6 +836,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_STRING__NAME = VARIABLE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_STRING__IS_IN_CONDITIONIAL = VARIABLE__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -781,6 +898,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int LT__NAME = COMPARAISON__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LT__IS_IN_CONDITIONIAL = COMPARAISON__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -838,6 +964,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int FOR_LOOP__NAME = LOOP__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_LOOP__IS_IN_CONDITIONIAL = LOOP__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Statement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -893,6 +1028,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int PRINT__NAME = STATEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT__IS_IN_CONDITIONIAL = STATEMENT__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Statement</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -939,6 +1083,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int VARIABLE_PROXY__NAME = EXPRESSION__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_PROXY__IS_IN_CONDITIONIAL = EXPRESSION__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Variable</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -983,6 +1136,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int EQUAL__NAME = COMPARAISON__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EQUAL__IS_IN_CONDITIONIAL = COMPARAISON__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1040,6 +1202,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_BOOLEAN__NAME = VARIABLE__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_BOOLEAN__IS_IN_CONDITIONIAL = VARIABLE__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1093,6 +1264,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int LE_FLOAT__NAME = VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LE_FLOAT__IS_IN_CONDITIONIAL = VARIABLE__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
@@ -1150,6 +1330,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int ADDITION__NAME = CALCUL__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADDITION__IS_IN_CONDITIONIAL = CALCUL__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1203,6 +1392,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMENTARY__NAME = STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENTARY__IS_IN_CONDITIONIAL = STATEMENT__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Statement</b></em>' containment reference list.
@@ -1260,6 +1458,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int DIVISION__NAME = CALCUL__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIVISION__IS_IN_CONDITIONIAL = CALCUL__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1313,6 +1520,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXPONENTIAL__NAME = CALCUL__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPONENTIAL__IS_IN_CONDITIONIAL = CALCUL__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1370,6 +1586,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int MULTIPLICATION__NAME = CALCUL__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MULTIPLICATION__IS_IN_CONDITIONIAL = CALCUL__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1423,6 +1648,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int IF__NAME = STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF__IS_IN_CONDITIONIAL = STATEMENT__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -1480,6 +1714,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	int GT_EQUAL__NAME = COMPARAISON__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GT_EQUAL__IS_IN_CONDITIONIAL = COMPARAISON__IS_IN_CONDITIONIAL;
+
+	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1533,6 +1776,15 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int LT_EQUAL__NAME = COMPARAISON__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LT_EQUAL__IS_IN_CONDITIONIAL = COMPARAISON__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1622,6 +1874,17 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getStatement_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.Statement#isIsInConditionial <em>Is In Conditionial</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is In Conditionial</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Statement#isIsInConditionial()
+	 * @see #getStatement()
+	 * @generated
+	 */
+	EAttribute getStatement_IsInConditionial();
 
 	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Variable <em>Variable</em>}'.
@@ -2135,6 +2398,14 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STATEMENT__NAME = eINSTANCE.getStatement_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Is In Conditionial</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATEMENT__IS_IN_CONDITIONIAL = eINSTANCE.getStatement_IsInConditionial();
 
 		/**
 		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.VariableImpl <em>Variable</em>}' class.

@@ -5,7 +5,7 @@
     <semanticResources>legolanguagePr.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Wd2QoIjfEeyvpJt1YElzLQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_WfdaMIjfEeyvpJt1YElzLQ" name="legolanguagePr" repPath="#_We0hAIjfEeyvpJt1YElzLQ" changeId="fff67ee0-6015-4d1c-87d6-2b6eda5d984c">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_WfdaMIjfEeyvpJt1YElzLQ" name="legolanguagePr" repPath="#_We0hAIjfEeyvpJt1YElzLQ" changeId="7222f139-a8bb-44e6-8bdf-5a008e39d948">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="legolanguagePr.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -42,6 +42,10 @@
             <children xmi:type="notation:Node" xmi:id="_mFvLgIjfEey6E_WkB7-9vA" type="3010" element="_mFSfkIjfEey6E_WkB7-9vA">
               <styles xmi:type="notation:FontStyle" xmi:id="_mFvLgYjfEey6E_WkB7-9vA" fontName=".AppleSystemUIFont" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_mFvLgojfEey6E_WkB7-9vA"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_4wivMJPfEeyXRb09mrLRPw" type="3010" element="_4vxTIJPfEeyXRb09mrLRPw">
+              <styles xmi:type="notation:FontStyle" xmi:id="_4wivMZPfEeyXRb09mrLRPw" fontColor="2697711" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_4wivMpPfEeyXRb09mrLRPw"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_mFpr9YjfEey6E_WkB7-9vA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_mFpr9ojfEey6E_WkB7-9vA"/>
@@ -1001,7 +1005,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_mE428IjfEey6E_WkB7-9vA" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_Yb_lk5PmEeyQ34j2VjKjUQ" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
         <labelFormat>italic</labelFormat>
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
@@ -1010,6 +1014,14 @@
         <target xmi:type="ecore:EAttribute" href="legolanguagePr.ecore#//Statement/name"/>
         <semanticElements xmi:type="ecore:EAttribute" href="legolanguagePr.ecore#//Statement/name"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_mFTGoIjfEey6E_WkB7-9vA" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_4vxTIJPfEeyXRb09mrLRPw" name="isInConditionial : Boolean = false" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="legolanguagePr.ecore#//Statement/isInConditionial"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="legolanguagePr.ecore#//Statement/isInConditionial"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Scr9QpPgEeyXRb09mrLRPw" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>

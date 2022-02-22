@@ -54,6 +54,7 @@ public class StatementItemProvider extends ItemProviderAdapter implements IEditi
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addIsInConditionialPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -72,6 +73,22 @@ public class StatementItemProvider extends ItemProviderAdapter implements IEditi
 								"_UI_Statement_type"),
 						LegolanguagePrPackage.Literals.STATEMENT__NAME, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is In Conditionial feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsInConditionialPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Statement_isInConditionial_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Statement_isInConditionial_feature",
+								"_UI_Statement_type"),
+						LegolanguagePrPackage.Literals.STATEMENT__IS_IN_CONDITIONIAL, true, false, false,
+						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -110,6 +127,7 @@ public class StatementItemProvider extends ItemProviderAdapter implements IEditi
 
 		switch (notification.getFeatureID(Statement.class)) {
 		case LegolanguagePrPackage.STATEMENT__NAME:
+		case LegolanguagePrPackage.STATEMENT__IS_IN_CONDITIONIAL:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

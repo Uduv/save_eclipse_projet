@@ -176,7 +176,7 @@ LeFloat returns LeFloat:
 
 Print returns Print:
 	{Print}
-	'print' '(' (statement+=Statement)? ')'
+	'print' '(' (statement+=Statement)* ')'
 	;
 
 VariableProxy returns VariableProxy:
