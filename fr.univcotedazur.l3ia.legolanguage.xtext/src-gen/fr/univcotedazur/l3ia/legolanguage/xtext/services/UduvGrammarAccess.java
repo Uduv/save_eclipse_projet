@@ -55,19 +55,19 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cIfParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cLoopParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cComparaisonParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cCalculParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cAssignementParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cVariableProxyParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cPrintParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cExpressionParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cCommentaryParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cVariableParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cPrintParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cExpressionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cCommentaryParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cRobotDeclarationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cSensorParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cActuatorParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
 		
 		//Statement returns Statement:
-		//    If | Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary;
+		//    If | Loop  | Variable | Print | Expression | Commentary | RobotDeclaration | Sensor | Actuator ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//If | Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary
+		//If | Loop  | Variable | Print | Expression | Commentary | RobotDeclaration | Sensor | Actuator
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//If
@@ -76,57 +76,146 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//Loop
 		public RuleCall getLoopParserRuleCall_1() { return cLoopParserRuleCall_1; }
 		
-		//Comparaison
-		public RuleCall getComparaisonParserRuleCall_2() { return cComparaisonParserRuleCall_2; }
-		
-		//Calcul
-		public RuleCall getCalculParserRuleCall_3() { return cCalculParserRuleCall_3; }
-		
-		//Assignement
-		public RuleCall getAssignementParserRuleCall_4() { return cAssignementParserRuleCall_4; }
-		
-		//VariableProxy
-		public RuleCall getVariableProxyParserRuleCall_5() { return cVariableProxyParserRuleCall_5; }
+		//Variable
+		public RuleCall getVariableParserRuleCall_2() { return cVariableParserRuleCall_2; }
 		
 		//Print
-		public RuleCall getPrintParserRuleCall_6() { return cPrintParserRuleCall_6; }
+		public RuleCall getPrintParserRuleCall_3() { return cPrintParserRuleCall_3; }
 		
 		//Expression
-		public RuleCall getExpressionParserRuleCall_7() { return cExpressionParserRuleCall_7; }
+		public RuleCall getExpressionParserRuleCall_4() { return cExpressionParserRuleCall_4; }
 		
 		//Commentary
-		public RuleCall getCommentaryParserRuleCall_8() { return cCommentaryParserRuleCall_8; }
+		public RuleCall getCommentaryParserRuleCall_5() { return cCommentaryParserRuleCall_5; }
+		
+		//RobotDeclaration
+		public RuleCall getRobotDeclarationParserRuleCall_6() { return cRobotDeclarationParserRuleCall_6; }
+		
+		//Sensor
+		public RuleCall getSensorParserRuleCall_7() { return cSensorParserRuleCall_7; }
+		
+		//Actuator
+		public RuleCall getActuatorParserRuleCall_8() { return cActuatorParserRuleCall_8; }
+	}
+	public class RobotDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.RobotDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cRobotKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cLeftKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cLeftWheelAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cLeftWheelWheelParserRuleCall_2_2_0 = (RuleCall)cLeftWheelAssignment_2_2.eContents().get(0);
+		private final Keyword cRightKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
+		private final Assignment cRightWheelAssignment_2_4 = (Assignment)cGroup_2.eContents().get(4);
+		private final RuleCall cRightWheelWheelParserRuleCall_2_4_0 = (RuleCall)cRightWheelAssignment_2_4.eContents().get(0);
+		private final Assignment cActuatorAssignment_2_5 = (Assignment)cGroup_2.eContents().get(5);
+		private final RuleCall cActuatorActuatorParserRuleCall_2_5_0 = (RuleCall)cActuatorAssignment_2_5.eContents().get(0);
+		private final Assignment cSensorAssignment_2_6 = (Assignment)cGroup_2.eContents().get(6);
+		private final RuleCall cSensorSensorParserRuleCall_2_6_0 = (RuleCall)cSensorAssignment_2_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2_7 = (Keyword)cGroup_2.eContents().get(7);
+		
+		//RobotDeclaration returns Robot:
+		//    'Robot' name=ID
+		//        ('{'
+		//        "left" leftWheel = Wheel
+		//        "right" rightWheel= Wheel
+		//        (actuator+=Actuator)*
+		//        (sensor+=Sensor)*
+		//        '}')?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Robot' name=ID
+		//    ('{'
+		//    "left" leftWheel = Wheel
+		//    "right" rightWheel= Wheel
+		//    (actuator+=Actuator)*
+		//    (sensor+=Sensor)*
+		//    '}')?
+		public Group getGroup() { return cGroup; }
+		
+		//'Robot'
+		public Keyword getRobotKeyword_0() { return cRobotKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//('{'
+		//"left" leftWheel = Wheel
+		//"right" rightWheel= Wheel
+		//(actuator+=Actuator)*
+		//(sensor+=Sensor)*
+		//'}')?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
+		
+		//"left"
+		public Keyword getLeftKeyword_2_1() { return cLeftKeyword_2_1; }
+		
+		//leftWheel = Wheel
+		public Assignment getLeftWheelAssignment_2_2() { return cLeftWheelAssignment_2_2; }
+		
+		//Wheel
+		public RuleCall getLeftWheelWheelParserRuleCall_2_2_0() { return cLeftWheelWheelParserRuleCall_2_2_0; }
+		
+		//"right"
+		public Keyword getRightKeyword_2_3() { return cRightKeyword_2_3; }
+		
+		//rightWheel= Wheel
+		public Assignment getRightWheelAssignment_2_4() { return cRightWheelAssignment_2_4; }
+		
+		//Wheel
+		public RuleCall getRightWheelWheelParserRuleCall_2_4_0() { return cRightWheelWheelParserRuleCall_2_4_0; }
+		
+		//(actuator+=Actuator)*
+		public Assignment getActuatorAssignment_2_5() { return cActuatorAssignment_2_5; }
+		
+		//Actuator
+		public RuleCall getActuatorActuatorParserRuleCall_2_5_0() { return cActuatorActuatorParserRuleCall_2_5_0; }
+		
+		//(sensor+=Sensor)*
+		public Assignment getSensorAssignment_2_6() { return cSensorAssignment_2_6; }
+		
+		//Sensor
+		public RuleCall getSensorSensorParserRuleCall_2_6_0() { return cSensorSensorParserRuleCall_2_6_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2_7() { return cRightCurlyBracketKeyword_2_7; }
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cAssignementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cVariableProxyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cVariableParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cCalculParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cComparaisonParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cSensorProxyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cActuatorProxyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cVariableProxyParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cBinaryOperationParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//Expression returns Expression:
-		//     Assignement | VariableProxy | Variable | Calcul | Comparaison ;
+		//     SensorProxy | ActuatorProxy | VariableProxy  | BinaryOperation;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Assignement | VariableProxy | Variable | Calcul | Comparaison
+		//SensorProxy | ActuatorProxy | VariableProxy  | BinaryOperation
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//Assignement
-		public RuleCall getAssignementParserRuleCall_0() { return cAssignementParserRuleCall_0; }
+		//SensorProxy
+		public RuleCall getSensorProxyParserRuleCall_0() { return cSensorProxyParserRuleCall_0; }
+		
+		//ActuatorProxy
+		public RuleCall getActuatorProxyParserRuleCall_1() { return cActuatorProxyParserRuleCall_1; }
 		
 		//VariableProxy
-		public RuleCall getVariableProxyParserRuleCall_1() { return cVariableProxyParserRuleCall_1; }
+		public RuleCall getVariableProxyParserRuleCall_2() { return cVariableProxyParserRuleCall_2; }
 		
-		//Variable
-		public RuleCall getVariableParserRuleCall_2() { return cVariableParserRuleCall_2; }
-		
-		//Calcul
-		public RuleCall getCalculParserRuleCall_3() { return cCalculParserRuleCall_3; }
-		
-		//Comparaison
-		public RuleCall getComparaisonParserRuleCall_4() { return cComparaisonParserRuleCall_4; }
+		//BinaryOperation
+		public RuleCall getBinaryOperationParserRuleCall_3() { return cBinaryOperationParserRuleCall_3; }
 	}
 	public class CalculElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Calcul");
@@ -158,6 +247,29 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//Multiplication
 		public RuleCall getMultiplicationParserRuleCall_4() { return cMultiplicationParserRuleCall_4; }
+	}
+	public class BinaryOperationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.BinaryOperation");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cComparaisonParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cCalculParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cAssignementParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//BinaryOperation returns BinaryOperation :
+		//Comparaison |  Calcul |  Assignement /*| SensorOperation | ActuatorOperation*/ ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Comparaison |  Calcul |  Assignement
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Comparaison
+		public RuleCall getComparaisonParserRuleCall_0() { return cComparaisonParserRuleCall_0; }
+		
+		//Calcul
+		public RuleCall getCalculParserRuleCall_1() { return cCalculParserRuleCall_1; }
+		
+		//Assignement
+		public RuleCall getAssignementParserRuleCall_2() { return cAssignementParserRuleCall_2; }
 	}
 	public class ComparaisonElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Comparaison");
@@ -216,6 +328,95 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		
 		//LeBoolean
 		public RuleCall getLeBooleanParserRuleCall_3() { return cLeBooleanParserRuleCall_3; }
+	}
+	public class SensorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Sensor");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cColorDectorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cLaserParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Sensor returns Sensor :
+		//    ColorDector | Laser
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ColorDector | Laser
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ColorDector
+		public RuleCall getColorDectorParserRuleCall_0() { return cColorDectorParserRuleCall_0; }
+		
+		//Laser
+		public RuleCall getLaserParserRuleCall_1() { return cLaserParserRuleCall_1; }
+	}
+	public class ActuatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Actuator");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cMotorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cLedParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		///*
+		//ActuatorOperation returns ActuatorOperation :
+		//    Robot = EString
+		//    Go | Turn | ChangeAngle | ChangeIntensityLight | Shoot
+		//;
+		//SensorOperation returns SensorOperation :
+		//    GetColor | GetDistance
+		//;
+		//*/
+		//Actuator returns Actuator :
+		//    Motor | Led
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Motor | Led
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Motor
+		public RuleCall getMotorParserRuleCall_0() { return cMotorParserRuleCall_0; }
+		
+		//Led
+		public RuleCall getLedParserRuleCall_1() { return cLedParserRuleCall_1; }
+	}
+	public class MotorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Motor");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cRotativeMotorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cShootLauncherParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Motor returns Motor :
+		//    RotativeMotor | ShootLauncher
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//RotativeMotor | ShootLauncher
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//RotativeMotor
+		public RuleCall getRotativeMotorParserRuleCall_0() { return cRotativeMotorParserRuleCall_0; }
+		
+		//ShootLauncher
+		public RuleCall getShootLauncherParserRuleCall_1() { return cShootLauncherParserRuleCall_1; }
+	}
+	public class RotativeMotorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.RotativeMotor");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cWheelParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cArmParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//RotativeMotor returns RotativeMotor:
+		//    Wheel | Arm
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Wheel | Arm
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Wheel
+		public RuleCall getWheelParserRuleCall_0() { return cWheelParserRuleCall_0; }
+		
+		//Arm
+		public RuleCall getArmParserRuleCall_1() { return cArmParserRuleCall_1; }
 	}
 	public class CommentaryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Commentary");
@@ -1182,6 +1383,46 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//EString
 		public RuleCall getVariableVariableEStringParserRuleCall_0_1() { return cVariableVariableEStringParserRuleCall_0_1; }
 	}
+	public class SensorProxyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.SensorProxy");
+		private final Assignment cSensorAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cSensorSensorCrossReference_0 = (CrossReference)cSensorAssignment.eContents().get(0);
+		private final RuleCall cSensorSensorEStringParserRuleCall_0_1 = (RuleCall)cSensorSensorCrossReference_0.eContents().get(1);
+		
+		//SensorProxy returns SensorProxy:
+		//    sensor=[Sensor|EString]
+		//    ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//sensor=[Sensor|EString]
+		public Assignment getSensorAssignment() { return cSensorAssignment; }
+		
+		//[Sensor|EString]
+		public CrossReference getSensorSensorCrossReference_0() { return cSensorSensorCrossReference_0; }
+		
+		//EString
+		public RuleCall getSensorSensorEStringParserRuleCall_0_1() { return cSensorSensorEStringParserRuleCall_0_1; }
+	}
+	public class ActuatorProxyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.ActuatorProxy");
+		private final Assignment cActuatorAssignment = (Assignment)rule.eContents().get(1);
+		private final CrossReference cActuatorActuatorCrossReference_0 = (CrossReference)cActuatorAssignment.eContents().get(0);
+		private final RuleCall cActuatorActuatorEStringParserRuleCall_0_1 = (RuleCall)cActuatorActuatorCrossReference_0.eContents().get(1);
+		
+		//ActuatorProxy returns ActuatorProxy:
+		//    actuator=[Actuator|EString]
+		//    ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//actuator=[Actuator|EString]
+		public Assignment getActuatorAssignment() { return cActuatorAssignment; }
+		
+		//[Actuator|EString]
+		public CrossReference getActuatorActuatorCrossReference_0() { return cActuatorActuatorCrossReference_0; }
+		
+		//EString
+		public RuleCall getActuatorActuatorEStringParserRuleCall_0_1() { return cActuatorActuatorEStringParserRuleCall_0_1; }
+	}
 	public class EBooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EBoolean");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1247,7 +1488,8 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//EFloat returns ecore::EFloat:
-		//    INT '.' INT;
+		//    INT '.' INT
+		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//INT '.' INT
@@ -1267,26 +1509,28 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cWheelAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cWheelKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cSideAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cSideEStringParserRuleCall_2_0 = (RuleCall)cSideAssignment_2.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cSpeedAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cSpeedEIntParserRuleCall_4_0 = (RuleCall)cSpeedAssignment_4.eContents().get(0);
+		private final Keyword cOnKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cPortIDAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPortIDEStringParserRuleCall_3_0 = (RuleCall)cPortIDAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cEqualsSignKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cSpeedAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cSpeedEIntParserRuleCall_4_1_0 = (RuleCall)cSpeedAssignment_4_1.eContents().get(0);
 		
 		//Wheel returns Wheel :
 		//    {Wheel}
 		//    'wheel'
-		//    side=EString
-		//    "="
-		//    (speed=EInt)?
+		//    'on'
+		//    portID=EString
+		//    ("=" speed=EInt)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Wheel}
 		//'wheel'
-		//side=EString
-		//"="
-		//(speed=EInt)?
+		//'on'
+		//portID=EString
+		//("=" speed=EInt)?
 		public Group getGroup() { return cGroup; }
 		
 		//{Wheel}
@@ -1295,29 +1539,335 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		//'wheel'
 		public Keyword getWheelKeyword_1() { return cWheelKeyword_1; }
 		
-		//side=EString
-		public Assignment getSideAssignment_2() { return cSideAssignment_2; }
+		//'on'
+		public Keyword getOnKeyword_2() { return cOnKeyword_2; }
+		
+		//portID=EString
+		public Assignment getPortIDAssignment_3() { return cPortIDAssignment_3; }
 		
 		//EString
-		public RuleCall getSideEStringParserRuleCall_2_0() { return cSideEStringParserRuleCall_2_0; }
+		public RuleCall getPortIDEStringParserRuleCall_3_0() { return cPortIDEStringParserRuleCall_3_0; }
+		
+		//("=" speed=EInt)?
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//"="
-		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
+		public Keyword getEqualsSignKeyword_4_0() { return cEqualsSignKeyword_4_0; }
 		
-		//(speed=EInt)?
-		public Assignment getSpeedAssignment_4() { return cSpeedAssignment_4; }
+		//speed=EInt
+		public Assignment getSpeedAssignment_4_1() { return cSpeedAssignment_4_1; }
 		
 		//EInt
-		public RuleCall getSpeedEIntParserRuleCall_4_0() { return cSpeedEIntParserRuleCall_4_0; }
+		public RuleCall getSpeedEIntParserRuleCall_4_1_0() { return cSpeedEIntParserRuleCall_4_1_0; }
+	}
+	public class ArmElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Arm");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cArmAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cArmKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cPortIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPortIDEStringParserRuleCall_4_0 = (RuleCall)cPortIDAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cEqualsSignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cAngleAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cAngleEIntParserRuleCall_5_1_0 = (RuleCall)cAngleAssignment_5_1.eContents().get(0);
+		
+		//Arm returns Arm :
+		//    {Arm}
+		//    'arm'
+		//    name=ID
+		//    'on'
+		//    portID=EString
+		//    ("=" angle=EInt)?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Arm}
+		//'arm'
+		//name=ID
+		//'on'
+		//portID=EString
+		//("=" angle=EInt)?
+		public Group getGroup() { return cGroup; }
+		
+		//{Arm}
+		public Action getArmAction_0() { return cArmAction_0; }
+		
+		//'arm'
+		public Keyword getArmKeyword_1() { return cArmKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		
+		//'on'
+		public Keyword getOnKeyword_3() { return cOnKeyword_3; }
+		
+		//portID=EString
+		public Assignment getPortIDAssignment_4() { return cPortIDAssignment_4; }
+		
+		//EString
+		public RuleCall getPortIDEStringParserRuleCall_4_0() { return cPortIDEStringParserRuleCall_4_0; }
+		
+		//("=" angle=EInt)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_5_0() { return cEqualsSignKeyword_5_0; }
+		
+		//angle=EInt
+		public Assignment getAngleAssignment_5_1() { return cAngleAssignment_5_1; }
+		
+		//EInt
+		public RuleCall getAngleEIntParserRuleCall_5_1_0() { return cAngleEIntParserRuleCall_5_1_0; }
+	}
+	public class LedElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Led");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cLedAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLedKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cPortIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPortIDEStringParserRuleCall_4_0 = (RuleCall)cPortIDAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cEqualsSignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cBrightAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cBrightEIntParserRuleCall_5_1_0 = (RuleCall)cBrightAssignment_5_1.eContents().get(0);
+		
+		//Led returns Led:
+		//    {Led}
+		//    'led'
+		//    name=ID
+		//    'on'
+		//    portID=EString
+		//    ("=" bright=EInt)?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Led}
+		//'led'
+		//name=ID
+		//'on'
+		//portID=EString
+		//("=" bright=EInt)?
+		public Group getGroup() { return cGroup; }
+		
+		//{Led}
+		public Action getLedAction_0() { return cLedAction_0; }
+		
+		//'led'
+		public Keyword getLedKeyword_1() { return cLedKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		
+		//'on'
+		public Keyword getOnKeyword_3() { return cOnKeyword_3; }
+		
+		//portID=EString
+		public Assignment getPortIDAssignment_4() { return cPortIDAssignment_4; }
+		
+		//EString
+		public RuleCall getPortIDEStringParserRuleCall_4_0() { return cPortIDEStringParserRuleCall_4_0; }
+		
+		//("=" bright=EInt)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_5_0() { return cEqualsSignKeyword_5_0; }
+		
+		//bright=EInt
+		public Assignment getBrightAssignment_5_1() { return cBrightAssignment_5_1; }
+		
+		//EInt
+		public RuleCall getBrightEIntParserRuleCall_5_1_0() { return cBrightEIntParserRuleCall_5_1_0; }
+	}
+	public class ShootLauncherElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.ShootLauncher");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cShootLauncherAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cShootLauncherKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cPortIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPortIDEStringParserRuleCall_4_0 = (RuleCall)cPortIDAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cEqualsSignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cForceAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cForceEIntParserRuleCall_5_1_0 = (RuleCall)cForceAssignment_5_1.eContents().get(0);
+		
+		//ShootLauncher returns ShootLauncher :
+		//    {ShootLauncher}
+		//    'shootLauncher'
+		//    name=ID
+		//    'on'
+		//    portID=EString
+		//    ("=" force=EInt)?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ShootLauncher}
+		//'shootLauncher'
+		//name=ID
+		//'on'
+		//portID=EString
+		//("=" force=EInt)?
+		public Group getGroup() { return cGroup; }
+		
+		//{ShootLauncher}
+		public Action getShootLauncherAction_0() { return cShootLauncherAction_0; }
+		
+		//'shootLauncher'
+		public Keyword getShootLauncherKeyword_1() { return cShootLauncherKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		
+		//'on'
+		public Keyword getOnKeyword_3() { return cOnKeyword_3; }
+		
+		//portID=EString
+		public Assignment getPortIDAssignment_4() { return cPortIDAssignment_4; }
+		
+		//EString
+		public RuleCall getPortIDEStringParserRuleCall_4_0() { return cPortIDEStringParserRuleCall_4_0; }
+		
+		//("=" force=EInt)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_5_0() { return cEqualsSignKeyword_5_0; }
+		
+		//force=EInt
+		public Assignment getForceAssignment_5_1() { return cForceAssignment_5_1; }
+		
+		//EInt
+		public RuleCall getForceEIntParserRuleCall_5_1_0() { return cForceEIntParserRuleCall_5_1_0; }
+	}
+	public class ColorDectorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.ColorDector");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cColorDectorAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cColorDectorKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cPortIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPortIDEStringParserRuleCall_4_0 = (RuleCall)cPortIDAssignment_4.eContents().get(0);
+		
+		//ColorDector returns ColorDector :
+		//    {ColorDector}
+		//    'colorDector'
+		//    name=ID
+		//    'on'
+		//    portID=EString
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ColorDector}
+		//'colorDector'
+		//name=ID
+		//'on'
+		//portID=EString
+		public Group getGroup() { return cGroup; }
+		
+		//{ColorDector}
+		public Action getColorDectorAction_0() { return cColorDectorAction_0; }
+		
+		//'colorDector'
+		public Keyword getColorDectorKeyword_1() { return cColorDectorKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		
+		//'on'
+		public Keyword getOnKeyword_3() { return cOnKeyword_3; }
+		
+		//portID=EString
+		public Assignment getPortIDAssignment_4() { return cPortIDAssignment_4; }
+		
+		//EString
+		public RuleCall getPortIDEStringParserRuleCall_4_0() { return cPortIDEStringParserRuleCall_4_0; }
+	}
+	public class LaserElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Laser");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cLaserAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cLaserKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cPortIDAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPortIDEStringParserRuleCall_4_0 = (RuleCall)cPortIDAssignment_4.eContents().get(0);
+		
+		//Laser returns Laser :
+		//    {Laser}
+		//    'laser'
+		//    name=ID
+		//    'on'
+		//    portID=EString
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Laser}
+		//'laser'
+		//name=ID
+		//'on'
+		//portID=EString
+		public Group getGroup() { return cGroup; }
+		
+		//{Laser}
+		public Action getLaserAction_0() { return cLaserAction_0; }
+		
+		//'laser'
+		public Keyword getLaserKeyword_1() { return cLaserKeyword_1; }
+		
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		
+		//'on'
+		public Keyword getOnKeyword_3() { return cOnKeyword_3; }
+		
+		//portID=EString
+		public Assignment getPortIDAssignment_4() { return cPortIDAssignment_4; }
+		
+		//EString
+		public RuleCall getPortIDEStringParserRuleCall_4_0() { return cPortIDEStringParserRuleCall_4_0; }
 	}
 	
 	
 	private final ProgramElements pProgram;
 	private final StatementElements pStatement;
+	private final RobotDeclarationElements pRobotDeclaration;
 	private final ExpressionElements pExpression;
 	private final CalculElements pCalcul;
+	private final BinaryOperationElements pBinaryOperation;
 	private final ComparaisonElements pComparaison;
 	private final VariableElements pVariable;
+	private final SensorElements pSensor;
+	private final ActuatorElements pActuator;
+	private final MotorElements pMotor;
+	private final RotativeMotorElements pRotativeMotor;
 	private final CommentaryElements pCommentary;
 	private final LoopElements pLoop;
 	private final IfElements pIf;
@@ -1340,11 +1890,18 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	private final LeFloatElements pLeFloat;
 	private final PrintElements pPrint;
 	private final VariableProxyElements pVariableProxy;
+	private final SensorProxyElements pSensorProxy;
+	private final ActuatorProxyElements pActuatorProxy;
 	private final EBooleanElements pEBoolean;
 	private final EStringElements pEString;
 	private final EIntElements pEInt;
 	private final EFloatElements pEFloat;
 	private final WheelElements pWheel;
+	private final ArmElements pArm;
+	private final LedElements pLed;
+	private final ShootLauncherElements pShootLauncher;
+	private final ColorDectorElements pColorDector;
+	private final LaserElements pLaser;
 	
 	private final Grammar grammar;
 	
@@ -1357,10 +1914,16 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.gaTerminals = gaTerminals;
 		this.pProgram = new ProgramElements();
 		this.pStatement = new StatementElements();
+		this.pRobotDeclaration = new RobotDeclarationElements();
 		this.pExpression = new ExpressionElements();
 		this.pCalcul = new CalculElements();
+		this.pBinaryOperation = new BinaryOperationElements();
 		this.pComparaison = new ComparaisonElements();
 		this.pVariable = new VariableElements();
+		this.pSensor = new SensorElements();
+		this.pActuator = new ActuatorElements();
+		this.pMotor = new MotorElements();
+		this.pRotativeMotor = new RotativeMotorElements();
 		this.pCommentary = new CommentaryElements();
 		this.pLoop = new LoopElements();
 		this.pIf = new IfElements();
@@ -1383,11 +1946,18 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		this.pLeFloat = new LeFloatElements();
 		this.pPrint = new PrintElements();
 		this.pVariableProxy = new VariableProxyElements();
+		this.pSensorProxy = new SensorProxyElements();
+		this.pActuatorProxy = new ActuatorProxyElements();
 		this.pEBoolean = new EBooleanElements();
 		this.pEString = new EStringElements();
 		this.pEInt = new EIntElements();
 		this.pEFloat = new EFloatElements();
 		this.pWheel = new WheelElements();
+		this.pArm = new ArmElements();
+		this.pLed = new LedElements();
+		this.pShootLauncher = new ShootLauncherElements();
+		this.pColorDector = new ColorDectorElements();
+		this.pLaser = new LaserElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1430,7 +2000,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Statement returns Statement:
-	//    If | Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary;
+	//    If | Loop  | Variable | Print | Expression | Commentary | RobotDeclaration | Sensor | Actuator ;
 	public StatementElements getStatementAccess() {
 		return pStatement;
 	}
@@ -1439,8 +2009,25 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getStatementAccess().getRule();
 	}
 	
+	//RobotDeclaration returns Robot:
+	//    'Robot' name=ID
+	//        ('{'
+	//        "left" leftWheel = Wheel
+	//        "right" rightWheel= Wheel
+	//        (actuator+=Actuator)*
+	//        (sensor+=Sensor)*
+	//        '}')?
+	//;
+	public RobotDeclarationElements getRobotDeclarationAccess() {
+		return pRobotDeclaration;
+	}
+	
+	public ParserRule getRobotDeclarationRule() {
+		return getRobotDeclarationAccess().getRule();
+	}
+	
 	//Expression returns Expression:
-	//     Assignement | VariableProxy | Variable | Calcul | Comparaison ;
+	//     SensorProxy | ActuatorProxy | VariableProxy  | BinaryOperation;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -1457,6 +2044,16 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getCalculRule() {
 		return getCalculAccess().getRule();
+	}
+	
+	//BinaryOperation returns BinaryOperation :
+	//Comparaison |  Calcul |  Assignement /*| SensorOperation | ActuatorOperation*/ ;
+	public BinaryOperationElements getBinaryOperationAccess() {
+		return pBinaryOperation;
+	}
+	
+	public ParserRule getBinaryOperationRule() {
+		return getBinaryOperationAccess().getRule();
 	}
 	
 	//Comparaison returns Comparaison:
@@ -1477,6 +2074,59 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getVariableRule() {
 		return getVariableAccess().getRule();
+	}
+	
+	//Sensor returns Sensor :
+	//    ColorDector | Laser
+	//;
+	public SensorElements getSensorAccess() {
+		return pSensor;
+	}
+	
+	public ParserRule getSensorRule() {
+		return getSensorAccess().getRule();
+	}
+	
+	///*
+	//ActuatorOperation returns ActuatorOperation :
+	//    Robot = EString
+	//    Go | Turn | ChangeAngle | ChangeIntensityLight | Shoot
+	//;
+	//SensorOperation returns SensorOperation :
+	//    GetColor | GetDistance
+	//;
+	//*/
+	//Actuator returns Actuator :
+	//    Motor | Led
+	//;
+	public ActuatorElements getActuatorAccess() {
+		return pActuator;
+	}
+	
+	public ParserRule getActuatorRule() {
+		return getActuatorAccess().getRule();
+	}
+	
+	//Motor returns Motor :
+	//    RotativeMotor | ShootLauncher
+	//;
+	public MotorElements getMotorAccess() {
+		return pMotor;
+	}
+	
+	public ParserRule getMotorRule() {
+		return getMotorAccess().getRule();
+	}
+	
+	//RotativeMotor returns RotativeMotor:
+	//    Wheel | Arm
+	//;
+	public RotativeMotorElements getRotativeMotorAccess() {
+		return pRotativeMotor;
+	}
+	
+	public ParserRule getRotativeMotorRule() {
+		return getRotativeMotorAccess().getRule();
 	}
 	
 	//Commentary returns Commentary:
@@ -1774,6 +2424,28 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getVariableProxyAccess().getRule();
 	}
 	
+	//SensorProxy returns SensorProxy:
+	//    sensor=[Sensor|EString]
+	//    ;
+	public SensorProxyElements getSensorProxyAccess() {
+		return pSensorProxy;
+	}
+	
+	public ParserRule getSensorProxyRule() {
+		return getSensorProxyAccess().getRule();
+	}
+	
+	//ActuatorProxy returns ActuatorProxy:
+	//    actuator=[Actuator|EString]
+	//    ;
+	public ActuatorProxyElements getActuatorProxyAccess() {
+		return pActuatorProxy;
+	}
+	
+	public ParserRule getActuatorProxyRule() {
+		return getActuatorProxyAccess().getRule();
+	}
+	
 	//EBoolean returns ecore::EBoolean:
 	//    'True' | 'False';
 	public EBooleanElements getEBooleanAccess() {
@@ -1805,7 +2477,8 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//EFloat returns ecore::EFloat:
-	//    INT '.' INT;
+	//    INT '.' INT
+	//    ;
 	public EFloatElements getEFloatAccess() {
 		return pEFloat;
 	}
@@ -1817,9 +2490,9 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	//Wheel returns Wheel :
 	//    {Wheel}
 	//    'wheel'
-	//    side=EString
-	//    "="
-	//    (speed=EInt)?
+	//    'on'
+	//    portID=EString
+	//    ("=" speed=EInt)?
 	//;
 	public WheelElements getWheelAccess() {
 		return pWheel;
@@ -1827,6 +2500,84 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	
 	public ParserRule getWheelRule() {
 		return getWheelAccess().getRule();
+	}
+	
+	//Arm returns Arm :
+	//    {Arm}
+	//    'arm'
+	//    name=ID
+	//    'on'
+	//    portID=EString
+	//    ("=" angle=EInt)?
+	//;
+	public ArmElements getArmAccess() {
+		return pArm;
+	}
+	
+	public ParserRule getArmRule() {
+		return getArmAccess().getRule();
+	}
+	
+	//Led returns Led:
+	//    {Led}
+	//    'led'
+	//    name=ID
+	//    'on'
+	//    portID=EString
+	//    ("=" bright=EInt)?
+	//;
+	public LedElements getLedAccess() {
+		return pLed;
+	}
+	
+	public ParserRule getLedRule() {
+		return getLedAccess().getRule();
+	}
+	
+	//ShootLauncher returns ShootLauncher :
+	//    {ShootLauncher}
+	//    'shootLauncher'
+	//    name=ID
+	//    'on'
+	//    portID=EString
+	//    ("=" force=EInt)?
+	//;
+	public ShootLauncherElements getShootLauncherAccess() {
+		return pShootLauncher;
+	}
+	
+	public ParserRule getShootLauncherRule() {
+		return getShootLauncherAccess().getRule();
+	}
+	
+	//ColorDector returns ColorDector :
+	//    {ColorDector}
+	//    'colorDector'
+	//    name=ID
+	//    'on'
+	//    portID=EString
+	//;
+	public ColorDectorElements getColorDectorAccess() {
+		return pColorDector;
+	}
+	
+	public ParserRule getColorDectorRule() {
+		return getColorDectorAccess().getRule();
+	}
+	
+	//Laser returns Laser :
+	//    {Laser}
+	//    'laser'
+	//    name=ID
+	//    'on'
+	//    portID=EString
+	//;
+	public LaserElements getLaserAccess() {
+		return pLaser;
+	}
+	
+	public ParserRule getLaserRule() {
+		return getLaserAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

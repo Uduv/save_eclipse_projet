@@ -12,5 +12,5 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @model abstract="true"
  * @generated
  */
-public interface Motor extends Activator {
+public interface Motor extends Actuator {
 } // Motor

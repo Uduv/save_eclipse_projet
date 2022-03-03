@@ -283,6 +283,87 @@ public interface LegolanguagePrFactory extends EFactory {
 	Arm createArm();
 
 	/**
+	 * Returns a new object of class '<em>Sensor Proxy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Sensor Proxy</em>'.
+	 * @generated
+	 */
+	SensorProxy createSensorProxy();
+
+	/**
+	 * Returns a new object of class '<em>Actuator Proxy</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Actuator Proxy</em>'.
+	 * @generated
+	 */
+	ActuatorProxy createActuatorProxy();
+
+	/**
+	 * Returns a new object of class '<em>Go</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Go</em>'.
+	 * @generated
+	 */
+	Go createGo();
+
+	/**
+	 * Returns a new object of class '<em>Change Angle</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Change Angle</em>'.
+	 * @generated
+	 */
+	ChangeAngle createChangeAngle();
+
+	/**
+	 * Returns a new object of class '<em>Change Intensity Light</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Change Intensity Light</em>'.
+	 * @generated
+	 */
+	ChangeIntensityLight createChangeIntensityLight();
+
+	/**
+	 * Returns a new object of class '<em>Get Color</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Get Color</em>'.
+	 * @generated
+	 */
+	GetColor createGetColor();
+
+	/**
+	 * Returns a new object of class '<em>Get Distance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Get Distance</em>'.
+	 * @generated
+	 */
+	GetDistance createGetDistance();
+
+	/**
+	 * Returns a new object of class '<em>Turn</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Turn</em>'.
+	 * @generated
+	 */
+	Turn createTurn();
+
+	/**
+	 * Returns a new object of class '<em>Shoot</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Shoot</em>'.
+	 * @generated
+	 */
+	Shoot createShoot();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class MotorImpl extends ActivatorImpl implements Motor {
+public abstract class MotorImpl extends ActuatorImpl implements Motor {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

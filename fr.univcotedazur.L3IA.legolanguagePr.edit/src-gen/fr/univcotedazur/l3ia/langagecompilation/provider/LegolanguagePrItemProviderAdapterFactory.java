@@ -740,6 +740,213 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.SensorProxy} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SensorProxyItemProvider sensorProxyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.SensorProxy}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSensorProxyAdapter() {
+		if (sensorProxyItemProvider == null) {
+			sensorProxyItemProvider = new SensorProxyItemProvider(this);
+		}
+
+		return sensorProxyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.ActuatorProxy} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ActuatorProxyItemProvider actuatorProxyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ActuatorProxy}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createActuatorProxyAdapter() {
+		if (actuatorProxyItemProvider == null) {
+			actuatorProxyItemProvider = new ActuatorProxyItemProvider(this);
+		}
+
+		return actuatorProxyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Go} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GoItemProvider goItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Go}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGoAdapter() {
+		if (goItemProvider == null) {
+			goItemProvider = new GoItemProvider(this);
+		}
+
+		return goItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.ChangeAngle} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChangeAngleItemProvider changeAngleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ChangeAngle}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChangeAngleAdapter() {
+		if (changeAngleItemProvider == null) {
+			changeAngleItemProvider = new ChangeAngleItemProvider(this);
+		}
+
+		return changeAngleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.ChangeIntensityLight} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChangeIntensityLightItemProvider changeIntensityLightItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ChangeIntensityLight}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChangeIntensityLightAdapter() {
+		if (changeIntensityLightItemProvider == null) {
+			changeIntensityLightItemProvider = new ChangeIntensityLightItemProvider(this);
+		}
+
+		return changeIntensityLightItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.GetColor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GetColorItemProvider getColorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.GetColor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGetColorAdapter() {
+		if (getColorItemProvider == null) {
+			getColorItemProvider = new GetColorItemProvider(this);
+		}
+
+		return getColorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.GetDistance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GetDistanceItemProvider getDistanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.GetDistance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGetDistanceAdapter() {
+		if (getDistanceItemProvider == null) {
+			getDistanceItemProvider = new GetDistanceItemProvider(this);
+		}
+
+		return getDistanceItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Turn} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TurnItemProvider turnItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Turn}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTurnAdapter() {
+		if (turnItemProvider == null) {
+			turnItemProvider = new TurnItemProvider(this);
+		}
+
+		return turnItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Shoot} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ShootItemProvider shootItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Shoot}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createShootAdapter() {
+		if (shootItemProvider == null) {
+			shootItemProvider = new ShootItemProvider(this);
+		}
+
+		return shootItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -896,6 +1103,24 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			wheelItemProvider.dispose();
 		if (armItemProvider != null)
 			armItemProvider.dispose();
+		if (sensorProxyItemProvider != null)
+			sensorProxyItemProvider.dispose();
+		if (actuatorProxyItemProvider != null)
+			actuatorProxyItemProvider.dispose();
+		if (goItemProvider != null)
+			goItemProvider.dispose();
+		if (changeAngleItemProvider != null)
+			changeAngleItemProvider.dispose();
+		if (changeIntensityLightItemProvider != null)
+			changeIntensityLightItemProvider.dispose();
+		if (getColorItemProvider != null)
+			getColorItemProvider.dispose();
+		if (getDistanceItemProvider != null)
+			getDistanceItemProvider.dispose();
+		if (turnItemProvider != null)
+			turnItemProvider.dispose();
+		if (shootItemProvider != null)
+			shootItemProvider.dispose();
 	}
 
 }

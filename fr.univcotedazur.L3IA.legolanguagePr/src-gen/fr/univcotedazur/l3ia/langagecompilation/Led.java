@@ -11,35 +11,35 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Led#isBright <em>Bright</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Led#getBright <em>Bright</em>}</li>
  * </ul>
  *
  * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getLed()
  * @model
  * @generated
  */
-public interface Led extends Activator {
+public interface Led extends Actuator {
 	/**
 	 * Returns the value of the '<em><b>Bright</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
+	 * The default value is <code>"50"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bright</em>' attribute.
-	 * @see #setBright(boolean)
+	 * @see #setBright(int)
 	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getLed_Bright()
-	 * @model default="false"
+	 * @model default="50"
 	 * @generated
 	 */
-	boolean isBright();
+	int getBright();
 
 	/**
-	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.Led#isBright <em>Bright</em>}' attribute.
+	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.Led#getBright <em>Bright</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Bright</em>' attribute.
-	 * @see #isBright()
+	 * @see #getBright()
 	 * @generated
 	 */
-	void setBright(boolean value);
+	void setBright(int value);
 
 } // Led

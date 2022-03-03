@@ -5,6 +5,7 @@ package fr.univcotedazur.l3ia.langagecompilation.impl;
 import fr.univcotedazur.l3ia.langagecompilation.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -114,8 +115,60 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createWheel();
 		case LegolanguagePrPackage.ARM:
 			return createArm();
+		case LegolanguagePrPackage.SENSOR_PROXY:
+			return createSensorProxy();
+		case LegolanguagePrPackage.ACTUATOR_PROXY:
+			return createActuatorProxy();
+		case LegolanguagePrPackage.GO:
+			return createGo();
+		case LegolanguagePrPackage.CHANGE_ANGLE:
+			return createChangeAngle();
+		case LegolanguagePrPackage.CHANGE_INTENSITY_LIGHT:
+			return createChangeIntensityLight();
+		case LegolanguagePrPackage.GET_COLOR:
+			return createGetColor();
+		case LegolanguagePrPackage.GET_DISTANCE:
+			return createGetDistance();
+		case LegolanguagePrPackage.TURN:
+			return createTurn();
+		case LegolanguagePrPackage.SHOOT:
+			return createShoot();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+		case LegolanguagePrPackage.DIRECTION:
+			return createDirectionFromString(eDataType, initialValue);
+		case LegolanguagePrPackage.SIDE:
+			return createSideFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+		case LegolanguagePrPackage.DIRECTION:
+			return convertDirectionToString(eDataType, instanceValue);
+		case LegolanguagePrPackage.SIDE:
+			return convertSideToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -407,6 +460,140 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	public Arm createArm() {
 		ArmImpl arm = new ArmImpl();
 		return arm;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SensorProxy createSensorProxy() {
+		SensorProxyImpl sensorProxy = new SensorProxyImpl();
+		return sensorProxy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ActuatorProxy createActuatorProxy() {
+		ActuatorProxyImpl actuatorProxy = new ActuatorProxyImpl();
+		return actuatorProxy;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Go createGo() {
+		GoImpl go = new GoImpl();
+		return go;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChangeAngle createChangeAngle() {
+		ChangeAngleImpl changeAngle = new ChangeAngleImpl();
+		return changeAngle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChangeIntensityLight createChangeIntensityLight() {
+		ChangeIntensityLightImpl changeIntensityLight = new ChangeIntensityLightImpl();
+		return changeIntensityLight;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GetColor createGetColor() {
+		GetColorImpl getColor = new GetColorImpl();
+		return getColor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GetDistance createGetDistance() {
+		GetDistanceImpl getDistance = new GetDistanceImpl();
+		return getDistance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Turn createTurn() {
+		TurnImpl turn = new TurnImpl();
+		return turn;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shoot createShoot() {
+		ShootImpl shoot = new ShootImpl();
+		return shoot;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Direction createDirectionFromString(EDataType eDataType, String initialValue) {
+		Direction result = Direction.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDirectionToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Side createSideFromString(EDataType eDataType, String initialValue) {
+		Side result = Side.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSideToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

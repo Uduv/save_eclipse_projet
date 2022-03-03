@@ -19,31 +19,31 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.LedImpl#isBright <em>Bright</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.LedImpl#getBright <em>Bright</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class LedImpl extends ActivatorImpl implements Led {
+public class LedImpl extends ActuatorImpl implements Led {
 	/**
-	 * The default value of the '{@link #isBright() <em>Bright</em>}' attribute.
+	 * The default value of the '{@link #getBright() <em>Bright</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isBright()
+	 * @see #getBright()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean BRIGHT_EDEFAULT = false;
+	protected static final int BRIGHT_EDEFAULT = 50;
 
 	/**
-	 * The cached value of the '{@link #isBright() <em>Bright</em>}' attribute.
+	 * The cached value of the '{@link #getBright() <em>Bright</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isBright()
+	 * @see #getBright()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean bright = BRIGHT_EDEFAULT;
+	protected int bright = BRIGHT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,7 +69,7 @@ public class LedImpl extends ActivatorImpl implements Led {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isBright() {
+	public int getBright() {
 		return bright;
 	}
 
@@ -78,8 +78,8 @@ public class LedImpl extends ActivatorImpl implements Led {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBright(boolean newBright) {
-		boolean oldBright = bright;
+	public void setBright(int newBright) {
+		int oldBright = bright;
 		bright = newBright;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.LED__BRIGHT, oldBright,
@@ -95,7 +95,7 @@ public class LedImpl extends ActivatorImpl implements Led {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case LegolanguagePrPackage.LED__BRIGHT:
-			return isBright();
+			return getBright();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -109,7 +109,7 @@ public class LedImpl extends ActivatorImpl implements Led {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case LegolanguagePrPackage.LED__BRIGHT:
-			setBright((Boolean) newValue);
+			setBright((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

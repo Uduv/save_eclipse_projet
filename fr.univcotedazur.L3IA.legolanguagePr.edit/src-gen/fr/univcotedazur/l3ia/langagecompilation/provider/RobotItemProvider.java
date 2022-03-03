@@ -62,7 +62,9 @@ public class RobotItemProvider extends StatementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(LegolanguagePrPackage.Literals.ROBOT__SENSOR);
-			childrenFeatures.add(LegolanguagePrPackage.Literals.ROBOT__ACTIVATOR);
+			childrenFeatures.add(LegolanguagePrPackage.Literals.ROBOT__ACTUATOR);
+			childrenFeatures.add(LegolanguagePrPackage.Literals.ROBOT__RIGHT_WHEEL);
+			childrenFeatures.add(LegolanguagePrPackage.Literals.ROBOT__LEFT_WHEEL);
 		}
 		return childrenFeatures;
 	}
@@ -127,7 +129,9 @@ public class RobotItemProvider extends StatementItemProvider {
 
 		switch (notification.getFeatureID(Robot.class)) {
 		case LegolanguagePrPackage.ROBOT__SENSOR:
-		case LegolanguagePrPackage.ROBOT__ACTIVATOR:
+		case LegolanguagePrPackage.ROBOT__ACTUATOR:
+		case LegolanguagePrPackage.ROBOT__RIGHT_WHEEL:
+		case LegolanguagePrPackage.ROBOT__LEFT_WHEEL:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -151,17 +155,45 @@ public class RobotItemProvider extends StatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__SENSOR,
 				LegolanguagePrFactory.eINSTANCE.createLaser()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__ACTIVATOR,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__ACTUATOR,
 				LegolanguagePrFactory.eINSTANCE.createShootLauncher()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__ACTIVATOR,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__ACTUATOR,
 				LegolanguagePrFactory.eINSTANCE.createLed()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__ACTIVATOR,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__ACTUATOR,
 				LegolanguagePrFactory.eINSTANCE.createWheel()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__ACTIVATOR,
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__ACTUATOR,
 				LegolanguagePrFactory.eINSTANCE.createArm()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__RIGHT_WHEEL,
+				LegolanguagePrFactory.eINSTANCE.createWheel()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__LEFT_WHEEL,
+				LegolanguagePrFactory.eINSTANCE.createWheel()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify = childFeature == LegolanguagePrPackage.Literals.ROBOT__ACTUATOR
+				|| childFeature == LegolanguagePrPackage.Literals.ROBOT__RIGHT_WHEEL
+				|| childFeature == LegolanguagePrPackage.Literals.ROBOT__LEFT_WHEEL;
+
+		if (qualify) {
+			return getString("_UI_CreateChild_text2",
+					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

@@ -18,7 +18,7 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @model abstract="true"
  * @generated
  */
-public interface Variable extends Statement, Expression {
+public interface Variable extends Statement {
 	/**
 	 * Returns the value of the '<em><b>Is In Expression</b></em>' attribute.
 	 * The default value is <code>"false"</code>.

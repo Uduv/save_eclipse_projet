@@ -22,7 +22,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LedItemProvider extends ActivatorItemProvider {
+public class LedItemProvider extends ActuatorItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public class LedItemProvider extends ActivatorItemProvider {
 						getResourceLocator(), getString("_UI_Led_bright_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Led_bright_feature", "_UI_Led_type"),
 						LegolanguagePrPackage.Literals.LED__BRIGHT, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**

@@ -2,21 +2,29 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.impl;
 
-import fr.univcotedazur.l3ia.langagecompilation.Activator;
+import fr.univcotedazur.l3ia.langagecompilation.Actuator;
+import fr.univcotedazur.l3ia.langagecompilation.ActuatorOperation;
+import fr.univcotedazur.l3ia.langagecompilation.ActuatorProxy;
 import fr.univcotedazur.l3ia.langagecompilation.Addition;
 import fr.univcotedazur.l3ia.langagecompilation.Arm;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
 import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
 import fr.univcotedazur.l3ia.langagecompilation.Calcul;
+import fr.univcotedazur.l3ia.langagecompilation.ChangeAngle;
+import fr.univcotedazur.l3ia.langagecompilation.ChangeIntensityLight;
 import fr.univcotedazur.l3ia.langagecompilation.ColorDector;
 import fr.univcotedazur.l3ia.langagecompilation.Commentary;
 import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
+import fr.univcotedazur.l3ia.langagecompilation.Direction;
 import fr.univcotedazur.l3ia.langagecompilation.Division;
 import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.Exponential;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.GTEqual;
+import fr.univcotedazur.l3ia.langagecompilation.GetColor;
+import fr.univcotedazur.l3ia.langagecompilation.GetDistance;
+import fr.univcotedazur.l3ia.langagecompilation.Go;
 import fr.univcotedazur.l3ia.langagecompilation.If;
 import fr.univcotedazur.l3ia.langagecompilation.LTEqual;
 import fr.univcotedazur.l3ia.langagecompilation.Laser;
@@ -28,17 +36,21 @@ import fr.univcotedazur.l3ia.langagecompilation.Led;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrFactory;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Loop;
-import fr.univcotedazur.l3ia.langagecompilation.ModuleRobot;
 import fr.univcotedazur.l3ia.langagecompilation.Motor;
 import fr.univcotedazur.l3ia.langagecompilation.Multiplication;
 import fr.univcotedazur.l3ia.langagecompilation.Print;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
 import fr.univcotedazur.l3ia.langagecompilation.Robot;
-import fr.univcotedazur.l3ia.langagecompilation.Rotation;
+import fr.univcotedazur.l3ia.langagecompilation.RotativeMotor;
 import fr.univcotedazur.l3ia.langagecompilation.Sensor;
+import fr.univcotedazur.l3ia.langagecompilation.SensorOperation;
+import fr.univcotedazur.l3ia.langagecompilation.SensorProxy;
+import fr.univcotedazur.l3ia.langagecompilation.Shoot;
 import fr.univcotedazur.l3ia.langagecompilation.ShootLauncher;
+import fr.univcotedazur.l3ia.langagecompilation.Side;
 import fr.univcotedazur.l3ia.langagecompilation.Statement;
 import fr.univcotedazur.l3ia.langagecompilation.Substarction;
+import fr.univcotedazur.l3ia.langagecompilation.Turn;
 import fr.univcotedazur.l3ia.langagecompilation.Variable;
 import fr.univcotedazur.l3ia.langagecompilation.VariableProxy;
 import fr.univcotedazur.l3ia.langagecompilation.Wheel;
@@ -46,6 +58,7 @@ import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -275,7 +288,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass activatorEClass = null;
+	private EClass actuatorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -283,13 +296,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * @generated
 	 */
 	private EClass sensorEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass moduleRobotEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -310,7 +316,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass rotationEClass = null;
+	private EClass rotativeMotorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -346,6 +352,97 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * @generated
 	 */
 	private EClass armEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sensorProxyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actuatorProxyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sensorOperationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actuatorOperationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass goEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass changeAngleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass changeIntensityLightEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass getColorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass getDistanceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass turnEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass shootEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum directionEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum sideEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -878,7 +975,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRobot_Activator() {
+	public EReference getRobot_Actuator() {
 		return (EReference) robotEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -887,8 +984,35 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getActivator() {
-		return activatorEClass;
+	public EReference getRobot_RightWheel() {
+		return (EReference) robotEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRobot_LeftWheel() {
+		return (EReference) robotEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getActuator() {
+		return actuatorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getActuator_PortID() {
+		return (EAttribute) actuatorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -905,17 +1029,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getModuleRobot() {
-		return moduleRobotEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getModuleRobot_Side() {
-		return (EAttribute) moduleRobotEClass.getEStructuralFeatures().get(0);
+	public EAttribute getSensor_PortID() {
+		return (EAttribute) sensorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -959,26 +1074,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getRotation() {
-		return rotationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRotation_Speed() {
-		return (EAttribute) rotationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRotation_Angle() {
-		return (EAttribute) rotationEClass.getEStructuralFeatures().get(1);
+	public EClass getRotativeMotor() {
+		return rotativeMotorEClass;
 	}
 
 	/**
@@ -995,7 +1092,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getShootLauncher_Armed() {
+	public EAttribute getShootLauncher_Force() {
 		return (EAttribute) shootLauncherEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1040,8 +1137,206 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWheel_Speed() {
+		return (EAttribute) wheelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getArm() {
 		return armEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArm_Angle() {
+		return (EAttribute) armEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSensorProxy() {
+		return sensorProxyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSensorProxy_Sensor() {
+		return (EReference) sensorProxyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getActuatorProxy() {
+		return actuatorProxyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getActuatorProxy_Actuator() {
+		return (EReference) actuatorProxyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSensorOperation() {
+		return sensorOperationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getActuatorOperation() {
+		return actuatorOperationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGo() {
+		return goEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGo_Speed() {
+		return (EReference) goEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getChangeAngle() {
+		return changeAngleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getChangeAngle_Angle() {
+		return (EReference) changeAngleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getChangeIntensityLight() {
+		return changeIntensityLightEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getChangeIntensityLight_Intensity() {
+		return (EReference) changeIntensityLightEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGetColor() {
+		return getColorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGetDistance() {
+		return getDistanceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTurn() {
+		return turnEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTurn_Angle() {
+		return (EReference) turnEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTurn_Direction() {
+		return (EAttribute) turnEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getShoot() {
+		return shootEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getDirection() {
+		return directionEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getSide() {
+		return sideEEnum;
 	}
 
 	/**
@@ -1153,14 +1448,15 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		robotEClass = createEClass(ROBOT);
 		createEReference(robotEClass, ROBOT__SENSOR);
-		createEReference(robotEClass, ROBOT__ACTIVATOR);
+		createEReference(robotEClass, ROBOT__ACTUATOR);
+		createEReference(robotEClass, ROBOT__RIGHT_WHEEL);
+		createEReference(robotEClass, ROBOT__LEFT_WHEEL);
 
-		activatorEClass = createEClass(ACTIVATOR);
+		actuatorEClass = createEClass(ACTUATOR);
+		createEAttribute(actuatorEClass, ACTUATOR__PORT_ID);
 
 		sensorEClass = createEClass(SENSOR);
-
-		moduleRobotEClass = createEClass(MODULE_ROBOT);
-		createEAttribute(moduleRobotEClass, MODULE_ROBOT__SIDE);
+		createEAttribute(sensorEClass, SENSOR__PORT_ID);
 
 		colorDectorEClass = createEClass(COLOR_DECTOR);
 		createEAttribute(colorDectorEClass, COLOR_DECTOR__COLOR);
@@ -1168,12 +1464,10 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		laserEClass = createEClass(LASER);
 		createEAttribute(laserEClass, LASER__DISTANCE);
 
-		rotationEClass = createEClass(ROTATION);
-		createEAttribute(rotationEClass, ROTATION__SPEED);
-		createEAttribute(rotationEClass, ROTATION__ANGLE);
+		rotativeMotorEClass = createEClass(ROTATIVE_MOTOR);
 
 		shootLauncherEClass = createEClass(SHOOT_LAUNCHER);
-		createEAttribute(shootLauncherEClass, SHOOT_LAUNCHER__ARMED);
+		createEAttribute(shootLauncherEClass, SHOOT_LAUNCHER__FORCE);
 
 		ledEClass = createEClass(LED);
 		createEAttribute(ledEClass, LED__BRIGHT);
@@ -1181,8 +1475,43 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		motorEClass = createEClass(MOTOR);
 
 		wheelEClass = createEClass(WHEEL);
+		createEAttribute(wheelEClass, WHEEL__SPEED);
 
 		armEClass = createEClass(ARM);
+		createEAttribute(armEClass, ARM__ANGLE);
+
+		sensorProxyEClass = createEClass(SENSOR_PROXY);
+		createEReference(sensorProxyEClass, SENSOR_PROXY__SENSOR);
+
+		actuatorProxyEClass = createEClass(ACTUATOR_PROXY);
+		createEReference(actuatorProxyEClass, ACTUATOR_PROXY__ACTUATOR);
+
+		sensorOperationEClass = createEClass(SENSOR_OPERATION);
+
+		actuatorOperationEClass = createEClass(ACTUATOR_OPERATION);
+
+		goEClass = createEClass(GO);
+		createEReference(goEClass, GO__SPEED);
+
+		changeAngleEClass = createEClass(CHANGE_ANGLE);
+		createEReference(changeAngleEClass, CHANGE_ANGLE__ANGLE);
+
+		changeIntensityLightEClass = createEClass(CHANGE_INTENSITY_LIGHT);
+		createEReference(changeIntensityLightEClass, CHANGE_INTENSITY_LIGHT__INTENSITY);
+
+		getColorEClass = createEClass(GET_COLOR);
+
+		getDistanceEClass = createEClass(GET_DISTANCE);
+
+		turnEClass = createEClass(TURN);
+		createEReference(turnEClass, TURN__ANGLE);
+		createEAttribute(turnEClass, TURN__DIRECTION);
+
+		shootEClass = createEClass(SHOOT);
+
+		// Create enums
+		directionEEnum = createEEnum(DIRECTION);
+		sideEEnum = createEEnum(SIDE);
 	}
 
 	/**
@@ -1219,7 +1548,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		// Add supertypes to classes
 		variableEClass.getESuperTypes().add(this.getStatement());
-		variableEClass.getESuperTypes().add(this.getExpression());
 		loopEClass.getESuperTypes().add(this.getStatement());
 		whileLoopEClass.getESuperTypes().add(this.getLoop());
 		expressionEClass.getESuperTypes().add(this.getStatement());
@@ -1247,17 +1575,27 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		gtEqualEClass.getESuperTypes().add(this.getComparaison());
 		ltEqualEClass.getESuperTypes().add(this.getComparaison());
 		robotEClass.getESuperTypes().add(this.getStatement());
-		activatorEClass.getESuperTypes().add(this.getModuleRobot());
-		sensorEClass.getESuperTypes().add(this.getModuleRobot());
-		moduleRobotEClass.getESuperTypes().add(this.getExpression());
+		actuatorEClass.getESuperTypes().add(this.getStatement());
+		sensorEClass.getESuperTypes().add(this.getStatement());
 		colorDectorEClass.getESuperTypes().add(this.getSensor());
 		laserEClass.getESuperTypes().add(this.getSensor());
-		rotationEClass.getESuperTypes().add(this.getMotor());
+		rotativeMotorEClass.getESuperTypes().add(this.getMotor());
 		shootLauncherEClass.getESuperTypes().add(this.getMotor());
-		ledEClass.getESuperTypes().add(this.getActivator());
-		motorEClass.getESuperTypes().add(this.getActivator());
-		wheelEClass.getESuperTypes().add(this.getRotation());
-		armEClass.getESuperTypes().add(this.getRotation());
+		ledEClass.getESuperTypes().add(this.getActuator());
+		motorEClass.getESuperTypes().add(this.getActuator());
+		wheelEClass.getESuperTypes().add(this.getRotativeMotor());
+		armEClass.getESuperTypes().add(this.getRotativeMotor());
+		sensorProxyEClass.getESuperTypes().add(this.getExpression());
+		actuatorProxyEClass.getESuperTypes().add(this.getExpression());
+		sensorOperationEClass.getESuperTypes().add(this.getBinaryOperation());
+		actuatorOperationEClass.getESuperTypes().add(this.getBinaryOperation());
+		goEClass.getESuperTypes().add(this.getActuatorOperation());
+		changeAngleEClass.getESuperTypes().add(this.getActuatorOperation());
+		changeIntensityLightEClass.getESuperTypes().add(this.getActuatorOperation());
+		getColorEClass.getESuperTypes().add(this.getSensorOperation());
+		getDistanceEClass.getESuperTypes().add(this.getSensorOperation());
+		turnEClass.getESuperTypes().add(this.getActuatorOperation());
+		shootEClass.getESuperTypes().add(this.getActuatorOperation());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1397,19 +1735,23 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEReference(getRobot_Sensor(), this.getSensor(), null, "sensor", null, 0, 4, Robot.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getRobot_Activator(), this.getActivator(), null, "activator", null, 0, 4, Robot.class,
+		initEReference(getRobot_Actuator(), this.getActuator(), null, "actuator", null, 0, 2, Robot.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRobot_RightWheel(), this.getWheel(), null, "rightWheel", null, 1, 1, Robot.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRobot_LeftWheel(), this.getWheel(), null, "leftWheel", null, 1, 1, Robot.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
-		initEClass(activatorEClass, Activator.class, "Activator", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
+		initEClass(actuatorEClass, Actuator.class, "Actuator", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getActuator_PortID(), ecorePackage.getEString(), "portID", null, 1, 1, Actuator.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorEClass, Sensor.class, "Sensor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(moduleRobotEClass, ModuleRobot.class, "ModuleRobot", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getModuleRobot_Side(), ecorePackage.getEString(), "side", "left", 1, 1, ModuleRobot.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSensor_PortID(), ecorePackage.getEString(), "portID", null, 1, 1, Sensor.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(colorDectorEClass, ColorDector.class, "ColorDector", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1420,27 +1762,85 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEAttribute(getLaser_Distance(), ecorePackage.getEInt(), "distance", "0", 0, 1, Laser.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(rotationEClass, Rotation.class, "Rotation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRotation_Speed(), ecorePackage.getEInt(), "speed", "0", 0, 1, Rotation.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRotation_Angle(), ecorePackage.getEInt(), "angle", "0", 0, 1, Rotation.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(rotativeMotorEClass, RotativeMotor.class, "RotativeMotor", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(shootLauncherEClass, ShootLauncher.class, "ShootLauncher", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getShootLauncher_Armed(), ecorePackage.getEBoolean(), "armed", "false", 0, 1,
-				ShootLauncher.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShootLauncher_Force(), ecorePackage.getEInt(), "force", "0", 0, 1, ShootLauncher.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ledEClass, Led.class, "Led", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLed_Bright(), ecorePackage.getEBoolean(), "bright", "false", 0, 1, Led.class, !IS_TRANSIENT,
+		initEAttribute(getLed_Bright(), ecorePackage.getEInt(), "bright", "50", 0, 1, Led.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(motorEClass, Motor.class, "Motor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(wheelEClass, Wheel.class, "Wheel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWheel_Speed(), ecorePackage.getEInt(), "speed", "10", 0, 1, Wheel.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(armEClass, Arm.class, "Arm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getArm_Angle(), ecorePackage.getEInt(), "angle", "45", 0, 1, Arm.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sensorProxyEClass, SensorProxy.class, "SensorProxy", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSensorProxy_Sensor(), this.getSensor(), null, "sensor", null, 1, 1, SensorProxy.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(actuatorProxyEClass, ActuatorProxy.class, "ActuatorProxy", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getActuatorProxy_Actuator(), this.getActuator(), null, "actuator", null, 1, 1,
+				ActuatorProxy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sensorOperationEClass, SensorOperation.class, "SensorOperation", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(actuatorOperationEClass, ActuatorOperation.class, "ActuatorOperation", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(goEClass, Go.class, "Go", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGo_Speed(), this.getExpression(), null, "speed", null, 1, 1, Go.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(changeAngleEClass, ChangeAngle.class, "ChangeAngle", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChangeAngle_Angle(), this.getExpression(), null, "angle", null, 1, 1, ChangeAngle.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(changeIntensityLightEClass, ChangeIntensityLight.class, "ChangeIntensityLight", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChangeIntensityLight_Intensity(), this.getExpression(), null, "intensity", null, 1, 1,
+				ChangeIntensityLight.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(getColorEClass, GetColor.class, "GetColor", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(getDistanceEClass, GetDistance.class, "GetDistance", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(turnEClass, Turn.class, "Turn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTurn_Angle(), this.getExpression(), null, "angle", null, 1, 1, Turn.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getTurn_Direction(), this.getDirection(), "direction", null, 0, 1, Turn.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(shootEClass, Shoot.class, "Shoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		// Initialize enums and add enum literals
+		initEEnum(directionEEnum, Direction.class, "Direction");
+		addEEnumLiteral(directionEEnum, Direction.LEFT);
+		addEEnumLiteral(directionEEnum, Direction.RIGHT);
+
+		initEEnum(sideEEnum, Side.class, "Side");
+		addEEnumLiteral(sideEEnum, Side.LITERAL0);
 
 		// Create resource
 		createResource(eNS_URI);

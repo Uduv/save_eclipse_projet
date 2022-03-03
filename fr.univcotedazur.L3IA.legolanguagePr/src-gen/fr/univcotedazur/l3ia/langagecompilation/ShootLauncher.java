@@ -11,7 +11,7 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.ShootLauncher#isArmed <em>Armed</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.ShootLauncher#getForce <em>Force</em>}</li>
  * </ul>
  *
  * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getShootLauncher()
@@ -20,26 +20,26 @@ package fr.univcotedazur.l3ia.langagecompilation;
  */
 public interface ShootLauncher extends Motor {
 	/**
-	 * Returns the value of the '<em><b>Armed</b></em>' attribute.
-	 * The default value is <code>"false"</code>.
+	 * Returns the value of the '<em><b>Force</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Armed</em>' attribute.
-	 * @see #setArmed(boolean)
-	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getShootLauncher_Armed()
-	 * @model default="false"
+	 * @return the value of the '<em>Force</em>' attribute.
+	 * @see #setForce(int)
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getShootLauncher_Force()
+	 * @model default="0"
 	 * @generated
 	 */
-	boolean isArmed();
+	int getForce();
 
 	/**
-	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.ShootLauncher#isArmed <em>Armed</em>}' attribute.
+	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.ShootLauncher#getForce <em>Force</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Armed</em>' attribute.
-	 * @see #isArmed()
+	 * @param value the new value of the '<em>Force</em>' attribute.
+	 * @see #getForce()
 	 * @generated
 	 */
-	void setArmed(boolean value);
+	void setForce(int value);
 
 } // ShootLauncher

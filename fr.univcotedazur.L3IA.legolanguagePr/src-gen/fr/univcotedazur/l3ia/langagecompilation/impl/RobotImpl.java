@@ -2,19 +2,23 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.impl;
 
-import fr.univcotedazur.l3ia.langagecompilation.Activator;
+import fr.univcotedazur.l3ia.langagecompilation.Actuator;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Robot;
 import fr.univcotedazur.l3ia.langagecompilation.Sensor;
 
+import fr.univcotedazur.l3ia.langagecompilation.Wheel;
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -28,7 +32,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.RobotImpl#getSensor <em>Sensor</em>}</li>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.RobotImpl#getActivator <em>Activator</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.RobotImpl#getActuator <em>Actuator</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.RobotImpl#getRightWheel <em>Right Wheel</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.RobotImpl#getLeftWheel <em>Left Wheel</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,14 +51,34 @@ public class RobotImpl extends StatementImpl implements Robot {
 	protected EList<Sensor> sensor;
 
 	/**
-	 * The cached value of the '{@link #getActivator() <em>Activator</em>}' containment reference list.
+	 * The cached value of the '{@link #getActuator() <em>Actuator</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getActivator()
+	 * @see #getActuator()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Activator> activator;
+	protected EList<Actuator> actuator;
+
+	/**
+	 * The cached value of the '{@link #getRightWheel() <em>Right Wheel</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRightWheel()
+	 * @generated
+	 * @ordered
+	 */
+	protected Wheel rightWheel;
+
+	/**
+	 * The cached value of the '{@link #getLeftWheel() <em>Left Wheel</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLeftWheel()
+	 * @generated
+	 * @ordered
+	 */
+	protected Wheel leftWheel;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,12 +116,112 @@ public class RobotImpl extends StatementImpl implements Robot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Activator> getActivator() {
-		if (activator == null) {
-			activator = new EObjectContainmentEList<Activator>(Activator.class, this,
-					LegolanguagePrPackage.ROBOT__ACTIVATOR);
+	public EList<Actuator> getActuator() {
+		if (actuator == null) {
+			actuator = new EObjectContainmentEList<Actuator>(Actuator.class, this,
+					LegolanguagePrPackage.ROBOT__ACTUATOR);
 		}
-		return activator;
+		return actuator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Wheel getRightWheel() {
+		return rightWheel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRightWheel(Wheel newRightWheel, NotificationChain msgs) {
+		Wheel oldRightWheel = rightWheel;
+		rightWheel = newRightWheel;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					LegolanguagePrPackage.ROBOT__RIGHT_WHEEL, oldRightWheel, newRightWheel);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRightWheel(Wheel newRightWheel) {
+		if (newRightWheel != rightWheel) {
+			NotificationChain msgs = null;
+			if (rightWheel != null)
+				msgs = ((InternalEObject) rightWheel).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.ROBOT__RIGHT_WHEEL, null, msgs);
+			if (newRightWheel != null)
+				msgs = ((InternalEObject) newRightWheel).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.ROBOT__RIGHT_WHEEL, null, msgs);
+			msgs = basicSetRightWheel(newRightWheel, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.ROBOT__RIGHT_WHEEL,
+					newRightWheel, newRightWheel));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Wheel getLeftWheel() {
+		return leftWheel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLeftWheel(Wheel newLeftWheel, NotificationChain msgs) {
+		Wheel oldLeftWheel = leftWheel;
+		leftWheel = newLeftWheel;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					LegolanguagePrPackage.ROBOT__LEFT_WHEEL, oldLeftWheel, newLeftWheel);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLeftWheel(Wheel newLeftWheel) {
+		if (newLeftWheel != leftWheel) {
+			NotificationChain msgs = null;
+			if (leftWheel != null)
+				msgs = ((InternalEObject) leftWheel).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.ROBOT__LEFT_WHEEL, null, msgs);
+			if (newLeftWheel != null)
+				msgs = ((InternalEObject) newLeftWheel).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.ROBOT__LEFT_WHEEL, null, msgs);
+			msgs = basicSetLeftWheel(newLeftWheel, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.ROBOT__LEFT_WHEEL, newLeftWheel,
+					newLeftWheel));
 	}
 
 	/**
@@ -108,8 +234,12 @@ public class RobotImpl extends StatementImpl implements Robot {
 		switch (featureID) {
 		case LegolanguagePrPackage.ROBOT__SENSOR:
 			return ((InternalEList<?>) getSensor()).basicRemove(otherEnd, msgs);
-		case LegolanguagePrPackage.ROBOT__ACTIVATOR:
-			return ((InternalEList<?>) getActivator()).basicRemove(otherEnd, msgs);
+		case LegolanguagePrPackage.ROBOT__ACTUATOR:
+			return ((InternalEList<?>) getActuator()).basicRemove(otherEnd, msgs);
+		case LegolanguagePrPackage.ROBOT__RIGHT_WHEEL:
+			return basicSetRightWheel(null, msgs);
+		case LegolanguagePrPackage.ROBOT__LEFT_WHEEL:
+			return basicSetLeftWheel(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -124,8 +254,12 @@ public class RobotImpl extends StatementImpl implements Robot {
 		switch (featureID) {
 		case LegolanguagePrPackage.ROBOT__SENSOR:
 			return getSensor();
-		case LegolanguagePrPackage.ROBOT__ACTIVATOR:
-			return getActivator();
+		case LegolanguagePrPackage.ROBOT__ACTUATOR:
+			return getActuator();
+		case LegolanguagePrPackage.ROBOT__RIGHT_WHEEL:
+			return getRightWheel();
+		case LegolanguagePrPackage.ROBOT__LEFT_WHEEL:
+			return getLeftWheel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -143,9 +277,15 @@ public class RobotImpl extends StatementImpl implements Robot {
 			getSensor().clear();
 			getSensor().addAll((Collection<? extends Sensor>) newValue);
 			return;
-		case LegolanguagePrPackage.ROBOT__ACTIVATOR:
-			getActivator().clear();
-			getActivator().addAll((Collection<? extends Activator>) newValue);
+		case LegolanguagePrPackage.ROBOT__ACTUATOR:
+			getActuator().clear();
+			getActuator().addAll((Collection<? extends Actuator>) newValue);
+			return;
+		case LegolanguagePrPackage.ROBOT__RIGHT_WHEEL:
+			setRightWheel((Wheel) newValue);
+			return;
+		case LegolanguagePrPackage.ROBOT__LEFT_WHEEL:
+			setLeftWheel((Wheel) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -162,8 +302,14 @@ public class RobotImpl extends StatementImpl implements Robot {
 		case LegolanguagePrPackage.ROBOT__SENSOR:
 			getSensor().clear();
 			return;
-		case LegolanguagePrPackage.ROBOT__ACTIVATOR:
-			getActivator().clear();
+		case LegolanguagePrPackage.ROBOT__ACTUATOR:
+			getActuator().clear();
+			return;
+		case LegolanguagePrPackage.ROBOT__RIGHT_WHEEL:
+			setRightWheel((Wheel) null);
+			return;
+		case LegolanguagePrPackage.ROBOT__LEFT_WHEEL:
+			setLeftWheel((Wheel) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -179,8 +325,12 @@ public class RobotImpl extends StatementImpl implements Robot {
 		switch (featureID) {
 		case LegolanguagePrPackage.ROBOT__SENSOR:
 			return sensor != null && !sensor.isEmpty();
-		case LegolanguagePrPackage.ROBOT__ACTIVATOR:
-			return activator != null && !activator.isEmpty();
+		case LegolanguagePrPackage.ROBOT__ACTUATOR:
+			return actuator != null && !actuator.isEmpty();
+		case LegolanguagePrPackage.ROBOT__RIGHT_WHEEL:
+			return rightWheel != null;
+		case LegolanguagePrPackage.ROBOT__LEFT_WHEEL:
+			return leftWheel != null;
 		}
 		return super.eIsSet(featureID);
 	}

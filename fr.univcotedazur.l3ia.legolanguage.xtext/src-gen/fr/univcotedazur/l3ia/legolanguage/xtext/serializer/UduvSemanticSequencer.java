@@ -4,8 +4,11 @@
 package fr.univcotedazur.l3ia.legolanguage.xtext.serializer;
 
 import com.google.inject.Inject;
+import fr.univcotedazur.l3ia.langagecompilation.ActuatorProxy;
 import fr.univcotedazur.l3ia.langagecompilation.Addition;
+import fr.univcotedazur.l3ia.langagecompilation.Arm;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
+import fr.univcotedazur.l3ia.langagecompilation.ColorDector;
 import fr.univcotedazur.l3ia.langagecompilation.Commentary;
 import fr.univcotedazur.l3ia.langagecompilation.Division;
 import fr.univcotedazur.l3ia.langagecompilation.Equal;
@@ -16,14 +19,19 @@ import fr.univcotedazur.l3ia.langagecompilation.GTEqual;
 import fr.univcotedazur.l3ia.langagecompilation.If;
 import fr.univcotedazur.l3ia.langagecompilation.LT;
 import fr.univcotedazur.l3ia.langagecompilation.LTEqual;
+import fr.univcotedazur.l3ia.langagecompilation.Laser;
 import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
 import fr.univcotedazur.l3ia.langagecompilation.LeFloat;
 import fr.univcotedazur.l3ia.langagecompilation.LeInteger;
 import fr.univcotedazur.l3ia.langagecompilation.LeString;
+import fr.univcotedazur.l3ia.langagecompilation.Led;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Multiplication;
 import fr.univcotedazur.l3ia.langagecompilation.Print;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
+import fr.univcotedazur.l3ia.langagecompilation.Robot;
+import fr.univcotedazur.l3ia.langagecompilation.SensorProxy;
+import fr.univcotedazur.l3ia.langagecompilation.ShootLauncher;
 import fr.univcotedazur.l3ia.langagecompilation.Substarction;
 import fr.univcotedazur.l3ia.langagecompilation.VariableProxy;
 import fr.univcotedazur.l3ia.langagecompilation.Wheel;
@@ -54,11 +62,20 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == LegolanguagePrPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case LegolanguagePrPackage.ACTUATOR_PROXY:
+				sequence_ActuatorProxy(context, (ActuatorProxy) semanticObject); 
+				return; 
 			case LegolanguagePrPackage.ADDITION:
 				sequence_Addition(context, (Addition) semanticObject); 
 				return; 
+			case LegolanguagePrPackage.ARM:
+				sequence_Arm(context, (Arm) semanticObject); 
+				return; 
 			case LegolanguagePrPackage.ASSIGNEMENT:
 				sequence_Assignement(context, (Assignement) semanticObject); 
+				return; 
+			case LegolanguagePrPackage.COLOR_DECTOR:
+				sequence_ColorDector(context, (ColorDector) semanticObject); 
 				return; 
 			case LegolanguagePrPackage.COMMENTARY:
 				sequence_Commentary(context, (Commentary) semanticObject); 
@@ -90,6 +107,9 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LegolanguagePrPackage.LT_EQUAL:
 				sequence_LTEqual(context, (LTEqual) semanticObject); 
 				return; 
+			case LegolanguagePrPackage.LASER:
+				sequence_Laser(context, (Laser) semanticObject); 
+				return; 
 			case LegolanguagePrPackage.LE_BOOLEAN:
 				sequence_LeBoolean(context, (LeBoolean) semanticObject); 
 				return; 
@@ -102,6 +122,9 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LegolanguagePrPackage.LE_STRING:
 				sequence_LeString(context, (LeString) semanticObject); 
 				return; 
+			case LegolanguagePrPackage.LED:
+				sequence_Led(context, (Led) semanticObject); 
+				return; 
 			case LegolanguagePrPackage.MULTIPLICATION:
 				sequence_Multiplication(context, (Multiplication) semanticObject); 
 				return; 
@@ -110,6 +133,15 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case LegolanguagePrPackage.PROGRAM:
 				sequence_Program(context, (Program) semanticObject); 
+				return; 
+			case LegolanguagePrPackage.ROBOT:
+				sequence_RobotDeclaration(context, (Robot) semanticObject); 
+				return; 
+			case LegolanguagePrPackage.SENSOR_PROXY:
+				sequence_SensorProxy(context, (SensorProxy) semanticObject); 
+				return; 
+			case LegolanguagePrPackage.SHOOT_LAUNCHER:
+				sequence_ShootLauncher(context, (ShootLauncher) semanticObject); 
 				return; 
 			case LegolanguagePrPackage.SUBSTARCTION:
 				sequence_Substarction(context, (Substarction) semanticObject); 
@@ -130,9 +162,30 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Statement returns ActuatorProxy
+	 *     Expression returns ActuatorProxy
+	 *     ActuatorProxy returns ActuatorProxy
+	 *
+	 * Constraint:
+	 *     actuator=[Actuator|EString]
+	 */
+	protected void sequence_ActuatorProxy(ISerializationContext context, ActuatorProxy semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR_PROXY__ACTUATOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR_PROXY__ACTUATOR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getActuatorProxyAccess().getActuatorActuatorEStringParserRuleCall_0_1(), semanticObject.eGet(LegolanguagePrPackage.Literals.ACTUATOR_PROXY__ACTUATOR, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Statement returns Addition
 	 *     Expression returns Addition
 	 *     Calcul returns Addition
+	 *     BinaryOperation returns Addition
 	 *     Addition returns Addition
 	 *
 	 * Constraint:
@@ -154,8 +207,25 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Statement returns Arm
+	 *     Actuator returns Arm
+	 *     Motor returns Arm
+	 *     RotativeMotor returns Arm
+	 *     Arm returns Arm
+	 *
+	 * Constraint:
+	 *     (name=ID portID=EString angle=EInt?)
+	 */
+	protected void sequence_Arm(ISerializationContext context, Arm semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Statement returns Assignement
 	 *     Expression returns Assignement
+	 *     BinaryOperation returns Assignement
 	 *     Assignement returns Assignement
 	 *
 	 * Constraint:
@@ -171,6 +241,29 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAssignementAccess().getLeftExpressionParserRuleCall_1_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getAssignementAccess().getRightExpressionParserRuleCall_3_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns ColorDector
+	 *     Sensor returns ColorDector
+	 *     ColorDector returns ColorDector
+	 *
+	 * Constraint:
+	 *     (name=ID portID=EString)
+	 */
+	protected void sequence_ColorDector(ISerializationContext context, ColorDector semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.SENSOR__PORT_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.SENSOR__PORT_ID));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getColorDectorAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getColorDectorAccess().getPortIDEStringParserRuleCall_4_0(), semanticObject.getPortID());
 		feeder.finish();
 	}
 	
@@ -199,6 +292,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Statement returns Division
 	 *     Expression returns Division
 	 *     Calcul returns Division
+	 *     BinaryOperation returns Division
 	 *     Division returns Division
 	 *
 	 * Constraint:
@@ -222,6 +316,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Contexts:
 	 *     Statement returns Equal
 	 *     Expression returns Equal
+	 *     BinaryOperation returns Equal
 	 *     Comparaison returns Equal
 	 *     Equal returns Equal
 	 *
@@ -247,6 +342,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Statement returns Exponential
 	 *     Expression returns Exponential
 	 *     Calcul returns Exponential
+	 *     BinaryOperation returns Exponential
 	 *     Exponential returns Exponential
 	 *
 	 * Constraint:
@@ -284,6 +380,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Contexts:
 	 *     Statement returns GTEqual
 	 *     Expression returns GTEqual
+	 *     BinaryOperation returns GTEqual
 	 *     Comparaison returns GTEqual
 	 *     GTEqual returns GTEqual
 	 *
@@ -308,6 +405,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Contexts:
 	 *     Statement returns GT
 	 *     Expression returns GT
+	 *     BinaryOperation returns GT
 	 *     Comparaison returns GT
 	 *     GT returns GT
 	 *
@@ -345,6 +443,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Contexts:
 	 *     Statement returns LTEqual
 	 *     Expression returns LTEqual
+	 *     BinaryOperation returns LTEqual
 	 *     Comparaison returns LTEqual
 	 *     LTEqual returns LTEqual
 	 *
@@ -369,6 +468,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * Contexts:
 	 *     Statement returns LT
 	 *     Expression returns LT
+	 *     BinaryOperation returns LT
 	 *     Comparaison returns LT
 	 *     LT returns LT
 	 *
@@ -391,8 +491,30 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Statement returns Laser
+	 *     Sensor returns Laser
+	 *     Laser returns Laser
+	 *
+	 * Constraint:
+	 *     (name=ID portID=EString)
+	 */
+	protected void sequence_Laser(ISerializationContext context, Laser semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.SENSOR__PORT_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.SENSOR__PORT_ID));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLaserAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLaserAccess().getPortIDEStringParserRuleCall_4_0(), semanticObject.getPortID());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Statement returns LeBoolean
-	 *     Expression returns LeBoolean
 	 *     Variable returns LeBoolean
 	 *     LeBoolean returns LeBoolean
 	 *
@@ -407,7 +529,6 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Statement returns LeFloat
-	 *     Expression returns LeFloat
 	 *     Variable returns LeFloat
 	 *     LeFloat returns LeFloat
 	 *
@@ -422,7 +543,6 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Statement returns LeInteger
-	 *     Expression returns LeInteger
 	 *     Variable returns LeInteger
 	 *     LeInteger returns LeInteger
 	 *
@@ -437,7 +557,6 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Statement returns LeString
-	 *     Expression returns LeString
 	 *     Variable returns LeString
 	 *     LeString returns LeString
 	 *
@@ -451,9 +570,24 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Statement returns Led
+	 *     Actuator returns Led
+	 *     Led returns Led
+	 *
+	 * Constraint:
+	 *     (name=ID portID=EString bright=EInt?)
+	 */
+	protected void sequence_Led(ISerializationContext context, Led semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Statement returns Multiplication
 	 *     Expression returns Multiplication
 	 *     Calcul returns Multiplication
+	 *     BinaryOperation returns Multiplication
 	 *     Multiplication returns Multiplication
 	 *
 	 * Constraint:
@@ -500,9 +634,58 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Statement returns Robot
+	 *     RobotDeclaration returns Robot
+	 *
+	 * Constraint:
+	 *     (name=ID (leftWheel=Wheel rightWheel=Wheel actuator+=Actuator* sensor+=Sensor*)?)
+	 */
+	protected void sequence_RobotDeclaration(ISerializationContext context, Robot semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns SensorProxy
+	 *     Expression returns SensorProxy
+	 *     SensorProxy returns SensorProxy
+	 *
+	 * Constraint:
+	 *     sensor=[Sensor|EString]
+	 */
+	protected void sequence_SensorProxy(ISerializationContext context, SensorProxy semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.SENSOR_PROXY__SENSOR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.SENSOR_PROXY__SENSOR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSensorProxyAccess().getSensorSensorEStringParserRuleCall_0_1(), semanticObject.eGet(LegolanguagePrPackage.Literals.SENSOR_PROXY__SENSOR, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Statement returns ShootLauncher
+	 *     Actuator returns ShootLauncher
+	 *     Motor returns ShootLauncher
+	 *     ShootLauncher returns ShootLauncher
+	 *
+	 * Constraint:
+	 *     (name=ID portID=EString force=EInt?)
+	 */
+	protected void sequence_ShootLauncher(ISerializationContext context, ShootLauncher semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Statement returns Substarction
 	 *     Expression returns Substarction
 	 *     Calcul returns Substarction
+	 *     BinaryOperation returns Substarction
 	 *     Substarction returns Substarction
 	 *
 	 * Constraint:
@@ -544,10 +727,14 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Statement returns Wheel
+	 *     Actuator returns Wheel
+	 *     Motor returns Wheel
+	 *     RotativeMotor returns Wheel
 	 *     Wheel returns Wheel
 	 *
 	 * Constraint:
-	 *     (side=EString speed=EInt?)
+	 *     (portID=EString speed=EInt?)
 	 */
 	protected void sequence_Wheel(ISerializationContext context, Wheel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

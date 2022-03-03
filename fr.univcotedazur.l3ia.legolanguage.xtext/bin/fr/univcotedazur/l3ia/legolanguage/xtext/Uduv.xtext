@@ -6,28 +6,73 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Program returns Program:
 	{Program}
-
+		 
 		(statement+=Statement)*
 ;
 
 Statement returns Statement:
-	If | Loop  | Comparaison | Calcul | Assignement | VariableProxy | Print | Expression | Commentary;
+	If | Loop  | Variable | Print | Expression | Commentary | RobotDeclaration | Sensor | Actuator ;
+
+RobotDeclaration returns Robot:
+	'Robot' name=ID 
+		('{'  
+		"left" leftWheel = Wheel
+		"right" rightWheel= Wheel 
+		(actuator+=Actuator)*
+		(sensor+=Sensor)*
+		'}')?
+;
+
+/* to fix 
+Module returns Module :
+	Actuator | Sensor
+;
+ */
 
 Expression returns Expression:
-	 Assignement | VariableProxy | Variable | Calcul | Comparaison ;
+	 SensorProxy | ActuatorProxy | VariableProxy  | BinaryOperation;
 	
 Calcul returns Calcul : 
 	Substarction | Addition | Division | Exponential | Multiplication ;
+	
+BinaryOperation returns BinaryOperation :
+Comparaison |  Calcul |  Assignement /*| SensorOperation | ActuatorOperation*/ ;
+
 
 Comparaison returns Comparaison:
 	GT | LT | Equal | GTEqual | LTEqual ;
 
 Variable returns Variable:
 	LeInteger | LeString | LeFloat | LeBoolean;
-	
 
-	
-	
+
+Sensor returns Sensor : 
+	ColorDector | Laser  
+;
+
+/*
+ActuatorOperation returns ActuatorOperation :
+	Robot = EString
+	Go | Turn | ChangeAngle | ChangeIntensityLight | Shoot
+;
+
+SensorOperation returns SensorOperation :
+	GetColor | GetDistance
+;
+*/
+Actuator returns Actuator :
+	Motor | Led
+ 
+;	
+
+Motor returns Motor :
+	RotativeMotor | ShootLauncher
+;
+
+RotativeMotor returns RotativeMotor:
+	Wheel | Arm
+;
+
 Commentary returns Commentary:
 	{Commentary}
 	'\'\'\''
@@ -38,7 +83,6 @@ Commentary returns Commentary:
 Loop returns Loop : 
 	WhileLoop | ForLoop  ; 
 
-
 If returns If :
 	'if'
 	condition=Comparaison
@@ -47,7 +91,6 @@ If returns If :
 		
 	'}';
 	
-
 WhileLoop returns WhileLoop:
 	'while'
 
@@ -118,7 +161,6 @@ GTEqual returns GTEqual:
 		right=Expression
 	')';
 
-
 LT returns LT:
 	'('
 		left=Expression
@@ -139,7 +181,6 @@ Equal returns Equal:
 		'=='
 		right=Expression
 	')';
-	
 	
 Assignement returns Assignement:
 	
@@ -175,7 +216,6 @@ LeFloat returns LeFloat:
 		 initialeValue= EFloat 
 		;
 
-
 Print returns Print:
 	{Print}
 	'print' '(' (statement+=Statement)* ')'
@@ -185,7 +225,14 @@ VariableProxy returns VariableProxy:
 	variable=[Variable|EString]
 	;
 
+SensorProxy returns SensorProxy:
+	sensor=[Sensor|EString]
+	;
 
+ActuatorProxy returns ActuatorProxy:
+	actuator=[Actuator|EString]
+	;
+	
 EBoolean returns ecore::EBoolean:
 	'True' | 'False';
 	
@@ -196,14 +243,77 @@ EInt returns ecore::EInt:
 	'-'? INT;
 
 EFloat returns ecore::EFloat: 
-	INT '.' INT;
-	
-	
+	INT '.' INT
+	;
 	
 Wheel returns Wheel : 
 	{Wheel}
-	'wheel'
-	side=EString 
-	"="
-	(speed=EInt)?
+	'wheel' 
+	'on'
+	portID=EString
+	("=" speed=EInt)?
 ;
+
+
+Arm returns Arm : 
+	{Arm}
+	'arm'
+	name=ID 
+	'on'
+	portID=EString
+	("=" angle=EInt)?
+; 
+
+
+Led returns Led:
+	{Led}
+	'led'
+	name=ID 
+	'on'
+	portID=EString
+	("=" bright=EInt)?
+;
+
+ 
+ShootLauncher returns ShootLauncher : 
+	{ShootLauncher}
+	'shootLauncher'
+	name=ID 
+	'on'
+	portID=EString
+	("=" force=EInt)?
+;
+
+
+ColorDector returns ColorDector :
+	{ColorDector}
+	'colorDector'
+	name=ID 
+	'on'
+	portID=EString
+	
+;	
+
+Laser returns Laser :
+	{Laser}
+	'laser'
+	name=ID 
+	'on'
+	portID=EString
+	
+;
+
+
+
+/*
+Turn returns Turn : 
+	 
+	'turn' '('
+	direction=Direction
+	(angle=EInt)?
+	')'
+;
+
+
+
+*/

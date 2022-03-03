@@ -19,31 +19,31 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.ShootLauncherImpl#isArmed <em>Armed</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.ShootLauncherImpl#getForce <em>Force</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ShootLauncherImpl extends MotorImpl implements ShootLauncher {
 	/**
-	 * The default value of the '{@link #isArmed() <em>Armed</em>}' attribute.
+	 * The default value of the '{@link #getForce() <em>Force</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isArmed()
+	 * @see #getForce()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean ARMED_EDEFAULT = false;
+	protected static final int FORCE_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #isArmed() <em>Armed</em>}' attribute.
+	 * The cached value of the '{@link #getForce() <em>Force</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isArmed()
+	 * @see #getForce()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean armed = ARMED_EDEFAULT;
+	protected int force = FORCE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,8 +69,8 @@ public class ShootLauncherImpl extends MotorImpl implements ShootLauncher {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isArmed() {
-		return armed;
+	public int getForce() {
+		return force;
 	}
 
 	/**
@@ -78,12 +78,12 @@ public class ShootLauncherImpl extends MotorImpl implements ShootLauncher {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setArmed(boolean newArmed) {
-		boolean oldArmed = armed;
-		armed = newArmed;
+	public void setForce(int newForce) {
+		int oldForce = force;
+		force = newForce;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.SHOOT_LAUNCHER__ARMED, oldArmed,
-					armed));
+			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.SHOOT_LAUNCHER__FORCE, oldForce,
+					force));
 	}
 
 	/**
@@ -94,8 +94,8 @@ public class ShootLauncherImpl extends MotorImpl implements ShootLauncher {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case LegolanguagePrPackage.SHOOT_LAUNCHER__ARMED:
-			return isArmed();
+		case LegolanguagePrPackage.SHOOT_LAUNCHER__FORCE:
+			return getForce();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,8 +108,8 @@ public class ShootLauncherImpl extends MotorImpl implements ShootLauncher {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case LegolanguagePrPackage.SHOOT_LAUNCHER__ARMED:
-			setArmed((Boolean) newValue);
+		case LegolanguagePrPackage.SHOOT_LAUNCHER__FORCE:
+			setForce((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +123,8 @@ public class ShootLauncherImpl extends MotorImpl implements ShootLauncher {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case LegolanguagePrPackage.SHOOT_LAUNCHER__ARMED:
-			setArmed(ARMED_EDEFAULT);
+		case LegolanguagePrPackage.SHOOT_LAUNCHER__FORCE:
+			setForce(FORCE_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -138,8 +138,8 @@ public class ShootLauncherImpl extends MotorImpl implements ShootLauncher {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case LegolanguagePrPackage.SHOOT_LAUNCHER__ARMED:
-			return armed != ARMED_EDEFAULT;
+		case LegolanguagePrPackage.SHOOT_LAUNCHER__FORCE:
+			return force != FORCE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -155,8 +155,8 @@ public class ShootLauncherImpl extends MotorImpl implements ShootLauncher {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (armed: ");
-		result.append(armed);
+		result.append(" (force: ");
+		result.append(force);
 		result.append(')');
 		return result.toString();
 	}

@@ -37,6 +37,15 @@ import fr.univcotedazur.l3ia.langagecompilation.If
 import fr.univcotedazur.l3ia.langagecompilation.GTEqual
 import fr.univcotedazur.l3ia.langagecompilation.LTEqual
 import fr.univcotedazur.l3ia.langagecompilation.VariableProxy
+import fr.univcotedazur.l3ia.langagecompilation.Robot
+import fr.univcotedazur.l3ia.langagecompilation.Motor
+import fr.univcotedazur.l3ia.langagecompilation.Actuator
+import fr.univcotedazur.l3ia.langagecompilation.Sensor
+import fr.univcotedazur.l3ia.langagecompilation.Wheel
+import fr.univcotedazur.l3ia.langagecompilation.RotativeMotor
+import fr.univcotedazur.l3ia.langagecompilation.Led
+import fr.univcotedazur.l3ia.langagecompilation.ShootLauncher
+import fr.univcotedazur.l3ia.langagecompilation.Arm
 
 /**
  * Generates code from your model files on save.
@@ -67,8 +76,7 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 	
 	def String StatementToString(Statement s) {
 		var res = ''
-		// not work 
-		// check before if variable is a "variable expression" and after a variable flottante
+		
 		if (s.isInConditionial){
 			res += '\t'
 		}
@@ -88,6 +96,15 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 				res += '\t' + StatementToString(state as Statement)
 			}
 		}else
+		if(s instanceof Robot){
+			res += RobotToString(s as Robot)
+		}else
+		if(s instanceof Actuator){
+			res+= ActuatorToString(s as Actuator)
+		}else
+		if(s instanceof Sensor){
+			res+= SensorToString(s as Sensor)
+		}else
 		if(s instanceof Print){
 			res += 'print('
 			for ( state : s.statement ) {
@@ -98,9 +115,12 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 		if(s instanceof Commentary){
 			res += '\'\'\'' + s.initialeValue + '\'\'\''
 		}
+		
+		
+		
 		res +=  '\n'
 		return res
-	}
+	}	
 	
 	def String VariableToString(Variable v) {
 		var res = ''
@@ -207,6 +227,7 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 	}
 	
 	def String ComparaisonToString(Comparaison c){
+
 		var res = ''
 		if (c instanceof GT){
 			res += ExpressionToString(c.left) + '>' + ExpressionToString(c.right)
@@ -224,10 +245,67 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 			res += ExpressionToString(c.left) + '<=' + ExpressionToString(c.right)
 		}
 		
+		return res
+	} 
+	
+	def String RobotToString(Robot r){
+		var res = ''
+		for (r_a : r.actuator){
+			res += StatementToString(r_a as Actuator)
+		}
+		for (r_s : r.sensor){
+			res += StatementToString(r_s as Sensor)
+		}
 		
+		res += "left" + RotativeMotorToString(r.leftWheel as Wheel) + '\n'
+		res += "right" + RotativeMotorToString(r.rightWheel as Wheel) + '\n'
+		
+		return res
+		
+	}
+
+		
+	def String ActuatorToString(Actuator a){
+		var res =''
+		if (a instanceof Motor){
+			res += MotorToString(a as Motor)
+		}else 
+		if (a instanceof Led){
+			res += "ledMotor"+ a.portID + " = " + "testled"+"("+a.portID+")"
+		}
+		return res
+	}
+	
+	def String SensorToString(Sensor s){
+		var res =''
 		
 		return res
 	}
+	
+	def String MotorToString(Motor m){
+		var res =''
+		if (m instanceof RotativeMotor){
+			res += RotativeMotorToString(m as RotativeMotor)
+		}else
+		if (m instanceof ShootLauncher){
+			res += "shootMotor"+ m.portID + " = " + "LargeMotor"+"("+m.portID+")"
+		}
+		
+		return res
+	}
+	
+	def String RotativeMotorToString(RotativeMotor rm ){
+		var res = ''
+		if (rm instanceof Arm){
+			res += "armMotor"+ rm.portID + " = " + "LargeMotor"+"("+rm.portID+")"
+		}else
+		if (rm instanceof Wheel){
+			res += "wheelMotor"+ rm.portID + " = " + "LargeMotor"+"("+rm.portID+")"
+			
+		}
+		return res
+	}
+	
 	
 	
 	

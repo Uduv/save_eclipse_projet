@@ -3,7 +3,9 @@
  */
 package fr.univcotedazur.l3ia.legolanguage.xtext.generator;
 
+import fr.univcotedazur.l3ia.langagecompilation.Actuator;
 import fr.univcotedazur.l3ia.langagecompilation.Addition;
+import fr.univcotedazur.l3ia.langagecompilation.Arm;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
 import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
 import fr.univcotedazur.l3ia.langagecompilation.Calcul;
@@ -23,14 +25,21 @@ import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
 import fr.univcotedazur.l3ia.langagecompilation.LeFloat;
 import fr.univcotedazur.l3ia.langagecompilation.LeInteger;
 import fr.univcotedazur.l3ia.langagecompilation.LeString;
+import fr.univcotedazur.l3ia.langagecompilation.Led;
 import fr.univcotedazur.l3ia.langagecompilation.Loop;
+import fr.univcotedazur.l3ia.langagecompilation.Motor;
 import fr.univcotedazur.l3ia.langagecompilation.Multiplication;
 import fr.univcotedazur.l3ia.langagecompilation.Print;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
+import fr.univcotedazur.l3ia.langagecompilation.Robot;
+import fr.univcotedazur.l3ia.langagecompilation.RotativeMotor;
+import fr.univcotedazur.l3ia.langagecompilation.Sensor;
+import fr.univcotedazur.l3ia.langagecompilation.ShootLauncher;
 import fr.univcotedazur.l3ia.langagecompilation.Statement;
 import fr.univcotedazur.l3ia.langagecompilation.Substarction;
 import fr.univcotedazur.l3ia.langagecompilation.Variable;
 import fr.univcotedazur.l3ia.langagecompilation.VariableProxy;
+import fr.univcotedazur.l3ia.langagecompilation.Wheel;
 import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -105,32 +114,50 @@ public class UduvGenerator extends AbstractGenerator {
               }
             }
           } else {
-            if ((s instanceof Print)) {
+            if ((s instanceof Robot)) {
               String _res_5 = res;
-              res = (_res_5 + "print(");
-              EList<Statement> _statement_1 = ((Print)s).getStatement();
-              for (final Statement state_1 : _statement_1) {
-                String _res_6 = res;
-                String _StatementToString = this.StatementToString(((Statement) state_1));
-                res = (_res_6 + _StatementToString);
-              }
-              String _res_7 = res;
-              res = (_res_7 + ")");
+              String _RobotToString = this.RobotToString(((Robot) s));
+              res = (_res_5 + _RobotToString);
             } else {
-              if ((s instanceof Commentary)) {
-                String _res_8 = res;
-                String _initialeValue = ((Commentary)s).getInitialeValue();
-                String _plus_4 = ("\'\'\'" + _initialeValue);
-                String _plus_5 = (_plus_4 + "\'\'\'");
-                res = (_res_8 + _plus_5);
+              if ((s instanceof Actuator)) {
+                String _res_6 = res;
+                String _ActuatorToString = this.ActuatorToString(((Actuator) s));
+                res = (_res_6 + _ActuatorToString);
+              } else {
+                if ((s instanceof Sensor)) {
+                  String _res_7 = res;
+                  String _SensorToString = this.SensorToString(((Sensor) s));
+                  res = (_res_7 + _SensorToString);
+                } else {
+                  if ((s instanceof Print)) {
+                    String _res_8 = res;
+                    res = (_res_8 + "print(");
+                    EList<Statement> _statement_1 = ((Print)s).getStatement();
+                    for (final Statement state_1 : _statement_1) {
+                      String _res_9 = res;
+                      String _StatementToString = this.StatementToString(((Statement) state_1));
+                      res = (_res_9 + _StatementToString);
+                    }
+                    String _res_10 = res;
+                    res = (_res_10 + ")");
+                  } else {
+                    if ((s instanceof Commentary)) {
+                      String _res_11 = res;
+                      String _initialeValue = ((Commentary)s).getInitialeValue();
+                      String _plus_4 = ("\'\'\'" + _initialeValue);
+                      String _plus_5 = (_plus_4 + "\'\'\'");
+                      res = (_res_11 + _plus_5);
+                    }
+                  }
+                }
               }
             }
           }
         }
       }
     }
-    String _res_9 = res;
-    res = (_res_9 + "\n");
+    String _res_12 = res;
+    res = (_res_12 + "\n");
     return res;
   }
   
@@ -370,6 +397,116 @@ public class UduvGenerator extends AbstractGenerator {
             }
           }
         }
+      }
+    }
+    return res;
+  }
+  
+  public String RobotToString(final Robot r) {
+    String res = "";
+    EList<Actuator> _actuator = r.getActuator();
+    for (final Actuator r_a : _actuator) {
+      String _res = res;
+      String _StatementToString = this.StatementToString(((Actuator) r_a));
+      res = (_res + _StatementToString);
+    }
+    EList<Sensor> _sensor = r.getSensor();
+    for (final Sensor r_s : _sensor) {
+      String _res_1 = res;
+      String _StatementToString_1 = this.StatementToString(((Sensor) r_s));
+      res = (_res_1 + _StatementToString_1);
+    }
+    String _res_2 = res;
+    Wheel _leftWheel = r.getLeftWheel();
+    String _RotativeMotorToString = this.RotativeMotorToString(((Wheel) _leftWheel));
+    String _plus = ("left" + _RotativeMotorToString);
+    String _plus_1 = (_plus + "\n");
+    res = (_res_2 + _plus_1);
+    String _res_3 = res;
+    Wheel _rightWheel = r.getRightWheel();
+    String _RotativeMotorToString_1 = this.RotativeMotorToString(((Wheel) _rightWheel));
+    String _plus_2 = ("right" + _RotativeMotorToString_1);
+    String _plus_3 = (_plus_2 + "\n");
+    res = (_res_3 + _plus_3);
+    return res;
+  }
+  
+  public String ActuatorToString(final Actuator a) {
+    String res = "";
+    if ((a instanceof Motor)) {
+      String _res = res;
+      String _MotorToString = this.MotorToString(((Motor) a));
+      res = (_res + _MotorToString);
+    } else {
+      if ((a instanceof Led)) {
+        String _res_1 = res;
+        String _portID = ((Led)a).getPortID();
+        String _plus = ("ledMotor" + _portID);
+        String _plus_1 = (_plus + " = ");
+        String _plus_2 = (_plus_1 + "testled");
+        String _plus_3 = (_plus_2 + "(");
+        String _portID_1 = ((Led)a).getPortID();
+        String _plus_4 = (_plus_3 + _portID_1);
+        String _plus_5 = (_plus_4 + ")");
+        res = (_res_1 + _plus_5);
+      }
+    }
+    return res;
+  }
+  
+  public String SensorToString(final Sensor s) {
+    String res = "";
+    return res;
+  }
+  
+  public String MotorToString(final Motor m) {
+    String res = "";
+    if ((m instanceof RotativeMotor)) {
+      String _res = res;
+      String _RotativeMotorToString = this.RotativeMotorToString(((RotativeMotor) m));
+      res = (_res + _RotativeMotorToString);
+    } else {
+      if ((m instanceof ShootLauncher)) {
+        String _res_1 = res;
+        String _portID = ((ShootLauncher)m).getPortID();
+        String _plus = ("shootMotor" + _portID);
+        String _plus_1 = (_plus + " = ");
+        String _plus_2 = (_plus_1 + "LargeMotor");
+        String _plus_3 = (_plus_2 + "(");
+        String _portID_1 = ((ShootLauncher)m).getPortID();
+        String _plus_4 = (_plus_3 + _portID_1);
+        String _plus_5 = (_plus_4 + ")");
+        res = (_res_1 + _plus_5);
+      }
+    }
+    return res;
+  }
+  
+  public String RotativeMotorToString(final RotativeMotor rm) {
+    String res = "";
+    if ((rm instanceof Arm)) {
+      String _res = res;
+      String _portID = ((Arm)rm).getPortID();
+      String _plus = ("armMotor" + _portID);
+      String _plus_1 = (_plus + " = ");
+      String _plus_2 = (_plus_1 + "LargeMotor");
+      String _plus_3 = (_plus_2 + "(");
+      String _portID_1 = ((Arm)rm).getPortID();
+      String _plus_4 = (_plus_3 + _portID_1);
+      String _plus_5 = (_plus_4 + ")");
+      res = (_res + _plus_5);
+    } else {
+      if ((rm instanceof Wheel)) {
+        String _res_1 = res;
+        String _portID_2 = ((Wheel)rm).getPortID();
+        String _plus_6 = ("wheelMotor" + _portID_2);
+        String _plus_7 = (_plus_6 + " = ");
+        String _plus_8 = (_plus_7 + "LargeMotor");
+        String _plus_9 = (_plus_8 + "(");
+        String _portID_3 = ((Wheel)rm).getPortID();
+        String _plus_10 = (_plus_9 + _portID_3);
+        String _plus_11 = (_plus_10 + ")");
+        res = (_res_1 + _plus_11);
       }
     }
     return res;
