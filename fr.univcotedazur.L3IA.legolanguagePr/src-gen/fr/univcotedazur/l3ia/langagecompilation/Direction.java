@@ -26,7 +26,7 @@ public enum Direction implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LEFT(0, "Left", "Left"),
+	LEFT(0, "left", "left"),
 
 	/**
 	 * The '<em><b>Right</b></em>' literal object.
@@ -36,14 +36,14 @@ public enum Direction implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RIGHT(1, "Right", "Right");
+	RIGHT(1, "right", "right");
 
 	/**
 	 * The '<em><b>Left</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #LEFT
-	 * @model name="Left"
+	 * @model name="left"
 	 * @generated
 	 * @ordered
 	 */
@@ -54,7 +54,7 @@ public enum Direction implements Enumerator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #RIGHT
-	 * @model name="Right"
+	 * @model name="right"
 	 * @generated
 	 * @ordered
 	 */

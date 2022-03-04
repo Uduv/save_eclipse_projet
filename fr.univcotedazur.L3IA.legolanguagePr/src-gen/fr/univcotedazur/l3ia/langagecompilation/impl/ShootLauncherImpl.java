@@ -4,6 +4,7 @@ package fr.univcotedazur.l3ia.langagecompilation.impl;
 
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.ShootLauncher;
+
 import org.eclipse.emf.ecore.EClass;
 
 /**

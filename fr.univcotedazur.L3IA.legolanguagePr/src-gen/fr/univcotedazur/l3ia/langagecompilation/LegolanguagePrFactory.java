@@ -283,24 +283,6 @@ public interface LegolanguagePrFactory extends EFactory {
 	Arm createArm();
 
 	/**
-	 * Returns a new object of class '<em>Sensor Proxy</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sensor Proxy</em>'.
-	 * @generated
-	 */
-	SensorProxy createSensorProxy();
-
-	/**
-	 * Returns a new object of class '<em>Actuator Proxy</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Actuator Proxy</em>'.
-	 * @generated
-	 */
-	ActuatorProxy createActuatorProxy();
-
-	/**
 	 * Returns a new object of class '<em>Go</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

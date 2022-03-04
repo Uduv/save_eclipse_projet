@@ -13,5 +13,4 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @generated
  */
 public interface ShootLauncher extends Motor {
-
 } // ShootLauncher

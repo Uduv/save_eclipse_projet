@@ -3,7 +3,6 @@
 package fr.univcotedazur.l3ia.langagecompilation.impl;
 
 import fr.univcotedazur.l3ia.langagecompilation.Actuator;
-import fr.univcotedazur.l3ia.langagecompilation.ActuatorProxy;
 import fr.univcotedazur.l3ia.langagecompilation.Addition;
 import fr.univcotedazur.l3ia.langagecompilation.Arm;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
@@ -46,7 +45,6 @@ import fr.univcotedazur.l3ia.langagecompilation.Robot;
 import fr.univcotedazur.l3ia.langagecompilation.RobotStatement;
 import fr.univcotedazur.l3ia.langagecompilation.RotativeMotor;
 import fr.univcotedazur.l3ia.langagecompilation.Sensor;
-import fr.univcotedazur.l3ia.langagecompilation.SensorProxy;
 import fr.univcotedazur.l3ia.langagecompilation.Shoot;
 import fr.univcotedazur.l3ia.langagecompilation.ShootLauncher;
 import fr.univcotedazur.l3ia.langagecompilation.Side;
@@ -354,20 +352,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * @generated
 	 */
 	private EClass armEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass sensorProxyEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass actuatorProxyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1171,42 +1155,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getSensorProxy() {
-		return sensorProxyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSensorProxy_Sensor() {
-		return (EReference) sensorProxyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getActuatorProxy() {
-		return actuatorProxyEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getActuatorProxy_Actuator() {
-		return (EReference) actuatorProxyEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getRobotStatement() {
 		return robotStatementEClass;
 	}
@@ -1270,17 +1218,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getChangeAngle_Arm() {
-		return (EReference) changeAngleEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getChangeAngle_Speed() {
-		return (EReference) changeAngleEClass.getEStructuralFeatures().get(2);
+		return (EReference) changeAngleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1299,15 +1238,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 */
 	public EReference getChangeIntensity_Intensity() {
 		return (EReference) changeIntensityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getChangeIntensity_Led() {
-		return (EReference) changeIntensityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1387,17 +1317,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getShoot_Shootlauncher() {
-		return (EReference) shootEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getShoot_Force() {
-		return (EReference) shootEClass.getEStructuralFeatures().get(1);
+		return (EReference) shootEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1612,12 +1533,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		armEClass = createEClass(ARM);
 		createEAttribute(armEClass, ARM__ANGLE);
 
-		sensorProxyEClass = createEClass(SENSOR_PROXY);
-		createEReference(sensorProxyEClass, SENSOR_PROXY__SENSOR);
-
-		actuatorProxyEClass = createEClass(ACTUATOR_PROXY);
-		createEReference(actuatorProxyEClass, ACTUATOR_PROXY__ACTUATOR);
-
 		robotStatementEClass = createEClass(ROBOT_STATEMENT);
 		createEReference(robotStatementEClass, ROBOT_STATEMENT__ROBOT);
 
@@ -1627,12 +1542,10 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		changeAngleEClass = createEClass(CHANGE_ANGLE);
 		createEReference(changeAngleEClass, CHANGE_ANGLE__ANGLE);
-		createEReference(changeAngleEClass, CHANGE_ANGLE__ARM);
 		createEReference(changeAngleEClass, CHANGE_ANGLE__SPEED);
 
 		changeIntensityEClass = createEClass(CHANGE_INTENSITY);
 		createEReference(changeIntensityEClass, CHANGE_INTENSITY__INTENSITY);
-		createEReference(changeIntensityEClass, CHANGE_INTENSITY__LED);
 
 		getColorEClass = createEClass(GET_COLOR);
 
@@ -1645,7 +1558,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		createEReference(turnEClass, TURN__DURATION);
 
 		shootEClass = createEClass(SHOOT);
-		createEReference(shootEClass, SHOOT__SHOOTLAUNCHER);
 		createEReference(shootEClass, SHOOT__FORCE);
 
 		gyroSensorEClass = createEClass(GYRO_SENSOR);
@@ -1732,8 +1644,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		motorEClass.getESuperTypes().add(this.getActuator());
 		wheelEClass.getESuperTypes().add(this.getRotativeMotor());
 		armEClass.getESuperTypes().add(this.getRotativeMotor());
-		sensorProxyEClass.getESuperTypes().add(this.getExpression());
-		actuatorProxyEClass.getESuperTypes().add(this.getExpression());
 		robotStatementEClass.getESuperTypes().add(this.getStatement());
 		goEClass.getESuperTypes().add(this.getRobotStatement());
 		changeAngleEClass.getESuperTypes().add(this.getRobotStatement());
@@ -1931,18 +1841,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEAttribute(getArm_Angle(), ecorePackage.getEInt(), "angle", "45", 0, 1, Arm.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(sensorProxyEClass, SensorProxy.class, "SensorProxy", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSensorProxy_Sensor(), this.getSensor(), null, "sensor", null, 1, 1, SensorProxy.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(actuatorProxyEClass, ActuatorProxy.class, "ActuatorProxy", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getActuatorProxy_Actuator(), this.getActuator(), null, "actuator", null, 1, 1,
-				ActuatorProxy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(robotStatementEClass, RobotStatement.class, "RobotStatement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRobotStatement_Robot(), this.getRobot(), null, "robot", null, 1, 1, RobotStatement.class,
@@ -1962,9 +1860,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEReference(getChangeAngle_Angle(), this.getExpression(), null, "angle", null, 1, 1, ChangeAngle.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getChangeAngle_Arm(), this.getArm(), null, "arm", null, 1, 1, ChangeAngle.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEReference(getChangeAngle_Speed(), this.getExpression(), null, "speed", null, 1, 1, ChangeAngle.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1974,9 +1869,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEReference(getChangeIntensity_Intensity(), this.getExpression(), null, "intensity", null, 1, 1,
 				ChangeIntensity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getChangeIntensity_Led(), this.getLed(), null, "led", null, 1, 1, ChangeIntensity.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(getColorEClass, GetColor.class, "GetColor", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1998,9 +1890,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(shootEClass, Shoot.class, "Shoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getShoot_Shootlauncher(), this.getShootLauncher(), null, "shootlauncher", null, 1, 1,
-				Shoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getShoot_Force(), this.getExpression(), null, "force", null, 1, 1, Shoot.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);

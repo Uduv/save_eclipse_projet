@@ -6,8 +6,10 @@ import fr.univcotedazur.l3ia.langagecompilation.Direction;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Turn;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -314,7 +316,6 @@ public class TurnImpl extends RobotStatementImpl implements Turn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

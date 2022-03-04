@@ -13,7 +13,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -45,24 +44,8 @@ public class ChangeIntensityItemProvider extends RobotStatementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Led feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLedPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ChangeIntensity_led_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ChangeIntensity_led_feature",
-								"_UI_ChangeIntensity_type"),
-						LegolanguagePrPackage.Literals.CHANGE_INTENSITY__LED, true, false, true, null, null, null));
 	}
 
 	/**
@@ -194,12 +177,6 @@ public class ChangeIntensityItemProvider extends RobotStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
-				LegolanguagePrFactory.eINSTANCE.createSensorProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
-				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
 	}
 
 }

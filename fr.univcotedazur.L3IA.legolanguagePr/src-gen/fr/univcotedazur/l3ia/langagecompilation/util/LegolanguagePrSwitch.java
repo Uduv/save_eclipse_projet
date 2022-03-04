@@ -538,28 +538,6 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case LegolanguagePrPackage.SENSOR_PROXY: {
-			SensorProxy sensorProxy = (SensorProxy) theEObject;
-			T result = caseSensorProxy(sensorProxy);
-			if (result == null)
-				result = caseExpression(sensorProxy);
-			if (result == null)
-				result = caseStatement(sensorProxy);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case LegolanguagePrPackage.ACTUATOR_PROXY: {
-			ActuatorProxy actuatorProxy = (ActuatorProxy) theEObject;
-			T result = caseActuatorProxy(actuatorProxy);
-			if (result == null)
-				result = caseExpression(actuatorProxy);
-			if (result == null)
-				result = caseStatement(actuatorProxy);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case LegolanguagePrPackage.ROBOT_STATEMENT: {
 			RobotStatement robotStatement = (RobotStatement) theEObject;
 			T result = caseRobotStatement(robotStatement);
@@ -1270,36 +1248,6 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseArm(Arm object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sensor Proxy</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sensor Proxy</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSensorProxy(SensorProxy object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Actuator Proxy</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Actuator Proxy</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseActuatorProxy(ActuatorProxy object) {
 		return null;
 	}
 

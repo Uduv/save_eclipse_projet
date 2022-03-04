@@ -204,12 +204,6 @@ public class TurnItemProvider extends RobotStatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createSensorProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
-
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -246,12 +240,6 @@ public class TurnItemProvider extends RobotStatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createSensorProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
-
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -287,12 +275,6 @@ public class TurnItemProvider extends RobotStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createSensorProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
 	}
 
 	/**

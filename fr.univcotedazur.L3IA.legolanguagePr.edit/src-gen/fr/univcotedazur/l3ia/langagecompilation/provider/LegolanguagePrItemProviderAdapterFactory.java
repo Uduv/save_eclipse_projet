@@ -740,52 +740,6 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.SensorProxy} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SensorProxyItemProvider sensorProxyItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.SensorProxy}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSensorProxyAdapter() {
-		if (sensorProxyItemProvider == null) {
-			sensorProxyItemProvider = new SensorProxyItemProvider(this);
-		}
-
-		return sensorProxyItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.ActuatorProxy} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ActuatorProxyItemProvider actuatorProxyItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ActuatorProxy}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createActuatorProxyAdapter() {
-		if (actuatorProxyItemProvider == null) {
-			actuatorProxyItemProvider = new ActuatorProxyItemProvider(this);
-		}
-
-		return actuatorProxyItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Go} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1149,10 +1103,6 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			wheelItemProvider.dispose();
 		if (armItemProvider != null)
 			armItemProvider.dispose();
-		if (sensorProxyItemProvider != null)
-			sensorProxyItemProvider.dispose();
-		if (actuatorProxyItemProvider != null)
-			actuatorProxyItemProvider.dispose();
 		if (goItemProvider != null)
 			goItemProvider.dispose();
 		if (changeAngleItemProvider != null)

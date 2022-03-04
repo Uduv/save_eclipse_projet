@@ -13,7 +13,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -45,24 +44,8 @@ public class ChangeAngleItemProvider extends RobotStatementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addArmPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Arm feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addArmPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ChangeAngle_arm_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ChangeAngle_arm_feature",
-								"_UI_ChangeAngle_type"),
-						LegolanguagePrPackage.Literals.CHANGE_ANGLE__ARM, true, false, true, null, null, null));
 	}
 
 	/**
@@ -197,12 +180,6 @@ public class ChangeAngleItemProvider extends RobotStatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createSensorProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
-
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -238,12 +215,6 @@ public class ChangeAngleItemProvider extends RobotStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createSensorProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
 	}
 
 	/**

@@ -244,12 +244,6 @@ public class IfItemProvider extends StatementItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createArm()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createSensorProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createGo()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,

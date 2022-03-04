@@ -267,16 +267,6 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseSensorProxy(SensorProxy object) {
-			return createSensorProxyAdapter();
-		}
-
-		@Override
-		public Adapter caseActuatorProxy(ActuatorProxy object) {
-			return createActuatorProxyAdapter();
-		}
-
-		@Override
 		public Adapter caseRobotStatement(RobotStatement object) {
 			return createRobotStatementAdapter();
 		}
@@ -902,34 +892,6 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createArmAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.SensorProxy <em>Sensor Proxy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.SensorProxy
-	 * @generated
-	 */
-	public Adapter createSensorProxyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.ActuatorProxy <em>Actuator Proxy</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.ActuatorProxy
-	 * @generated
-	 */
-	public Adapter createActuatorProxyAdapter() {
 		return null;
 	}
 

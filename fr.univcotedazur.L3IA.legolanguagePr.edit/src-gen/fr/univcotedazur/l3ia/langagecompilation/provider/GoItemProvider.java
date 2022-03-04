@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -179,12 +180,6 @@ public class GoItemProvider extends RobotStatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createSensorProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
-
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -220,12 +215,6 @@ public class GoItemProvider extends RobotStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createSensorProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
 	}
 
 	/**

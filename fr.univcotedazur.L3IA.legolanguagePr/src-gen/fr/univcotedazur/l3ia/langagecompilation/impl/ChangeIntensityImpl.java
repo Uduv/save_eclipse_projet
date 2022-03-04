@@ -4,7 +4,6 @@ package fr.univcotedazur.l3ia.langagecompilation.impl;
 
 import fr.univcotedazur.l3ia.langagecompilation.ChangeIntensity;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
-import fr.univcotedazur.l3ia.langagecompilation.Led;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.ChangeIntensityImpl#getIntensity <em>Intensity</em>}</li>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.ChangeIntensityImpl#getLed <em>Led</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,16 +37,6 @@ public class ChangeIntensityImpl extends RobotStatementImpl implements ChangeInt
 	 * @ordered
 	 */
 	protected Expression intensity;
-
-	/**
-	 * The cached value of the '{@link #getLed() <em>Led</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLed()
-	 * @generated
-	 * @ordered
-	 */
-	protected Led led;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,46 +112,6 @@ public class ChangeIntensityImpl extends RobotStatementImpl implements ChangeInt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Led getLed() {
-		if (led != null && led.eIsProxy()) {
-			InternalEObject oldLed = (InternalEObject) led;
-			led = (Led) eResolveProxy(oldLed);
-			if (led != oldLed) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							LegolanguagePrPackage.CHANGE_INTENSITY__LED, oldLed, led));
-			}
-		}
-		return led;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Led basicGetLed() {
-		return led;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLed(Led newLed) {
-		Led oldLed = led;
-		led = newLed;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.CHANGE_INTENSITY__LED, oldLed,
-					led));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -183,10 +131,6 @@ public class ChangeIntensityImpl extends RobotStatementImpl implements ChangeInt
 		switch (featureID) {
 		case LegolanguagePrPackage.CHANGE_INTENSITY__INTENSITY:
 			return getIntensity();
-		case LegolanguagePrPackage.CHANGE_INTENSITY__LED:
-			if (resolve)
-				return getLed();
-			return basicGetLed();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,9 +145,6 @@ public class ChangeIntensityImpl extends RobotStatementImpl implements ChangeInt
 		switch (featureID) {
 		case LegolanguagePrPackage.CHANGE_INTENSITY__INTENSITY:
 			setIntensity((Expression) newValue);
-			return;
-		case LegolanguagePrPackage.CHANGE_INTENSITY__LED:
-			setLed((Led) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -220,9 +161,6 @@ public class ChangeIntensityImpl extends RobotStatementImpl implements ChangeInt
 		case LegolanguagePrPackage.CHANGE_INTENSITY__INTENSITY:
 			setIntensity((Expression) null);
 			return;
-		case LegolanguagePrPackage.CHANGE_INTENSITY__LED:
-			setLed((Led) null);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -237,8 +175,6 @@ public class ChangeIntensityImpl extends RobotStatementImpl implements ChangeInt
 		switch (featureID) {
 		case LegolanguagePrPackage.CHANGE_INTENSITY__INTENSITY:
 			return intensity != null;
-		case LegolanguagePrPackage.CHANGE_INTENSITY__LED:
-			return led != null;
 		}
 		return super.eIsSet(featureID);
 	}

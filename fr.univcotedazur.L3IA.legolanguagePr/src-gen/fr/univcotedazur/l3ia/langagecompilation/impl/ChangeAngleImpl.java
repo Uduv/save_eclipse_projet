@@ -2,7 +2,6 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.impl;
 
-import fr.univcotedazur.l3ia.langagecompilation.Arm;
 import fr.univcotedazur.l3ia.langagecompilation.ChangeAngle;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
@@ -24,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.ChangeAngleImpl#getAngle <em>Angle</em>}</li>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.ChangeAngleImpl#getArm <em>Arm</em>}</li>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.ChangeAngleImpl#getSpeed <em>Speed</em>}</li>
  * </ul>
  *
@@ -40,16 +38,6 @@ public class ChangeAngleImpl extends RobotStatementImpl implements ChangeAngle {
 	 * @ordered
 	 */
 	protected Expression angle;
-
-	/**
-	 * The cached value of the '{@link #getArm() <em>Arm</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getArm()
-	 * @generated
-	 * @ordered
-	 */
-	protected Arm arm;
 
 	/**
 	 * The cached value of the '{@link #getSpeed() <em>Speed</em>}' containment reference.
@@ -135,46 +123,6 @@ public class ChangeAngleImpl extends RobotStatementImpl implements ChangeAngle {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Arm getArm() {
-		if (arm != null && arm.eIsProxy()) {
-			InternalEObject oldArm = (InternalEObject) arm;
-			arm = (Arm) eResolveProxy(oldArm);
-			if (arm != oldArm) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LegolanguagePrPackage.CHANGE_ANGLE__ARM,
-							oldArm, arm));
-			}
-		}
-		return arm;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Arm basicGetArm() {
-		return arm;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setArm(Arm newArm) {
-		Arm oldArm = arm;
-		arm = newArm;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.CHANGE_ANGLE__ARM, oldArm,
-					arm));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Expression getSpeed() {
 		return speed;
 	}
@@ -246,10 +194,6 @@ public class ChangeAngleImpl extends RobotStatementImpl implements ChangeAngle {
 		switch (featureID) {
 		case LegolanguagePrPackage.CHANGE_ANGLE__ANGLE:
 			return getAngle();
-		case LegolanguagePrPackage.CHANGE_ANGLE__ARM:
-			if (resolve)
-				return getArm();
-			return basicGetArm();
 		case LegolanguagePrPackage.CHANGE_ANGLE__SPEED:
 			return getSpeed();
 		}
@@ -266,9 +210,6 @@ public class ChangeAngleImpl extends RobotStatementImpl implements ChangeAngle {
 		switch (featureID) {
 		case LegolanguagePrPackage.CHANGE_ANGLE__ANGLE:
 			setAngle((Expression) newValue);
-			return;
-		case LegolanguagePrPackage.CHANGE_ANGLE__ARM:
-			setArm((Arm) newValue);
 			return;
 		case LegolanguagePrPackage.CHANGE_ANGLE__SPEED:
 			setSpeed((Expression) newValue);
@@ -288,9 +229,6 @@ public class ChangeAngleImpl extends RobotStatementImpl implements ChangeAngle {
 		case LegolanguagePrPackage.CHANGE_ANGLE__ANGLE:
 			setAngle((Expression) null);
 			return;
-		case LegolanguagePrPackage.CHANGE_ANGLE__ARM:
-			setArm((Arm) null);
-			return;
 		case LegolanguagePrPackage.CHANGE_ANGLE__SPEED:
 			setSpeed((Expression) null);
 			return;
@@ -308,8 +246,6 @@ public class ChangeAngleImpl extends RobotStatementImpl implements ChangeAngle {
 		switch (featureID) {
 		case LegolanguagePrPackage.CHANGE_ANGLE__ANGLE:
 			return angle != null;
-		case LegolanguagePrPackage.CHANGE_ANGLE__ARM:
-			return arm != null;
 		case LegolanguagePrPackage.CHANGE_ANGLE__SPEED:
 			return speed != null;
 		}

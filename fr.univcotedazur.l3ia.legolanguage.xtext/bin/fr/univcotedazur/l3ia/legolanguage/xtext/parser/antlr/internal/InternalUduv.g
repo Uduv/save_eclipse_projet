@@ -411,11 +411,11 @@ ruleExpression returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getSensorProxyParserRuleCall_0());
+			newCompositeNode(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_0());
 		}
-		this_SensorProxy_0=ruleSensorProxy
+		this_VariableProxy_0=ruleVariableProxy
 		{
-			$current = $this_SensorProxy_0.current;
+			$current = $this_VariableProxy_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -423,35 +423,11 @@ ruleExpression returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getActuatorProxyParserRuleCall_1());
+			newCompositeNode(grammarAccess.getExpressionAccess().getBinaryOperationParserRuleCall_1());
 		}
-		this_ActuatorProxy_1=ruleActuatorProxy
+		this_BinaryOperation_1=ruleBinaryOperation
 		{
-			$current = $this_ActuatorProxy_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			/* */
-		}
-		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_2());
-		}
-		this_VariableProxy_2=ruleVariableProxy
-		{
-			$current = $this_VariableProxy_2.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			/* */
-		}
-		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getBinaryOperationParserRuleCall_3());
-		}
-		this_BinaryOperation_3=ruleBinaryOperation
-		{
-			$current = $this_BinaryOperation_3.current;
+			$current = $this_BinaryOperation_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -2460,84 +2436,9 @@ ruleVariableProxy returns [EObject current=null]
 					$current = createModelElement(grammarAccess.getVariableProxyRule());
 				}
 			}
+			otherlv_0=RULE_ID
 			{
-				newCompositeNode(grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0());
-			}
-			ruleEString
-			{
-				afterParserOrEnumRuleCall();
-			}
-		)
-	)
-;
-
-// Entry rule entryRuleSensorProxy
-entryRuleSensorProxy returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSensorProxyRule()); }
-	iv_ruleSensorProxy=ruleSensorProxy
-	{ $current=$iv_ruleSensorProxy.current; }
-	EOF;
-
-// Rule SensorProxy
-ruleSensorProxy returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				/* */
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getSensorProxyRule());
-				}
-			}
-			{
-				newCompositeNode(grammarAccess.getSensorProxyAccess().getSensorSensorCrossReference_0());
-			}
-			ruleEString
-			{
-				afterParserOrEnumRuleCall();
-			}
-		)
-	)
-;
-
-// Entry rule entryRuleActuatorProxy
-entryRuleActuatorProxy returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getActuatorProxyRule()); }
-	iv_ruleActuatorProxy=ruleActuatorProxy
-	{ $current=$iv_ruleActuatorProxy.current; }
-	EOF;
-
-// Rule ActuatorProxy
-ruleActuatorProxy returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				/* */
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getActuatorProxyRule());
-				}
-			}
-			{
-				newCompositeNode(grammarAccess.getActuatorProxyAccess().getActuatorActuatorCrossReference_0());
-			}
-			ruleEString
-			{
-				afterParserOrEnumRuleCall();
+				newLeafNode(otherlv_0, grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0());
 			}
 		)
 	)
@@ -3505,9 +3406,9 @@ ruleGo returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGoAccess().getSpeedBinaryOperationParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getGoAccess().getSpeedExpressionParserRuleCall_3_0());
 				}
-				lv_speed_3_0=ruleBinaryOperation
+				lv_speed_3_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGoRule());
@@ -3516,37 +3417,39 @@ ruleGo returns [EObject current=null]
 						$current,
 						"speed",
 						lv_speed_3_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.BinaryOperation");
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4=','
-		{
-			newLeafNode(otherlv_4, grammarAccess.getGoAccess().getCommaKeyword_4());
-		}
 		(
+			otherlv_4=','
+			{
+				newLeafNode(otherlv_4, grammarAccess.getGoAccess().getCommaKeyword_4_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getGoAccess().getDurationBinaryOperationParserRuleCall_5_0());
-				}
-				lv_duration_5_0=ruleBinaryOperation
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getGoRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getGoAccess().getDurationExpressionParserRuleCall_4_1_0());
 					}
-					set(
-						$current,
-						"duration",
-						lv_duration_5_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.BinaryOperation");
-					afterParserOrEnumRuleCall();
-				}
+					lv_duration_5_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGoRule());
+						}
+						set(
+							$current,
+							"duration",
+							lv_duration_5_0,
+							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)?
 		otherlv_6=')'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getGoAccess().getRightParenthesisKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getGoAccess().getRightParenthesisKeyword_5());
 		}
 	)
 ;
@@ -3610,32 +3513,34 @@ ruleChangeAngle returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=','
-		{
-			newLeafNode(otherlv_4, grammarAccess.getChangeAngleAccess().getCommaKeyword_4());
-		}
 		(
+			otherlv_4=','
+			{
+				newLeafNode(otherlv_4, grammarAccess.getChangeAngleAccess().getCommaKeyword_4_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getChangeAngleAccess().getSpeedExpressionParserRuleCall_5_0());
-				}
-				lv_speed_5_0=ruleExpression
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getChangeAngleRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getChangeAngleAccess().getSpeedExpressionParserRuleCall_4_1_0());
 					}
-					set(
-						$current,
-						"speed",
-						lv_speed_5_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
-					afterParserOrEnumRuleCall();
-				}
+					lv_speed_5_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getChangeAngleRule());
+						}
+						set(
+							$current,
+							"speed",
+							lv_speed_5_0,
+							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)?
 		otherlv_6=')'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getChangeAngleAccess().getRightParenthesisKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getChangeAngleAccess().getRightParenthesisKeyword_5());
 		}
 	)
 ;
@@ -3782,7 +3687,7 @@ ruleDirection returns [Enumerator current=null]
 }:
 	(
 		(
-			enumLiteral_0='Left'
+			enumLiteral_0='left'
 			{
 				$current = grammarAccess.getDirectionAccess().getLeftEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_0, grammarAccess.getDirectionAccess().getLeftEnumLiteralDeclaration_0());
@@ -3790,7 +3695,7 @@ ruleDirection returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_1='Right'
+			enumLiteral_1='right'
 			{
 				$current = grammarAccess.getDirectionAccess().getRightEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_1, grammarAccess.getDirectionAccess().getRightEnumLiteralDeclaration_1());

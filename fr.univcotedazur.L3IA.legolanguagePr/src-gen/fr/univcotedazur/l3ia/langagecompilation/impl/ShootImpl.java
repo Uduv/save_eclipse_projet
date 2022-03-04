@@ -5,11 +5,12 @@ package fr.univcotedazur.l3ia.langagecompilation.impl;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Shoot;
-import fr.univcotedazur.l3ia.langagecompilation.ShootLauncher;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -20,22 +21,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.ShootImpl#getShootlauncher <em>Shootlauncher</em>}</li>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.ShootImpl#getForce <em>Force</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ShootImpl extends RobotStatementImpl implements Shoot {
-	/**
-	 * The cached value of the '{@link #getShootlauncher() <em>Shootlauncher</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShootlauncher()
-	 * @generated
-	 * @ordered
-	 */
-	protected ShootLauncher shootlauncher;
 	/**
 	 * The cached value of the '{@link #getForce() <em>Force</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -63,46 +54,6 @@ public class ShootImpl extends RobotStatementImpl implements Shoot {
 	@Override
 	protected EClass eStaticClass() {
 		return LegolanguagePrPackage.Literals.SHOOT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ShootLauncher getShootlauncher() {
-		if (shootlauncher != null && shootlauncher.eIsProxy()) {
-			InternalEObject oldShootlauncher = (InternalEObject) shootlauncher;
-			shootlauncher = (ShootLauncher) eResolveProxy(oldShootlauncher);
-			if (shootlauncher != oldShootlauncher) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							LegolanguagePrPackage.SHOOT__SHOOTLAUNCHER, oldShootlauncher, shootlauncher));
-			}
-		}
-		return shootlauncher;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ShootLauncher basicGetShootlauncher() {
-		return shootlauncher;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setShootlauncher(ShootLauncher newShootlauncher) {
-		ShootLauncher oldShootlauncher = shootlauncher;
-		shootlauncher = newShootlauncher;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.SHOOT__SHOOTLAUNCHER,
-					oldShootlauncher, shootlauncher));
 	}
 
 	/**
@@ -177,10 +128,6 @@ public class ShootImpl extends RobotStatementImpl implements Shoot {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case LegolanguagePrPackage.SHOOT__SHOOTLAUNCHER:
-			if (resolve)
-				return getShootlauncher();
-			return basicGetShootlauncher();
 		case LegolanguagePrPackage.SHOOT__FORCE:
 			return getForce();
 		}
@@ -195,9 +142,6 @@ public class ShootImpl extends RobotStatementImpl implements Shoot {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case LegolanguagePrPackage.SHOOT__SHOOTLAUNCHER:
-			setShootlauncher((ShootLauncher) newValue);
-			return;
 		case LegolanguagePrPackage.SHOOT__FORCE:
 			setForce((Expression) newValue);
 			return;
@@ -213,9 +157,6 @@ public class ShootImpl extends RobotStatementImpl implements Shoot {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case LegolanguagePrPackage.SHOOT__SHOOTLAUNCHER:
-			setShootlauncher((ShootLauncher) null);
-			return;
 		case LegolanguagePrPackage.SHOOT__FORCE:
 			setForce((Expression) null);
 			return;
@@ -231,8 +172,6 @@ public class ShootImpl extends RobotStatementImpl implements Shoot {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case LegolanguagePrPackage.SHOOT__SHOOTLAUNCHER:
-			return shootlauncher != null;
 		case LegolanguagePrPackage.SHOOT__FORCE:
 			return force != null;
 		}

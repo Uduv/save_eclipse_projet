@@ -56,6 +56,7 @@ import fr.univcotedazur.l3ia.langagecompilation.Turn
 import fr.univcotedazur.l3ia.langagecompilation.ChangeAngle
 import fr.univcotedazur.l3ia.langagecompilation.ChangeIntensity
 import fr.univcotedazur.l3ia.langagecompilation.Shoot
+import fr.univcotedazur.l3ia.langagecompilation.Direction
 
 /**
  * Generates code from your model files on save.
@@ -333,28 +334,37 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 	def String RobotStatementToString(RobotStatement rs){
 		var res = ''
 		if (rs instanceof Go){
-			res += 'steering_drive = MoveSteering('+rs.robot.leftWheel.portID+","rs.robot.rightWheel.portID+')\n'
-			res += 'steering_drive.on_for_rotations(' +"0, "+rs.speed + ', ' +rs.duration + ')'
-		}else
-		if (rs instanceof Turn){
-			if (rs.direction == "Left"){
-				res += 'steering_drive = MoveSteering('+rs.robot.leftWheel.portID+","rs.robot.rightWheel.portID+')\n'
-				res += 'steering_drive.on_for_rotations(' + "-"+rs.angle +', ' +rs.speed + ', ' +rs.duration + ')'
-				}else
-			if (rs.direction == "Right"){
-				res += 'steering_drive = MoveSteering('+rs.robot.leftWheel.portID+","rs.robot.rightWheel.portID+')\n'
-				res += 'steering_drive.on_for_rotations(' + "" +rs.angle +', ' +rs.speed + ', ' +rs.duration + ')'
+			res += 'steering_drive = MoveSteering(' + rs.robot.leftWheel.portID + "," + rs.robot.rightWheel.portID+') ,'
+			res += 'steering_drive.on_for_rotations(' +"0, "+ExpressionToString(rs.speed as Expression) + ', ' +ExpressionToString(rs.duration as Expression) + ')'
 			}
-		}else
-		if (rs instanceof ChangeAngle){
-			res+= "armMotor"+ rs.arm.portID + ".on_for_degrees("+ rs.speed +', '+rs.angle+')'
-		}else
-		if ( rs instanceof ChangeIntensity){
-			res+= "ledMotor"+ rs.led.portID + ".intensity("+rs.intensity+')'
-		}else
-		if( rs instanceof Shoot){
-			res += "shootMotor"+rs.shootlauncher.portID +  ".on_for_position(-"+ rs.force +')'
-			res += "shootMotor"+rs.shootlauncher.portID +  ".on_for_position("+ rs.force +')'
+			if (rs instanceof Turn){
+				if (rs.direction.equals(Direction.LEFT) ){
+					res += 'steering_drive = MoveSteering(' + rs.robot.leftWheel.portID + "," + rs.robot.rightWheel.portID+') ,'
+					res += 'steering_drive.on_for_rotations(' + "-"+ExpressionToString(rs.angle as Expression) +', ' +ExpressionToString(rs.speed as Expression) + ', ' +ExpressionToString(rs.duration as Expression) + ')'
+					}else
+				if (rs.direction.equals(Direction.RIGHT) ){
+					res += 'steering_drive = MoveSteering(' + rs.robot.leftWheel.portID + "," + rs.robot.rightWheel.portID+') ,'
+					res += 'steering_drive.on_for_rotations(' + ""+ExpressionToString(rs.angle as Expression) +', ' +ExpressionToString(rs.speed as Expression) + ', ' +ExpressionToString(rs.duration as Expression) + ')'
+				}
+			}
+		for (act : rs.robot.actuator){
+			if (rs instanceof ChangeAngle){
+				if (act instanceof Arm){
+					res+= "armMotor"+ act.portID + ".on_for_degrees("+ ExpressionToString(rs.speed as Expression) +', '+ExpressionToString(rs.angle as Expression)+')'
+				}
+			}else
+			if ( rs instanceof ChangeIntensity){
+				if (act instanceof Led){
+					res+= "ledMotor"+ act.portID + ".intensity("+ExpressionToString(rs.intensity as Expression)+')'
+				}
+			}else
+			if( rs instanceof Shoot){
+				if (act instanceof ShootLauncher ){
+					res += "shootMotor"+ act.portID +  ".on_for_position(-"+ ExpressionToString(rs.force as Expression) +') , '
+					res += "shootMotor"+ act.portID +  ".on_for_position("+ ExpressionToString(rs.force as Expression) +')'
+				}
+			}
+			
 		}
 		
 		return res 

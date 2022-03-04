@@ -115,10 +115,6 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createWheel();
 		case LegolanguagePrPackage.ARM:
 			return createArm();
-		case LegolanguagePrPackage.SENSOR_PROXY:
-			return createSensorProxy();
-		case LegolanguagePrPackage.ACTUATOR_PROXY:
-			return createActuatorProxy();
 		case LegolanguagePrPackage.GO:
 			return createGo();
 		case LegolanguagePrPackage.CHANGE_ANGLE:
@@ -468,26 +464,6 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	public Arm createArm() {
 		ArmImpl arm = new ArmImpl();
 		return arm;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SensorProxy createSensorProxy() {
-		SensorProxyImpl sensorProxy = new SensorProxyImpl();
-		return sensorProxy;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ActuatorProxy createActuatorProxy() {
-		ActuatorProxyImpl actuatorProxy = new ActuatorProxyImpl();
-		return actuatorProxy;
 	}
 
 	/**

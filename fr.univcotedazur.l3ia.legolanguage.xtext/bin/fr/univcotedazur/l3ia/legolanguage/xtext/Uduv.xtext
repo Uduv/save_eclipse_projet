@@ -26,13 +26,13 @@ RobotDeclaration returns Robot:
 
 
 Expression returns Expression:
-	 SensorProxy | ActuatorProxy | VariableProxy  | BinaryOperation;
+	/*/ SensorProxy | ActuatorProxy | */ VariableProxy  | BinaryOperation;
 	
 Calcul returns Calcul : 
 	Substarction | Addition | Division | Exponential | Multiplication ;
 	
 BinaryOperation returns BinaryOperation :
-Comparaison |  Calcul |  Assignement /*| SensorOperation | ActuatorOperation*/ ;
+Comparaison |  Calcul |  Assignement  ;
 
 
 Comparaison returns Comparaison:
@@ -217,14 +217,6 @@ VariableProxy returns VariableProxy:
 	variable=[Variable|EString]
 	;
 
-SensorProxy returns SensorProxy:
-	sensor=[Sensor|EString]
-	;
-
-ActuatorProxy returns ActuatorProxy:
-	actuator=[Actuator|EString]
-	;
-	
 EBoolean returns ecore::EBoolean:
 	'True' | 'False';
 	
@@ -324,16 +316,16 @@ Turn returns Turn :
 Go returns Go :
 	robot=[Robot|ID]
 	'go' '('
-	speed=Expression","
-	(duration=Expression)?
+	speed=Expression 
+	("," duration=Expression)?
 	')'
 ;
 
 ChangeAngle returns ChangeAngle :
 	robot=[Robot|ID]
 	'changeAngle' '('
-	angle=Expression','
-	(speed=Expression)?
+	angle=Expression
+	(',' speed=Expression)?
 	
 	')'
 ;
@@ -352,11 +344,11 @@ Shoot returns Shoot :
 ;
 
 enum Color:
-	Rouge = "Rouge" | Bleu = "Bleu"
+	Rouge = "rouge" | Bleu = "bleu"
 ; 
 
 enum Direction:
-	Left= "Left" | Right = "Right"
+	left= "left" | right = "right"
 ;
 
 
