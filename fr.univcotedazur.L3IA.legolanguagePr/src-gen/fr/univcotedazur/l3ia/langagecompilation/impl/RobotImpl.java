@@ -6,8 +6,8 @@ import fr.univcotedazur.l3ia.langagecompilation.Actuator;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Robot;
 import fr.univcotedazur.l3ia.langagecompilation.Sensor;
-
 import fr.univcotedazur.l3ia.langagecompilation.Wheel;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;

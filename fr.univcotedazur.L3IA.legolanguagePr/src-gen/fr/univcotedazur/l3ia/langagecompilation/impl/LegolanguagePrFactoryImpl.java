@@ -103,10 +103,10 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createLTEqual();
 		case LegolanguagePrPackage.ROBOT:
 			return createRobot();
-		case LegolanguagePrPackage.COLOR_DECTOR:
-			return createColorDector();
-		case LegolanguagePrPackage.LASER:
-			return createLaser();
+		case LegolanguagePrPackage.COLOR_SENSOR:
+			return createColorSensor();
+		case LegolanguagePrPackage.LASER_SENSOR:
+			return createLaserSensor();
 		case LegolanguagePrPackage.SHOOT_LAUNCHER:
 			return createShootLauncher();
 		case LegolanguagePrPackage.LED:
@@ -123,8 +123,8 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createGo();
 		case LegolanguagePrPackage.CHANGE_ANGLE:
 			return createChangeAngle();
-		case LegolanguagePrPackage.CHANGE_INTENSITY_LIGHT:
-			return createChangeIntensityLight();
+		case LegolanguagePrPackage.CHANGE_INTENSITY:
+			return createChangeIntensity();
 		case LegolanguagePrPackage.GET_COLOR:
 			return createGetColor();
 		case LegolanguagePrPackage.GET_DISTANCE:
@@ -133,6 +133,10 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createTurn();
 		case LegolanguagePrPackage.SHOOT:
 			return createShoot();
+		case LegolanguagePrPackage.GYRO_SENSOR:
+			return createGyroSensor();
+		case LegolanguagePrPackage.GPS_SENSOR:
+			return createGPSSensor();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -150,6 +154,8 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createDirectionFromString(eDataType, initialValue);
 		case LegolanguagePrPackage.SIDE:
 			return createSideFromString(eDataType, initialValue);
+		case LegolanguagePrPackage.COLOR:
+			return createColorFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -167,6 +173,8 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return convertDirectionToString(eDataType, instanceValue);
 		case LegolanguagePrPackage.SIDE:
 			return convertSideToString(eDataType, instanceValue);
+		case LegolanguagePrPackage.COLOR:
+			return convertColorToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -407,9 +415,9 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ColorDector createColorDector() {
-		ColorDectorImpl colorDector = new ColorDectorImpl();
-		return colorDector;
+	public ColorSensor createColorSensor() {
+		ColorSensorImpl colorSensor = new ColorSensorImpl();
+		return colorSensor;
 	}
 
 	/**
@@ -417,9 +425,9 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Laser createLaser() {
-		LaserImpl laser = new LaserImpl();
-		return laser;
+	public LaserSensor createLaserSensor() {
+		LaserSensorImpl laserSensor = new LaserSensorImpl();
+		return laserSensor;
 	}
 
 	/**
@@ -507,9 +515,9 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ChangeIntensityLight createChangeIntensityLight() {
-		ChangeIntensityLightImpl changeIntensityLight = new ChangeIntensityLightImpl();
-		return changeIntensityLight;
+	public ChangeIntensity createChangeIntensity() {
+		ChangeIntensityImpl changeIntensity = new ChangeIntensityImpl();
+		return changeIntensity;
 	}
 
 	/**
@@ -557,6 +565,26 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public GyroSensor createGyroSensor() {
+		GyroSensorImpl gyroSensor = new GyroSensorImpl();
+		return gyroSensor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GPSSensor createGPSSensor() {
+		GPSSensorImpl gpsSensor = new GPSSensorImpl();
+		return gpsSensor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Direction createDirectionFromString(EDataType eDataType, String initialValue) {
 		Direction result = Direction.get(initialValue);
 		if (result == null)
@@ -593,6 +621,28 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	 * @generated
 	 */
 	public String convertSideToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Color createColorFromString(EDataType eDataType, String initialValue) {
+		Color result = Color.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertColorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

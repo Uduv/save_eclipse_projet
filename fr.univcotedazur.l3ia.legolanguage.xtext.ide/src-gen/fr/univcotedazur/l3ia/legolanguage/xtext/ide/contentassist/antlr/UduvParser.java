@@ -32,18 +32,22 @@ public class UduvParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, UduvGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
+			builder.put(grammarAccess.getRobotDeclarationAccess().getAlternatives_2_5(), "rule__RobotDeclaration__Alternatives_2_5");
 			builder.put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 			builder.put(grammarAccess.getCalculAccess().getAlternatives(), "rule__Calcul__Alternatives");
 			builder.put(grammarAccess.getBinaryOperationAccess().getAlternatives(), "rule__BinaryOperation__Alternatives");
 			builder.put(grammarAccess.getComparaisonAccess().getAlternatives(), "rule__Comparaison__Alternatives");
 			builder.put(grammarAccess.getVariableAccess().getAlternatives(), "rule__Variable__Alternatives");
 			builder.put(grammarAccess.getSensorAccess().getAlternatives(), "rule__Sensor__Alternatives");
+			builder.put(grammarAccess.getRobotStatementAccess().getAlternatives(), "rule__RobotStatement__Alternatives");
 			builder.put(grammarAccess.getActuatorAccess().getAlternatives(), "rule__Actuator__Alternatives");
 			builder.put(grammarAccess.getMotorAccess().getAlternatives(), "rule__Motor__Alternatives");
 			builder.put(grammarAccess.getRotativeMotorAccess().getAlternatives(), "rule__RotativeMotor__Alternatives");
 			builder.put(grammarAccess.getLoopAccess().getAlternatives(), "rule__Loop__Alternatives");
 			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
+			builder.put(grammarAccess.getColorAccess().getAlternatives(), "rule__Color__Alternatives");
+			builder.put(grammarAccess.getDirectionAccess().getAlternatives(), "rule__Direction__Alternatives");
 			builder.put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
 			builder.put(grammarAccess.getRobotDeclarationAccess().getGroup(), "rule__RobotDeclaration__Group__0");
 			builder.put(grammarAccess.getRobotDeclarationAccess().getGroup_2(), "rule__RobotDeclaration__Group_2__0");
@@ -80,15 +84,21 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLedAccess().getGroup(), "rule__Led__Group__0");
 			builder.put(grammarAccess.getLedAccess().getGroup_5(), "rule__Led__Group_5__0");
 			builder.put(grammarAccess.getShootLauncherAccess().getGroup(), "rule__ShootLauncher__Group__0");
-			builder.put(grammarAccess.getShootLauncherAccess().getGroup_5(), "rule__ShootLauncher__Group_5__0");
-			builder.put(grammarAccess.getColorDectorAccess().getGroup(), "rule__ColorDector__Group__0");
-			builder.put(grammarAccess.getLaserAccess().getGroup(), "rule__Laser__Group__0");
+			builder.put(grammarAccess.getColorSensorAccess().getGroup(), "rule__ColorSensor__Group__0");
+			builder.put(grammarAccess.getLaserSensorAccess().getGroup(), "rule__LaserSensor__Group__0");
+			builder.put(grammarAccess.getGPSSensorAccess().getGroup(), "rule__GPSSensor__Group__0");
+			builder.put(grammarAccess.getGyroSensorAccess().getGroup(), "rule__GyroSensor__Group__0");
+			builder.put(grammarAccess.getTurnAccess().getGroup(), "rule__Turn__Group__0");
+			builder.put(grammarAccess.getGoAccess().getGroup(), "rule__Go__Group__0");
+			builder.put(grammarAccess.getChangeAngleAccess().getGroup(), "rule__ChangeAngle__Group__0");
+			builder.put(grammarAccess.getChangeIntensityAccess().getGroup(), "rule__ChangeIntensity__Group__0");
+			builder.put(grammarAccess.getShootAccess().getGroup(), "rule__Shoot__Group__0");
 			builder.put(grammarAccess.getProgramAccess().getStatementAssignment_1(), "rule__Program__StatementAssignment_1");
 			builder.put(grammarAccess.getRobotDeclarationAccess().getNameAssignment_1(), "rule__RobotDeclaration__NameAssignment_1");
 			builder.put(grammarAccess.getRobotDeclarationAccess().getLeftWheelAssignment_2_2(), "rule__RobotDeclaration__LeftWheelAssignment_2_2");
 			builder.put(grammarAccess.getRobotDeclarationAccess().getRightWheelAssignment_2_4(), "rule__RobotDeclaration__RightWheelAssignment_2_4");
-			builder.put(grammarAccess.getRobotDeclarationAccess().getActuatorAssignment_2_5(), "rule__RobotDeclaration__ActuatorAssignment_2_5");
-			builder.put(grammarAccess.getRobotDeclarationAccess().getSensorAssignment_2_6(), "rule__RobotDeclaration__SensorAssignment_2_6");
+			builder.put(grammarAccess.getRobotDeclarationAccess().getActuatorAssignment_2_5_0(), "rule__RobotDeclaration__ActuatorAssignment_2_5_0");
+			builder.put(grammarAccess.getRobotDeclarationAccess().getSensorAssignment_2_5_1(), "rule__RobotDeclaration__SensorAssignment_2_5_1");
 			builder.put(grammarAccess.getCommentaryAccess().getInitialeValueAssignment_2(), "rule__Commentary__InitialeValueAssignment_2");
 			builder.put(grammarAccess.getIfAccess().getConditionAssignment_1(), "rule__If__ConditionAssignment_1");
 			builder.put(grammarAccess.getIfAccess().getStatementAssignment_3(), "rule__If__StatementAssignment_3");
@@ -140,11 +150,29 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLedAccess().getBrightAssignment_5_1(), "rule__Led__BrightAssignment_5_1");
 			builder.put(grammarAccess.getShootLauncherAccess().getNameAssignment_2(), "rule__ShootLauncher__NameAssignment_2");
 			builder.put(grammarAccess.getShootLauncherAccess().getPortIDAssignment_4(), "rule__ShootLauncher__PortIDAssignment_4");
-			builder.put(grammarAccess.getShootLauncherAccess().getForceAssignment_5_1(), "rule__ShootLauncher__ForceAssignment_5_1");
-			builder.put(grammarAccess.getColorDectorAccess().getNameAssignment_2(), "rule__ColorDector__NameAssignment_2");
-			builder.put(grammarAccess.getColorDectorAccess().getPortIDAssignment_4(), "rule__ColorDector__PortIDAssignment_4");
-			builder.put(grammarAccess.getLaserAccess().getNameAssignment_2(), "rule__Laser__NameAssignment_2");
-			builder.put(grammarAccess.getLaserAccess().getPortIDAssignment_4(), "rule__Laser__PortIDAssignment_4");
+			builder.put(grammarAccess.getColorSensorAccess().getNameAssignment_2(), "rule__ColorSensor__NameAssignment_2");
+			builder.put(grammarAccess.getColorSensorAccess().getPortIDAssignment_4(), "rule__ColorSensor__PortIDAssignment_4");
+			builder.put(grammarAccess.getLaserSensorAccess().getNameAssignment_2(), "rule__LaserSensor__NameAssignment_2");
+			builder.put(grammarAccess.getLaserSensorAccess().getPortIDAssignment_4(), "rule__LaserSensor__PortIDAssignment_4");
+			builder.put(grammarAccess.getGPSSensorAccess().getNameAssignment_2(), "rule__GPSSensor__NameAssignment_2");
+			builder.put(grammarAccess.getGPSSensorAccess().getPortIDAssignment_4(), "rule__GPSSensor__PortIDAssignment_4");
+			builder.put(grammarAccess.getGyroSensorAccess().getNameAssignment_2(), "rule__GyroSensor__NameAssignment_2");
+			builder.put(grammarAccess.getGyroSensorAccess().getPortIDAssignment_4(), "rule__GyroSensor__PortIDAssignment_4");
+			builder.put(grammarAccess.getTurnAccess().getRobotAssignment_0(), "rule__Turn__RobotAssignment_0");
+			builder.put(grammarAccess.getTurnAccess().getDirectionAssignment_3(), "rule__Turn__DirectionAssignment_3");
+			builder.put(grammarAccess.getTurnAccess().getAngleAssignment_5(), "rule__Turn__AngleAssignment_5");
+			builder.put(grammarAccess.getTurnAccess().getSpeedAssignment_7(), "rule__Turn__SpeedAssignment_7");
+			builder.put(grammarAccess.getTurnAccess().getDurationAssignment_9(), "rule__Turn__DurationAssignment_9");
+			builder.put(grammarAccess.getGoAccess().getRobotAssignment_0(), "rule__Go__RobotAssignment_0");
+			builder.put(grammarAccess.getGoAccess().getSpeedAssignment_3(), "rule__Go__SpeedAssignment_3");
+			builder.put(grammarAccess.getGoAccess().getDurationAssignment_5(), "rule__Go__DurationAssignment_5");
+			builder.put(grammarAccess.getChangeAngleAccess().getRobotAssignment_0(), "rule__ChangeAngle__RobotAssignment_0");
+			builder.put(grammarAccess.getChangeAngleAccess().getAngleAssignment_3(), "rule__ChangeAngle__AngleAssignment_3");
+			builder.put(grammarAccess.getChangeAngleAccess().getSpeedAssignment_5(), "rule__ChangeAngle__SpeedAssignment_5");
+			builder.put(grammarAccess.getChangeIntensityAccess().getRobotAssignment_0(), "rule__ChangeIntensity__RobotAssignment_0");
+			builder.put(grammarAccess.getChangeIntensityAccess().getIntensityAssignment_3(), "rule__ChangeIntensity__IntensityAssignment_3");
+			builder.put(grammarAccess.getShootAccess().getRobotAssignment_0(), "rule__Shoot__RobotAssignment_0");
+			builder.put(grammarAccess.getShootAccess().getForceAssignment_3(), "rule__Shoot__ForceAssignment_3");
 		}
 	}
 	

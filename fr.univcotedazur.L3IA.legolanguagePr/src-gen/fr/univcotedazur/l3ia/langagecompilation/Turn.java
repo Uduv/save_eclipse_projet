@@ -13,13 +13,15 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * <ul>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Turn#getAngle <em>Angle</em>}</li>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Turn#getDirection <em>Direction</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Turn#getSpeed <em>Speed</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Turn#getDuration <em>Duration</em>}</li>
  * </ul>
  *
  * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getTurn()
  * @model
  * @generated
  */
-public interface Turn extends ActuatorOperation {
+public interface Turn extends RobotStatement {
 	/**
 	 * Returns the value of the '<em><b>Angle</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -66,5 +68,49 @@ public interface Turn extends ActuatorOperation {
 	 * @generated
 	 */
 	void setDirection(Direction value);
+
+	/**
+	 * Returns the value of the '<em><b>Speed</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Speed</em>' containment reference.
+	 * @see #setSpeed(Expression)
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getTurn_Speed()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Expression getSpeed();
+
+	/**
+	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.Turn#getSpeed <em>Speed</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Speed</em>' containment reference.
+	 * @see #getSpeed()
+	 * @generated
+	 */
+	void setSpeed(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>Duration</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Duration</em>' containment reference.
+	 * @see #setDuration(Expression)
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getTurn_Duration()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Expression getDuration();
+
+	/**
+	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.Turn#getDuration <em>Duration</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Duration</em>' containment reference.
+	 * @see #getDuration()
+	 * @generated
+	 */
+	void setDuration(Expression value);
 
 } // Turn

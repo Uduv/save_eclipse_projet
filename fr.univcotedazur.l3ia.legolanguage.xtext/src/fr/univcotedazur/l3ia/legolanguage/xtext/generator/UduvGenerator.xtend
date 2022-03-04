@@ -46,6 +46,16 @@ import fr.univcotedazur.l3ia.langagecompilation.RotativeMotor
 import fr.univcotedazur.l3ia.langagecompilation.Led
 import fr.univcotedazur.l3ia.langagecompilation.ShootLauncher
 import fr.univcotedazur.l3ia.langagecompilation.Arm
+import fr.univcotedazur.l3ia.langagecompilation.ColorSensor
+import fr.univcotedazur.l3ia.langagecompilation.LaserSensor
+import fr.univcotedazur.l3ia.langagecompilation.GyroSensor
+import fr.univcotedazur.l3ia.langagecompilation.GPSSensor
+import fr.univcotedazur.l3ia.langagecompilation.RobotStatement
+import fr.univcotedazur.l3ia.langagecompilation.Go
+import fr.univcotedazur.l3ia.langagecompilation.Turn
+import fr.univcotedazur.l3ia.langagecompilation.ChangeAngle
+import fr.univcotedazur.l3ia.langagecompilation.ChangeIntensity
+import fr.univcotedazur.l3ia.langagecompilation.Shoot
 
 /**
  * Generates code from your model files on save.
@@ -104,6 +114,9 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 		}else
 		if(s instanceof Sensor){
 			res+= SensorToString(s as Sensor)
+		}else
+		if(s instanceof RobotStatement){
+			res+= RobotStatementToString(s as RobotStatement) 
 		}else
 		if(s instanceof Print){
 			res += 'print('
@@ -271,14 +284,25 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 			res += MotorToString(a as Motor)
 		}else 
 		if (a instanceof Led){
-			res += "ledMotor"+ a.portID + " = " + "testled"+"("+a.portID+")"
+			res += "ledMotor"+ a.portID + " = " + "LargeMotor"+"("+a.portID+")"
 		}
 		return res
 	}
 	
 	def String SensorToString(Sensor s){
 		var res =''
-		
+		if (s instanceof ColorSensor){
+			res += "colorSensor"+ s.portID + " = " + "ColorSensor"+"("+s.portID+")"
+		}else
+		if ( s instanceof LaserSensor){
+			res += "laserSensor"+ s.portID + " = " + "LaserRangeSensor"+"("+s.portID+")"
+		}else
+		if ( s instanceof GyroSensor){
+			res += "gyroSensor"+ s.portID + " = " + "GyroSensor"+"("+s.portID+")"
+		}else
+		if ( s instanceof GPSSensor){
+			res += "gpsSensor"+ s.portID + " = " + "GPSSensor"+"("+s.portID+")"
+		}
 		return res
 	}
 	
@@ -304,6 +328,36 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 			
 		}
 		return res
+	}
+	
+	def String RobotStatementToString(RobotStatement rs){
+		var res = ''
+		if (rs instanceof Go){
+			res += 'steering_drive = MoveSteering('+rs.robot.leftWheel.portID+","rs.robot.rightWheel.portID+')\n'
+			res += 'steering_drive.on_for_rotations(' +"0, "+rs.speed + ', ' +rs.duration + ')'
+		}else
+		if (rs instanceof Turn){
+			if (rs.direction == "Left"){
+				res += 'steering_drive = MoveSteering('+rs.robot.leftWheel.portID+","rs.robot.rightWheel.portID+')\n'
+				res += 'steering_drive.on_for_rotations(' + "-"+rs.angle +', ' +rs.speed + ', ' +rs.duration + ')'
+				}else
+			if (rs.direction == "Right"){
+				res += 'steering_drive = MoveSteering('+rs.robot.leftWheel.portID+","rs.robot.rightWheel.portID+')\n'
+				res += 'steering_drive.on_for_rotations(' + "" +rs.angle +', ' +rs.speed + ', ' +rs.duration + ')'
+			}
+		}else
+		if (rs instanceof ChangeAngle){
+			res+= "armMotor"+ rs.arm.portID + ".on_for_degrees("+ rs.speed +', '+rs.angle+')'
+		}else
+		if ( rs instanceof ChangeIntensity){
+			res+= "ledMotor"+ rs.led.portID + ".intensity("+rs.intensity+')'
+		}else
+		if( rs instanceof Shoot){
+			res += "shootMotor"+rs.shootlauncher.portID +  ".on_for_position(-"+ rs.force +')'
+			res += "shootMotor"+rs.shootlauncher.portID +  ".on_for_position("+ rs.force +')'
+		}
+		
+		return res 
 	}
 	
 	

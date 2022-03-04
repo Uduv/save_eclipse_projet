@@ -150,10 +150,16 @@ public class RobotItemProvider extends StatementItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__SENSOR,
-				LegolanguagePrFactory.eINSTANCE.createColorDector()));
+				LegolanguagePrFactory.eINSTANCE.createColorSensor()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__SENSOR,
-				LegolanguagePrFactory.eINSTANCE.createLaser()));
+				LegolanguagePrFactory.eINSTANCE.createLaserSensor()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__SENSOR,
+				LegolanguagePrFactory.eINSTANCE.createGyroSensor()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__SENSOR,
+				LegolanguagePrFactory.eINSTANCE.createGPSSensor()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.ROBOT__ACTUATOR,
 				LegolanguagePrFactory.eINSTANCE.createShootLauncher()));

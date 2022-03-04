@@ -176,27 +176,6 @@ public class BinaryOperationItemProvider extends ExpressionItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
 				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
-				LegolanguagePrFactory.eINSTANCE.createGo()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
-				LegolanguagePrFactory.eINSTANCE.createChangeAngle()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
-				LegolanguagePrFactory.eINSTANCE.createChangeIntensityLight()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
-				LegolanguagePrFactory.eINSTANCE.createGetColor()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
-				LegolanguagePrFactory.eINSTANCE.createGetDistance()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
-				LegolanguagePrFactory.eINSTANCE.createTurn()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
-				LegolanguagePrFactory.eINSTANCE.createShoot()));
-
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -238,27 +217,6 @@ public class BinaryOperationItemProvider extends ExpressionItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
 				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
-				LegolanguagePrFactory.eINSTANCE.createGo()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
-				LegolanguagePrFactory.eINSTANCE.createChangeAngle()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
-				LegolanguagePrFactory.eINSTANCE.createChangeIntensityLight()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
-				LegolanguagePrFactory.eINSTANCE.createGetColor()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
-				LegolanguagePrFactory.eINSTANCE.createGetDistance()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
-				LegolanguagePrFactory.eINSTANCE.createTurn()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
-				LegolanguagePrFactory.eINSTANCE.createShoot()));
 	}
 
 	/**

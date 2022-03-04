@@ -6,10 +6,8 @@ import fr.univcotedazur.l3ia.langagecompilation.Direction;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Turn;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -25,11 +23,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.TurnImpl#getAngle <em>Angle</em>}</li>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.TurnImpl#getDirection <em>Direction</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.TurnImpl#getSpeed <em>Speed</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.TurnImpl#getDuration <em>Duration</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TurnImpl extends ActuatorOperationImpl implements Turn {
+public class TurnImpl extends RobotStatementImpl implements Turn {
 	/**
 	 * The cached value of the '{@link #getAngle() <em>Angle</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -59,6 +59,26 @@ public class TurnImpl extends ActuatorOperationImpl implements Turn {
 	 * @ordered
 	 */
 	protected Direction direction = DIRECTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSpeed() <em>Speed</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSpeed()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expression speed;
+
+	/**
+	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDuration()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expression duration;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -156,11 +176,115 @@ public class TurnImpl extends ActuatorOperationImpl implements Turn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Expression getSpeed() {
+		return speed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSpeed(Expression newSpeed, NotificationChain msgs) {
+		Expression oldSpeed = speed;
+		speed = newSpeed;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					LegolanguagePrPackage.TURN__SPEED, oldSpeed, newSpeed);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSpeed(Expression newSpeed) {
+		if (newSpeed != speed) {
+			NotificationChain msgs = null;
+			if (speed != null)
+				msgs = ((InternalEObject) speed).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.TURN__SPEED, null, msgs);
+			if (newSpeed != null)
+				msgs = ((InternalEObject) newSpeed).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.TURN__SPEED, null, msgs);
+			msgs = basicSetSpeed(newSpeed, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.TURN__SPEED, newSpeed,
+					newSpeed));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Expression getDuration() {
+		return duration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDuration(Expression newDuration, NotificationChain msgs) {
+		Expression oldDuration = duration;
+		duration = newDuration;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					LegolanguagePrPackage.TURN__DURATION, oldDuration, newDuration);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDuration(Expression newDuration) {
+		if (newDuration != duration) {
+			NotificationChain msgs = null;
+			if (duration != null)
+				msgs = ((InternalEObject) duration).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.TURN__DURATION, null, msgs);
+			if (newDuration != null)
+				msgs = ((InternalEObject) newDuration).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.TURN__DURATION, null, msgs);
+			msgs = basicSetDuration(newDuration, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.TURN__DURATION, newDuration,
+					newDuration));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case LegolanguagePrPackage.TURN__ANGLE:
 			return basicSetAngle(null, msgs);
+		case LegolanguagePrPackage.TURN__SPEED:
+			return basicSetSpeed(null, msgs);
+		case LegolanguagePrPackage.TURN__DURATION:
+			return basicSetDuration(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -177,6 +301,10 @@ public class TurnImpl extends ActuatorOperationImpl implements Turn {
 			return getAngle();
 		case LegolanguagePrPackage.TURN__DIRECTION:
 			return getDirection();
+		case LegolanguagePrPackage.TURN__SPEED:
+			return getSpeed();
+		case LegolanguagePrPackage.TURN__DURATION:
+			return getDuration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -186,6 +314,7 @@ public class TurnImpl extends ActuatorOperationImpl implements Turn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -194,6 +323,12 @@ public class TurnImpl extends ActuatorOperationImpl implements Turn {
 			return;
 		case LegolanguagePrPackage.TURN__DIRECTION:
 			setDirection((Direction) newValue);
+			return;
+		case LegolanguagePrPackage.TURN__SPEED:
+			setSpeed((Expression) newValue);
+			return;
+		case LegolanguagePrPackage.TURN__DURATION:
+			setDuration((Expression) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,6 +348,12 @@ public class TurnImpl extends ActuatorOperationImpl implements Turn {
 		case LegolanguagePrPackage.TURN__DIRECTION:
 			setDirection(DIRECTION_EDEFAULT);
 			return;
+		case LegolanguagePrPackage.TURN__SPEED:
+			setSpeed((Expression) null);
+			return;
+		case LegolanguagePrPackage.TURN__DURATION:
+			setDuration((Expression) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -229,6 +370,10 @@ public class TurnImpl extends ActuatorOperationImpl implements Turn {
 			return angle != null;
 		case LegolanguagePrPackage.TURN__DIRECTION:
 			return direction != DIRECTION_EDEFAULT;
+		case LegolanguagePrPackage.TURN__SPEED:
+			return speed != null;
+		case LegolanguagePrPackage.TURN__DURATION:
+			return duration != null;
 		}
 		return super.eIsSet(featureID);
 	}

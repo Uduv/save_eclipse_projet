@@ -11,23 +11,19 @@ Program returns Program:
 ;
 
 Statement returns Statement:
-	If | Loop  | Variable | Print | Expression | Commentary | RobotDeclaration | Sensor | Actuator ;
+	If | Loop  | Variable | Print | Expression | Commentary | RobotDeclaration | Sensor | Actuator | RobotStatement ;
 
 RobotDeclaration returns Robot:
 	'Robot' name=ID 
 		('{'  
 		"left" leftWheel = Wheel
 		"right" rightWheel= Wheel 
-		(actuator+=Actuator)*
-		(sensor+=Sensor)*
+		((actuator+=Actuator) |(sensor+=Sensor))*
 		'}')?
 ;
 
-/* to fix 
-Module returns Module :
-	Actuator | Sensor
-;
- */
+
+
 
 Expression returns Expression:
 	 SensorProxy | ActuatorProxy | VariableProxy  | BinaryOperation;
@@ -47,19 +43,15 @@ Variable returns Variable:
 
 
 Sensor returns Sensor : 
-	ColorDector | Laser  
+	ColorSensor | LaserSensor | GPSSensor | GyroSensor 
 ;
 
-/*
-ActuatorOperation returns ActuatorOperation :
-	Robot = EString
-	Go | Turn | ChangeAngle | ChangeIntensityLight | Shoot
+
+
+RobotStatement returns RobotStatement :
+	Go | Turn | ChangeAngle | ChangeIntensity | Shoot
 ;
 
-SensorOperation returns SensorOperation :
-	GetColor | GetDistance
-;
-*/
 Actuator returns Actuator :
 	Motor | Led
  
@@ -281,39 +273,91 @@ ShootLauncher returns ShootLauncher :
 	name=ID 
 	'on'
 	portID=EString
-	("=" force=EInt)?
 ;
 
 
-ColorDector returns ColorDector :
-	{ColorDector}
-	'colorDector'
+ColorSensor returns ColorSensor :
+	{ColorSensor}
+	'colorSensor'
 	name=ID 
 	'on'
 	portID=EString
 	
 ;	
 
-Laser returns Laser :
-	{Laser}
-	'laser'
+LaserSensor returns LaserSensor :
+	{LaserSensor}
+	'laserSensor'
 	name=ID 
 	'on'
 	portID=EString
 	
 ;
 
+GPSSensor returns GPSSensor :
+	{GPSSensor}
+	'laserSensor'
+	name=ID 
+	'on'
+	portID=EString
+;
+
+GyroSensor returns GyroSensor :
+	{GyroSensor}
+	'laserSensor'
+	name=ID 
+	'on'
+	portID=EString
+;
 
 
-/*
 Turn returns Turn : 
-	 
+	robot=[Robot|ID]
 	'turn' '('
-	direction=Direction
-	(angle=EInt)?
+	direction=Direction ","
+	angle=Expression ","
+	speed=Expression ","
+	duration=Expression
 	')'
+;
+
+Go returns Go :
+	robot=[Robot|ID]
+	'go' '('
+	speed=Expression","
+	(duration=Expression)?
+	')'
+;
+
+ChangeAngle returns ChangeAngle :
+	robot=[Robot|ID]
+	'changeAngle' '('
+	angle=Expression','
+	(speed=Expression)?
+	
+	')'
+;
+
+ChangeIntensity returns ChangeIntensity :
+	robot=[Robot|ID]
+	'ChangeIntensity' '('
+	intensity=Expression
+	')'
+;
+
+Shoot returns Shoot :
+	robot=[Robot|ID]
+	'shoot' '('
+	force=Expression ')'
+;
+
+enum Color:
+	Rouge = "Rouge" | Bleu = "Bleu"
+; 
+
+enum Direction:
+	Left= "Left" | Right = "Right"
 ;
 
 
 
-*/

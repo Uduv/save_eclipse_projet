@@ -3,24 +3,33 @@
  */
 package fr.univcotedazur.l3ia.legolanguage.xtext.generator;
 
+import com.google.common.base.Objects;
 import fr.univcotedazur.l3ia.langagecompilation.Actuator;
 import fr.univcotedazur.l3ia.langagecompilation.Addition;
 import fr.univcotedazur.l3ia.langagecompilation.Arm;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
 import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
 import fr.univcotedazur.l3ia.langagecompilation.Calcul;
+import fr.univcotedazur.l3ia.langagecompilation.ChangeAngle;
+import fr.univcotedazur.l3ia.langagecompilation.ChangeIntensity;
+import fr.univcotedazur.l3ia.langagecompilation.ColorSensor;
 import fr.univcotedazur.l3ia.langagecompilation.Commentary;
 import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
+import fr.univcotedazur.l3ia.langagecompilation.Direction;
 import fr.univcotedazur.l3ia.langagecompilation.Division;
 import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.Exponential;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
+import fr.univcotedazur.l3ia.langagecompilation.GPSSensor;
 import fr.univcotedazur.l3ia.langagecompilation.GT;
 import fr.univcotedazur.l3ia.langagecompilation.GTEqual;
+import fr.univcotedazur.l3ia.langagecompilation.Go;
+import fr.univcotedazur.l3ia.langagecompilation.GyroSensor;
 import fr.univcotedazur.l3ia.langagecompilation.If;
 import fr.univcotedazur.l3ia.langagecompilation.LT;
 import fr.univcotedazur.l3ia.langagecompilation.LTEqual;
+import fr.univcotedazur.l3ia.langagecompilation.LaserSensor;
 import fr.univcotedazur.l3ia.langagecompilation.LeBoolean;
 import fr.univcotedazur.l3ia.langagecompilation.LeFloat;
 import fr.univcotedazur.l3ia.langagecompilation.LeInteger;
@@ -32,11 +41,14 @@ import fr.univcotedazur.l3ia.langagecompilation.Multiplication;
 import fr.univcotedazur.l3ia.langagecompilation.Print;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
 import fr.univcotedazur.l3ia.langagecompilation.Robot;
+import fr.univcotedazur.l3ia.langagecompilation.RobotStatement;
 import fr.univcotedazur.l3ia.langagecompilation.RotativeMotor;
 import fr.univcotedazur.l3ia.langagecompilation.Sensor;
+import fr.univcotedazur.l3ia.langagecompilation.Shoot;
 import fr.univcotedazur.l3ia.langagecompilation.ShootLauncher;
 import fr.univcotedazur.l3ia.langagecompilation.Statement;
 import fr.univcotedazur.l3ia.langagecompilation.Substarction;
+import fr.univcotedazur.l3ia.langagecompilation.Turn;
 import fr.univcotedazur.l3ia.langagecompilation.Variable;
 import fr.univcotedazur.l3ia.langagecompilation.VariableProxy;
 import fr.univcotedazur.l3ia.langagecompilation.Wheel;
@@ -129,24 +141,30 @@ public class UduvGenerator extends AbstractGenerator {
                   String _SensorToString = this.SensorToString(((Sensor) s));
                   res = (_res_7 + _SensorToString);
                 } else {
-                  if ((s instanceof Print)) {
+                  if ((s instanceof RobotStatement)) {
                     String _res_8 = res;
-                    res = (_res_8 + "print(");
-                    EList<Statement> _statement_1 = ((Print)s).getStatement();
-                    for (final Statement state_1 : _statement_1) {
-                      String _res_9 = res;
-                      String _StatementToString = this.StatementToString(((Statement) state_1));
-                      res = (_res_9 + _StatementToString);
-                    }
-                    String _res_10 = res;
-                    res = (_res_10 + ")");
+                    String _RobotStatementToString = this.RobotStatementToString(((RobotStatement) s));
+                    res = (_res_8 + _RobotStatementToString);
                   } else {
-                    if ((s instanceof Commentary)) {
+                    if ((s instanceof Print)) {
+                      String _res_9 = res;
+                      res = (_res_9 + "print(");
+                      EList<Statement> _statement_1 = ((Print)s).getStatement();
+                      for (final Statement state_1 : _statement_1) {
+                        String _res_10 = res;
+                        String _StatementToString = this.StatementToString(((Statement) state_1));
+                        res = (_res_10 + _StatementToString);
+                      }
                       String _res_11 = res;
-                      String _initialeValue = ((Commentary)s).getInitialeValue();
-                      String _plus_4 = ("\'\'\'" + _initialeValue);
-                      String _plus_5 = (_plus_4 + "\'\'\'");
-                      res = (_res_11 + _plus_5);
+                      res = (_res_11 + ")");
+                    } else {
+                      if ((s instanceof Commentary)) {
+                        String _res_12 = res;
+                        String _initialeValue = ((Commentary)s).getInitialeValue();
+                        String _plus_4 = ("\'\'\'" + _initialeValue);
+                        String _plus_5 = (_plus_4 + "\'\'\'");
+                        res = (_res_12 + _plus_5);
+                      }
                     }
                   }
                 }
@@ -156,8 +174,8 @@ public class UduvGenerator extends AbstractGenerator {
         }
       }
     }
-    String _res_12 = res;
-    res = (_res_12 + "\n");
+    String _res_13 = res;
+    res = (_res_13 + "\n");
     return res;
   }
   
@@ -443,7 +461,7 @@ public class UduvGenerator extends AbstractGenerator {
         String _portID = ((Led)a).getPortID();
         String _plus = ("ledMotor" + _portID);
         String _plus_1 = (_plus + " = ");
-        String _plus_2 = (_plus_1 + "testled");
+        String _plus_2 = (_plus_1 + "LargeMotor");
         String _plus_3 = (_plus_2 + "(");
         String _portID_1 = ((Led)a).getPortID();
         String _plus_4 = (_plus_3 + _portID_1);
@@ -456,6 +474,57 @@ public class UduvGenerator extends AbstractGenerator {
   
   public String SensorToString(final Sensor s) {
     String res = "";
+    if ((s instanceof ColorSensor)) {
+      String _res = res;
+      String _portID = ((ColorSensor)s).getPortID();
+      String _plus = ("colorSensor" + _portID);
+      String _plus_1 = (_plus + " = ");
+      String _plus_2 = (_plus_1 + "ColorSensor");
+      String _plus_3 = (_plus_2 + "(");
+      String _portID_1 = ((ColorSensor)s).getPortID();
+      String _plus_4 = (_plus_3 + _portID_1);
+      String _plus_5 = (_plus_4 + ")");
+      res = (_res + _plus_5);
+    } else {
+      if ((s instanceof LaserSensor)) {
+        String _res_1 = res;
+        String _portID_2 = ((LaserSensor)s).getPortID();
+        String _plus_6 = ("laserSensor" + _portID_2);
+        String _plus_7 = (_plus_6 + " = ");
+        String _plus_8 = (_plus_7 + "LaserRangeSensor");
+        String _plus_9 = (_plus_8 + "(");
+        String _portID_3 = ((LaserSensor)s).getPortID();
+        String _plus_10 = (_plus_9 + _portID_3);
+        String _plus_11 = (_plus_10 + ")");
+        res = (_res_1 + _plus_11);
+      } else {
+        if ((s instanceof GyroSensor)) {
+          String _res_2 = res;
+          String _portID_4 = ((GyroSensor)s).getPortID();
+          String _plus_12 = ("gyroSensor" + _portID_4);
+          String _plus_13 = (_plus_12 + " = ");
+          String _plus_14 = (_plus_13 + "GyroSensor");
+          String _plus_15 = (_plus_14 + "(");
+          String _portID_5 = ((GyroSensor)s).getPortID();
+          String _plus_16 = (_plus_15 + _portID_5);
+          String _plus_17 = (_plus_16 + ")");
+          res = (_res_2 + _plus_17);
+        } else {
+          if ((s instanceof GPSSensor)) {
+            String _res_3 = res;
+            String _portID_6 = ((GPSSensor)s).getPortID();
+            String _plus_18 = ("gpsSensor" + _portID_6);
+            String _plus_19 = (_plus_18 + " = ");
+            String _plus_20 = (_plus_19 + "GPSSensor");
+            String _plus_21 = (_plus_20 + "(");
+            String _portID_7 = ((GPSSensor)s).getPortID();
+            String _plus_22 = (_plus_21 + _portID_7);
+            String _plus_23 = (_plus_22 + ")");
+            res = (_res_3 + _plus_23);
+          }
+        }
+      }
+    }
     return res;
   }
   
@@ -507,6 +576,120 @@ public class UduvGenerator extends AbstractGenerator {
         String _plus_10 = (_plus_9 + _portID_3);
         String _plus_11 = (_plus_10 + ")");
         res = (_res_1 + _plus_11);
+      }
+    }
+    return res;
+  }
+  
+  public String RobotStatementToString(final RobotStatement rs) {
+    String res = "";
+    if ((rs instanceof Go)) {
+      String _res = res;
+      String _portID = ((Go)rs).getRobot().getLeftWheel().getPortID();
+      String _plus = ("steering_drive = MoveSteering(" + _portID);
+      String _plus_1 = (_plus + ",");
+      res = (_res + _plus_1);
+      String _portID_1 = ((Go)rs).getRobot().getRightWheel().getPortID();
+      /* (_portID_1 + ")\n"); */
+      String _res_1 = res;
+      Expression _speed = ((Go)rs).getSpeed();
+      String _plus_2 = (("steering_drive.on_for_rotations(" + "0, ") + _speed);
+      String _plus_3 = (_plus_2 + ", ");
+      Expression _duration = ((Go)rs).getDuration();
+      String _plus_4 = (_plus_3 + _duration);
+      String _plus_5 = (_plus_4 + ")");
+      res = (_res_1 + _plus_5);
+    } else {
+      if ((rs instanceof Turn)) {
+        Direction _direction = ((Turn)rs).getDirection();
+        boolean _equals = Objects.equal(_direction, "Left");
+        if (_equals) {
+          String _res_2 = res;
+          String _portID_2 = ((Turn)rs).getRobot().getLeftWheel().getPortID();
+          String _plus_6 = ("steering_drive = MoveSteering(" + _portID_2);
+          String _plus_7 = (_plus_6 + ",");
+          res = (_res_2 + _plus_7);
+          String _portID_3 = ((Turn)rs).getRobot().getRightWheel().getPortID();
+          /* (_portID_3 + ")\n"); */
+          String _res_3 = res;
+          Expression _angle = ((Turn)rs).getAngle();
+          String _plus_8 = (("steering_drive.on_for_rotations(" + "-") + _angle);
+          String _plus_9 = (_plus_8 + ", ");
+          Expression _speed_1 = ((Turn)rs).getSpeed();
+          String _plus_10 = (_plus_9 + _speed_1);
+          String _plus_11 = (_plus_10 + ", ");
+          Expression _duration_1 = ((Turn)rs).getDuration();
+          String _plus_12 = (_plus_11 + _duration_1);
+          String _plus_13 = (_plus_12 + ")");
+          res = (_res_3 + _plus_13);
+        } else {
+          Direction _direction_1 = ((Turn)rs).getDirection();
+          boolean _equals_1 = Objects.equal(_direction_1, "Right");
+          if (_equals_1) {
+            String _res_4 = res;
+            String _portID_4 = ((Turn)rs).getRobot().getLeftWheel().getPortID();
+            String _plus_14 = ("steering_drive = MoveSteering(" + _portID_4);
+            String _plus_15 = (_plus_14 + ",");
+            res = (_res_4 + _plus_15);
+            String _portID_5 = ((Turn)rs).getRobot().getRightWheel().getPortID();
+            /* (_portID_5 + ")\n"); */
+            String _res_5 = res;
+            Expression _angle_1 = ((Turn)rs).getAngle();
+            String _plus_16 = (("steering_drive.on_for_rotations(" + "") + _angle_1);
+            String _plus_17 = (_plus_16 + ", ");
+            Expression _speed_2 = ((Turn)rs).getSpeed();
+            String _plus_18 = (_plus_17 + _speed_2);
+            String _plus_19 = (_plus_18 + ", ");
+            Expression _duration_2 = ((Turn)rs).getDuration();
+            String _plus_20 = (_plus_19 + _duration_2);
+            String _plus_21 = (_plus_20 + ")");
+            res = (_res_5 + _plus_21);
+          }
+        }
+      } else {
+        if ((rs instanceof ChangeAngle)) {
+          String _res_6 = res;
+          String _portID_6 = ((ChangeAngle)rs).getArm().getPortID();
+          String _plus_22 = ("armMotor" + _portID_6);
+          String _plus_23 = (_plus_22 + ".on_for_degrees(");
+          Expression _speed_3 = ((ChangeAngle)rs).getSpeed();
+          String _plus_24 = (_plus_23 + _speed_3);
+          String _plus_25 = (_plus_24 + ", ");
+          Expression _angle_2 = ((ChangeAngle)rs).getAngle();
+          String _plus_26 = (_plus_25 + _angle_2);
+          String _plus_27 = (_plus_26 + ")");
+          res = (_res_6 + _plus_27);
+        } else {
+          if ((rs instanceof ChangeIntensity)) {
+            String _res_7 = res;
+            String _portID_7 = ((ChangeIntensity)rs).getLed().getPortID();
+            String _plus_28 = ("ledMotor" + _portID_7);
+            String _plus_29 = (_plus_28 + ".intensity(");
+            Expression _intensity = ((ChangeIntensity)rs).getIntensity();
+            String _plus_30 = (_plus_29 + _intensity);
+            String _plus_31 = (_plus_30 + ")");
+            res = (_res_7 + _plus_31);
+          } else {
+            if ((rs instanceof Shoot)) {
+              String _res_8 = res;
+              String _portID_8 = ((Shoot)rs).getShootlauncher().getPortID();
+              String _plus_32 = ("shootMotor" + _portID_8);
+              String _plus_33 = (_plus_32 + ".on_for_position(-");
+              Expression _force = ((Shoot)rs).getForce();
+              String _plus_34 = (_plus_33 + _force);
+              String _plus_35 = (_plus_34 + ")");
+              res = (_res_8 + _plus_35);
+              String _res_9 = res;
+              String _portID_9 = ((Shoot)rs).getShootlauncher().getPortID();
+              String _plus_36 = ("shootMotor" + _portID_9);
+              String _plus_37 = (_plus_36 + ".on_for_position(");
+              Expression _force_1 = ((Shoot)rs).getForce();
+              String _plus_38 = (_plus_37 + _force_1);
+              String _plus_39 = (_plus_38 + ")");
+              res = (_res_9 + _plus_39);
+            }
+          }
+        }
       }
     }
     return res;

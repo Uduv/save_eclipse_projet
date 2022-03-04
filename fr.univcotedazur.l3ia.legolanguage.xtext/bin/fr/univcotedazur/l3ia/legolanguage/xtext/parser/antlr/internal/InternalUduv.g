@@ -24,6 +24,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -237,6 +238,18 @@ ruleStatement returns [EObject current=null]
 			$current = $this_Actuator_8.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getStatementAccess().getRobotStatementParserRuleCall_9());
+		}
+		this_RobotStatement_9=ruleRobotStatement
+		{
+			$current = $this_RobotStatement_9.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -331,45 +344,48 @@ ruleRobotDeclaration returns [EObject current=null]
 			)
 			(
 				(
-					{
-						newCompositeNode(grammarAccess.getRobotDeclarationAccess().getActuatorActuatorParserRuleCall_2_5_0());
-					}
-					lv_actuator_7_0=ruleActuator
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getRobotDeclarationRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getRobotDeclarationAccess().getActuatorActuatorParserRuleCall_2_5_0_0());
 						}
-						add(
-							$current,
-							"actuator",
-							lv_actuator_7_0,
-							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Actuator");
-						afterParserOrEnumRuleCall();
-					}
+						lv_actuator_7_0=ruleActuator
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getRobotDeclarationRule());
+							}
+							add(
+								$current,
+								"actuator",
+								lv_actuator_7_0,
+								"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Actuator");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
-			)*
-			(
+				    |
 				(
-					{
-						newCompositeNode(grammarAccess.getRobotDeclarationAccess().getSensorSensorParserRuleCall_2_6_0());
-					}
-					lv_sensor_8_0=ruleSensor
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getRobotDeclarationRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getRobotDeclarationAccess().getSensorSensorParserRuleCall_2_5_1_0());
 						}
-						add(
-							$current,
-							"sensor",
-							lv_sensor_8_0,
-							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Sensor");
-						afterParserOrEnumRuleCall();
-					}
+						lv_sensor_8_0=ruleSensor
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getRobotDeclarationRule());
+							}
+							add(
+								$current,
+								"sensor",
+								lv_sensor_8_0,
+								"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Sensor");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
 			)*
 			otherlv_9='}'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getRobotDeclarationAccess().getRightCurlyBracketKeyword_2_7());
+				newLeafNode(otherlv_9, grammarAccess.getRobotDeclarationAccess().getRightCurlyBracketKeyword_2_6());
 			}
 		)?
 	)
@@ -737,11 +753,11 @@ ruleSensor returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getSensorAccess().getColorDectorParserRuleCall_0());
+			newCompositeNode(grammarAccess.getSensorAccess().getColorSensorParserRuleCall_0());
 		}
-		this_ColorDector_0=ruleColorDector
+		this_ColorSensor_0=ruleColorSensor
 		{
-			$current = $this_ColorDector_0.current;
+			$current = $this_ColorSensor_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -749,11 +765,113 @@ ruleSensor returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getSensorAccess().getLaserParserRuleCall_1());
+			newCompositeNode(grammarAccess.getSensorAccess().getLaserSensorParserRuleCall_1());
 		}
-		this_Laser_1=ruleLaser
+		this_LaserSensor_1=ruleLaserSensor
 		{
-			$current = $this_Laser_1.current;
+			$current = $this_LaserSensor_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getSensorAccess().getGPSSensorParserRuleCall_2());
+		}
+		this_GPSSensor_2=ruleGPSSensor
+		{
+			$current = $this_GPSSensor_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getSensorAccess().getGyroSensorParserRuleCall_3());
+		}
+		this_GyroSensor_3=ruleGyroSensor
+		{
+			$current = $this_GyroSensor_3.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleRobotStatement
+entryRuleRobotStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRobotStatementRule()); }
+	iv_ruleRobotStatement=ruleRobotStatement
+	{ $current=$iv_ruleRobotStatement.current; }
+	EOF;
+
+// Rule RobotStatement
+ruleRobotStatement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getRobotStatementAccess().getGoParserRuleCall_0());
+		}
+		this_Go_0=ruleGo
+		{
+			$current = $this_Go_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getRobotStatementAccess().getTurnParserRuleCall_1());
+		}
+		this_Turn_1=ruleTurn
+		{
+			$current = $this_Turn_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getRobotStatementAccess().getChangeAngleParserRuleCall_2());
+		}
+		this_ChangeAngle_2=ruleChangeAngle
+		{
+			$current = $this_ChangeAngle_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getRobotStatementAccess().getChangeIntensityParserRuleCall_3());
+		}
+		this_ChangeIntensity_3=ruleChangeIntensity
+		{
+			$current = $this_ChangeIntensity_3.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getRobotStatementAccess().getShootParserRuleCall_4());
+		}
+		this_Shoot_4=ruleShoot
+		{
+			$current = $this_Shoot_4.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -2910,43 +3028,538 @@ ruleShootLauncher returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleColorSensor
+entryRuleColorSensor returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getColorSensorRule()); }
+	iv_ruleColorSensor=ruleColorSensor
+	{ $current=$iv_ruleColorSensor.current; }
+	EOF;
+
+// Rule ColorSensor
+ruleColorSensor returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		(
-			otherlv_5='='
 			{
-				newLeafNode(otherlv_5, grammarAccess.getShootLauncherAccess().getEqualsSignKeyword_5_0());
+				/* */
 			}
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getColorSensorAccess().getColorSensorAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='colorSensor'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getColorSensorAccess().getColorSensorKeyword_1());
+		}
+		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getShootLauncherAccess().getForceEIntParserRuleCall_5_1_0());
+				lv_name_2_0=RULE_ID
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getColorSensorAccess().getNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getColorSensorRule());
 					}
-					lv_force_6_0=ruleEInt
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getShootLauncherRule());
-						}
-						set(
-							$current,
-							"force",
-							lv_force_6_0,
-							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EInt");
-						afterParserOrEnumRuleCall();
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_3='on'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getColorSensorAccess().getOnKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getColorSensorAccess().getPortIDEStringParserRuleCall_4_0());
+				}
+				lv_portID_4_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getColorSensorRule());
 					}
-				)
+					set(
+						$current,
+						"portID",
+						lv_portID_4_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleLaserSensor
+entryRuleLaserSensor returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLaserSensorRule()); }
+	iv_ruleLaserSensor=ruleLaserSensor
+	{ $current=$iv_ruleLaserSensor.current; }
+	EOF;
+
+// Rule LaserSensor
+ruleLaserSensor returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				/* */
+			}
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getLaserSensorAccess().getLaserSensorAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='laserSensor'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getLaserSensorAccess().getLaserSensorKeyword_1());
+		}
+		(
+			(
+				lv_name_2_0=RULE_ID
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getLaserSensorAccess().getNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLaserSensorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_3='on'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getLaserSensorAccess().getOnKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getLaserSensorAccess().getPortIDEStringParserRuleCall_4_0());
+				}
+				lv_portID_4_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getLaserSensorRule());
+					}
+					set(
+						$current,
+						"portID",
+						lv_portID_4_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleGPSSensor
+entryRuleGPSSensor returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGPSSensorRule()); }
+	iv_ruleGPSSensor=ruleGPSSensor
+	{ $current=$iv_ruleGPSSensor.current; }
+	EOF;
+
+// Rule GPSSensor
+ruleGPSSensor returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				/* */
+			}
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getGPSSensorAccess().getGPSSensorAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='laserSensor'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGPSSensorAccess().getLaserSensorKeyword_1());
+		}
+		(
+			(
+				lv_name_2_0=RULE_ID
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getGPSSensorAccess().getNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGPSSensorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_3='on'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getGPSSensorAccess().getOnKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGPSSensorAccess().getPortIDEStringParserRuleCall_4_0());
+				}
+				lv_portID_4_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGPSSensorRule());
+					}
+					set(
+						$current,
+						"portID",
+						lv_portID_4_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleGyroSensor
+entryRuleGyroSensor returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGyroSensorRule()); }
+	iv_ruleGyroSensor=ruleGyroSensor
+	{ $current=$iv_ruleGyroSensor.current; }
+	EOF;
+
+// Rule GyroSensor
+ruleGyroSensor returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				/* */
+			}
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getGyroSensorAccess().getGyroSensorAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='laserSensor'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGyroSensorAccess().getLaserSensorKeyword_1());
+		}
+		(
+			(
+				lv_name_2_0=RULE_ID
+				{
+					newLeafNode(lv_name_2_0, grammarAccess.getGyroSensorAccess().getNameIDTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGyroSensorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_2_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_3='on'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getGyroSensorAccess().getOnKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGyroSensorAccess().getPortIDEStringParserRuleCall_4_0());
+				}
+				lv_portID_4_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGyroSensorRule());
+					}
+					set(
+						$current,
+						"portID",
+						lv_portID_4_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleTurn
+entryRuleTurn returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTurnRule()); }
+	iv_ruleTurn=ruleTurn
+	{ $current=$iv_ruleTurn.current; }
+	EOF;
+
+// Rule Turn
+ruleTurn returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					/* */
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTurnRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getTurnAccess().getRobotRobotCrossReference_0_0());
+				}
+			)
+		)
+		otherlv_1='turn'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTurnAccess().getTurnKeyword_1());
+		}
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getTurnAccess().getLeftParenthesisKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTurnAccess().getDirectionDirectionEnumRuleCall_3_0());
+				}
+				lv_direction_3_0=ruleDirection
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTurnRule());
+					}
+					set(
+						$current,
+						"direction",
+						lv_direction_3_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Direction");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4=','
+		{
+			newLeafNode(otherlv_4, grammarAccess.getTurnAccess().getCommaKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTurnAccess().getAngleExpressionParserRuleCall_5_0());
+				}
+				lv_angle_5_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTurnRule());
+					}
+					set(
+						$current,
+						"angle",
+						lv_angle_5_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_6=','
+		{
+			newLeafNode(otherlv_6, grammarAccess.getTurnAccess().getCommaKeyword_6());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTurnAccess().getSpeedExpressionParserRuleCall_7_0());
+				}
+				lv_speed_7_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTurnRule());
+					}
+					set(
+						$current,
+						"speed",
+						lv_speed_7_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_8=','
+		{
+			newLeafNode(otherlv_8, grammarAccess.getTurnAccess().getCommaKeyword_8());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTurnAccess().getDurationExpressionParserRuleCall_9_0());
+				}
+				lv_duration_9_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTurnRule());
+					}
+					set(
+						$current,
+						"duration",
+						lv_duration_9_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_10=')'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getTurnAccess().getRightParenthesisKeyword_10());
+		}
+	)
+;
+
+// Entry rule entryRuleGo
+entryRuleGo returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGoRule()); }
+	iv_ruleGo=ruleGo
+	{ $current=$iv_ruleGo.current; }
+	EOF;
+
+// Rule Go
+ruleGo returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					/* */
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGoRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getGoAccess().getRobotRobotCrossReference_0_0());
+				}
+			)
+		)
+		otherlv_1='go'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGoAccess().getGoKeyword_1());
+		}
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getGoAccess().getLeftParenthesisKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGoAccess().getSpeedBinaryOperationParserRuleCall_3_0());
+				}
+				lv_speed_3_0=ruleBinaryOperation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGoRule());
+					}
+					set(
+						$current,
+						"speed",
+						lv_speed_3_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.BinaryOperation");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4=','
+		{
+			newLeafNode(otherlv_4, grammarAccess.getGoAccess().getCommaKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGoAccess().getDurationBinaryOperationParserRuleCall_5_0());
+				}
+				lv_duration_5_0=ruleBinaryOperation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGoRule());
+					}
+					set(
+						$current,
+						"duration",
+						lv_duration_5_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.BinaryOperation");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)?
+		otherlv_6=')'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getGoAccess().getRightParenthesisKeyword_6());
+		}
 	)
 ;
 
-// Entry rule entryRuleColorDector
-entryRuleColorDector returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getColorDectorRule()); }
-	iv_ruleColorDector=ruleColorDector
-	{ $current=$iv_ruleColorDector.current; }
+// Entry rule entryRuleChangeAngle
+entryRuleChangeAngle returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getChangeAngleRule()); }
+	iv_ruleChangeAngle=ruleChangeAngle
+	{ $current=$iv_ruleChangeAngle.current; }
 	EOF;
 
-// Rule ColorDector
-ruleColorDector returns [EObject current=null]
+// Rule ChangeAngle
+ruleChangeAngle returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -2955,72 +3568,87 @@ ruleColorDector returns [EObject current=null]
 }:
 	(
 		(
-			{
-				/* */
-			}
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getColorDectorAccess().getColorDectorAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='colorDector'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getColorDectorAccess().getColorDectorKeyword_1());
-		}
-		(
 			(
-				lv_name_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getColorDectorAccess().getNameIDTerminalRuleCall_2_0());
+					/* */
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getColorDectorRule());
+						$current = createModelElement(grammarAccess.getChangeAngleRule());
 					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getChangeAngleAccess().getRobotRobotCrossReference_0_0());
 				}
 			)
 		)
-		otherlv_3='on'
+		otherlv_1='changeAngle'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getColorDectorAccess().getOnKeyword_3());
+			newLeafNode(otherlv_1, grammarAccess.getChangeAngleAccess().getChangeAngleKeyword_1());
+		}
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getChangeAngleAccess().getLeftParenthesisKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getColorDectorAccess().getPortIDEStringParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getChangeAngleAccess().getAngleExpressionParserRuleCall_3_0());
 				}
-				lv_portID_4_0=ruleEString
+				lv_angle_3_0=ruleExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getColorDectorRule());
+						$current = createModelElementForParent(grammarAccess.getChangeAngleRule());
 					}
 					set(
 						$current,
-						"portID",
-						lv_portID_4_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EString");
+						"angle",
+						lv_angle_3_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		otherlv_4=','
+		{
+			newLeafNode(otherlv_4, grammarAccess.getChangeAngleAccess().getCommaKeyword_4());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getChangeAngleAccess().getSpeedExpressionParserRuleCall_5_0());
+				}
+				lv_speed_5_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getChangeAngleRule());
+					}
+					set(
+						$current,
+						"speed",
+						lv_speed_5_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		otherlv_6=')'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getChangeAngleAccess().getRightParenthesisKeyword_6());
+		}
 	)
 ;
 
-// Entry rule entryRuleLaser
-entryRuleLaser returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getLaserRule()); }
-	iv_ruleLaser=ruleLaser
-	{ $current=$iv_ruleLaser.current; }
+// Entry rule entryRuleChangeIntensity
+entryRuleChangeIntensity returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getChangeIntensityRule()); }
+	iv_ruleChangeIntensity=ruleChangeIntensity
+	{ $current=$iv_ruleChangeIntensity.current; }
 	EOF;
 
-// Rule Laser
-ruleLaser returns [EObject current=null]
+// Rule ChangeIntensity
+ruleChangeIntensity returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -3029,59 +3657,144 @@ ruleLaser returns [EObject current=null]
 }:
 	(
 		(
-			{
-				/* */
-			}
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getLaserAccess().getLaserAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='laser'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getLaserAccess().getLaserKeyword_1());
-		}
-		(
 			(
-				lv_name_2_0=RULE_ID
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getLaserAccess().getNameIDTerminalRuleCall_2_0());
+					/* */
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLaserRule());
+						$current = createModelElement(grammarAccess.getChangeIntensityRule());
 					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_2_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getChangeIntensityAccess().getRobotRobotCrossReference_0_0());
 				}
 			)
 		)
-		otherlv_3='on'
+		otherlv_1='ChangeIntensity'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getLaserAccess().getOnKeyword_3());
+			newLeafNode(otherlv_1, grammarAccess.getChangeIntensityAccess().getChangeIntensityKeyword_1());
+		}
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getChangeIntensityAccess().getLeftParenthesisKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getLaserAccess().getPortIDEStringParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getChangeIntensityAccess().getIntensityExpressionParserRuleCall_3_0());
 				}
-				lv_portID_4_0=ruleEString
+				lv_intensity_3_0=ruleExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getLaserRule());
+						$current = createModelElementForParent(grammarAccess.getChangeIntensityRule());
 					}
 					set(
 						$current,
-						"portID",
-						lv_portID_4_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EString");
+						"intensity",
+						lv_intensity_3_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
+		)
+		otherlv_4=')'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getChangeIntensityAccess().getRightParenthesisKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleShoot
+entryRuleShoot returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getShootRule()); }
+	iv_ruleShoot=ruleShoot
+	{ $current=$iv_ruleShoot.current; }
+	EOF;
+
+// Rule Shoot
+ruleShoot returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					/* */
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getShootRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getShootAccess().getRobotRobotCrossReference_0_0());
+				}
+			)
+		)
+		otherlv_1='shoot'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getShootAccess().getShootKeyword_1());
+		}
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getShootAccess().getLeftParenthesisKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getShootAccess().getForceExpressionParserRuleCall_3_0());
+				}
+				lv_force_3_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getShootRule());
+					}
+					set(
+						$current,
+						"force",
+						lv_force_3_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4=')'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getShootAccess().getRightParenthesisKeyword_4());
+		}
+	)
+;
+
+// Rule Direction
+ruleDirection returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='Left'
+			{
+				$current = grammarAccess.getDirectionAccess().getLeftEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getDirectionAccess().getLeftEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='Right'
+			{
+				$current = grammarAccess.getDirectionAccess().getRightEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getDirectionAccess().getRightEnumLiteralDeclaration_1());
+			}
 		)
 	)
 ;

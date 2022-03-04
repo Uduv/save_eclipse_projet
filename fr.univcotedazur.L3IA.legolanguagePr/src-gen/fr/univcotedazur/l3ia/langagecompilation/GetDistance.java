@@ -12,5 +12,5 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @model
  * @generated
  */
-public interface GetDistance extends SensorOperation {
+public interface GetDistance extends RobotStatement {
 } // GetDistance

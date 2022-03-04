@@ -438,24 +438,24 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case LegolanguagePrPackage.COLOR_DECTOR: {
-			ColorDector colorDector = (ColorDector) theEObject;
-			T result = caseColorDector(colorDector);
+		case LegolanguagePrPackage.COLOR_SENSOR: {
+			ColorSensor colorSensor = (ColorSensor) theEObject;
+			T result = caseColorSensor(colorSensor);
 			if (result == null)
-				result = caseSensor(colorDector);
+				result = caseSensor(colorSensor);
 			if (result == null)
-				result = caseStatement(colorDector);
+				result = caseStatement(colorSensor);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case LegolanguagePrPackage.LASER: {
-			Laser laser = (Laser) theEObject;
-			T result = caseLaser(laser);
+		case LegolanguagePrPackage.LASER_SENSOR: {
+			LaserSensor laserSensor = (LaserSensor) theEObject;
+			T result = caseLaserSensor(laserSensor);
 			if (result == null)
-				result = caseSensor(laser);
+				result = caseSensor(laserSensor);
 			if (result == null)
-				result = caseStatement(laser);
+				result = caseStatement(laserSensor);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -560,28 +560,11 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case LegolanguagePrPackage.SENSOR_OPERATION: {
-			SensorOperation sensorOperation = (SensorOperation) theEObject;
-			T result = caseSensorOperation(sensorOperation);
+		case LegolanguagePrPackage.ROBOT_STATEMENT: {
+			RobotStatement robotStatement = (RobotStatement) theEObject;
+			T result = caseRobotStatement(robotStatement);
 			if (result == null)
-				result = caseBinaryOperation(sensorOperation);
-			if (result == null)
-				result = caseExpression(sensorOperation);
-			if (result == null)
-				result = caseStatement(sensorOperation);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case LegolanguagePrPackage.ACTUATOR_OPERATION: {
-			ActuatorOperation actuatorOperation = (ActuatorOperation) theEObject;
-			T result = caseActuatorOperation(actuatorOperation);
-			if (result == null)
-				result = caseBinaryOperation(actuatorOperation);
-			if (result == null)
-				result = caseExpression(actuatorOperation);
-			if (result == null)
-				result = caseStatement(actuatorOperation);
+				result = caseStatement(robotStatement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -590,11 +573,7 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			Go go = (Go) theEObject;
 			T result = caseGo(go);
 			if (result == null)
-				result = caseActuatorOperation(go);
-			if (result == null)
-				result = caseBinaryOperation(go);
-			if (result == null)
-				result = caseExpression(go);
+				result = caseRobotStatement(go);
 			if (result == null)
 				result = caseStatement(go);
 			if (result == null)
@@ -605,28 +584,20 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			ChangeAngle changeAngle = (ChangeAngle) theEObject;
 			T result = caseChangeAngle(changeAngle);
 			if (result == null)
-				result = caseActuatorOperation(changeAngle);
-			if (result == null)
-				result = caseBinaryOperation(changeAngle);
-			if (result == null)
-				result = caseExpression(changeAngle);
+				result = caseRobotStatement(changeAngle);
 			if (result == null)
 				result = caseStatement(changeAngle);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case LegolanguagePrPackage.CHANGE_INTENSITY_LIGHT: {
-			ChangeIntensityLight changeIntensityLight = (ChangeIntensityLight) theEObject;
-			T result = caseChangeIntensityLight(changeIntensityLight);
+		case LegolanguagePrPackage.CHANGE_INTENSITY: {
+			ChangeIntensity changeIntensity = (ChangeIntensity) theEObject;
+			T result = caseChangeIntensity(changeIntensity);
 			if (result == null)
-				result = caseActuatorOperation(changeIntensityLight);
+				result = caseRobotStatement(changeIntensity);
 			if (result == null)
-				result = caseBinaryOperation(changeIntensityLight);
-			if (result == null)
-				result = caseExpression(changeIntensityLight);
-			if (result == null)
-				result = caseStatement(changeIntensityLight);
+				result = caseStatement(changeIntensity);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -635,11 +606,7 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			GetColor getColor = (GetColor) theEObject;
 			T result = caseGetColor(getColor);
 			if (result == null)
-				result = caseSensorOperation(getColor);
-			if (result == null)
-				result = caseBinaryOperation(getColor);
-			if (result == null)
-				result = caseExpression(getColor);
+				result = caseRobotStatement(getColor);
 			if (result == null)
 				result = caseStatement(getColor);
 			if (result == null)
@@ -650,11 +617,7 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			GetDistance getDistance = (GetDistance) theEObject;
 			T result = caseGetDistance(getDistance);
 			if (result == null)
-				result = caseSensorOperation(getDistance);
-			if (result == null)
-				result = caseBinaryOperation(getDistance);
-			if (result == null)
-				result = caseExpression(getDistance);
+				result = caseRobotStatement(getDistance);
 			if (result == null)
 				result = caseStatement(getDistance);
 			if (result == null)
@@ -665,11 +628,7 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			Turn turn = (Turn) theEObject;
 			T result = caseTurn(turn);
 			if (result == null)
-				result = caseActuatorOperation(turn);
-			if (result == null)
-				result = caseBinaryOperation(turn);
-			if (result == null)
-				result = caseExpression(turn);
+				result = caseRobotStatement(turn);
 			if (result == null)
 				result = caseStatement(turn);
 			if (result == null)
@@ -680,13 +639,31 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			Shoot shoot = (Shoot) theEObject;
 			T result = caseShoot(shoot);
 			if (result == null)
-				result = caseActuatorOperation(shoot);
-			if (result == null)
-				result = caseBinaryOperation(shoot);
-			if (result == null)
-				result = caseExpression(shoot);
+				result = caseRobotStatement(shoot);
 			if (result == null)
 				result = caseStatement(shoot);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.GYRO_SENSOR: {
+			GyroSensor gyroSensor = (GyroSensor) theEObject;
+			T result = caseGyroSensor(gyroSensor);
+			if (result == null)
+				result = caseSensor(gyroSensor);
+			if (result == null)
+				result = caseStatement(gyroSensor);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.GPS_SENSOR: {
+			GPSSensor gpsSensor = (GPSSensor) theEObject;
+			T result = caseGPSSensor(gpsSensor);
+			if (result == null)
+				result = caseSensor(gpsSensor);
+			if (result == null)
+				result = caseStatement(gpsSensor);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1177,32 +1154,32 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Color Dector</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Color Sensor</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Color Dector</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Color Sensor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseColorDector(ColorDector object) {
+	public T caseColorSensor(ColorSensor object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Laser</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Laser Sensor</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Laser</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Laser Sensor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLaser(Laser object) {
+	public T caseLaserSensor(LaserSensor object) {
 		return null;
 	}
 
@@ -1327,32 +1304,17 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sensor Operation</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Robot Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sensor Operation</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Robot Statement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSensorOperation(SensorOperation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Actuator Operation</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Actuator Operation</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseActuatorOperation(ActuatorOperation object) {
+	public T caseRobotStatement(RobotStatement object) {
 		return null;
 	}
 
@@ -1387,17 +1349,17 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Change Intensity Light</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Change Intensity</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Change Intensity Light</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Change Intensity</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseChangeIntensityLight(ChangeIntensityLight object) {
+	public T caseChangeIntensity(ChangeIntensity object) {
 		return null;
 	}
 
@@ -1458,6 +1420,36 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseShoot(Shoot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Gyro Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Gyro Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGyroSensor(GyroSensor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>GPS Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>GPS Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGPSSensor(GPSSensor object) {
 		return null;
 	}
 

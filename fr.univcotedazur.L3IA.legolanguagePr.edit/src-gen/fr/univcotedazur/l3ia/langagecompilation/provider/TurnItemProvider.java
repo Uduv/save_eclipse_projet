@@ -25,7 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TurnItemProvider extends ActuatorOperationItemProvider {
+public class TurnItemProvider extends RobotStatementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -80,6 +80,8 @@ public class TurnItemProvider extends ActuatorOperationItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(LegolanguagePrPackage.Literals.TURN__ANGLE);
+			childrenFeatures.add(LegolanguagePrPackage.Literals.TURN__SPEED);
+			childrenFeatures.add(LegolanguagePrPackage.Literals.TURN__DURATION);
 		}
 		return childrenFeatures;
 	}
@@ -147,6 +149,8 @@ public class TurnItemProvider extends ActuatorOperationItemProvider {
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case LegolanguagePrPackage.TURN__ANGLE:
+		case LegolanguagePrPackage.TURN__SPEED:
+		case LegolanguagePrPackage.TURN__DURATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -206,26 +210,89 @@ public class TurnItemProvider extends ActuatorOperationItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
 				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createGo()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createChangeAngle()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createGT()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createChangeIntensityLight()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createAssignement()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createGetColor()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createLT()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createGetDistance()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createVariableProxy()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createTurn()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createEqual()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createShoot()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createAddition()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createDivision()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createExponential()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createMultiplication()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createGTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createSensorProxy()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createGT()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createAssignement()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createLT()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createVariableProxy()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createAddition()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createDivision()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createExponential()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createMultiplication()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createGTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createSensorProxy()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
 	}
 
 	/**
@@ -239,9 +306,9 @@ public class TurnItemProvider extends ActuatorOperationItemProvider {
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT
-				|| childFeature == LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT
-				|| childFeature == LegolanguagePrPackage.Literals.TURN__ANGLE;
+		boolean qualify = childFeature == LegolanguagePrPackage.Literals.TURN__ANGLE
+				|| childFeature == LegolanguagePrPackage.Literals.TURN__SPEED
+				|| childFeature == LegolanguagePrPackage.Literals.TURN__DURATION;
 
 		if (qualify) {
 			return getString("_UI_CreateChild_text2",

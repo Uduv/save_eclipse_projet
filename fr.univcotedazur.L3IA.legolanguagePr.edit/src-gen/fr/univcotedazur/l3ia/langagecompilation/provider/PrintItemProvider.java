@@ -210,10 +210,10 @@ public class PrintItemProvider extends StatementItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createRobot()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createColorDector()));
+				LegolanguagePrFactory.eINSTANCE.createColorSensor()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createLaser()));
+				LegolanguagePrFactory.eINSTANCE.createLaserSensor()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createShootLauncher()));
@@ -240,7 +240,7 @@ public class PrintItemProvider extends StatementItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createChangeAngle()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createChangeIntensityLight()));
+				LegolanguagePrFactory.eINSTANCE.createChangeIntensity()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createGetColor()));
@@ -253,6 +253,12 @@ public class PrintItemProvider extends StatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createShoot()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createGyroSensor()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createGPSSensor()));
 	}
 
 }

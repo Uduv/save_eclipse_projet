@@ -229,22 +229,22 @@ public interface LegolanguagePrFactory extends EFactory {
 	Robot createRobot();
 
 	/**
-	 * Returns a new object of class '<em>Color Dector</em>'.
+	 * Returns a new object of class '<em>Color Sensor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Color Dector</em>'.
+	 * @return a new object of class '<em>Color Sensor</em>'.
 	 * @generated
 	 */
-	ColorDector createColorDector();
+	ColorSensor createColorSensor();
 
 	/**
-	 * Returns a new object of class '<em>Laser</em>'.
+	 * Returns a new object of class '<em>Laser Sensor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Laser</em>'.
+	 * @return a new object of class '<em>Laser Sensor</em>'.
 	 * @generated
 	 */
-	Laser createLaser();
+	LaserSensor createLaserSensor();
 
 	/**
 	 * Returns a new object of class '<em>Shoot Launcher</em>'.
@@ -319,13 +319,13 @@ public interface LegolanguagePrFactory extends EFactory {
 	ChangeAngle createChangeAngle();
 
 	/**
-	 * Returns a new object of class '<em>Change Intensity Light</em>'.
+	 * Returns a new object of class '<em>Change Intensity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Change Intensity Light</em>'.
+	 * @return a new object of class '<em>Change Intensity</em>'.
 	 * @generated
 	 */
-	ChangeIntensityLight createChangeIntensityLight();
+	ChangeIntensity createChangeIntensity();
 
 	/**
 	 * Returns a new object of class '<em>Get Color</em>'.
@@ -362,6 +362,24 @@ public interface LegolanguagePrFactory extends EFactory {
 	 * @generated
 	 */
 	Shoot createShoot();
+
+	/**
+	 * Returns a new object of class '<em>Gyro Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Gyro Sensor</em>'.
+	 * @generated
+	 */
+	GyroSensor createGyroSensor();
+
+	/**
+	 * Returns a new object of class '<em>GPS Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>GPS Sensor</em>'.
+	 * @generated
+	 */
+	GPSSensor createGPSSensor();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class GetDistanceImpl extends SensorOperationImpl implements GetDistance {
+public class GetDistanceImpl extends RobotStatementImpl implements GetDistance {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

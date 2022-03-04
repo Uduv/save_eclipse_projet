@@ -12,5 +12,5 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @model
  * @generated
  */
-public interface GetColor extends SensorOperation {
+public interface GetColor extends RobotStatement {
 } // GetColor

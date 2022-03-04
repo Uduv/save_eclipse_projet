@@ -12,13 +12,15 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * </p>
  * <ul>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.ChangeAngle#getAngle <em>Angle</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.ChangeAngle#getArm <em>Arm</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.ChangeAngle#getSpeed <em>Speed</em>}</li>
  * </ul>
  *
  * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getChangeAngle()
  * @model
  * @generated
  */
-public interface ChangeAngle extends ActuatorOperation {
+public interface ChangeAngle extends RobotStatement {
 	/**
 	 * Returns the value of the '<em><b>Angle</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -40,5 +42,49 @@ public interface ChangeAngle extends ActuatorOperation {
 	 * @generated
 	 */
 	void setAngle(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>Arm</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Arm</em>' reference.
+	 * @see #setArm(Arm)
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getChangeAngle_Arm()
+	 * @model required="true"
+	 * @generated
+	 */
+	Arm getArm();
+
+	/**
+	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.ChangeAngle#getArm <em>Arm</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Arm</em>' reference.
+	 * @see #getArm()
+	 * @generated
+	 */
+	void setArm(Arm value);
+
+	/**
+	 * Returns the value of the '<em><b>Speed</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Speed</em>' containment reference.
+	 * @see #setSpeed(Expression)
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getChangeAngle_Speed()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Expression getSpeed();
+
+	/**
+	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.ChangeAngle#getSpeed <em>Speed</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Speed</em>' containment reference.
+	 * @see #getSpeed()
+	 * @generated
+	 */
+	void setSpeed(Expression value);
 
 } // ChangeAngle

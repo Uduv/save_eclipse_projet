@@ -3,7 +3,6 @@
 package fr.univcotedazur.l3ia.langagecompilation.provider;
 
 import fr.univcotedazur.l3ia.langagecompilation.GetColor;
-import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -19,7 +18,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GetColorItemProvider extends SensorOperationItemProvider {
+public class GetColorItemProvider extends RobotStatementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -102,27 +101,6 @@ public class GetColorItemProvider extends SensorOperationItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT
-				|| childFeature == LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2",
-					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

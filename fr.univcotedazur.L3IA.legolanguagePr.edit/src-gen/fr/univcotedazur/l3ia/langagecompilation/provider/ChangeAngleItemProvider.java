@@ -13,7 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ChangeAngleItemProvider extends ActuatorOperationItemProvider {
+public class ChangeAngleItemProvider extends RobotStatementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,8 +45,24 @@ public class ChangeAngleItemProvider extends ActuatorOperationItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addArmPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Arm feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addArmPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_ChangeAngle_arm_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ChangeAngle_arm_feature",
+								"_UI_ChangeAngle_type"),
+						LegolanguagePrPackage.Literals.CHANGE_ANGLE__ARM, true, false, true, null, null, null));
 	}
 
 	/**
@@ -62,6 +78,7 @@ public class ChangeAngleItemProvider extends ActuatorOperationItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE);
+			childrenFeatures.add(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED);
 		}
 		return childrenFeatures;
 	}
@@ -126,6 +143,7 @@ public class ChangeAngleItemProvider extends ActuatorOperationItemProvider {
 
 		switch (notification.getFeatureID(ChangeAngle.class)) {
 		case LegolanguagePrPackage.CHANGE_ANGLE__ANGLE:
+		case LegolanguagePrPackage.CHANGE_ANGLE__SPEED:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -185,26 +203,47 @@ public class ChangeAngleItemProvider extends ActuatorOperationItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
 				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createGo()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createChangeAngle()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createGT()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createChangeIntensityLight()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createAssignement()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createGetColor()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createLT()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createGetDistance()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createVariableProxy()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createTurn()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createEqual()));
 
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
-				LegolanguagePrFactory.eINSTANCE.createShoot()));
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createAddition()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createDivision()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createExponential()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createMultiplication()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createGTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createSensorProxy()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createActuatorProxy()));
 	}
 
 	/**
@@ -218,9 +257,8 @@ public class ChangeAngleItemProvider extends ActuatorOperationItemProvider {
 		Object childFeature = feature;
 		Object childObject = child;
 
-		boolean qualify = childFeature == LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT
-				|| childFeature == LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT
-				|| childFeature == LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE;
+		boolean qualify = childFeature == LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE
+				|| childFeature == LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED;
 
 		if (qualify) {
 			return getString("_UI_CreateChild_text2",

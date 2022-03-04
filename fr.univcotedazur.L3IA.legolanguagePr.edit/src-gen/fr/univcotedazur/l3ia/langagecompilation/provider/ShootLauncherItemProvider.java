@@ -2,7 +2,6 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.provider;
 
-import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.ShootLauncher;
 
 import java.util.Collection;
@@ -10,11 +9,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ShootLauncher} object.
@@ -44,25 +39,8 @@ public class ShootLauncherItemProvider extends MotorItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addForcePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Force feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addForcePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_ShootLauncher_force_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_ShootLauncher_force_feature",
-								"_UI_ShootLauncher_type"),
-						LegolanguagePrPackage.Literals.SHOOT_LAUNCHER__FORCE, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -109,12 +87,6 @@ public class ShootLauncherItemProvider extends MotorItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(ShootLauncher.class)) {
-		case LegolanguagePrPackage.SHOOT_LAUNCHER__FORCE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 

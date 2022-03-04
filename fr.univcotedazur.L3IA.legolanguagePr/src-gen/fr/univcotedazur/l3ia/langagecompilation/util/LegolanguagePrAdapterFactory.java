@@ -227,13 +227,13 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseColorDector(ColorDector object) {
-			return createColorDectorAdapter();
+		public Adapter caseColorSensor(ColorSensor object) {
+			return createColorSensorAdapter();
 		}
 
 		@Override
-		public Adapter caseLaser(Laser object) {
-			return createLaserAdapter();
+		public Adapter caseLaserSensor(LaserSensor object) {
+			return createLaserSensorAdapter();
 		}
 
 		@Override
@@ -277,13 +277,8 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseSensorOperation(SensorOperation object) {
-			return createSensorOperationAdapter();
-		}
-
-		@Override
-		public Adapter caseActuatorOperation(ActuatorOperation object) {
-			return createActuatorOperationAdapter();
+		public Adapter caseRobotStatement(RobotStatement object) {
+			return createRobotStatementAdapter();
 		}
 
 		@Override
@@ -297,8 +292,8 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseChangeIntensityLight(ChangeIntensityLight object) {
-			return createChangeIntensityLightAdapter();
+		public Adapter caseChangeIntensity(ChangeIntensity object) {
+			return createChangeIntensityAdapter();
 		}
 
 		@Override
@@ -319,6 +314,16 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseShoot(Shoot object) {
 			return createShootAdapter();
+		}
+
+		@Override
+		public Adapter caseGyroSensor(GyroSensor object) {
+			return createGyroSensorAdapter();
+		}
+
+		@Override
+		public Adapter caseGPSSensor(GPSSensor object) {
+			return createGPSSensorAdapter();
 		}
 
 		@Override
@@ -789,30 +794,30 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.ColorDector <em>Color Dector</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.ColorSensor <em>Color Sensor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.ColorDector
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ColorSensor
 	 * @generated
 	 */
-	public Adapter createColorDectorAdapter() {
+	public Adapter createColorSensorAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Laser <em>Laser</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.LaserSensor <em>Laser Sensor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.Laser
+	 * @see fr.univcotedazur.l3ia.langagecompilation.LaserSensor
 	 * @generated
 	 */
-	public Adapter createLaserAdapter() {
+	public Adapter createLaserSensorAdapter() {
 		return null;
 	}
 
@@ -929,30 +934,16 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.SensorOperation <em>Sensor Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.RobotStatement <em>Robot Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.SensorOperation
+	 * @see fr.univcotedazur.l3ia.langagecompilation.RobotStatement
 	 * @generated
 	 */
-	public Adapter createSensorOperationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.ActuatorOperation <em>Actuator Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.ActuatorOperation
-	 * @generated
-	 */
-	public Adapter createActuatorOperationAdapter() {
+	public Adapter createRobotStatementAdapter() {
 		return null;
 	}
 
@@ -985,16 +976,16 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.ChangeIntensityLight <em>Change Intensity Light</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.ChangeIntensity <em>Change Intensity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.ChangeIntensityLight
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ChangeIntensity
 	 * @generated
 	 */
-	public Adapter createChangeIntensityLightAdapter() {
+	public Adapter createChangeIntensityAdapter() {
 		return null;
 	}
 
@@ -1051,6 +1042,34 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createShootAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.GyroSensor <em>Gyro Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.GyroSensor
+	 * @generated
+	 */
+	public Adapter createGyroSensorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.GPSSensor <em>GPS Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.GPSSensor
+	 * @generated
+	 */
+	public Adapter createGPSSensorAdapter() {
 		return null;
 	}
 

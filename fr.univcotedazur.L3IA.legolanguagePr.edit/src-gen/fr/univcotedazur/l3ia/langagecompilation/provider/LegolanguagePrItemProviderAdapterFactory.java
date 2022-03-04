@@ -602,49 +602,49 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.ColorDector} instances.
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.ColorSensor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ColorDectorItemProvider colorDectorItemProvider;
+	protected ColorSensorItemProvider colorSensorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ColorDector}.
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ColorSensor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createColorDectorAdapter() {
-		if (colorDectorItemProvider == null) {
-			colorDectorItemProvider = new ColorDectorItemProvider(this);
+	public Adapter createColorSensorAdapter() {
+		if (colorSensorItemProvider == null) {
+			colorSensorItemProvider = new ColorSensorItemProvider(this);
 		}
 
-		return colorDectorItemProvider;
+		return colorSensorItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Laser} instances.
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.LaserSensor} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected LaserItemProvider laserItemProvider;
+	protected LaserSensorItemProvider laserSensorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Laser}.
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.LaserSensor}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createLaserAdapter() {
-		if (laserItemProvider == null) {
-			laserItemProvider = new LaserItemProvider(this);
+	public Adapter createLaserSensorAdapter() {
+		if (laserSensorItemProvider == null) {
+			laserSensorItemProvider = new LaserSensorItemProvider(this);
 		}
 
-		return laserItemProvider;
+		return laserSensorItemProvider;
 	}
 
 	/**
@@ -832,26 +832,26 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.ChangeIntensityLight} instances.
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.ChangeIntensity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChangeIntensityLightItemProvider changeIntensityLightItemProvider;
+	protected ChangeIntensityItemProvider changeIntensityItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ChangeIntensityLight}.
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ChangeIntensity}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createChangeIntensityLightAdapter() {
-		if (changeIntensityLightItemProvider == null) {
-			changeIntensityLightItemProvider = new ChangeIntensityLightItemProvider(this);
+	public Adapter createChangeIntensityAdapter() {
+		if (changeIntensityItemProvider == null) {
+			changeIntensityItemProvider = new ChangeIntensityItemProvider(this);
 		}
 
-		return changeIntensityLightItemProvider;
+		return changeIntensityItemProvider;
 	}
 
 	/**
@@ -944,6 +944,52 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 		}
 
 		return shootItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.GyroSensor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GyroSensorItemProvider gyroSensorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.GyroSensor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGyroSensorAdapter() {
+		if (gyroSensorItemProvider == null) {
+			gyroSensorItemProvider = new GyroSensorItemProvider(this);
+		}
+
+		return gyroSensorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.GPSSensor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GPSSensorItemProvider gpsSensorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.GPSSensor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGPSSensorAdapter() {
+		if (gpsSensorItemProvider == null) {
+			gpsSensorItemProvider = new GPSSensorItemProvider(this);
+		}
+
+		return gpsSensorItemProvider;
 	}
 
 	/**
@@ -1091,10 +1137,10 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			ltEqualItemProvider.dispose();
 		if (robotItemProvider != null)
 			robotItemProvider.dispose();
-		if (colorDectorItemProvider != null)
-			colorDectorItemProvider.dispose();
-		if (laserItemProvider != null)
-			laserItemProvider.dispose();
+		if (colorSensorItemProvider != null)
+			colorSensorItemProvider.dispose();
+		if (laserSensorItemProvider != null)
+			laserSensorItemProvider.dispose();
 		if (shootLauncherItemProvider != null)
 			shootLauncherItemProvider.dispose();
 		if (ledItemProvider != null)
@@ -1111,8 +1157,8 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			goItemProvider.dispose();
 		if (changeAngleItemProvider != null)
 			changeAngleItemProvider.dispose();
-		if (changeIntensityLightItemProvider != null)
-			changeIntensityLightItemProvider.dispose();
+		if (changeIntensityItemProvider != null)
+			changeIntensityItemProvider.dispose();
 		if (getColorItemProvider != null)
 			getColorItemProvider.dispose();
 		if (getDistanceItemProvider != null)
@@ -1121,6 +1167,10 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			turnItemProvider.dispose();
 		if (shootItemProvider != null)
 			shootItemProvider.dispose();
+		if (gyroSensorItemProvider != null)
+			gyroSensorItemProvider.dispose();
+		if (gpsSensorItemProvider != null)
+			gpsSensorItemProvider.dispose();
 	}
 
 }
