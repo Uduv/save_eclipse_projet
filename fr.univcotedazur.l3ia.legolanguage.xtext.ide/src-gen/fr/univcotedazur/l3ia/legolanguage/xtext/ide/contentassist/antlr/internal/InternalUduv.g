@@ -8037,9 +8037,9 @@ rule__VariableProxy__VariableAssignment
 	(
 		{ before(grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0()); }
 		(
-			{ before(grammarAccess.getVariableProxyAccess().getVariableVariableEStringParserRuleCall_0_1()); }
-			ruleEString
-			{ after(grammarAccess.getVariableProxyAccess().getVariableVariableEStringParserRuleCall_0_1()); }
+			{ before(grammarAccess.getVariableProxyAccess().getVariableVariableIDTerminalRuleCall_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getVariableProxyAccess().getVariableVariableIDTerminalRuleCall_0_1()); }
 		)
 		{ after(grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0()); }
 	)

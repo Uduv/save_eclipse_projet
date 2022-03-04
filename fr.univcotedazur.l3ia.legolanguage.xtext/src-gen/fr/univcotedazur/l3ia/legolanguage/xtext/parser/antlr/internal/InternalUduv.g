@@ -2436,12 +2436,9 @@ ruleVariableProxy returns [EObject current=null]
 					$current = createModelElement(grammarAccess.getVariableProxyRule());
 				}
 			}
+			otherlv_0=RULE_ID
 			{
-				newCompositeNode(grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0());
-			}
-			ruleEString
-			{
-				afterParserOrEnumRuleCall();
+				newLeafNode(otherlv_0, grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0());
 			}
 		)
 	)

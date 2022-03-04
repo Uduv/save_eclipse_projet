@@ -26,7 +26,7 @@ RobotDeclaration returns Robot:
 
 
 Expression returns Expression:
-	/*/ SensorProxy | ActuatorProxy | */ VariableProxy  | BinaryOperation;
+	 VariableProxy  | BinaryOperation;
 	
 Calcul returns Calcul : 
 	Substarction | Addition | Division | Exponential | Multiplication ;
@@ -213,8 +213,9 @@ Print returns Print:
 	'print' '(' (statement+=Statement)* ')'
 	;
 
+// marche uniquement a l'extérieur des expressions
 VariableProxy returns VariableProxy:
-	variable=[Variable|EString]
+	variable=[Variable|ID]
 	;
 
 EBoolean returns ecore::EBoolean:

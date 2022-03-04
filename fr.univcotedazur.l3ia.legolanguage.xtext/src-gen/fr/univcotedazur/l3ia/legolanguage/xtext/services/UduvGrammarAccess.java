@@ -204,13 +204,13 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final RuleCall cBinaryOperationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Expression returns Expression:
-		//    /*/ SensorProxy | ActuatorProxy | */ VariableProxy  | BinaryOperation;
+		//     VariableProxy  | BinaryOperation;
 		@Override public ParserRule getRule() { return rule; }
 		
-		///*/ SensorProxy | ActuatorProxy | */ VariableProxy  | BinaryOperation
+		//VariableProxy  | BinaryOperation
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		///*/ SensorProxy | ActuatorProxy | */ VariableProxy
+		//VariableProxy
 		public RuleCall getVariableProxyParserRuleCall_0() { return cVariableProxyParserRuleCall_0; }
 		
 		//BinaryOperation
@@ -1397,21 +1397,21 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.VariableProxy");
 		private final Assignment cVariableAssignment = (Assignment)rule.eContents().get(1);
 		private final CrossReference cVariableVariableCrossReference_0 = (CrossReference)cVariableAssignment.eContents().get(0);
-		private final RuleCall cVariableVariableEStringParserRuleCall_0_1 = (RuleCall)cVariableVariableCrossReference_0.eContents().get(1);
+		private final RuleCall cVariableVariableIDTerminalRuleCall_0_1 = (RuleCall)cVariableVariableCrossReference_0.eContents().get(1);
 		
 		//VariableProxy returns VariableProxy:
-		//    variable=[Variable|EString]
+		//    variable=[Variable|ID]
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//variable=[Variable|EString]
+		//variable=[Variable|ID]
 		public Assignment getVariableAssignment() { return cVariableAssignment; }
 		
-		//[Variable|EString]
+		//[Variable|ID]
 		public CrossReference getVariableVariableCrossReference_0() { return cVariableVariableCrossReference_0; }
 		
-		//EString
-		public RuleCall getVariableVariableEStringParserRuleCall_0_1() { return cVariableVariableEStringParserRuleCall_0_1; }
+		//ID
+		public RuleCall getVariableVariableIDTerminalRuleCall_0_1() { return cVariableVariableIDTerminalRuleCall_0_1; }
 	}
 	public class EBooleanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EBoolean");
@@ -2492,7 +2492,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Expression returns Expression:
-	//    /*/ SensorProxy | ActuatorProxy | */ VariableProxy  | BinaryOperation;
+	//     VariableProxy  | BinaryOperation;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -2881,7 +2881,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//VariableProxy returns VariableProxy:
-	//    variable=[Variable|EString]
+	//    variable=[Variable|ID]
 	//    ;
 	public VariableProxyElements getVariableProxyAccess() {
 		return pVariableProxy;

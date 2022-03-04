@@ -853,7 +853,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     VariableProxy returns VariableProxy
 	 *
 	 * Constraint:
-	 *     variable=[Variable|EString]
+	 *     variable=[Variable|ID]
 	 */
 	protected void sequence_VariableProxy(ISerializationContext context, VariableProxy semanticObject) {
 		if (errorAcceptor != null) {
@@ -861,7 +861,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.VARIABLE_PROXY__VARIABLE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVariableProxyAccess().getVariableVariableEStringParserRuleCall_0_1(), semanticObject.eGet(LegolanguagePrPackage.Literals.VARIABLE_PROXY__VARIABLE, false));
+		feeder.accept(grammarAccess.getVariableProxyAccess().getVariableVariableIDTerminalRuleCall_0_1(), semanticObject.eGet(LegolanguagePrPackage.Literals.VARIABLE_PROXY__VARIABLE, false));
 		feeder.finish();
 	}
 	
