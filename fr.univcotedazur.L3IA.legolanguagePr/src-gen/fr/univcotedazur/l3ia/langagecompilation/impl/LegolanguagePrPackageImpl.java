@@ -579,15 +579,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVariable_IsInExpression() {
-		return (EAttribute) variableEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getLoop() {
 		return loopEClass;
 	}
@@ -1431,7 +1422,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		createEAttribute(statementEClass, STATEMENT__IS_IN_CONDITIONIAL);
 
 		variableEClass = createEClass(VARIABLE);
-		createEAttribute(variableEClass, VARIABLE__IS_IN_EXPRESSION);
 
 		loopEClass = createEClass(LOOP);
 		createEReference(loopEClass, LOOP__STATEMENT);
@@ -1607,6 +1597,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		// Add supertypes to classes
 		variableEClass.getESuperTypes().add(this.getStatement());
+		variableEClass.getESuperTypes().add(this.getExpression());
 		loopEClass.getESuperTypes().add(this.getStatement());
 		whileLoopEClass.getESuperTypes().add(this.getLoop());
 		expressionEClass.getESuperTypes().add(this.getStatement());
@@ -1672,9 +1663,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariable_IsInExpression(), ecorePackage.getEBoolean(), "isInExpression", "false", 0, 1,
-				Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(loopEClass, Loop.class, "Loop", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLoop_Statement(), this.getStatement(), null, "statement", null, 0, -1, Loop.class,

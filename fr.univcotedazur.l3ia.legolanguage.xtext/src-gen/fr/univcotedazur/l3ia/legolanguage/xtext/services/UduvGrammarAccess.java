@@ -200,18 +200,18 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cVariableProxyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cVariableParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cBinaryOperationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Expression returns Expression:
-		//     VariableProxy  | BinaryOperation;
+		//     Variable | BinaryOperation;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//VariableProxy  | BinaryOperation
+		//Variable | BinaryOperation
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//VariableProxy
-		public RuleCall getVariableProxyParserRuleCall_0() { return cVariableProxyParserRuleCall_0; }
+		//Variable
+		public RuleCall getVariableParserRuleCall_0() { return cVariableParserRuleCall_0; }
 		
 		//BinaryOperation
 		public RuleCall getBinaryOperationParserRuleCall_1() { return cBinaryOperationParserRuleCall_1; }
@@ -1399,6 +1399,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		private final CrossReference cVariableVariableCrossReference_0 = (CrossReference)cVariableAssignment.eContents().get(0);
 		private final RuleCall cVariableVariableIDTerminalRuleCall_0_1 = (RuleCall)cVariableVariableCrossReference_0.eContents().get(1);
 		
+		//// marche uniquement a l'extérieur des expressions
 		//VariableProxy returns VariableProxy:
 		//    variable=[Variable|ID]
 		//    ;
@@ -2492,7 +2493,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 	}
 	
 	//Expression returns Expression:
-	//     VariableProxy  | BinaryOperation;
+	//     Variable | BinaryOperation;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -2880,6 +2881,7 @@ public class UduvGrammarAccess extends AbstractElementFinder.AbstractGrammarElem
 		return getPrintAccess().getRule();
 	}
 	
+	//// marche uniquement a l'extérieur des expressions
 	//VariableProxy returns VariableProxy:
 	//    variable=[Variable|ID]
 	//    ;

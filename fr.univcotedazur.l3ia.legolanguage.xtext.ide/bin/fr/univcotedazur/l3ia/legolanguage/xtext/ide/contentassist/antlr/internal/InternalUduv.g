@@ -900,31 +900,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleVariableProxy
-entryRuleVariableProxy
-:
-{ before(grammarAccess.getVariableProxyRule()); }
-	 ruleVariableProxy
-{ after(grammarAccess.getVariableProxyRule()); } 
-	 EOF 
-;
-
-// Rule VariableProxy
-ruleVariableProxy 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getVariableProxyAccess().getVariableAssignment()); }
-		(rule__VariableProxy__VariableAssignment)
-		{ after(grammarAccess.getVariableProxyAccess().getVariableAssignment()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleEBoolean
 entryRuleEBoolean
 :
@@ -1462,9 +1437,9 @@ rule__Expression__Alternatives
 	}
 :
 	(
-		{ before(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_0()); }
-		ruleVariableProxy
-		{ after(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_0()); }
+		{ before(grammarAccess.getExpressionAccess().getVariableParserRuleCall_0()); }
+		ruleVariable
+		{ after(grammarAccess.getExpressionAccess().getVariableParserRuleCall_0()); }
 	)
 	|
 	(
@@ -8023,25 +7998,6 @@ rule__Print__StatementAssignment_3
 		{ before(grammarAccess.getPrintAccess().getStatementStatementParserRuleCall_3_0()); }
 		ruleStatement
 		{ after(grammarAccess.getPrintAccess().getStatementStatementParserRuleCall_3_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__VariableProxy__VariableAssignment
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0()); }
-		(
-			{ before(grammarAccess.getVariableProxyAccess().getVariableVariableIDTerminalRuleCall_0_1()); }
-			RULE_ID
-			{ after(grammarAccess.getVariableProxyAccess().getVariableVariableIDTerminalRuleCall_0_1()); }
-		)
-		{ after(grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0()); }
 	)
 ;
 finally {

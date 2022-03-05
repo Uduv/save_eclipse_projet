@@ -30,9 +30,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Statement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Statement/isInConditionial"/>
     </genClasses>
-    <genClasses ecoreClass="legolanguagePr.ecore#//Variable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Variable/isInExpression"/>
-    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Variable"/>
     <genClasses image="false" ecoreClass="legolanguagePr.ecore#//Loop">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Loop/statement"/>
     </genClasses>

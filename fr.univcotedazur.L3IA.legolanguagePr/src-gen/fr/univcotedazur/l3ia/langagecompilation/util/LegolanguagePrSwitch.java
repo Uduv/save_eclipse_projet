@@ -84,6 +84,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			Variable variable = (Variable) theEObject;
 			T result = caseVariable(variable);
 			if (result == null)
+				result = caseExpression(variable);
+			if (result == null)
 				result = caseStatement(variable);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -191,6 +193,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseVariable(leInteger);
 			if (result == null)
+				result = caseExpression(leInteger);
+			if (result == null)
 				result = caseStatement(leInteger);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -201,6 +205,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			T result = caseLeString(leString);
 			if (result == null)
 				result = caseVariable(leString);
+			if (result == null)
+				result = caseExpression(leString);
 			if (result == null)
 				result = caseStatement(leString);
 			if (result == null)
@@ -274,6 +280,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseVariable(leBoolean);
 			if (result == null)
+				result = caseExpression(leBoolean);
+			if (result == null)
 				result = caseStatement(leBoolean);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -284,6 +292,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			T result = caseLeFloat(leFloat);
 			if (result == null)
 				result = caseVariable(leFloat);
+			if (result == null)
+				result = caseExpression(leFloat);
 			if (result == null)
 				result = caseStatement(leFloat);
 			if (result == null)

@@ -144,6 +144,12 @@ public class BinaryOperationItemProvider extends ExpressionItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createAssignement()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
+				LegolanguagePrFactory.eINSTANCE.createLeInteger()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
+				LegolanguagePrFactory.eINSTANCE.createLeString()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
@@ -151,6 +157,12 @@ public class BinaryOperationItemProvider extends ExpressionItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
 				LegolanguagePrFactory.eINSTANCE.createEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
+				LegolanguagePrFactory.eINSTANCE.createLeBoolean()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
+				LegolanguagePrFactory.eINSTANCE.createLeFloat()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT,
 				LegolanguagePrFactory.eINSTANCE.createAddition()));
@@ -180,6 +192,12 @@ public class BinaryOperationItemProvider extends ExpressionItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createAssignement()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
+				LegolanguagePrFactory.eINSTANCE.createLeInteger()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
+				LegolanguagePrFactory.eINSTANCE.createLeString()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
@@ -187,6 +205,12 @@ public class BinaryOperationItemProvider extends ExpressionItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
 				LegolanguagePrFactory.eINSTANCE.createEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
+				LegolanguagePrFactory.eINSTANCE.createLeBoolean()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
+				LegolanguagePrFactory.eINSTANCE.createLeFloat()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT,
 				LegolanguagePrFactory.eINSTANCE.createAddition()));

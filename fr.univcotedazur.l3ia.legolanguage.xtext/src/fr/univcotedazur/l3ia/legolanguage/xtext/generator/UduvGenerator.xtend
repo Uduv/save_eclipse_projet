@@ -139,13 +139,8 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 	def String VariableToString(Variable v) {
 		var res = ''
 		
-		if (v instanceof LeInteger) {
-			if (v.isInExpression){ 
-				res += v.initialeValue
-			}else{
-				
+		if (v instanceof LeInteger) {	
 			res += v.name + ':int = '+ v.initialeValue
-			}
 		}else
 		if (v instanceof LeFloat) {
 			res += v.name + ':float = '+ v.initialeValue
@@ -175,8 +170,19 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 			res += BinaryOperationToString(e as BinaryOperation)
 		}else 
 		if (e instanceof Variable) {
-			e.isInExpression = true
-			res += VariableToString(e as Variable)
+			if (e instanceof LeInteger) {
+				res += e.initialeValue
+			}else
+			if (e instanceof LeFloat) {
+				res += e.initialeValue
+			}else
+			if (e instanceof LeString) {
+				res += e.initialeValue 
+	
+			}else
+			if (e instanceof LeBoolean) {
+				res += e.initialeValue
+			}
 		} 
 		if (e instanceof VariableProxy){
 			res += e.variable.name

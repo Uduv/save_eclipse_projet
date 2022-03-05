@@ -178,22 +178,13 @@ public interface LegolanguagePrPackage extends EPackage {
 	int VARIABLE__IS_IN_CONDITIONIAL = STATEMENT__IS_IN_CONDITIONIAL;
 
 	/**
-	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE__IS_IN_EXPRESSION = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+	int VARIABLE_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Variable</em>' class.
@@ -782,15 +773,6 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_INTEGER__IS_IN_CONDITIONIAL = VARIABLE__IS_IN_CONDITIONIAL;
 
 	/**
-	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LE_INTEGER__IS_IN_EXPRESSION = VARIABLE__IS_IN_EXPRESSION;
-
-	/**
 	 * The feature id for the '<em><b>Initiale Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -844,15 +826,6 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int LE_STRING__IS_IN_CONDITIONIAL = VARIABLE__IS_IN_CONDITIONIAL;
-
-	/**
-	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LE_STRING__IS_IN_EXPRESSION = VARIABLE__IS_IN_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Initiale Value</b></em>' attribute.
@@ -1212,15 +1185,6 @@ public interface LegolanguagePrPackage extends EPackage {
 	int LE_BOOLEAN__IS_IN_CONDITIONIAL = VARIABLE__IS_IN_CONDITIONIAL;
 
 	/**
-	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LE_BOOLEAN__IS_IN_EXPRESSION = VARIABLE__IS_IN_EXPRESSION;
-
-	/**
 	 * The feature id for the '<em><b>Initiale Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1274,15 +1238,6 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @ordered
 	 */
 	int LE_FLOAT__IS_IN_CONDITIONIAL = VARIABLE__IS_IN_CONDITIONIAL;
-
-	/**
-	 * The feature id for the '<em><b>Is In Expression</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LE_FLOAT__IS_IN_EXPRESSION = VARIABLE__IS_IN_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Initiale Value</b></em>' attribute.
@@ -3272,17 +3227,6 @@ public interface LegolanguagePrPackage extends EPackage {
 	EClass getVariable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link fr.univcotedazur.l3ia.langagecompilation.Variable#isIsInExpression <em>Is In Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is In Expression</em>'.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.Variable#isIsInExpression()
-	 * @see #getVariable()
-	 * @generated
-	 */
-	EAttribute getVariable_IsInExpression();
-
-	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Loop <em>Loop</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4306,14 +4250,6 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * @generated
 		 */
 		EClass VARIABLE = eINSTANCE.getVariable();
-
-		/**
-		 * The meta object literal for the '<em><b>Is In Expression</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VARIABLE__IS_IN_EXPRESSION = eINSTANCE.getVariable_IsInExpression();
 
 		/**
 		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.LoopImpl <em>Loop</em>}' class.

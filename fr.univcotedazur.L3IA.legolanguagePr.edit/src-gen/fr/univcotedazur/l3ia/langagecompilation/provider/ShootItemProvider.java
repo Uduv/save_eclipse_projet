@@ -152,6 +152,12 @@ public class ShootItemProvider extends RobotStatementItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createAssignement()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
+				LegolanguagePrFactory.eINSTANCE.createLeInteger()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
+				LegolanguagePrFactory.eINSTANCE.createLeString()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
@@ -159,6 +165,12 @@ public class ShootItemProvider extends RobotStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
 				LegolanguagePrFactory.eINSTANCE.createEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
+				LegolanguagePrFactory.eINSTANCE.createLeBoolean()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
+				LegolanguagePrFactory.eINSTANCE.createLeFloat()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
 				LegolanguagePrFactory.eINSTANCE.createAddition()));

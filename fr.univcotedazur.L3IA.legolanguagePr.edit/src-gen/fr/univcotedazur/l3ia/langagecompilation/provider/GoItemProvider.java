@@ -154,6 +154,12 @@ public class GoItemProvider extends RobotStatementItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createAssignement()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createLeInteger()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createLeString()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
@@ -161,6 +167,12 @@ public class GoItemProvider extends RobotStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createLeBoolean()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createLeFloat()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createAddition()));
@@ -190,6 +202,12 @@ public class GoItemProvider extends RobotStatementItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createAssignement()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createLeInteger()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createLeString()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
@@ -197,6 +215,12 @@ public class GoItemProvider extends RobotStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createLeBoolean()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createLeFloat()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createAddition()));

@@ -612,6 +612,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Statement returns LeBoolean
+	 *     Expression returns LeBoolean
 	 *     Variable returns LeBoolean
 	 *     LeBoolean returns LeBoolean
 	 *
@@ -626,6 +627,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Statement returns LeFloat
+	 *     Expression returns LeFloat
 	 *     Variable returns LeFloat
 	 *     LeFloat returns LeFloat
 	 *
@@ -640,6 +642,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Statement returns LeInteger
+	 *     Expression returns LeInteger
 	 *     Variable returns LeInteger
 	 *     LeInteger returns LeInteger
 	 *
@@ -654,6 +657,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * Contexts:
 	 *     Statement returns LeString
+	 *     Expression returns LeString
 	 *     Variable returns LeString
 	 *     LeString returns LeString
 	 *
@@ -848,8 +852,6 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Statement returns VariableProxy
-	 *     Expression returns VariableProxy
 	 *     VariableProxy returns VariableProxy
 	 *
 	 * Constraint:

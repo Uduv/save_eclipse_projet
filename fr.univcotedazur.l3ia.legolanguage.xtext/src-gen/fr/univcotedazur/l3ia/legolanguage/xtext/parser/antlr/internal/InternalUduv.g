@@ -411,11 +411,11 @@ ruleExpression returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_0());
+			newCompositeNode(grammarAccess.getExpressionAccess().getVariableParserRuleCall_0());
 		}
-		this_VariableProxy_0=ruleVariableProxy
+		this_Variable_0=ruleVariable
 		{
-			$current = $this_VariableProxy_0.current;
+			$current = $this_Variable_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -2408,39 +2408,6 @@ rulePrint returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getPrintAccess().getRightParenthesisKeyword_4());
 		}
-	)
-;
-
-// Entry rule entryRuleVariableProxy
-entryRuleVariableProxy returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getVariableProxyRule()); }
-	iv_ruleVariableProxy=ruleVariableProxy
-	{ $current=$iv_ruleVariableProxy.current; }
-	EOF;
-
-// Rule VariableProxy
-ruleVariableProxy returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				/* */
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getVariableProxyRule());
-				}
-			}
-			otherlv_0=RULE_ID
-			{
-				newLeafNode(otherlv_0, grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0());
-			}
-		)
 	)
 ;
 

@@ -181,52 +181,45 @@ public class UduvGenerator extends AbstractGenerator {
   public String VariableToString(final Variable v) {
     String res = "";
     if ((v instanceof LeInteger)) {
-      boolean _isIsInExpression = ((LeInteger)v).isIsInExpression();
-      if (_isIsInExpression) {
-        String _res = res;
-        int _initialeValue = ((LeInteger)v).getInitialeValue();
-        res = (_res + Integer.valueOf(_initialeValue));
-      } else {
-        String _res_1 = res;
-        String _name = ((LeInteger)v).getName();
-        String _plus = (_name + ":int = ");
-        int _initialeValue_1 = ((LeInteger)v).getInitialeValue();
-        String _plus_1 = (_plus + Integer.valueOf(_initialeValue_1));
-        res = (_res_1 + _plus_1);
-      }
+      String _res = res;
+      String _name = ((LeInteger)v).getName();
+      String _plus = (_name + ":int = ");
+      int _initialeValue = ((LeInteger)v).getInitialeValue();
+      String _plus_1 = (_plus + Integer.valueOf(_initialeValue));
+      res = (_res + _plus_1);
     } else {
       if ((v instanceof LeFloat)) {
-        String _res_2 = res;
+        String _res_1 = res;
         String _name_1 = ((LeFloat)v).getName();
         String _plus_2 = (_name_1 + ":float = ");
-        float _initialeValue_2 = ((LeFloat)v).getInitialeValue();
-        String _plus_3 = (_plus_2 + Float.valueOf(_initialeValue_2));
-        res = (_res_2 + _plus_3);
+        float _initialeValue_1 = ((LeFloat)v).getInitialeValue();
+        String _plus_3 = (_plus_2 + Float.valueOf(_initialeValue_1));
+        res = (_res_1 + _plus_3);
       } else {
         if ((v instanceof LeString)) {
-          String _res_3 = res;
+          String _res_2 = res;
           String _name_2 = ((LeString)v).getName();
           String _plus_4 = (_name_2 + ":str = ");
           String _plus_5 = (_plus_4 + "\'");
-          String _initialeValue_3 = ((LeString)v).getInitialeValue();
-          String _plus_6 = (_plus_5 + _initialeValue_3);
+          String _initialeValue_2 = ((LeString)v).getInitialeValue();
+          String _plus_6 = (_plus_5 + _initialeValue_2);
           String _plus_7 = (_plus_6 + "\'");
-          res = (_res_3 + _plus_7);
+          res = (_res_2 + _plus_7);
         } else {
           if ((v instanceof LeBoolean)) {
             boolean _equals = Boolean.valueOf(((LeBoolean)v).isInitialeValue()).equals(Boolean.valueOf(true));
             if (_equals) {
-              String _res_4 = res;
+              String _res_3 = res;
               String _name_3 = ((LeBoolean)v).getName();
               String _plus_8 = (_name_3 + ":bool = ");
               String _plus_9 = (_plus_8 + "True");
-              res = (_res_4 + _plus_9);
+              res = (_res_3 + _plus_9);
             } else {
-              String _res_5 = res;
+              String _res_4 = res;
               String _name_4 = ((LeBoolean)v).getName();
               String _plus_10 = (_name_4 + ":bool = ");
               String _plus_11 = (_plus_10 + "False");
-              res = (_res_5 + _plus_11);
+              res = (_res_4 + _plus_11);
             }
           }
         }
@@ -243,16 +236,35 @@ public class UduvGenerator extends AbstractGenerator {
       res = (_res + _BinaryOperationToString);
     } else {
       if ((e instanceof Variable)) {
-        ((Variable)e).setIsInExpression(true);
-        String _res_1 = res;
-        String _VariableToString = this.VariableToString(((Variable) e));
-        res = (_res_1 + _VariableToString);
+        if ((e instanceof LeInteger)) {
+          String _res_1 = res;
+          int _initialeValue = ((LeInteger)e).getInitialeValue();
+          res = (_res_1 + Integer.valueOf(_initialeValue));
+        } else {
+          if ((e instanceof LeFloat)) {
+            String _res_2 = res;
+            float _initialeValue_1 = ((LeFloat)e).getInitialeValue();
+            res = (_res_2 + Float.valueOf(_initialeValue_1));
+          } else {
+            if ((e instanceof LeString)) {
+              String _res_3 = res;
+              String _initialeValue_2 = ((LeString)e).getInitialeValue();
+              res = (_res_3 + _initialeValue_2);
+            } else {
+              if ((e instanceof LeBoolean)) {
+                String _res_4 = res;
+                boolean _isInitialeValue = ((LeBoolean)e).isInitialeValue();
+                res = (_res_4 + Boolean.valueOf(_isInitialeValue));
+              }
+            }
+          }
+        }
       }
     }
     if ((e instanceof VariableProxy)) {
-      String _res_2 = res;
+      String _res_5 = res;
       String _name = ((VariableProxy)e).getVariable().getName();
-      res = (_res_2 + _name);
+      res = (_res_5 + _name);
     }
     return res;
   }

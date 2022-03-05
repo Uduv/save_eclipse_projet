@@ -152,6 +152,12 @@ public class ChangeIntensityItemProvider extends RobotStatementItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createAssignement()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
+				LegolanguagePrFactory.eINSTANCE.createLeInteger()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
+				LegolanguagePrFactory.eINSTANCE.createLeString()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
@@ -159,6 +165,12 @@ public class ChangeIntensityItemProvider extends RobotStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
 				LegolanguagePrFactory.eINSTANCE.createEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
+				LegolanguagePrFactory.eINSTANCE.createLeBoolean()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
+				LegolanguagePrFactory.eINSTANCE.createLeFloat()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
 				LegolanguagePrFactory.eINSTANCE.createAddition()));
