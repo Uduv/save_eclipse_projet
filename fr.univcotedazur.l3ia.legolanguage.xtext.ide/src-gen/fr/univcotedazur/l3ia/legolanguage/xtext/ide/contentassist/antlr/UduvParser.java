@@ -39,7 +39,8 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComparaisonAccess().getAlternatives(), "rule__Comparaison__Alternatives");
 			builder.put(grammarAccess.getVariableAccess().getAlternatives(), "rule__Variable__Alternatives");
 			builder.put(grammarAccess.getSensorAccess().getAlternatives(), "rule__Sensor__Alternatives");
-			builder.put(grammarAccess.getRobotStatementAccess().getAlternatives(), "rule__RobotStatement__Alternatives");
+			builder.put(grammarAccess.getActuatorStatementAccess().getAlternatives(), "rule__ActuatorStatement__Alternatives");
+			builder.put(grammarAccess.getSensorExpressionAccess().getAlternatives(), "rule__SensorExpression__Alternatives");
 			builder.put(grammarAccess.getActuatorAccess().getAlternatives(), "rule__Actuator__Alternatives");
 			builder.put(grammarAccess.getMotorAccess().getAlternatives(), "rule__Motor__Alternatives");
 			builder.put(grammarAccess.getRotativeMotorAccess().getAlternatives(), "rule__RotativeMotor__Alternatives");
@@ -95,6 +96,12 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getChangeAngleAccess().getGroup_4(), "rule__ChangeAngle__Group_4__0");
 			builder.put(grammarAccess.getChangeIntensityAccess().getGroup(), "rule__ChangeIntensity__Group__0");
 			builder.put(grammarAccess.getShootAccess().getGroup(), "rule__Shoot__Group__0");
+			builder.put(grammarAccess.getGetColorAccess().getGroup(), "rule__GetColor__Group__0");
+			builder.put(grammarAccess.getGetDistanceAccess().getGroup(), "rule__GetDistance__Group__0");
+			builder.put(grammarAccess.getFQNAccess().getGroup(), "rule__FQN__Group__0");
+			builder.put(grammarAccess.getFQNAccess().getGroup_1(), "rule__FQN__Group_1__0");
+			builder.put(grammarAccess.getGetGyroAccess().getGroup(), "rule__GetGyro__Group__0");
+			builder.put(grammarAccess.getGetPositionAccess().getGroup(), "rule__GetPosition__Group__0");
 			builder.put(grammarAccess.getProgramAccess().getStatementAssignment_1(), "rule__Program__StatementAssignment_1");
 			builder.put(grammarAccess.getRobotDeclarationAccess().getNameAssignment_1(), "rule__RobotDeclaration__NameAssignment_1");
 			builder.put(grammarAccess.getRobotDeclarationAccess().getLeftWheelAssignment_2_2(), "rule__RobotDeclaration__LeftWheelAssignment_2_2");
@@ -173,6 +180,10 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getChangeIntensityAccess().getIntensityAssignment_3(), "rule__ChangeIntensity__IntensityAssignment_3");
 			builder.put(grammarAccess.getShootAccess().getRobotAssignment_0(), "rule__Shoot__RobotAssignment_0");
 			builder.put(grammarAccess.getShootAccess().getForceAssignment_3(), "rule__Shoot__ForceAssignment_3");
+			builder.put(grammarAccess.getGetColorAccess().getSensorAssignment_2(), "rule__GetColor__SensorAssignment_2");
+			builder.put(grammarAccess.getGetDistanceAccess().getSensorAssignment_2(), "rule__GetDistance__SensorAssignment_2");
+			builder.put(grammarAccess.getGetGyroAccess().getSensorAssignment_2(), "rule__GetGyro__SensorAssignment_2");
+			builder.put(grammarAccess.getGetPositionAccess().getSensorAssignment_2(), "rule__GetPosition__SensorAssignment_2");
 		}
 	}
 	

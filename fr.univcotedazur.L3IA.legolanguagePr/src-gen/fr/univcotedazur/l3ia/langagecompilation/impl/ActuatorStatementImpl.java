@@ -2,9 +2,9 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.impl;
 
+import fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Robot;
-import fr.univcotedazur.l3ia.langagecompilation.RobotStatement;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,18 +15,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Robot Statement</b></em>'.
+ * An implementation of the model object '<em><b>Actuator Statement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.RobotStatementImpl#getRobot <em>Robot</em>}</li>
+ *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.ActuatorStatementImpl#getRobot <em>Robot</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class RobotStatementImpl extends StatementImpl implements RobotStatement {
+public abstract class ActuatorStatementImpl extends StatementImpl implements ActuatorStatement {
 	/**
 	 * The cached value of the '{@link #getRobot() <em>Robot</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -42,7 +42,7 @@ public abstract class RobotStatementImpl extends StatementImpl implements RobotS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RobotStatementImpl() {
+	protected ActuatorStatementImpl() {
 		super();
 	}
 
@@ -53,7 +53,7 @@ public abstract class RobotStatementImpl extends StatementImpl implements RobotS
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return LegolanguagePrPackage.Literals.ROBOT_STATEMENT;
+		return LegolanguagePrPackage.Literals.ACTUATOR_STATEMENT;
 	}
 
 	/**
@@ -68,7 +68,7 @@ public abstract class RobotStatementImpl extends StatementImpl implements RobotS
 			if (robot != oldRobot) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							LegolanguagePrPackage.ROBOT_STATEMENT__ROBOT, oldRobot, robot));
+							LegolanguagePrPackage.ACTUATOR_STATEMENT__ROBOT, oldRobot, robot));
 			}
 		}
 		return robot;
@@ -92,7 +92,7 @@ public abstract class RobotStatementImpl extends StatementImpl implements RobotS
 		Robot oldRobot = robot;
 		robot = newRobot;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.ROBOT_STATEMENT__ROBOT,
+			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.ACTUATOR_STATEMENT__ROBOT,
 					oldRobot, robot));
 	}
 
@@ -104,7 +104,7 @@ public abstract class RobotStatementImpl extends StatementImpl implements RobotS
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case LegolanguagePrPackage.ROBOT_STATEMENT__ROBOT:
+		case LegolanguagePrPackage.ACTUATOR_STATEMENT__ROBOT:
 			if (resolve)
 				return getRobot();
 			return basicGetRobot();
@@ -120,7 +120,7 @@ public abstract class RobotStatementImpl extends StatementImpl implements RobotS
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case LegolanguagePrPackage.ROBOT_STATEMENT__ROBOT:
+		case LegolanguagePrPackage.ACTUATOR_STATEMENT__ROBOT:
 			setRobot((Robot) newValue);
 			return;
 		}
@@ -135,7 +135,7 @@ public abstract class RobotStatementImpl extends StatementImpl implements RobotS
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case LegolanguagePrPackage.ROBOT_STATEMENT__ROBOT:
+		case LegolanguagePrPackage.ACTUATOR_STATEMENT__ROBOT:
 			setRobot((Robot) null);
 			return;
 		}
@@ -150,10 +150,10 @@ public abstract class RobotStatementImpl extends StatementImpl implements RobotS
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case LegolanguagePrPackage.ROBOT_STATEMENT__ROBOT:
+		case LegolanguagePrPackage.ACTUATOR_STATEMENT__ROBOT:
 			return robot != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //RobotStatementImpl
+} //ActuatorStatementImpl

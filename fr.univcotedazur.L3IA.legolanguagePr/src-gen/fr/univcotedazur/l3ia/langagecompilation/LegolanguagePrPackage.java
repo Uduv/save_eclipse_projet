@@ -2456,14 +2456,14 @@ public interface LegolanguagePrPackage extends EPackage {
 	int ARM_OPERATION_COUNT = ROTATIVE_MOTOR_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.RobotStatementImpl <em>Robot Statement</em>}' class.
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ActuatorStatementImpl <em>Actuator Statement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.RobotStatementImpl
-	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getRobotStatement()
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ActuatorStatementImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getActuatorStatement()
 	 * @generated
 	 */
-	int ROBOT_STATEMENT = 40;
+	int ACTUATOR_STATEMENT = 40;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2472,7 +2472,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROBOT_STATEMENT__NAME = STATEMENT__NAME;
+	int ACTUATOR_STATEMENT__NAME = STATEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
@@ -2481,7 +2481,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROBOT_STATEMENT__IS_IN_CONDITIONIAL = STATEMENT__IS_IN_CONDITIONIAL;
+	int ACTUATOR_STATEMENT__IS_IN_CONDITIONIAL = STATEMENT__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Robot</b></em>' reference.
@@ -2490,25 +2490,25 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROBOT_STATEMENT__ROBOT = STATEMENT_FEATURE_COUNT + 0;
+	int ACTUATOR_STATEMENT__ROBOT = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Robot Statement</em>' class.
+	 * The number of structural features of the '<em>Actuator Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROBOT_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+	int ACTUATOR_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Robot Statement</em>' class.
+	 * The number of operations of the '<em>Actuator Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROBOT_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+	int ACTUATOR_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.GoImpl <em>Go</em>}' class.
@@ -2527,7 +2527,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GO__NAME = ROBOT_STATEMENT__NAME;
+	int GO__NAME = ACTUATOR_STATEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
@@ -2536,7 +2536,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GO__IS_IN_CONDITIONIAL = ROBOT_STATEMENT__IS_IN_CONDITIONIAL;
+	int GO__IS_IN_CONDITIONIAL = ACTUATOR_STATEMENT__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Robot</b></em>' reference.
@@ -2545,7 +2545,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GO__ROBOT = ROBOT_STATEMENT__ROBOT;
+	int GO__ROBOT = ACTUATOR_STATEMENT__ROBOT;
 
 	/**
 	 * The feature id for the '<em><b>Speed</b></em>' containment reference.
@@ -2554,7 +2554,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GO__SPEED = ROBOT_STATEMENT_FEATURE_COUNT + 0;
+	int GO__SPEED = ACTUATOR_STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
@@ -2563,7 +2563,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GO__DURATION = ROBOT_STATEMENT_FEATURE_COUNT + 1;
+	int GO__DURATION = ACTUATOR_STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Go</em>' class.
@@ -2572,7 +2572,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GO_FEATURE_COUNT = ROBOT_STATEMENT_FEATURE_COUNT + 2;
+	int GO_FEATURE_COUNT = ACTUATOR_STATEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Go</em>' class.
@@ -2581,7 +2581,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GO_OPERATION_COUNT = ROBOT_STATEMENT_OPERATION_COUNT + 0;
+	int GO_OPERATION_COUNT = ACTUATOR_STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ChangeAngleImpl <em>Change Angle</em>}' class.
@@ -2600,7 +2600,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_ANGLE__NAME = ROBOT_STATEMENT__NAME;
+	int CHANGE_ANGLE__NAME = ACTUATOR_STATEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
@@ -2609,7 +2609,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_ANGLE__IS_IN_CONDITIONIAL = ROBOT_STATEMENT__IS_IN_CONDITIONIAL;
+	int CHANGE_ANGLE__IS_IN_CONDITIONIAL = ACTUATOR_STATEMENT__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Robot</b></em>' reference.
@@ -2618,7 +2618,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_ANGLE__ROBOT = ROBOT_STATEMENT__ROBOT;
+	int CHANGE_ANGLE__ROBOT = ACTUATOR_STATEMENT__ROBOT;
 
 	/**
 	 * The feature id for the '<em><b>Angle</b></em>' containment reference.
@@ -2627,7 +2627,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_ANGLE__ANGLE = ROBOT_STATEMENT_FEATURE_COUNT + 0;
+	int CHANGE_ANGLE__ANGLE = ACTUATOR_STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Speed</b></em>' containment reference.
@@ -2636,7 +2636,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_ANGLE__SPEED = ROBOT_STATEMENT_FEATURE_COUNT + 1;
+	int CHANGE_ANGLE__SPEED = ACTUATOR_STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Change Angle</em>' class.
@@ -2645,7 +2645,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_ANGLE_FEATURE_COUNT = ROBOT_STATEMENT_FEATURE_COUNT + 2;
+	int CHANGE_ANGLE_FEATURE_COUNT = ACTUATOR_STATEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Change Angle</em>' class.
@@ -2654,7 +2654,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_ANGLE_OPERATION_COUNT = ROBOT_STATEMENT_OPERATION_COUNT + 0;
+	int CHANGE_ANGLE_OPERATION_COUNT = ACTUATOR_STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ChangeIntensityImpl <em>Change Intensity</em>}' class.
@@ -2673,7 +2673,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_INTENSITY__NAME = ROBOT_STATEMENT__NAME;
+	int CHANGE_INTENSITY__NAME = ACTUATOR_STATEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
@@ -2682,7 +2682,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_INTENSITY__IS_IN_CONDITIONIAL = ROBOT_STATEMENT__IS_IN_CONDITIONIAL;
+	int CHANGE_INTENSITY__IS_IN_CONDITIONIAL = ACTUATOR_STATEMENT__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Robot</b></em>' reference.
@@ -2691,7 +2691,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_INTENSITY__ROBOT = ROBOT_STATEMENT__ROBOT;
+	int CHANGE_INTENSITY__ROBOT = ACTUATOR_STATEMENT__ROBOT;
 
 	/**
 	 * The feature id for the '<em><b>Intensity</b></em>' containment reference.
@@ -2700,7 +2700,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_INTENSITY__INTENSITY = ROBOT_STATEMENT_FEATURE_COUNT + 0;
+	int CHANGE_INTENSITY__INTENSITY = ACTUATOR_STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Change Intensity</em>' class.
@@ -2709,7 +2709,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_INTENSITY_FEATURE_COUNT = ROBOT_STATEMENT_FEATURE_COUNT + 1;
+	int CHANGE_INTENSITY_FEATURE_COUNT = ACTUATOR_STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Change Intensity</em>' class.
@@ -2718,7 +2718,53 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_INTENSITY_OPERATION_COUNT = ROBOT_STATEMENT_OPERATION_COUNT + 0;
+	int CHANGE_INTENSITY_OPERATION_COUNT = ACTUATOR_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.SensorExpressionImpl <em>Sensor Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.SensorExpressionImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getSensorExpression()
+	 * @generated
+	 */
+	int SENSOR_EXPRESSION = 52;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_EXPRESSION__NAME = EXPRESSION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_EXPRESSION__IS_IN_CONDITIONIAL = EXPRESSION__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The number of structural features of the '<em>Sensor Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Sensor Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.GetColorImpl <em>Get Color</em>}' class.
@@ -2737,7 +2783,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GET_COLOR__NAME = ROBOT_STATEMENT__NAME;
+	int GET_COLOR__NAME = SENSOR_EXPRESSION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
@@ -2746,16 +2792,16 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GET_COLOR__IS_IN_CONDITIONIAL = ROBOT_STATEMENT__IS_IN_CONDITIONIAL;
+	int GET_COLOR__IS_IN_CONDITIONIAL = SENSOR_EXPRESSION__IS_IN_CONDITIONIAL;
 
 	/**
-	 * The feature id for the '<em><b>Robot</b></em>' reference.
+	 * The feature id for the '<em><b>Sensor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GET_COLOR__ROBOT = ROBOT_STATEMENT__ROBOT;
+	int GET_COLOR__SENSOR = SENSOR_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Get Color</em>' class.
@@ -2764,7 +2810,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GET_COLOR_FEATURE_COUNT = ROBOT_STATEMENT_FEATURE_COUNT + 0;
+	int GET_COLOR_FEATURE_COUNT = SENSOR_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Get Color</em>' class.
@@ -2773,7 +2819,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GET_COLOR_OPERATION_COUNT = ROBOT_STATEMENT_OPERATION_COUNT + 0;
+	int GET_COLOR_OPERATION_COUNT = SENSOR_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.GetDistanceImpl <em>Get Distance</em>}' class.
@@ -2792,7 +2838,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GET_DISTANCE__NAME = ROBOT_STATEMENT__NAME;
+	int GET_DISTANCE__NAME = SENSOR_EXPRESSION__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
@@ -2801,16 +2847,16 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GET_DISTANCE__IS_IN_CONDITIONIAL = ROBOT_STATEMENT__IS_IN_CONDITIONIAL;
+	int GET_DISTANCE__IS_IN_CONDITIONIAL = SENSOR_EXPRESSION__IS_IN_CONDITIONIAL;
 
 	/**
-	 * The feature id for the '<em><b>Robot</b></em>' reference.
+	 * The feature id for the '<em><b>Sensor</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GET_DISTANCE__ROBOT = ROBOT_STATEMENT__ROBOT;
+	int GET_DISTANCE__SENSOR = SENSOR_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Get Distance</em>' class.
@@ -2819,7 +2865,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GET_DISTANCE_FEATURE_COUNT = ROBOT_STATEMENT_FEATURE_COUNT + 0;
+	int GET_DISTANCE_FEATURE_COUNT = SENSOR_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Get Distance</em>' class.
@@ -2828,7 +2874,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GET_DISTANCE_OPERATION_COUNT = ROBOT_STATEMENT_OPERATION_COUNT + 0;
+	int GET_DISTANCE_OPERATION_COUNT = SENSOR_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.TurnImpl <em>Turn</em>}' class.
@@ -2847,7 +2893,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TURN__NAME = ROBOT_STATEMENT__NAME;
+	int TURN__NAME = ACTUATOR_STATEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
@@ -2856,7 +2902,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TURN__IS_IN_CONDITIONIAL = ROBOT_STATEMENT__IS_IN_CONDITIONIAL;
+	int TURN__IS_IN_CONDITIONIAL = ACTUATOR_STATEMENT__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Robot</b></em>' reference.
@@ -2865,7 +2911,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TURN__ROBOT = ROBOT_STATEMENT__ROBOT;
+	int TURN__ROBOT = ACTUATOR_STATEMENT__ROBOT;
 
 	/**
 	 * The feature id for the '<em><b>Angle</b></em>' containment reference.
@@ -2874,7 +2920,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TURN__ANGLE = ROBOT_STATEMENT_FEATURE_COUNT + 0;
+	int TURN__ANGLE = ACTUATOR_STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Direction</b></em>' attribute.
@@ -2883,7 +2929,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TURN__DIRECTION = ROBOT_STATEMENT_FEATURE_COUNT + 1;
+	int TURN__DIRECTION = ACTUATOR_STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Speed</b></em>' containment reference.
@@ -2892,7 +2938,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TURN__SPEED = ROBOT_STATEMENT_FEATURE_COUNT + 2;
+	int TURN__SPEED = ACTUATOR_STATEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Duration</b></em>' containment reference.
@@ -2901,7 +2947,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TURN__DURATION = ROBOT_STATEMENT_FEATURE_COUNT + 3;
+	int TURN__DURATION = ACTUATOR_STATEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Turn</em>' class.
@@ -2910,7 +2956,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TURN_FEATURE_COUNT = ROBOT_STATEMENT_FEATURE_COUNT + 4;
+	int TURN_FEATURE_COUNT = ACTUATOR_STATEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Turn</em>' class.
@@ -2919,7 +2965,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TURN_OPERATION_COUNT = ROBOT_STATEMENT_OPERATION_COUNT + 0;
+	int TURN_OPERATION_COUNT = ACTUATOR_STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ShootImpl <em>Shoot</em>}' class.
@@ -2938,7 +2984,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOOT__NAME = ROBOT_STATEMENT__NAME;
+	int SHOOT__NAME = ACTUATOR_STATEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
@@ -2947,7 +2993,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOOT__IS_IN_CONDITIONIAL = ROBOT_STATEMENT__IS_IN_CONDITIONIAL;
+	int SHOOT__IS_IN_CONDITIONIAL = ACTUATOR_STATEMENT__IS_IN_CONDITIONIAL;
 
 	/**
 	 * The feature id for the '<em><b>Robot</b></em>' reference.
@@ -2956,7 +3002,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOOT__ROBOT = ROBOT_STATEMENT__ROBOT;
+	int SHOOT__ROBOT = ACTUATOR_STATEMENT__ROBOT;
 
 	/**
 	 * The feature id for the '<em><b>Force</b></em>' containment reference.
@@ -2965,7 +3011,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOOT__FORCE = ROBOT_STATEMENT_FEATURE_COUNT + 0;
+	int SHOOT__FORCE = ACTUATOR_STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Shoot</em>' class.
@@ -2974,7 +3020,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOOT_FEATURE_COUNT = ROBOT_STATEMENT_FEATURE_COUNT + 1;
+	int SHOOT_FEATURE_COUNT = ACTUATOR_STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Shoot</em>' class.
@@ -2983,7 +3029,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHOOT_OPERATION_COUNT = ROBOT_STATEMENT_OPERATION_COUNT + 0;
+	int SHOOT_OPERATION_COUNT = ACTUATOR_STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.GyroSensorImpl <em>Gyro Sensor</em>}' class.
@@ -3123,6 +3169,116 @@ public interface LegolanguagePrPackage extends EPackage {
 	int GPS_SENSOR_OPERATION_COUNT = SENSOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.GetPositionImpl <em>Get Position</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.GetPositionImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getGetPosition()
+	 * @generated
+	 */
+	int GET_POSITION = 50;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_POSITION__NAME = SENSOR_EXPRESSION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_POSITION__IS_IN_CONDITIONIAL = SENSOR_EXPRESSION__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Sensor</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_POSITION__SENSOR = SENSOR_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Get Position</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_POSITION_FEATURE_COUNT = SENSOR_EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Get Position</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_POSITION_OPERATION_COUNT = SENSOR_EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.GetGyroImpl <em>Get Gyro</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.GetGyroImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getGetGyro()
+	 * @generated
+	 */
+	int GET_GYRO = 51;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_GYRO__NAME = SENSOR_EXPRESSION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_GYRO__IS_IN_CONDITIONIAL = SENSOR_EXPRESSION__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Sensor</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_GYRO__SENSOR = SENSOR_EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Get Gyro</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_GYRO_FEATURE_COUNT = SENSOR_EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Get Gyro</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GET_GYRO_OPERATION_COUNT = SENSOR_EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.Direction <em>Direction</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3130,7 +3286,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getDirection()
 	 * @generated
 	 */
-	int DIRECTION = 50;
+	int DIRECTION = 53;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.Side <em>Side</em>}' enum.
@@ -3140,7 +3296,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getSide()
 	 * @generated
 	 */
-	int SIDE = 51;
+	int SIDE = 54;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.Color <em>Color</em>}' enum.
@@ -3150,7 +3306,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getColor()
 	 * @generated
 	 */
-	int COLOR = 52;
+	int COLOR = 55;
 
 	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Program <em>Program</em>}'.
@@ -3883,25 +4039,25 @@ public interface LegolanguagePrPackage extends EPackage {
 	EAttribute getArm_Angle();
 
 	/**
-	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.RobotStatement <em>Robot Statement</em>}'.
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement <em>Actuator Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Robot Statement</em>'.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.RobotStatement
+	 * @return the meta object for class '<em>Actuator Statement</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement
 	 * @generated
 	 */
-	EClass getRobotStatement();
+	EClass getActuatorStatement();
 
 	/**
-	 * Returns the meta object for the reference '{@link fr.univcotedazur.l3ia.langagecompilation.RobotStatement#getRobot <em>Robot</em>}'.
+	 * Returns the meta object for the reference '{@link fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement#getRobot <em>Robot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Robot</em>'.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.RobotStatement#getRobot()
-	 * @see #getRobotStatement()
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement#getRobot()
+	 * @see #getActuatorStatement()
 	 * @generated
 	 */
-	EReference getRobotStatement_Robot();
+	EReference getActuatorStatement_Robot();
 
 	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Go <em>Go</em>}'.
@@ -3999,6 +4155,17 @@ public interface LegolanguagePrPackage extends EPackage {
 	EClass getGetColor();
 
 	/**
+	 * Returns the meta object for the reference '{@link fr.univcotedazur.l3ia.langagecompilation.GetColor#getSensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sensor</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.GetColor#getSensor()
+	 * @see #getGetColor()
+	 * @generated
+	 */
+	EReference getGetColor_Sensor();
+
+	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.GetDistance <em>Get Distance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4007,6 +4174,17 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getGetDistance();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.univcotedazur.l3ia.langagecompilation.GetDistance#getSensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sensor</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.GetDistance#getSensor()
+	 * @see #getGetDistance()
+	 * @generated
+	 */
+	EReference getGetDistance_Sensor();
 
 	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Turn <em>Turn</em>}'.
@@ -4135,6 +4313,58 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getGPSSensor_Coord_y();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.GetPosition <em>Get Position</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Get Position</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.GetPosition
+	 * @generated
+	 */
+	EClass getGetPosition();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.univcotedazur.l3ia.langagecompilation.GetPosition#getSensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sensor</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.GetPosition#getSensor()
+	 * @see #getGetPosition()
+	 * @generated
+	 */
+	EReference getGetPosition_Sensor();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.GetGyro <em>Get Gyro</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Get Gyro</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.GetGyro
+	 * @generated
+	 */
+	EClass getGetGyro();
+
+	/**
+	 * Returns the meta object for the reference '{@link fr.univcotedazur.l3ia.langagecompilation.GetGyro#getSensor <em>Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sensor</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.GetGyro#getSensor()
+	 * @see #getGetGyro()
+	 * @generated
+	 */
+	EReference getGetGyro_Sensor();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.SensorExpression <em>Sensor Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Sensor Expression</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.SensorExpression
+	 * @generated
+	 */
+	EClass getSensorExpression();
 
 	/**
 	 * Returns the meta object for enum '{@link fr.univcotedazur.l3ia.langagecompilation.Direction <em>Direction</em>}'.
@@ -4830,14 +5060,14 @@ public interface LegolanguagePrPackage extends EPackage {
 		EAttribute ARM__ANGLE = eINSTANCE.getArm_Angle();
 
 		/**
-		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.RobotStatementImpl <em>Robot Statement</em>}' class.
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ActuatorStatementImpl <em>Actuator Statement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.RobotStatementImpl
-		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getRobotStatement()
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ActuatorStatementImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getActuatorStatement()
 		 * @generated
 		 */
-		EClass ROBOT_STATEMENT = eINSTANCE.getRobotStatement();
+		EClass ACTUATOR_STATEMENT = eINSTANCE.getActuatorStatement();
 
 		/**
 		 * The meta object literal for the '<em><b>Robot</b></em>' reference feature.
@@ -4845,7 +5075,7 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROBOT_STATEMENT__ROBOT = eINSTANCE.getRobotStatement_Robot();
+		EReference ACTUATOR_STATEMENT__ROBOT = eINSTANCE.getActuatorStatement_Robot();
 
 		/**
 		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.GoImpl <em>Go</em>}' class.
@@ -4928,6 +5158,14 @@ public interface LegolanguagePrPackage extends EPackage {
 		EClass GET_COLOR = eINSTANCE.getGetColor();
 
 		/**
+		 * The meta object literal for the '<em><b>Sensor</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GET_COLOR__SENSOR = eINSTANCE.getGetColor_Sensor();
+
+		/**
 		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.GetDistanceImpl <em>Get Distance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4936,6 +5174,14 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * @generated
 		 */
 		EClass GET_DISTANCE = eINSTANCE.getGetDistance();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensor</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GET_DISTANCE__SENSOR = eINSTANCE.getGetDistance_Sensor();
 
 		/**
 		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.TurnImpl <em>Turn</em>}' class.
@@ -5040,6 +5286,52 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GPS_SENSOR__COORD_Y = eINSTANCE.getGPSSensor_Coord_y();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.GetPositionImpl <em>Get Position</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.GetPositionImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getGetPosition()
+		 * @generated
+		 */
+		EClass GET_POSITION = eINSTANCE.getGetPosition();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensor</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GET_POSITION__SENSOR = eINSTANCE.getGetPosition_Sensor();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.GetGyroImpl <em>Get Gyro</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.GetGyroImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getGetGyro()
+		 * @generated
+		 */
+		EClass GET_GYRO = eINSTANCE.getGetGyro();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensor</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GET_GYRO__SENSOR = eINSTANCE.getGetGyro_Sensor();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.SensorExpressionImpl <em>Sensor Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.SensorExpressionImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getSensorExpression()
+		 * @generated
+		 */
+		EClass SENSOR_EXPRESSION = eINSTANCE.getSensorExpression();
 
 		/**
 		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.Direction <em>Direction</em>}' enum.

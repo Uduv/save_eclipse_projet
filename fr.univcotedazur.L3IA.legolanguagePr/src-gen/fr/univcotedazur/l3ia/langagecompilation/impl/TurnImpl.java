@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class TurnImpl extends RobotStatementImpl implements Turn {
+public class TurnImpl extends ActuatorStatementImpl implements Turn {
 	/**
 	 * The cached value of the '{@link #getAngle() <em>Angle</em>}' containment reference.
 	 * <!-- begin-user-doc -->

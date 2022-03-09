@@ -364,6 +364,24 @@ public interface LegolanguagePrFactory extends EFactory {
 	GPSSensor createGPSSensor();
 
 	/**
+	 * Returns a new object of class '<em>Get Position</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Get Position</em>'.
+	 * @generated
+	 */
+	GetPosition createGetPosition();
+
+	/**
+	 * Returns a new object of class '<em>Get Gyro</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Get Gyro</em>'.
+	 * @generated
+	 */
+	GetGyro createGetGyro();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

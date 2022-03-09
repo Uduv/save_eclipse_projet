@@ -133,6 +133,10 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createGyroSensor();
 		case LegolanguagePrPackage.GPS_SENSOR:
 			return createGPSSensor();
+		case LegolanguagePrPackage.GET_POSITION:
+			return createGetPosition();
+		case LegolanguagePrPackage.GET_GYRO:
+			return createGetGyro();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -554,6 +558,26 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	public GPSSensor createGPSSensor() {
 		GPSSensorImpl gpsSensor = new GPSSensorImpl();
 		return gpsSensor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GetPosition createGetPosition() {
+		GetPositionImpl getPosition = new GetPositionImpl();
+		return getPosition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GetGyro createGetGyro() {
+		GetGyroImpl getGyro = new GetGyroImpl();
+		return getGyro;
 	}
 
 	/**

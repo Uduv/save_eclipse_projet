@@ -947,6 +947,52 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.GetPosition} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GetPositionItemProvider getPositionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.GetPosition}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGetPositionAdapter() {
+		if (getPositionItemProvider == null) {
+			getPositionItemProvider = new GetPositionItemProvider(this);
+		}
+
+		return getPositionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.GetGyro} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected GetGyroItemProvider getGyroItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.GetGyro}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createGetGyroAdapter() {
+		if (getGyroItemProvider == null) {
+			getGyroItemProvider = new GetGyroItemProvider(this);
+		}
+
+		return getGyroItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1121,6 +1167,10 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			gyroSensorItemProvider.dispose();
 		if (gpsSensorItemProvider != null)
 			gpsSensorItemProvider.dispose();
+		if (getPositionItemProvider != null)
+			getPositionItemProvider.dispose();
+		if (getGyroItemProvider != null)
+			getGyroItemProvider.dispose();
 	}
 
 }

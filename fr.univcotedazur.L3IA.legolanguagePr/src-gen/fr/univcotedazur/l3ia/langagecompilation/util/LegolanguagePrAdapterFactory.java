@@ -267,8 +267,8 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseRobotStatement(RobotStatement object) {
-			return createRobotStatementAdapter();
+		public Adapter caseActuatorStatement(ActuatorStatement object) {
+			return createActuatorStatementAdapter();
 		}
 
 		@Override
@@ -314,6 +314,21 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseGPSSensor(GPSSensor object) {
 			return createGPSSensorAdapter();
+		}
+
+		@Override
+		public Adapter caseGetPosition(GetPosition object) {
+			return createGetPositionAdapter();
+		}
+
+		@Override
+		public Adapter caseGetGyro(GetGyro object) {
+			return createGetGyroAdapter();
+		}
+
+		@Override
+		public Adapter caseSensorExpression(SensorExpression object) {
+			return createSensorExpressionAdapter();
 		}
 
 		@Override
@@ -896,16 +911,16 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.RobotStatement <em>Robot Statement</em>}'.
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement <em>Actuator Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.RobotStatement
+	 * @see fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement
 	 * @generated
 	 */
-	public Adapter createRobotStatementAdapter() {
+	public Adapter createActuatorStatementAdapter() {
 		return null;
 	}
 
@@ -1032,6 +1047,48 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGPSSensorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.GetPosition <em>Get Position</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.GetPosition
+	 * @generated
+	 */
+	public Adapter createGetPositionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.GetGyro <em>Get Gyro</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.GetGyro
+	 * @generated
+	 */
+	public Adapter createGetGyroAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.SensorExpression <em>Sensor Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.SensorExpression
+	 * @generated
+	 */
+	public Adapter createSensorExpressionAdapter() {
 		return null;
 	}
 

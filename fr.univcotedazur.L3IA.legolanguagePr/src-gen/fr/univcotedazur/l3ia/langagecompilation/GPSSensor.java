@@ -20,6 +20,7 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @generated
  */
 public interface GPSSensor extends Sensor {
+
 	/**
 	 * Returns the value of the '<em><b>Coord x</b></em>' attribute.
 	 * The default value is <code>"0"</code>.

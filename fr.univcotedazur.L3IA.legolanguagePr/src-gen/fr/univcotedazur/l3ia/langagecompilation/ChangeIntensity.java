@@ -18,7 +18,7 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @model
  * @generated
  */
-public interface ChangeIntensity extends RobotStatement {
+public interface ChangeIntensity extends ActuatorStatement {
 	/**
 	 * Returns the value of the '<em><b>Intensity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

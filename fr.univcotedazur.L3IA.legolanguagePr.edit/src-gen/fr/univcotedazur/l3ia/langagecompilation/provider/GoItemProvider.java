@@ -23,7 +23,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GoItemProvider extends RobotStatementItemProvider {
+public class GoItemProvider extends ActuatorStatementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -192,6 +192,18 @@ public class GoItemProvider extends RobotStatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
 
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createGetColor()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createGetDistance()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createGetPosition()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
+
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -239,6 +251,18 @@ public class GoItemProvider extends RobotStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createGetColor()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createGetDistance()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createGetPosition()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
 	}
 
 	/**

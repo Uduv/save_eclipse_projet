@@ -3,13 +3,13 @@
 package fr.univcotedazur.l3ia.langagecompilation.provider;
 
 import fr.univcotedazur.l3ia.langagecompilation.GetDistance;
-
+import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -18,7 +18,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GetDistanceItemProvider extends RobotStatementItemProvider {
+public class GetDistanceItemProvider extends SensorExpressionItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -40,8 +40,24 @@ public class GetDistanceItemProvider extends RobotStatementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSensorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Sensor feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSensorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_GetDistance_sensor_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_GetDistance_sensor_feature",
+								"_UI_GetDistance_type"),
+						LegolanguagePrPackage.Literals.GET_DISTANCE__SENSOR, true, false, true, null, null, null));
 	}
 
 	/**

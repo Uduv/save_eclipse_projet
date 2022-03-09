@@ -4,6 +4,7 @@
 package fr.univcotedazur.l3ia.legolanguage.xtext.generator;
 
 import fr.univcotedazur.l3ia.langagecompilation.Actuator;
+import fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement;
 import fr.univcotedazur.l3ia.langagecompilation.Addition;
 import fr.univcotedazur.l3ia.langagecompilation.Arm;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
@@ -23,6 +24,10 @@ import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.GPSSensor;
 import fr.univcotedazur.l3ia.langagecompilation.GT;
 import fr.univcotedazur.l3ia.langagecompilation.GTEqual;
+import fr.univcotedazur.l3ia.langagecompilation.GetColor;
+import fr.univcotedazur.l3ia.langagecompilation.GetDistance;
+import fr.univcotedazur.l3ia.langagecompilation.GetGyro;
+import fr.univcotedazur.l3ia.langagecompilation.GetPosition;
 import fr.univcotedazur.l3ia.langagecompilation.Go;
 import fr.univcotedazur.l3ia.langagecompilation.GyroSensor;
 import fr.univcotedazur.l3ia.langagecompilation.If;
@@ -40,9 +45,9 @@ import fr.univcotedazur.l3ia.langagecompilation.Multiplication;
 import fr.univcotedazur.l3ia.langagecompilation.Print;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
 import fr.univcotedazur.l3ia.langagecompilation.Robot;
-import fr.univcotedazur.l3ia.langagecompilation.RobotStatement;
 import fr.univcotedazur.l3ia.langagecompilation.RotativeMotor;
 import fr.univcotedazur.l3ia.langagecompilation.Sensor;
+import fr.univcotedazur.l3ia.langagecompilation.SensorExpression;
 import fr.univcotedazur.l3ia.langagecompilation.Shoot;
 import fr.univcotedazur.l3ia.langagecompilation.ShootLauncher;
 import fr.univcotedazur.l3ia.langagecompilation.Statement;
@@ -140,10 +145,10 @@ public class UduvGenerator extends AbstractGenerator {
                   String _SensorToString = this.SensorToString(((Sensor) s));
                   res = (_res_7 + _SensorToString);
                 } else {
-                  if ((s instanceof RobotStatement)) {
+                  if ((s instanceof ActuatorStatement)) {
                     String _res_8 = res;
-                    String _RobotStatementToString = this.RobotStatementToString(((RobotStatement) s));
-                    res = (_res_8 + _RobotStatementToString);
+                    String _ActuatorStatementToString = this.ActuatorStatementToString(((ActuatorStatement) s));
+                    res = (_res_8 + _ActuatorStatementToString);
                   } else {
                     if ((s instanceof Print)) {
                       String _res_9 = res;
@@ -235,36 +240,50 @@ public class UduvGenerator extends AbstractGenerator {
       String _BinaryOperationToString = this.BinaryOperationToString(((BinaryOperation) e));
       res = (_res + _BinaryOperationToString);
     } else {
-      if ((e instanceof Variable)) {
-        if ((e instanceof LeInteger)) {
-          String _res_1 = res;
-          int _initialeValue = ((LeInteger)e).getInitialeValue();
-          res = (_res_1 + Integer.valueOf(_initialeValue));
-        } else {
-          if ((e instanceof LeFloat)) {
+      if ((e instanceof VariableProxy)) {
+        String _res_1 = res;
+        String _name = ((VariableProxy)e).getVariable().getName();
+        res = (_res_1 + _name);
+      } else {
+        if ((e instanceof Variable)) {
+          if ((e instanceof LeInteger)) {
             String _res_2 = res;
-            float _initialeValue_1 = ((LeFloat)e).getInitialeValue();
-            res = (_res_2 + Float.valueOf(_initialeValue_1));
+            int _initialeValue = ((LeInteger)e).getInitialeValue();
+            res = (_res_2 + Integer.valueOf(_initialeValue));
           } else {
-            if ((e instanceof LeString)) {
+            if ((e instanceof LeFloat)) {
               String _res_3 = res;
-              String _initialeValue_2 = ((LeString)e).getInitialeValue();
-              res = (_res_3 + _initialeValue_2);
+              float _initialeValue_1 = ((LeFloat)e).getInitialeValue();
+              res = (_res_3 + Float.valueOf(_initialeValue_1));
             } else {
-              if ((e instanceof LeBoolean)) {
+              if ((e instanceof LeString)) {
                 String _res_4 = res;
-                boolean _isInitialeValue = ((LeBoolean)e).isInitialeValue();
-                res = (_res_4 + Boolean.valueOf(_isInitialeValue));
+                String _initialeValue_2 = ((LeString)e).getInitialeValue();
+                String _plus = ("\'" + _initialeValue_2);
+                String _plus_1 = (_plus + "\'");
+                res = (_res_4 + _plus_1);
+              } else {
+                if ((e instanceof LeBoolean)) {
+                  boolean _equals = Boolean.valueOf(((LeBoolean)e).isInitialeValue()).equals(Boolean.valueOf(true));
+                  if (_equals) {
+                    String _res_5 = res;
+                    res = (_res_5 + "True");
+                  } else {
+                    String _res_6 = res;
+                    res = (_res_6 + "False");
+                  }
+                }
               }
             }
           }
+        } else {
+          if ((e instanceof SensorExpression)) {
+            String _res_7 = res;
+            String _SensorExpressionToString = this.SensorExpressionToString(((SensorExpression) e));
+            res = (_res_7 + _SensorExpressionToString);
+          }
         }
       }
-    }
-    if ((e instanceof VariableProxy)) {
-      String _res_5 = res;
-      String _name = ((VariableProxy)e).getVariable().getName();
-      res = (_res_5 + _name);
     }
     return res;
   }
@@ -592,7 +611,7 @@ public class UduvGenerator extends AbstractGenerator {
     return res;
   }
   
-  public String RobotStatementToString(final RobotStatement rs) {
+  public String ActuatorStatementToString(final ActuatorStatement rs) {
     String res = "";
     if ((rs instanceof Go)) {
       String _res = res;
@@ -720,6 +739,38 @@ public class UduvGenerator extends AbstractGenerator {
               String _plus_45 = (_plus_44 + ")");
               res = (_res_9 + _plus_45);
             }
+          }
+        }
+      }
+    }
+    return res;
+  }
+  
+  public String SensorExpressionToString(final SensorExpression se) {
+    String res = "";
+    if ((se instanceof GetDistance)) {
+      String _res = res;
+      String _portID = ((GetDistance)se).getSensor().getPortID();
+      String _plus = ("laserSensor" + _portID);
+      res = (_res + _plus);
+    } else {
+      if ((se instanceof GetPosition)) {
+        String _res_1 = res;
+        String _portID_1 = ((GetPosition)se).getSensor().getPortID();
+        String _plus_1 = ("gpsSensor" + _portID_1);
+        res = (_res_1 + _plus_1);
+      } else {
+        if ((se instanceof GetGyro)) {
+          String _res_2 = res;
+          String _portID_2 = ((GetGyro)se).getSensor().getPortID();
+          String _plus_2 = ("gyroSensor" + _portID_2);
+          res = (_res_2 + _plus_2);
+        } else {
+          if ((se instanceof GetColor)) {
+            String _res_3 = res;
+            String _portID_3 = ((GetColor)se).getSensor().getPortID();
+            String _plus_3 = ("colorSensor" + _portID_3);
+            res = (_res_3 + _plus_3);
           }
         }
       }

@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class GoImpl extends RobotStatementImpl implements Go {
+public class GoImpl extends ActuatorStatementImpl implements Go {
 	/**
 	 * The cached value of the '{@link #getSpeed() <em>Speed</em>}' containment reference.
 	 * <!-- begin-user-doc -->

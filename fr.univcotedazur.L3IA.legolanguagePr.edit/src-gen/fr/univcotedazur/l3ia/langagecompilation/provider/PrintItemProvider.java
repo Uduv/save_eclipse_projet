@@ -253,6 +253,12 @@ public class PrintItemProvider extends StatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createGPSSensor()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createGetPosition()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
 	}
 
 }

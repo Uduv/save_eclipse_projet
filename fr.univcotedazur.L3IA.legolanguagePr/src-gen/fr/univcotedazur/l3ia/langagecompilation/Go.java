@@ -19,7 +19,7 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @model
  * @generated
  */
-public interface Go extends RobotStatement {
+public interface Go extends ActuatorStatement {
 	/**
 	 * Returns the value of the '<em><b>Speed</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

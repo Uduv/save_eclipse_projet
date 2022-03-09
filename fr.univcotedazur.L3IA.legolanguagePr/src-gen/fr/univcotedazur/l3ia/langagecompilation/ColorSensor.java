@@ -19,6 +19,7 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @generated
  */
 public interface ColorSensor extends Sensor {
+
 	/**
 	 * Returns the value of the '<em><b>Color</b></em>' attribute.
 	 * The literals are from the enumeration {@link fr.univcotedazur.l3ia.langagecompilation.Color}.

@@ -19,7 +19,7 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @model
  * @generated
  */
-public interface ChangeAngle extends RobotStatement {
+public interface ChangeAngle extends ActuatorStatement {
 	/**
 	 * Returns the value of the '<em><b>Angle</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

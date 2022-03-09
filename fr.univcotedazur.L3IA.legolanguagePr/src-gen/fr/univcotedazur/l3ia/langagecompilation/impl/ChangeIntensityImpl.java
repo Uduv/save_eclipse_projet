@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ChangeIntensityImpl extends RobotStatementImpl implements ChangeIntensity {
+public class ChangeIntensityImpl extends ActuatorStatementImpl implements ChangeIntensity {
 	/**
 	 * The cached value of the '{@link #getIntensity() <em>Intensity</em>}' containment reference.
 	 * <!-- begin-user-doc -->

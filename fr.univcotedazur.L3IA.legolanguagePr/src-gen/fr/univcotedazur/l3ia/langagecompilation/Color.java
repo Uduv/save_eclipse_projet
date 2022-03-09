@@ -36,7 +36,16 @@ public enum Color implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BLEU(1, "Bleu", "Bleu");
+	BLEU(1, "Bleu", "Bleu"),
+	/**
+	 * The '<em><b>Jaune</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	* <!-- end-user-doc -->
+	 * @see #JAUNE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	JAUNE(2, "Jaune", "Jaune");
 
 	/**
 	 * The '<em><b>Rouge</b></em>' literal value.
@@ -61,12 +70,23 @@ public enum Color implements Enumerator {
 	public static final int BLEU_VALUE = 1;
 
 	/**
+	 * The '<em><b>Jaune</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #JAUNE
+	 * @model name="Jaune"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int JAUNE_VALUE = 2;
+
+	/**
 	 * An array of all the '<em><b>Color</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Color[] VALUES_ARRAY = new Color[] { ROUGE, BLEU, };
+	private static final Color[] VALUES_ARRAY = new Color[] { ROUGE, BLEU, JAUNE, };
 
 	/**
 	 * A public read-only list of all the '<em><b>Color</b></em>' enumerators.
@@ -126,6 +146,8 @@ public enum Color implements Enumerator {
 			return ROUGE;
 		case BLEU_VALUE:
 			return BLEU;
+		case JAUNE_VALUE:
+			return JAUNE;
 		}
 		return null;
 	}

@@ -11,7 +11,7 @@ Program returns Program:
 ;
 
 Statement returns Statement:
-	If | Loop  | Variable | Print | Expression | Commentary | RobotDeclaration | Sensor | Actuator | RobotStatement ;
+	If | Loop  | Variable | Print | Expression | Commentary | RobotDeclaration | Sensor | Actuator | ActuatorStatement ;
 
 RobotDeclaration returns Robot:
 	'Robot' name=ID 
@@ -26,7 +26,7 @@ RobotDeclaration returns Robot:
 
 
 Expression returns Expression:
-	 VariableProxy  | BinaryOperation | Variable ;
+	 VariableProxy  | BinaryOperation | Variable | SensorExpression ;
 	
 Calcul returns Calcul : 
 	Substarction | Addition | Division | Exponential | Multiplication ;
@@ -48,8 +48,12 @@ Sensor returns Sensor :
 
 
 
-RobotStatement returns RobotStatement :
-	Go | Turn | ChangeAngle | ChangeIntensity | Shoot
+ActuatorStatement returns ActuatorStatement :
+	Go | Turn | ChangeAngle | ChangeIntensity | Shoot 
+;
+
+SensorExpression returns SensorExpression :
+	GetColor | GetDistance | GetPosition | GetGyro 
 ;
 
 Actuator returns Actuator :
@@ -213,7 +217,7 @@ Print returns Print:
 	'print' '(' (statement+=Statement)* ')'
 	;
 
-// marche uniquement a l'extérieur des expressions
+
 VariableProxy returns VariableProxy:
 	variable=[Variable|ID]
 	;
@@ -289,7 +293,7 @@ LaserSensor returns LaserSensor :
 
 GPSSensor returns GPSSensor :
 	{GPSSensor}
-	'laserSensor'
+	'gpsSensor'
 	name=ID 
 	'on'
 	portID=EString
@@ -297,11 +301,13 @@ GPSSensor returns GPSSensor :
 
 GyroSensor returns GyroSensor :
 	{GyroSensor}
-	'laserSensor'
+	'gyroSensor'
 	name=ID 
 	'on'
 	portID=EString
 ;
+
+
 
 
 Turn returns Turn : 
@@ -333,7 +339,7 @@ ChangeAngle returns ChangeAngle :
 
 ChangeIntensity returns ChangeIntensity :
 	robot=[Robot|ID]
-	'ChangeIntensity' '('
+	'changeIntensity' '('
 	intensity=Expression
 	')'
 ;
@@ -344,8 +350,32 @@ Shoot returns Shoot :
 	force=Expression ')'
 ;
 
+GetColor returns GetColor :
+	'getColor' '(' sensor = [ColorSensor|EString]  ')'
+;
+
+// probleme d'appel que avec string que ça marche
+GetDistance returns GetDistance :
+		'getDistance' '(' 
+		sensor = [LaserSensor|FQN]     
+		')'
+;
+
+FQN :
+    ID('.'ID)*
+;
+
+
+GetGyro returns GetGyro :
+	'getGyro' '(' sensor = [GyroSensor|FQN]  ')'
+;
+
+GetPosition returns GetPosition :
+	'getPosition' '(' sensor = [GPSSensor|FQN]  ')'
+;
+
 enum Color:
-	Rouge = "rouge" | Bleu = "bleu"
+	Rouge = "rouge" | Bleu = "bleu" | Jaune = "jaune"
 ; 
 
 enum Direction:

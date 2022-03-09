@@ -50,13 +50,18 @@ import fr.univcotedazur.l3ia.langagecompilation.ColorSensor
 import fr.univcotedazur.l3ia.langagecompilation.LaserSensor
 import fr.univcotedazur.l3ia.langagecompilation.GyroSensor
 import fr.univcotedazur.l3ia.langagecompilation.GPSSensor
-import fr.univcotedazur.l3ia.langagecompilation.RobotStatement
 import fr.univcotedazur.l3ia.langagecompilation.Go
 import fr.univcotedazur.l3ia.langagecompilation.Turn
 import fr.univcotedazur.l3ia.langagecompilation.ChangeAngle
 import fr.univcotedazur.l3ia.langagecompilation.ChangeIntensity
 import fr.univcotedazur.l3ia.langagecompilation.Shoot
 import fr.univcotedazur.l3ia.langagecompilation.Direction
+import fr.univcotedazur.l3ia.langagecompilation.GetDistance
+import fr.univcotedazur.l3ia.langagecompilation.GetPosition
+import fr.univcotedazur.l3ia.langagecompilation.GetGyro
+import fr.univcotedazur.l3ia.langagecompilation.GetColor
+import fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement
+import fr.univcotedazur.l3ia.langagecompilation.SensorExpression
 
 /**
  * Generates code from your model files on save.
@@ -116,8 +121,8 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 		if(s instanceof Sensor){
 			res+= SensorToString(s as Sensor)
 		}else
-		if(s instanceof RobotStatement){
-			res+= RobotStatementToString(s as RobotStatement) 
+		if(s instanceof ActuatorStatement){
+			res+= ActuatorStatementToString(s as ActuatorStatement) 
 		}else
 		if(s instanceof Print){
 			res += 'print('
@@ -169,6 +174,9 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 		if (e instanceof BinaryOperation) {
 			res += BinaryOperationToString(e as BinaryOperation)
 		}else 
+		if (e instanceof VariableProxy){
+			res += e.variable.name
+		}else
 		if (e instanceof Variable) {
 			if (e instanceof LeInteger) {
 				res += e.initialeValue
@@ -177,16 +185,23 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 				res += e.initialeValue
 			}else
 			if (e instanceof LeString) {
-				res += e.initialeValue 
+				res += '\'' + e.initialeValue + '\'' 
 	
 			}else
 			if (e instanceof LeBoolean) {
-				res += e.initialeValue
+				if ( e.initialeValue.equals(true) ){
+					res += "True"
+				}else 
+				{
+					res += "False"
+					
+				}
 			}
+		}else
+		if (e instanceof SensorExpression){
+			res += SensorExpressionToString(e as SensorExpression)
 		} 
-		if (e instanceof VariableProxy){
-			res += e.variable.name
-		}
+		
 		return res 
 	}
 	
@@ -337,7 +352,7 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 		return res
 	}
 	
-	def String RobotStatementToString(RobotStatement rs){
+	def String ActuatorStatementToString(ActuatorStatement rs){
 		var res = ''
 		if (rs instanceof Go){
 			res += 'steering_drive = MoveSteering(' + rs.robot.leftWheel.portID + "," + rs.robot.rightWheel.portID+') ,'
@@ -372,9 +387,31 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 			}
 			
 		}
-		
-		return res 
+			return res 
 	}
+	
+	
+	def SensorExpressionToString (SensorExpression se){
+		var res = ''
+		
+		if (se instanceof GetDistance){
+				res += "laserSensor"+ se.sensor.portID 
+		}else
+		if (se instanceof GetPosition){ 
+				res += "gpsSensor"+ se.sensor.portID 
+		}else
+		if (se instanceof GetGyro){
+				res += "gyroSensor"+ se.sensor.portID 
+
+		}else
+		if (se instanceof GetColor ){
+				res += "colorSensor"+ se.sensor.portID 
+
+		}
+		return res 	
+	}
+		
+	
 	
 	
 	

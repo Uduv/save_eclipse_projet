@@ -19,6 +19,7 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @generated
  */
 public interface GyroSensor extends Sensor {
+
 	/**
 	 * Returns the value of the '<em><b>Angle</b></em>' attribute.
 	 * The default value is <code>"0"</code>.

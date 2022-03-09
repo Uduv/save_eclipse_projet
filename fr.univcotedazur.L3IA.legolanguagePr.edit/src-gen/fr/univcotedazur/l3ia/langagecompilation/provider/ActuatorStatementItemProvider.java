@@ -2,8 +2,8 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.provider;
 
+import fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-import fr.univcotedazur.l3ia.langagecompilation.RobotStatement;
 
 import java.util.Collection;
 import java.util.List;
@@ -15,19 +15,19 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.RobotStatement} object.
+ * This is the item provider adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RobotStatementItemProvider extends StatementItemProvider {
+public class ActuatorStatementItemProvider extends StatementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RobotStatementItemProvider(AdapterFactory adapterFactory) {
+	public ActuatorStatementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -56,21 +56,21 @@ public class RobotStatementItemProvider extends StatementItemProvider {
 	protected void addRobotPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_RobotStatement_robot_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_RobotStatement_robot_feature",
-								"_UI_RobotStatement_type"),
-						LegolanguagePrPackage.Literals.ROBOT_STATEMENT__ROBOT, true, false, true, null, null, null));
+						getResourceLocator(), getString("_UI_ActuatorStatement_robot_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ActuatorStatement_robot_feature",
+								"_UI_ActuatorStatement_type"),
+						LegolanguagePrPackage.Literals.ACTUATOR_STATEMENT__ROBOT, true, false, true, null, null, null));
 	}
 
 	/**
-	 * This returns RobotStatement.gif.
+	 * This returns ActuatorStatement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RobotStatement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ActuatorStatement"));
 	}
 
 	/**
@@ -91,9 +91,9 @@ public class RobotStatementItemProvider extends StatementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RobotStatement) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_RobotStatement_type")
-				: getString("_UI_RobotStatement_type") + " " + label;
+		String label = ((ActuatorStatement) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ActuatorStatement_type")
+				: getString("_UI_ActuatorStatement_type") + " " + label;
 	}
 
 	/**

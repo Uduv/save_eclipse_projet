@@ -25,7 +25,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TurnItemProvider extends RobotStatementItemProvider {
+public class TurnItemProvider extends ActuatorStatementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -216,6 +216,18 @@ public class TurnItemProvider extends RobotStatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
 
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
+				LegolanguagePrFactory.eINSTANCE.createGetColor()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
+				LegolanguagePrFactory.eINSTANCE.createGetDistance()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
+				LegolanguagePrFactory.eINSTANCE.createGetPosition()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
+				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
+
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -264,6 +276,18 @@ public class TurnItemProvider extends RobotStatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
 
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createGetColor()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createGetDistance()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createGetPosition()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
+
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -311,6 +335,18 @@ public class TurnItemProvider extends RobotStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createGetColor()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createGetDistance()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createGetPosition()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
 	}
 
 	/**

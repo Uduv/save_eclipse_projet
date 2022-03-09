@@ -19,6 +19,7 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @generated
  */
 public interface LaserSensor extends Sensor {
+
 	/**
 	 * Returns the value of the '<em><b>Distance</b></em>' attribute.
 	 * The default value is <code>"0"</code>.

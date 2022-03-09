@@ -13,6 +13,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -22,7 +23,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ShootItemProvider extends RobotStatementItemProvider {
+public class ShootItemProvider extends ActuatorStatementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -189,6 +190,18 @@ public class ShootItemProvider extends RobotStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
+				LegolanguagePrFactory.eINSTANCE.createGetColor()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
+				LegolanguagePrFactory.eINSTANCE.createGetDistance()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
+				LegolanguagePrFactory.eINSTANCE.createGetPosition()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
+				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
 	}
 
 }

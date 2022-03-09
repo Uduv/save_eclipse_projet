@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ChangeAngleImpl extends RobotStatementImpl implements ChangeAngle {
+public class ChangeAngleImpl extends ActuatorStatementImpl implements ChangeAngle {
 	/**
 	 * The cached value of the '{@link #getAngle() <em>Angle</em>}' containment reference.
 	 * <!-- begin-user-doc -->

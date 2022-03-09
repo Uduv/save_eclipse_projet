@@ -243,11 +243,11 @@ ruleStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getStatementAccess().getRobotStatementParserRuleCall_9());
+			newCompositeNode(grammarAccess.getStatementAccess().getActuatorStatementParserRuleCall_9());
 		}
-		this_RobotStatement_9=ruleRobotStatement
+		this_ActuatorStatement_9=ruleActuatorStatement
 		{
-			$current = $this_RobotStatement_9.current;
+			$current = $this_ActuatorStatement_9.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -411,11 +411,11 @@ ruleExpression returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getExpressionAccess().getVariableParserRuleCall_0());
+			newCompositeNode(grammarAccess.getExpressionAccess().getVariableProxyParserRuleCall_0());
 		}
-		this_Variable_0=ruleVariable
+		this_VariableProxy_0=ruleVariableProxy
 		{
-			$current = $this_Variable_0.current;
+			$current = $this_VariableProxy_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -428,6 +428,30 @@ ruleExpression returns [EObject current=null]
 		this_BinaryOperation_1=ruleBinaryOperation
 		{
 			$current = $this_BinaryOperation_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getExpressionAccess().getVariableParserRuleCall_2());
+		}
+		this_Variable_2=ruleVariable
+		{
+			$current = $this_Variable_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getExpressionAccess().getSensorExpressionParserRuleCall_3());
+		}
+		this_SensorExpression_3=ruleSensorExpression
+		{
+			$current = $this_SensorExpression_3.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -775,15 +799,15 @@ ruleSensor returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleRobotStatement
-entryRuleRobotStatement returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getRobotStatementRule()); }
-	iv_ruleRobotStatement=ruleRobotStatement
-	{ $current=$iv_ruleRobotStatement.current; }
+// Entry rule entryRuleActuatorStatement
+entryRuleActuatorStatement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getActuatorStatementRule()); }
+	iv_ruleActuatorStatement=ruleActuatorStatement
+	{ $current=$iv_ruleActuatorStatement.current; }
 	EOF;
 
-// Rule RobotStatement
-ruleRobotStatement returns [EObject current=null]
+// Rule ActuatorStatement
+ruleActuatorStatement returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -795,7 +819,7 @@ ruleRobotStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getRobotStatementAccess().getGoParserRuleCall_0());
+			newCompositeNode(grammarAccess.getActuatorStatementAccess().getGoParserRuleCall_0());
 		}
 		this_Go_0=ruleGo
 		{
@@ -807,7 +831,7 @@ ruleRobotStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getRobotStatementAccess().getTurnParserRuleCall_1());
+			newCompositeNode(grammarAccess.getActuatorStatementAccess().getTurnParserRuleCall_1());
 		}
 		this_Turn_1=ruleTurn
 		{
@@ -819,7 +843,7 @@ ruleRobotStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getRobotStatementAccess().getChangeAngleParserRuleCall_2());
+			newCompositeNode(grammarAccess.getActuatorStatementAccess().getChangeAngleParserRuleCall_2());
 		}
 		this_ChangeAngle_2=ruleChangeAngle
 		{
@@ -831,7 +855,7 @@ ruleRobotStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getRobotStatementAccess().getChangeIntensityParserRuleCall_3());
+			newCompositeNode(grammarAccess.getActuatorStatementAccess().getChangeIntensityParserRuleCall_3());
 		}
 		this_ChangeIntensity_3=ruleChangeIntensity
 		{
@@ -843,11 +867,77 @@ ruleRobotStatement returns [EObject current=null]
 			/* */
 		}
 		{
-			newCompositeNode(grammarAccess.getRobotStatementAccess().getShootParserRuleCall_4());
+			newCompositeNode(grammarAccess.getActuatorStatementAccess().getShootParserRuleCall_4());
 		}
 		this_Shoot_4=ruleShoot
 		{
 			$current = $this_Shoot_4.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleSensorExpression
+entryRuleSensorExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSensorExpressionRule()); }
+	iv_ruleSensorExpression=ruleSensorExpression
+	{ $current=$iv_ruleSensorExpression.current; }
+	EOF;
+
+// Rule SensorExpression
+ruleSensorExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getSensorExpressionAccess().getGetColorParserRuleCall_0());
+		}
+		this_GetColor_0=ruleGetColor
+		{
+			$current = $this_GetColor_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getSensorExpressionAccess().getGetDistanceParserRuleCall_1());
+		}
+		this_GetDistance_1=ruleGetDistance
+		{
+			$current = $this_GetDistance_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getSensorExpressionAccess().getGetPositionParserRuleCall_2());
+		}
+		this_GetPosition_2=ruleGetPosition
+		{
+			$current = $this_GetPosition_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getSensorExpressionAccess().getGetGyroParserRuleCall_3());
+		}
+		this_GetGyro_3=ruleGetGyro
+		{
+			$current = $this_GetGyro_3.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -2411,6 +2501,39 @@ rulePrint returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleVariableProxy
+entryRuleVariableProxy returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVariableProxyRule()); }
+	iv_ruleVariableProxy=ruleVariableProxy
+	{ $current=$iv_ruleVariableProxy.current; }
+	EOF;
+
+// Rule VariableProxy
+ruleVariableProxy returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				/* */
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getVariableProxyRule());
+				}
+			}
+			otherlv_0=RULE_ID
+			{
+				newLeafNode(otherlv_0, grammarAccess.getVariableProxyAccess().getVariableVariableCrossReference_0());
+			}
+		)
+	)
+;
+
 // Entry rule entryRuleEBoolean
 entryRuleEBoolean returns [String current=null]:
 	{ newCompositeNode(grammarAccess.getEBooleanRule()); }
@@ -3073,9 +3196,9 @@ ruleGPSSensor returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='laserSensor'
+		otherlv_1='gpsSensor'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getGPSSensorAccess().getLaserSensorKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getGPSSensorAccess().getGpsSensorKeyword_1());
 		}
 		(
 			(
@@ -3147,9 +3270,9 @@ ruleGyroSensor returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='laserSensor'
+		otherlv_1='gyroSensor'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getGyroSensorAccess().getLaserSensorKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getGyroSensorAccess().getGyroSensorKeyword_1());
 		}
 		(
 			(
@@ -3544,7 +3667,7 @@ ruleChangeIntensity returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='ChangeIntensity'
+		otherlv_1='changeIntensity'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getChangeIntensityAccess().getChangeIntensityKeyword_1());
 		}
@@ -3640,6 +3763,246 @@ ruleShoot returns [EObject current=null]
 		otherlv_4=')'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getShootAccess().getRightParenthesisKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleGetColor
+entryRuleGetColor returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGetColorRule()); }
+	iv_ruleGetColor=ruleGetColor
+	{ $current=$iv_ruleGetColor.current; }
+	EOF;
+
+// Rule GetColor
+ruleGetColor returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='getColor'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getGetColorAccess().getGetColorKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGetColorAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					/* */
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGetColorRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getGetColorAccess().getSensorColorSensorCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getGetColorAccess().getRightParenthesisKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleGetDistance
+entryRuleGetDistance returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGetDistanceRule()); }
+	iv_ruleGetDistance=ruleGetDistance
+	{ $current=$iv_ruleGetDistance.current; }
+	EOF;
+
+// Rule GetDistance
+ruleGetDistance returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='getDistance'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getGetDistanceAccess().getGetDistanceKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGetDistanceAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					/* */
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGetDistanceRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getGetDistanceAccess().getSensorLaserSensorCrossReference_2_0());
+				}
+				ruleFQN
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getGetDistanceAccess().getRightParenthesisKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleFQN
+entryRuleFQN returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getFQNRule()); }
+	iv_ruleFQN=ruleFQN
+	{ $current=$iv_ruleFQN.current.getText(); }
+	EOF;
+
+// Rule FQN
+ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_ID_0=RULE_ID
+		{
+			$current.merge(this_ID_0);
+		}
+		{
+			newLeafNode(this_ID_0, grammarAccess.getFQNAccess().getIDTerminalRuleCall_0());
+		}
+		(
+			kw='.'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getFQNAccess().getFullStopKeyword_1_0());
+			}
+			this_ID_2=RULE_ID
+			{
+				$current.merge(this_ID_2);
+			}
+			{
+				newLeafNode(this_ID_2, grammarAccess.getFQNAccess().getIDTerminalRuleCall_1_1());
+			}
+		)*
+	)
+;
+
+// Entry rule entryRuleGetGyro
+entryRuleGetGyro returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGetGyroRule()); }
+	iv_ruleGetGyro=ruleGetGyro
+	{ $current=$iv_ruleGetGyro.current; }
+	EOF;
+
+// Rule GetGyro
+ruleGetGyro returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='getGyro'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getGetGyroAccess().getGetGyroKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGetGyroAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					/* */
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGetGyroRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getGetGyroAccess().getSensorGyroSensorCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getGetGyroAccess().getRightParenthesisKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleGetPosition
+entryRuleGetPosition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGetPositionRule()); }
+	iv_ruleGetPosition=ruleGetPosition
+	{ $current=$iv_ruleGetPosition.current; }
+	EOF;
+
+// Rule GetPosition
+ruleGetPosition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='getPosition'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getGetPositionAccess().getGetPositionKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGetPositionAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					/* */
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGetPositionRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getGetPositionAccess().getSensorGPSSensorCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getGetPositionAccess().getRightParenthesisKeyword_3());
 		}
 	)
 ;

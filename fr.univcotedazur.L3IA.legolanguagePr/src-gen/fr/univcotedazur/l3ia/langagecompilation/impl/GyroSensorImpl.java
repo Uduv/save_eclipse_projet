@@ -4,11 +4,8 @@ package fr.univcotedazur.l3ia.langagecompilation.impl;
 
 import fr.univcotedazur.l3ia.langagecompilation.GyroSensor;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -34,7 +31,6 @@ public class GyroSensorImpl extends SensorImpl implements GyroSensor {
 	 * @ordered
 	 */
 	protected static final int ANGLE_EDEFAULT = 0;
-
 	/**
 	 * The cached value of the '{@link #getAngle() <em>Angle</em>}' attribute.
 	 * <!-- begin-user-doc -->

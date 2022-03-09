@@ -269,6 +269,12 @@ public class IfItemProvider extends StatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createGPSSensor()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createGetPosition()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
 	}
 
 	/**

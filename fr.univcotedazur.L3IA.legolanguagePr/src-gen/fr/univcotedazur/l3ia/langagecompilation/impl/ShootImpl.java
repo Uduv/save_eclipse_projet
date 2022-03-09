@@ -5,6 +5,7 @@ package fr.univcotedazur.l3ia.langagecompilation.impl;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Shoot;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -26,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class ShootImpl extends RobotStatementImpl implements Shoot {
+public class ShootImpl extends ActuatorStatementImpl implements Shoot {
 	/**
 	 * The cached value of the '{@link #getForce() <em>Force</em>}' containment reference.
 	 * <!-- begin-user-doc -->

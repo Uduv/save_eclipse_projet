@@ -18,7 +18,7 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @model
  * @generated
  */
-public interface Shoot extends RobotStatement {
+public interface Shoot extends ActuatorStatement {
 	/**
 	 * Returns the value of the '<em><b>Force</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
