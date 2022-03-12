@@ -202,6 +202,12 @@ public class ShootItemProvider extends ActuatorStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
 				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
+				LegolanguagePrFactory.eINSTANCE.createAnd()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.SHOOT__FORCE,
+				LegolanguagePrFactory.eINSTANCE.createOr()));
 	}
 
 }

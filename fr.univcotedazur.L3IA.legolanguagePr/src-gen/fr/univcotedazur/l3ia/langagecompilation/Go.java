@@ -49,7 +49,7 @@ public interface Go extends ActuatorStatement {
 	 * @return the value of the '<em>Duration</em>' containment reference.
 	 * @see #setDuration(Expression)
 	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getGo_Duration()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Expression getDuration();

@@ -332,6 +332,21 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseAnd(And object) {
+			return createAndAdapter();
+		}
+
+		@Override
+		public Adapter caseOr(Or object) {
+			return createOrAdapter();
+		}
+
+		@Override
+		public Adapter caseCondition(Condition object) {
+			return createConditionAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -1089,6 +1104,48 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSensorExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.And <em>And</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.And
+	 * @generated
+	 */
+	public Adapter createAndAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Or <em>Or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Or
+	 * @generated
+	 */
+	public Adapter createOrAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.Condition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Condition
+	 * @generated
+	 */
+	public Adapter createConditionAdapter() {
 		return null;
 	}
 

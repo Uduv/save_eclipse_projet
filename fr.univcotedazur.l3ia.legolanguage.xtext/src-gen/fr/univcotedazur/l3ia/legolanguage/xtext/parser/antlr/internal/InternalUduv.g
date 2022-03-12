@@ -589,6 +589,60 @@ ruleBinaryOperation returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleCondition
+entryRuleCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConditionRule()); }
+	iv_ruleCondition=ruleCondition
+	{ $current=$iv_ruleCondition.current; }
+	EOF;
+
+// Rule Condition
+ruleCondition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getAndParserRuleCall_0());
+		}
+		this_And_0=ruleAnd
+		{
+			$current = $this_And_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getOrParserRuleCall_1());
+		}
+		this_Or_1=ruleOr
+		{
+			$current = $this_Or_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			/* */
+		}
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getComparaisonParserRuleCall_2());
+		}
+		this_Comparaison_2=ruleComparaison
+		{
+			$current = $this_Comparaison_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
 // Entry rule entryRuleComparaison
 entryRuleComparaison returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getComparaisonRule()); }
@@ -1190,9 +1244,9 @@ ruleIf returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getIfAccess().getConditionComparaisonParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getIfAccess().getConditionConditionParserRuleCall_1_0());
 				}
-				lv_condition_1_0=ruleComparaison
+				lv_condition_1_0=ruleCondition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getIfRule());
@@ -1201,7 +1255,7 @@ ruleIf returns [EObject current=null]
 						$current,
 						"condition",
 						lv_condition_1_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Comparaison");
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Condition");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1259,9 +1313,9 @@ ruleWhileLoop returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWhileLoopAccess().getLoopConditionComparaisonParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getWhileLoopAccess().getLoopConditionConditionParserRuleCall_1_0());
 				}
-				lv_loopCondition_1_0=ruleComparaison
+				lv_loopCondition_1_0=ruleCondition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWhileLoopRule());
@@ -1270,7 +1324,7 @@ ruleWhileLoop returns [EObject current=null]
 						$current,
 						"loopCondition",
 						lv_loopCondition_1_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Comparaison");
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Condition");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1328,9 +1382,9 @@ ruleForLoop returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getForLoopAccess().getLoopConditionComparaisonParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getForLoopAccess().getLoopConditionConditionParserRuleCall_1_0());
 				}
-				lv_loopCondition_1_0=ruleComparaison
+				lv_loopCondition_1_0=ruleCondition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getForLoopRule());
@@ -1339,7 +1393,7 @@ ruleForLoop returns [EObject current=null]
 						$current,
 						"loopCondition",
 						lv_loopCondition_1_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Comparaison");
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Condition");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1758,32 +1812,34 @@ ruleGT returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='>'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getGTAccess().getGreaterThanSignKeyword_2());
-		}
 		(
+			otherlv_2='>'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getGTAccess().getGreaterThanSignKeyword_2_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getGTAccess().getRightExpressionParserRuleCall_3_0());
-				}
-				lv_right_3_0=ruleExpression
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getGTRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getGTAccess().getRightExpressionParserRuleCall_2_1_0());
 					}
-					set(
-						$current,
-						"right",
-						lv_right_3_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
-					afterParserOrEnumRuleCall();
-				}
+					lv_right_3_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGTRule());
+						}
+						set(
+							$current,
+							"right",
+							lv_right_3_0,
+							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
+		)?
 		otherlv_4=')'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getGTAccess().getRightParenthesisKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getGTAccess().getRightParenthesisKeyword_3());
 		}
 	)
 ;
@@ -1827,32 +1883,34 @@ ruleGTEqual returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='>='
-		{
-			newLeafNode(otherlv_2, grammarAccess.getGTEqualAccess().getGreaterThanSignEqualsSignKeyword_2());
-		}
 		(
+			otherlv_2='>='
+			{
+				newLeafNode(otherlv_2, grammarAccess.getGTEqualAccess().getGreaterThanSignEqualsSignKeyword_2_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getGTEqualAccess().getRightExpressionParserRuleCall_3_0());
-				}
-				lv_right_3_0=ruleExpression
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getGTEqualRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getGTEqualAccess().getRightExpressionParserRuleCall_2_1_0());
 					}
-					set(
-						$current,
-						"right",
-						lv_right_3_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
-					afterParserOrEnumRuleCall();
-				}
+					lv_right_3_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGTEqualRule());
+						}
+						set(
+							$current,
+							"right",
+							lv_right_3_0,
+							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
+		)?
 		otherlv_4=')'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getGTEqualAccess().getRightParenthesisKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getGTEqualAccess().getRightParenthesisKeyword_3());
 		}
 	)
 ;
@@ -1896,32 +1954,34 @@ ruleLT returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='<'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getLTAccess().getLessThanSignKeyword_2());
-		}
 		(
+			otherlv_2='<'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getLTAccess().getLessThanSignKeyword_2_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getLTAccess().getRightExpressionParserRuleCall_3_0());
-				}
-				lv_right_3_0=ruleExpression
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getLTRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getLTAccess().getRightExpressionParserRuleCall_2_1_0());
 					}
-					set(
-						$current,
-						"right",
-						lv_right_3_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
-					afterParserOrEnumRuleCall();
-				}
+					lv_right_3_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getLTRule());
+						}
+						set(
+							$current,
+							"right",
+							lv_right_3_0,
+							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
+		)?
 		otherlv_4=')'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getLTAccess().getRightParenthesisKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getLTAccess().getRightParenthesisKeyword_3());
 		}
 	)
 ;
@@ -1965,32 +2025,34 @@ ruleLTEqual returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='<='
-		{
-			newLeafNode(otherlv_2, grammarAccess.getLTEqualAccess().getLessThanSignEqualsSignKeyword_2());
-		}
 		(
+			otherlv_2='<='
+			{
+				newLeafNode(otherlv_2, grammarAccess.getLTEqualAccess().getLessThanSignEqualsSignKeyword_2_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getLTEqualAccess().getRightExpressionParserRuleCall_3_0());
-				}
-				lv_right_3_0=ruleExpression
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getLTEqualRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getLTEqualAccess().getRightExpressionParserRuleCall_2_1_0());
 					}
-					set(
-						$current,
-						"right",
-						lv_right_3_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
-					afterParserOrEnumRuleCall();
-				}
+					lv_right_3_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getLTEqualRule());
+						}
+						set(
+							$current,
+							"right",
+							lv_right_3_0,
+							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
+		)?
 		otherlv_4=')'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getLTEqualAccess().getRightParenthesisKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getLTEqualAccess().getRightParenthesisKeyword_3());
 		}
 	)
 ;
@@ -2034,32 +2096,34 @@ ruleEqual returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='=='
-		{
-			newLeafNode(otherlv_2, grammarAccess.getEqualAccess().getEqualsSignEqualsSignKeyword_2());
-		}
 		(
+			otherlv_2='=='
+			{
+				newLeafNode(otherlv_2, grammarAccess.getEqualAccess().getEqualsSignEqualsSignKeyword_2_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getEqualAccess().getRightExpressionParserRuleCall_3_0());
-				}
-				lv_right_3_0=ruleExpression
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getEqualRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getEqualAccess().getRightExpressionParserRuleCall_2_1_0());
 					}
-					set(
-						$current,
-						"right",
-						lv_right_3_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
-					afterParserOrEnumRuleCall();
-				}
+					lv_right_3_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getEqualRule());
+						}
+						set(
+							$current,
+							"right",
+							lv_right_3_0,
+							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
+		)?
 		otherlv_4=')'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getEqualAccess().getRightParenthesisKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getEqualAccess().getRightParenthesisKeyword_3());
 		}
 	)
 ;
@@ -3804,7 +3868,7 @@ ruleGetColor returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getGetColorAccess().getSensorColorSensorCrossReference_2_0());
 				}
-				ruleEString
+				ruleFQN
 				{
 					afterParserOrEnumRuleCall();
 				}
@@ -3867,46 +3931,6 @@ ruleGetDistance returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleFQN
-entryRuleFQN returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getFQNRule()); }
-	iv_ruleFQN=ruleFQN
-	{ $current=$iv_ruleFQN.current.getText(); }
-	EOF;
-
-// Rule FQN
-ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		this_ID_0=RULE_ID
-		{
-			$current.merge(this_ID_0);
-		}
-		{
-			newLeafNode(this_ID_0, grammarAccess.getFQNAccess().getIDTerminalRuleCall_0());
-		}
-		(
-			kw='.'
-			{
-				$current.merge(kw);
-				newLeafNode(kw, grammarAccess.getFQNAccess().getFullStopKeyword_1_0());
-			}
-			this_ID_2=RULE_ID
-			{
-				$current.merge(this_ID_2);
-			}
-			{
-				newLeafNode(this_ID_2, grammarAccess.getFQNAccess().getIDTerminalRuleCall_1_1());
-			}
-		)*
-	)
-;
-
 // Entry rule entryRuleGetGyro
 entryRuleGetGyro returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getGetGyroRule()); }
@@ -3944,7 +3968,7 @@ ruleGetGyro returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getGetGyroAccess().getSensorGyroSensorCrossReference_2_0());
 				}
-				ruleEString
+				ruleFQN
 				{
 					afterParserOrEnumRuleCall();
 				}
@@ -3994,7 +4018,7 @@ ruleGetPosition returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getGetPositionAccess().getSensorGPSSensorCrossReference_2_0());
 				}
-				ruleEString
+				ruleFQN
 				{
 					afterParserOrEnumRuleCall();
 				}
@@ -4004,6 +4028,208 @@ ruleGetPosition returns [EObject current=null]
 		{
 			newLeafNode(otherlv_3, grammarAccess.getGetPositionAccess().getRightParenthesisKeyword_3());
 		}
+	)
+;
+
+// Entry rule entryRuleAnd
+entryRuleAnd returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAndRule()); }
+	iv_ruleAnd=ruleAnd
+	{ $current=$iv_ruleAnd.current; }
+	EOF;
+
+// Rule And
+ruleAnd returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				/* */
+			}
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getAndAccess().getAndAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getAndAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAndAccess().getLeftExpressionParserRuleCall_2_0());
+				}
+				lv_left_2_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAndRule());
+					}
+					set(
+						$current,
+						"left",
+						lv_left_2_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_3='and'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getAndAccess().getAndKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getAndAccess().getRightExpressionParserRuleCall_3_1_0());
+					}
+					lv_right_4_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getAndRule());
+						}
+						set(
+							$current,
+							"right",
+							lv_right_4_0,
+							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		otherlv_5=')'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getAndAccess().getRightParenthesisKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleOr
+entryRuleOr returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getOrRule()); }
+	iv_ruleOr=ruleOr
+	{ $current=$iv_ruleOr.current; }
+	EOF;
+
+// Rule Or
+ruleOr returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				/* */
+			}
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getOrAccess().getOrAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getOrAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getOrAccess().getLeftExpressionParserRuleCall_2_0());
+				}
+				lv_left_2_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getOrRule());
+					}
+					set(
+						$current,
+						"left",
+						lv_left_2_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_3='or'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getOrAccess().getOrKeyword_3_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getOrAccess().getRightExpressionParserRuleCall_3_1_0());
+					}
+					lv_right_4_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getOrRule());
+						}
+						set(
+							$current,
+							"right",
+							lv_right_4_0,
+							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_5=')'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getOrAccess().getRightParenthesisKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleFQN
+entryRuleFQN returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getFQNRule()); }
+	iv_ruleFQN=ruleFQN
+	{ $current=$iv_ruleFQN.current.getText(); }
+	EOF;
+
+// Rule FQN
+ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_ID_0=RULE_ID
+		{
+			$current.merge(this_ID_0);
+		}
+		{
+			newLeafNode(this_ID_0, grammarAccess.getFQNAccess().getIDTerminalRuleCall_0());
+		}
+		(
+			kw='.'
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getFQNAccess().getFullStopKeyword_1_0());
+			}
+			this_ID_2=RULE_ID
+			{
+				$current.merge(this_ID_2);
+			}
+			{
+				newLeafNode(this_ID_2, grammarAccess.getFQNAccess().getIDTerminalRuleCall_1_1());
+			}
+		)*
 	)
 ;
 

@@ -2,7 +2,7 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.impl;
 
-import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
+import fr.univcotedazur.l3ia.langagecompilation.Condition;
 import fr.univcotedazur.l3ia.langagecompilation.If;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Statement;
@@ -45,7 +45,7 @@ public class IfImpl extends StatementImpl implements If {
 	 * @generated
 	 * @ordered
 	 */
-	protected Comparaison condition;
+	protected Condition condition;
 
 	/**
 	 * The cached value of the '{@link #getStatement() <em>Statement</em>}' containment reference list.
@@ -81,7 +81,7 @@ public class IfImpl extends StatementImpl implements If {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Comparaison getCondition() {
+	public Condition getCondition() {
 		return condition;
 	}
 
@@ -90,8 +90,8 @@ public class IfImpl extends StatementImpl implements If {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCondition(Comparaison newCondition, NotificationChain msgs) {
-		Comparaison oldCondition = condition;
+	public NotificationChain basicSetCondition(Condition newCondition, NotificationChain msgs) {
+		Condition oldCondition = condition;
 		condition = newCondition;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -109,7 +109,7 @@ public class IfImpl extends StatementImpl implements If {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCondition(Comparaison newCondition) {
+	public void setCondition(Condition newCondition) {
 		if (newCondition != condition) {
 			NotificationChain msgs = null;
 			if (condition != null)
@@ -181,7 +181,7 @@ public class IfImpl extends StatementImpl implements If {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case LegolanguagePrPackage.IF__CONDITION:
-			setCondition((Comparaison) newValue);
+			setCondition((Condition) newValue);
 			return;
 		case LegolanguagePrPackage.IF__STATEMENT:
 			getStatement().clear();
@@ -200,7 +200,7 @@ public class IfImpl extends StatementImpl implements If {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case LegolanguagePrPackage.IF__CONDITION:
-			setCondition((Comparaison) null);
+			setCondition((Condition) null);
 			return;
 		case LegolanguagePrPackage.IF__STATEMENT:
 			getStatement().clear();

@@ -158,5 +158,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//GetGyro/sensor"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//SensorExpression"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//And"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Or"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Condition"/>
   </genPackages>
 </genmodel:GenModel>

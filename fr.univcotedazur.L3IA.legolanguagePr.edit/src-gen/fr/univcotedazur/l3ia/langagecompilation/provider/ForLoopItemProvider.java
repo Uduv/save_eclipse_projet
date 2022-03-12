@@ -157,6 +157,12 @@ public class ForLoopItemProvider extends LoopItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.FOR_LOOP__LOOP_CONDITION,
 				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.FOR_LOOP__LOOP_CONDITION,
+				LegolanguagePrFactory.eINSTANCE.createAnd()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.FOR_LOOP__LOOP_CONDITION,
+				LegolanguagePrFactory.eINSTANCE.createOr()));
 	}
 
 	/**

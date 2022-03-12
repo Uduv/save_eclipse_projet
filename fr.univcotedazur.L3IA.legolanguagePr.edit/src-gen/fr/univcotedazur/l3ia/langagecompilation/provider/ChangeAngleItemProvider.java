@@ -205,6 +205,12 @@ public class ChangeAngleItemProvider extends ActuatorStatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
 				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
 
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
+				LegolanguagePrFactory.eINSTANCE.createAnd()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
+				LegolanguagePrFactory.eINSTANCE.createOr()));
+
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -264,6 +270,12 @@ public class ChangeAngleItemProvider extends ActuatorStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createAnd()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createOr()));
 	}
 
 	/**

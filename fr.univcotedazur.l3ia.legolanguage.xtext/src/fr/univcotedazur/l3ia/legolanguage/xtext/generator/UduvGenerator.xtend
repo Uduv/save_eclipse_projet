@@ -62,6 +62,8 @@ import fr.univcotedazur.l3ia.langagecompilation.GetGyro
 import fr.univcotedazur.l3ia.langagecompilation.GetColor
 import fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement
 import fr.univcotedazur.l3ia.langagecompilation.SensorExpression
+import fr.univcotedazur.l3ia.langagecompilation.And
+import fr.univcotedazur.l3ia.langagecompilation.Or
 
 /**
  * Generates code from your model files on save.
@@ -89,13 +91,14 @@ from ev3dev2.sensor import *
 from ev3dev2.sensor.lego import *
 from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 	}
+	var indentation = 0
 	
-	def String StatementToString(Statement s) {
+	def String StatementToString(Statement s ) {
 		var res = ''
-		
-		if (s.isInConditionial){
+		for (i : 0 ..< indentation){
 			res += '\t'
-		}
+		} 
+		
 		if (s instanceof Variable) {
 			res += VariableToString(s as Variable)
 		}else
@@ -106,11 +109,7 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 			res += LoopToString(s as Loop)
 		}else
 		if(s instanceof If){
-			res += 'if' + ' ('+ ExpressionToString(s.condition as Expression) + ') ' +':' + '\n'
-			for ( state : s.statement ) {
-				state.isInConditionial = true
-				res += '\t' + StatementToString(state as Statement)
-			}
+			res += IfToString(s as If)
 		}else
 		if(s instanceof Robot){
 			res += RobotToString(s as Robot)
@@ -209,17 +208,34 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 		var res = ''
 		if(l instanceof ForLoop){
 			res += 'for' + ' (' + ExpressionToString(l.loopCondition as Expression) + ') ' +':' + '\n'
+			indentation += 1 
 			for ( s : l.statement ) {
-				res += '\t' + StatementToString(s as Statement)
-			}  
+				res += StatementToString(s as Statement)
+			} 
+			indentation -= 1
 		}
 		if(l instanceof WhileLoop){
+			
 			res += 'while' + ' ('+ ExpressionToString(l.loopCondition as Expression) + ') ' +':' + '\n'
+			indentation += 1 
 			for ( s : l.statement ) {
-				res += '\t' + StatementToString(s as Statement)
+				res +=  StatementToString(s as Statement)
 			}
+			indentation -= 1
 		}
 		return res 
+	}
+	
+	def String IfToString(If i) {
+		var res = ''
+		res += 'if' + ' ('+ ExpressionToString(i.condition as Expression) + ') ' +':' + '\n'
+		indentation += 1 
+		for ( state : i.statement ) {
+			res +=  StatementToString(state as Statement)
+			}
+	indentation -= 1 
+	return res 
+	
 	}
 	
 	
@@ -234,7 +250,12 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 		if (b instanceof Comparaison){
 			res += ComparaisonToString(b as Comparaison)
 		}
-		
+		if (b instanceof And){
+			res += ExpressionToString(b.left) + ' and ' + ExpressionToString(b.right)
+		}else
+		if (b instanceof Or){
+			res += ExpressionToString(b.left) + ' or ' + ExpressionToString(b.right)
+		}else
 		return res
 	} 
 	
@@ -405,7 +426,7 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 
 		}else
 		if (se instanceof GetColor ){
-				res += "colorSensor"+ se.sensor.portID 
+				res += "colorSensor"+ se.sensor.portID + ".color_name"
 
 		}
 		return res 	

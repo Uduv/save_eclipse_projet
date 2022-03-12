@@ -204,6 +204,12 @@ public class GoItemProvider extends ActuatorStatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
 
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createAnd()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createOr()));
+
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -263,6 +269,12 @@ public class GoItemProvider extends ActuatorStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createAnd()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createOr()));
 	}
 
 	/**

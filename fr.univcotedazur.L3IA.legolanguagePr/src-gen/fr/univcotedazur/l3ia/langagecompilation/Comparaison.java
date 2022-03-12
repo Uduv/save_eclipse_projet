@@ -12,5 +12,5 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @model abstract="true"
  * @generated
  */
-public interface Comparaison extends BinaryOperation {
+public interface Comparaison extends BinaryOperation, Condition {
 } // Comparaison

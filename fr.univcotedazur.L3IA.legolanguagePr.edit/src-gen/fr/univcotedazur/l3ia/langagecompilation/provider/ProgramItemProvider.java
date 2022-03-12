@@ -289,6 +289,12 @@ public class ProgramItemProvider extends ItemProviderAdapter implements IEditing
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PROGRAM__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PROGRAM__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createAnd()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PROGRAM__STATEMENT,
+				LegolanguagePrFactory.eINSTANCE.createOr()));
 	}
 
 	/**

@@ -24,12 +24,12 @@ public interface WhileLoop extends Loop {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Loop Condition</em>' containment reference.
-	 * @see #setLoopCondition(Comparaison)
+	 * @see #setLoopCondition(Condition)
 	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getWhileLoop_LoopCondition()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Comparaison getLoopCondition();
+	Condition getLoopCondition();
 
 	/**
 	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.WhileLoop#getLoopCondition <em>Loop Condition</em>}' containment reference.
@@ -39,6 +39,6 @@ public interface WhileLoop extends Loop {
 	 * @see #getLoopCondition()
 	 * @generated
 	 */
-	void setLoopCondition(Comparaison value);
+	void setLoopCondition(Condition value);
 
 } // WhileLoop

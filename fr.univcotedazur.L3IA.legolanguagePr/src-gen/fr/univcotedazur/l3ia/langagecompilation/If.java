@@ -27,12 +27,12 @@ public interface If extends Statement {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Condition</em>' containment reference.
-	 * @see #setCondition(Comparaison)
+	 * @see #setCondition(Condition)
 	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getIf_Condition()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Comparaison getCondition();
+	Condition getCondition();
 
 	/**
 	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.If#getCondition <em>Condition</em>}' containment reference.
@@ -42,7 +42,7 @@ public interface If extends Statement {
 	 * @see #getCondition()
 	 * @generated
 	 */
-	void setCondition(Comparaison value);
+	void setCondition(Condition value);
 
 	/**
 	 * Returns the value of the '<em><b>Statement</b></em>' containment reference list.

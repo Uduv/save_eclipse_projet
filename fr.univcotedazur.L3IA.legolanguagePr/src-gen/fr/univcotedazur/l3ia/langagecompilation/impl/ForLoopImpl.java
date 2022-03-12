@@ -2,7 +2,7 @@
  */
 package fr.univcotedazur.l3ia.langagecompilation.impl;
 
-import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
+import fr.univcotedazur.l3ia.langagecompilation.Condition;
 import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 
@@ -36,7 +36,7 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 	 * @generated
 	 * @ordered
 	 */
-	protected Comparaison loopCondition;
+	protected Condition loopCondition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +62,7 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Comparaison getLoopCondition() {
+	public Condition getLoopCondition() {
 		return loopCondition;
 	}
 
@@ -71,8 +71,8 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLoopCondition(Comparaison newLoopCondition, NotificationChain msgs) {
-		Comparaison oldLoopCondition = loopCondition;
+	public NotificationChain basicSetLoopCondition(Condition newLoopCondition, NotificationChain msgs) {
+		Condition oldLoopCondition = loopCondition;
 		loopCondition = newLoopCondition;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -90,7 +90,7 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLoopCondition(Comparaison newLoopCondition) {
+	public void setLoopCondition(Condition newLoopCondition) {
 		if (newLoopCondition != loopCondition) {
 			NotificationChain msgs = null;
 			if (loopCondition != null)
@@ -144,7 +144,7 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case LegolanguagePrPackage.FOR_LOOP__LOOP_CONDITION:
-			setLoopCondition((Comparaison) newValue);
+			setLoopCondition((Condition) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -159,7 +159,7 @@ public class ForLoopImpl extends LoopImpl implements ForLoop {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case LegolanguagePrPackage.FOR_LOOP__LOOP_CONDITION:
-			setLoopCondition((Comparaison) null);
+			setLoopCondition((Condition) null);
 			return;
 		}
 		super.eUnset(featureID);

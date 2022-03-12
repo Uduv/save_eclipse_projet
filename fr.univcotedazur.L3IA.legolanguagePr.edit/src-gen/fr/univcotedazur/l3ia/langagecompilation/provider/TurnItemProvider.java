@@ -228,6 +228,12 @@ public class TurnItemProvider extends ActuatorStatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
 				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
 
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
+				LegolanguagePrFactory.eINSTANCE.createAnd()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__ANGLE,
+				LegolanguagePrFactory.eINSTANCE.createOr()));
+
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -288,6 +294,12 @@ public class TurnItemProvider extends ActuatorStatementItemProvider {
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
 
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createAnd()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__SPEED,
+				LegolanguagePrFactory.eINSTANCE.createOr()));
+
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
 
@@ -347,6 +359,12 @@ public class TurnItemProvider extends ActuatorStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
 				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createAnd()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.TURN__DURATION,
+				LegolanguagePrFactory.eINSTANCE.createOr()));
 	}
 
 	/**

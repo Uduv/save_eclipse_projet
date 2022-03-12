@@ -150,6 +150,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			Comparaison comparaison = (Comparaison) theEObject;
 			T result = caseComparaison(comparaison);
 			if (result == null)
+				result = caseCondition(comparaison);
+			if (result == null)
 				result = caseBinaryOperation(comparaison);
 			if (result == null)
 				result = caseExpression(comparaison);
@@ -164,6 +166,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			T result = caseGT(gt);
 			if (result == null)
 				result = caseComparaison(gt);
+			if (result == null)
+				result = caseCondition(gt);
 			if (result == null)
 				result = caseBinaryOperation(gt);
 			if (result == null)
@@ -219,6 +223,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseComparaison(lt);
 			if (result == null)
+				result = caseCondition(lt);
+			if (result == null)
 				result = caseBinaryOperation(lt);
 			if (result == null)
 				result = caseExpression(lt);
@@ -264,6 +270,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			T result = caseEqual(equal);
 			if (result == null)
 				result = caseComparaison(equal);
+			if (result == null)
+				result = caseCondition(equal);
 			if (result == null)
 				result = caseBinaryOperation(equal);
 			if (result == null)
@@ -397,6 +405,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseComparaison(gtEqual);
 			if (result == null)
+				result = caseCondition(gtEqual);
+			if (result == null)
 				result = caseBinaryOperation(gtEqual);
 			if (result == null)
 				result = caseExpression(gtEqual);
@@ -411,6 +421,8 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 			T result = caseLTEqual(ltEqual);
 			if (result == null)
 				result = caseComparaison(ltEqual);
+			if (result == null)
+				result = caseCondition(ltEqual);
 			if (result == null)
 				result = caseBinaryOperation(ltEqual);
 			if (result == null)
@@ -693,6 +705,49 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 				result = caseExpression(sensorExpression);
 			if (result == null)
 				result = caseStatement(sensorExpression);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.AND: {
+			And and = (And) theEObject;
+			T result = caseAnd(and);
+			if (result == null)
+				result = caseCondition(and);
+			if (result == null)
+				result = caseBinaryOperation(and);
+			if (result == null)
+				result = caseExpression(and);
+			if (result == null)
+				result = caseStatement(and);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.OR: {
+			Or or = (Or) theEObject;
+			T result = caseOr(or);
+			if (result == null)
+				result = caseCondition(or);
+			if (result == null)
+				result = caseBinaryOperation(or);
+			if (result == null)
+				result = caseExpression(or);
+			if (result == null)
+				result = caseStatement(or);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case LegolanguagePrPackage.CONDITION: {
+			Condition condition = (Condition) theEObject;
+			T result = caseCondition(condition);
+			if (result == null)
+				result = caseBinaryOperation(condition);
+			if (result == null)
+				result = caseExpression(condition);
+			if (result == null)
+				result = caseStatement(condition);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -1494,6 +1549,51 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSensorExpression(SensorExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>And</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>And</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAnd(And object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Or</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Or</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOr(Or object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCondition(Condition object) {
 		return null;
 	}
 

@@ -5,6 +5,7 @@ package fr.univcotedazur.l3ia.langagecompilation.impl;
 import fr.univcotedazur.l3ia.langagecompilation.Actuator;
 import fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement;
 import fr.univcotedazur.l3ia.langagecompilation.Addition;
+import fr.univcotedazur.l3ia.langagecompilation.And;
 import fr.univcotedazur.l3ia.langagecompilation.Arm;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
 import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
@@ -15,6 +16,7 @@ import fr.univcotedazur.l3ia.langagecompilation.Color;
 import fr.univcotedazur.l3ia.langagecompilation.ColorSensor;
 import fr.univcotedazur.l3ia.langagecompilation.Commentary;
 import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
+import fr.univcotedazur.l3ia.langagecompilation.Condition;
 import fr.univcotedazur.l3ia.langagecompilation.Direction;
 import fr.univcotedazur.l3ia.langagecompilation.Division;
 import fr.univcotedazur.l3ia.langagecompilation.Equal;
@@ -42,6 +44,7 @@ import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 import fr.univcotedazur.l3ia.langagecompilation.Loop;
 import fr.univcotedazur.l3ia.langagecompilation.Motor;
 import fr.univcotedazur.l3ia.langagecompilation.Multiplication;
+import fr.univcotedazur.l3ia.langagecompilation.Or;
 import fr.univcotedazur.l3ia.langagecompilation.Print;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
 import fr.univcotedazur.l3ia.langagecompilation.Robot;
@@ -446,6 +449,27 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * @generated
 	 */
 	private EClass sensorExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass andEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass orEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass conditionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1449,6 +1473,33 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAnd() {
+		return andEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOr() {
+		return orEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCondition() {
+		return conditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getDirection() {
 		return directionEEnum;
 	}
@@ -1654,6 +1705,12 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		sensorExpressionEClass = createEClass(SENSOR_EXPRESSION);
 
+		andEClass = createEClass(AND);
+
+		orEClass = createEClass(OR);
+
+		conditionEClass = createEClass(CONDITION);
+
 		// Create enums
 		directionEEnum = createEEnum(DIRECTION);
 		sideEEnum = createEEnum(SIDE);
@@ -1701,6 +1758,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		binaryOperationEClass.getESuperTypes().add(this.getExpression());
 		substarctionEClass.getESuperTypes().add(this.getCalcul());
 		comparaisonEClass.getESuperTypes().add(this.getBinaryOperation());
+		comparaisonEClass.getESuperTypes().add(this.getCondition());
 		gtEClass.getESuperTypes().add(this.getComparaison());
 		assignementEClass.getESuperTypes().add(this.getBinaryOperation());
 		leIntegerEClass.getESuperTypes().add(this.getVariable());
@@ -1745,6 +1803,9 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		getPositionEClass.getESuperTypes().add(this.getSensorExpression());
 		getGyroEClass.getESuperTypes().add(this.getSensorExpression());
 		sensorExpressionEClass.getESuperTypes().add(this.getExpression());
+		andEClass.getESuperTypes().add(this.getCondition());
+		orEClass.getESuperTypes().add(this.getCondition());
+		conditionEClass.getESuperTypes().add(this.getBinaryOperation());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1771,7 +1832,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		initEClass(whileLoopEClass, WhileLoop.class, "WhileLoop", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWhileLoop_LoopCondition(), this.getComparaison(), null, "loopCondition", null, 1, 1,
+		initEReference(getWhileLoop_LoopCondition(), this.getCondition(), null, "loopCondition", null, 1, 1,
 				WhileLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1815,7 +1876,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(forLoopEClass, ForLoop.class, "ForLoop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getForLoop_LoopCondition(), this.getComparaison(), null, "loopCondition", null, 1, 1,
+		initEReference(getForLoop_LoopCondition(), this.getCondition(), null, "loopCondition", null, 1, 1,
 				ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1866,7 +1927,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIf_Condition(), this.getComparaison(), null, "condition", null, 1, 1, If.class, !IS_TRANSIENT,
+		initEReference(getIf_Condition(), this.getCondition(), null, "condition", null, 1, 1, If.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getIf_Statement(), this.getStatement(), null, "statement", null, 0, -1, If.class, !IS_TRANSIENT,
@@ -1939,7 +2000,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEReference(getGo_Speed(), this.getExpression(), null, "speed", null, 1, 1, Go.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getGo_Duration(), this.getExpression(), null, "duration", null, 1, 1, Go.class, !IS_TRANSIENT,
+		initEReference(getGo_Duration(), this.getExpression(), null, "duration", null, 0, 1, Go.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
@@ -1979,7 +2040,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEReference(getTurn_Speed(), this.getExpression(), null, "speed", null, 1, 1, Turn.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getTurn_Duration(), this.getExpression(), null, "duration", null, 1, 1, Turn.class,
+		initEReference(getTurn_Duration(), this.getExpression(), null, "duration", null, 0, 1, Turn.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2012,6 +2073,13 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorExpressionEClass, SensorExpression.class, "SensorExpression", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(andEClass, And.class, "And", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(orEClass, Or.class, "Or", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(conditionEClass, Condition.class, "Condition", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals

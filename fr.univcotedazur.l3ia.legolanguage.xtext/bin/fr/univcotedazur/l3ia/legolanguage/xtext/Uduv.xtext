@@ -32,8 +32,11 @@ Calcul returns Calcul :
 	Substarction | Addition | Division | Exponential | Multiplication ;
 	
 BinaryOperation returns BinaryOperation :
-Comparaison |  Calcul |  Assignement  ;
+Comparaison |  Calcul |  Assignement   ;
 
+Condition returns Condition :
+	And | Or | Comparaison
+;
 
 Comparaison returns Comparaison:
 	GT | LT | Equal | GTEqual | LTEqual ;
@@ -81,7 +84,7 @@ Loop returns Loop :
 
 If returns If :
 	'if'
-	condition=Comparaison
+	condition=Condition 
 	'{'
 		(statement+=Statement)*
 		
@@ -90,7 +93,7 @@ If returns If :
 WhileLoop returns WhileLoop:
 	'while'
 
-	 loopCondition=Comparaison
+	 loopCondition=Condition
 	'{'
 		(statement+=Statement)*
 		
@@ -98,7 +101,7 @@ WhileLoop returns WhileLoop:
 
 ForLoop returns ForLoop:
 	'for'
-	loopCondition=Comparaison
+	loopCondition=Condition
 	'{'
 		(statement+=Statement)*
 		
@@ -146,36 +149,36 @@ Multiplication returns Multiplication:
 GT returns GT:
 	'('
 		left=Expression
-		'>'
-		right=Expression
+		('>'
+		right=Expression)?
 	')';
 	
 GTEqual returns GTEqual:
 	'('
 		left=Expression
-		'>='
-		right=Expression
+		('>='
+		right=Expression)?
 	')';
 
 LT returns LT:
 	'('
 		left=Expression
-		'<'
-		right=Expression
+		('<'
+		right=Expression)?
 	')';
 
 LTEqual returns LTEqual:
 	'('
-		left=Expression
-		'<='
-		right=Expression
+		left=Expression  
+		('<='
+		right=Expression)?
 	')';
 
 Equal returns Equal:
 	'('
 		left=Expression
-		'=='
-		right=Expression
+		('=='
+		right=Expression)?
 	')';
 	
 Assignement returns Assignement:
@@ -315,8 +318,8 @@ Turn returns Turn :
 	'turn' '('
 	direction=Direction ","
 	angle=Expression ","
-	speed=Expression ","
-	duration=Expression
+	speed=Expression (","
+	duration=Expression)?
 	')'
 ;
 
@@ -351,18 +354,14 @@ Shoot returns Shoot :
 ;
 
 GetColor returns GetColor :
-	'getColor' '(' sensor = [ColorSensor|EString]  ')'
+	'getColor' '(' sensor = [ColorSensor|FQN]  ')'
 ;
 
-// probleme d'appel que avec string que ça marche
+
 GetDistance returns GetDistance :
 		'getDistance' '(' 
 		sensor = [LaserSensor|FQN]     
 		')'
-;
-
-FQN :
-    ID('.'ID)*
 ;
 
 
@@ -372,6 +371,22 @@ GetGyro returns GetGyro :
 
 GetPosition returns GetPosition :
 	'getPosition' '(' sensor = [GPSSensor|FQN]  ')'
+; 
+
+
+And returns And :
+	 {And}
+    '('(left=Expression)
+    ('and' right=Expression)
+    ')'
+;
+
+Or returns Or :
+	{Or}
+    '('(left=Expression)
+    ('or' right=Expression)?
+    ')'
+
 ;
 
 enum Color:
@@ -382,5 +397,8 @@ enum Direction:
 	left= "left" | right = "right"
 ;
 
+FQN :
+    ID('.'ID)*
+;
 
 

@@ -3279,6 +3279,198 @@ public interface LegolanguagePrPackage extends EPackage {
 	int GET_GYRO_OPERATION_COUNT = SENSOR_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ConditionImpl <em>Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ConditionImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getCondition()
+	 * @generated
+	 */
+	int CONDITION = 55;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION__NAME = BINARY_OPERATION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION__IS_IN_CONDITIONIAL = BINARY_OPERATION__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION__LEFT = BINARY_OPERATION__LEFT;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION__RIGHT = BINARY_OPERATION__RIGHT;
+
+	/**
+	 * The number of structural features of the '<em>Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_FEATURE_COUNT = BINARY_OPERATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_OPERATION_COUNT = BINARY_OPERATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.AndImpl <em>And</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.AndImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getAnd()
+	 * @generated
+	 */
+	int AND = 53;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND__NAME = CONDITION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND__IS_IN_CONDITIONIAL = CONDITION__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND__LEFT = CONDITION__LEFT;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND__RIGHT = CONDITION__RIGHT;
+
+	/**
+	 * The number of structural features of the '<em>And</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>And</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.OrImpl <em>Or</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.OrImpl
+	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getOr()
+	 * @generated
+	 */
+	int OR = 54;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR__NAME = CONDITION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Is In Conditionial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR__IS_IN_CONDITIONIAL = CONDITION__IS_IN_CONDITIONIAL;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR__LEFT = CONDITION__LEFT;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR__RIGHT = CONDITION__RIGHT;
+
+	/**
+	 * The number of structural features of the '<em>Or</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Or</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_OPERATION_COUNT = CONDITION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.Direction <em>Direction</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3286,7 +3478,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getDirection()
 	 * @generated
 	 */
-	int DIRECTION = 53;
+	int DIRECTION = 56;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.Side <em>Side</em>}' enum.
@@ -3296,7 +3488,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getSide()
 	 * @generated
 	 */
-	int SIDE = 54;
+	int SIDE = 57;
 
 	/**
 	 * The meta object id for the '{@link fr.univcotedazur.l3ia.langagecompilation.Color <em>Color</em>}' enum.
@@ -3306,7 +3498,7 @@ public interface LegolanguagePrPackage extends EPackage {
 	 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getColor()
 	 * @generated
 	 */
-	int COLOR = 55;
+	int COLOR = 58;
 
 	/**
 	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Program <em>Program</em>}'.
@@ -4367,6 +4559,36 @@ public interface LegolanguagePrPackage extends EPackage {
 	EClass getSensorExpression();
 
 	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.And <em>And</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>And</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.And
+	 * @generated
+	 */
+	EClass getAnd();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Or <em>Or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Or</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Or
+	 * @generated
+	 */
+	EClass getOr();
+
+	/**
+	 * Returns the meta object for class '{@link fr.univcotedazur.l3ia.langagecompilation.Condition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Condition</em>'.
+	 * @see fr.univcotedazur.l3ia.langagecompilation.Condition
+	 * @generated
+	 */
+	EClass getCondition();
+
+	/**
 	 * Returns the meta object for enum '{@link fr.univcotedazur.l3ia.langagecompilation.Direction <em>Direction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5332,6 +5554,36 @@ public interface LegolanguagePrPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SENSOR_EXPRESSION = eINSTANCE.getSensorExpression();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.AndImpl <em>And</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.AndImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getAnd()
+		 * @generated
+		 */
+		EClass AND = eINSTANCE.getAnd();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.OrImpl <em>Or</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.OrImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getOr()
+		 * @generated
+		 */
+		EClass OR = eINSTANCE.getOr();
+
+		/**
+		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.impl.ConditionImpl <em>Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.ConditionImpl
+		 * @see fr.univcotedazur.l3ia.langagecompilation.impl.LegolanguagePrPackageImpl#getCondition()
+		 * @generated
+		 */
+		EClass CONDITION = eINSTANCE.getCondition();
 
 		/**
 		 * The meta object literal for the '{@link fr.univcotedazur.l3ia.langagecompilation.Direction <em>Direction</em>}' enum.

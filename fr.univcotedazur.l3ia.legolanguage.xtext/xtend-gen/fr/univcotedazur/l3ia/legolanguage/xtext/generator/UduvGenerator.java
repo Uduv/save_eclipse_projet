@@ -6,6 +6,7 @@ package fr.univcotedazur.l3ia.legolanguage.xtext.generator;
 import fr.univcotedazur.l3ia.langagecompilation.Actuator;
 import fr.univcotedazur.l3ia.langagecompilation.ActuatorStatement;
 import fr.univcotedazur.l3ia.langagecompilation.Addition;
+import fr.univcotedazur.l3ia.langagecompilation.And;
 import fr.univcotedazur.l3ia.langagecompilation.Arm;
 import fr.univcotedazur.l3ia.langagecompilation.Assignement;
 import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
@@ -15,6 +16,7 @@ import fr.univcotedazur.l3ia.langagecompilation.ChangeIntensity;
 import fr.univcotedazur.l3ia.langagecompilation.ColorSensor;
 import fr.univcotedazur.l3ia.langagecompilation.Commentary;
 import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
+import fr.univcotedazur.l3ia.langagecompilation.Condition;
 import fr.univcotedazur.l3ia.langagecompilation.Direction;
 import fr.univcotedazur.l3ia.langagecompilation.Division;
 import fr.univcotedazur.l3ia.langagecompilation.Equal;
@@ -42,6 +44,7 @@ import fr.univcotedazur.l3ia.langagecompilation.Led;
 import fr.univcotedazur.l3ia.langagecompilation.Loop;
 import fr.univcotedazur.l3ia.langagecompilation.Motor;
 import fr.univcotedazur.l3ia.langagecompilation.Multiplication;
+import fr.univcotedazur.l3ia.langagecompilation.Or;
 import fr.univcotedazur.l3ia.langagecompilation.Print;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
 import fr.univcotedazur.l3ia.langagecompilation.Robot;
@@ -63,6 +66,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.ExclusiveRange;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
@@ -88,10 +92,12 @@ public class UduvGenerator extends AbstractGenerator {
     fsa.generateFile(_plus, ("#!/usr/bin/env python3\n# Import Libraries\nimport time\nimport math\nfrom ev3dev2.motor import *\nfrom ev3dev2.sound import Sound\nfrom ev3dev2.button import Button\nfrom ev3dev2.sensor import *\nfrom ev3dev2.sensor.lego import *\nfrom ev3dev2.sensor.virtual import *\n\n" + fileContent));
   }
   
+  private int indentation = 0;
+  
   public String StatementToString(final Statement s) {
     String res = "";
-    boolean _isIsInConditionial = s.isIsInConditionial();
-    if (_isIsInConditionial) {
+    ExclusiveRange _doubleDotLessThan = new ExclusiveRange(0, this.indentation, true);
+    for (final Integer i : _doubleDotLessThan) {
       String _res = res;
       res = (_res + "\t");
     }
@@ -112,23 +118,8 @@ public class UduvGenerator extends AbstractGenerator {
         } else {
           if ((s instanceof If)) {
             String _res_4 = res;
-            Comparaison _condition = ((If)s).getCondition();
-            String _ExpressionToString_1 = this.ExpressionToString(((Expression) _condition));
-            String _plus = (("if" + " (") + _ExpressionToString_1);
-            String _plus_1 = (_plus + ") ");
-            String _plus_2 = (_plus_1 + ":");
-            String _plus_3 = (_plus_2 + "\n");
-            res = (_res_4 + _plus_3);
-            EList<Statement> _statement = ((If)s).getStatement();
-            for (final Statement state : _statement) {
-              {
-                state.setIsInConditionial(true);
-                String _res_5 = res;
-                String _StatementToString = this.StatementToString(((Statement) state));
-                String _plus_4 = ("\t" + _StatementToString);
-                res = (_res_5 + _plus_4);
-              }
-            }
+            String _IfToString = this.IfToString(((If) s));
+            res = (_res_4 + _IfToString);
           } else {
             if ((s instanceof Robot)) {
               String _res_5 = res;
@@ -153,10 +144,10 @@ public class UduvGenerator extends AbstractGenerator {
                     if ((s instanceof Print)) {
                       String _res_9 = res;
                       res = (_res_9 + "print(");
-                      EList<Statement> _statement_1 = ((Print)s).getStatement();
-                      for (final Statement state_1 : _statement_1) {
+                      EList<Statement> _statement = ((Print)s).getStatement();
+                      for (final Statement state : _statement) {
                         String _res_10 = res;
-                        String _StatementToString = this.StatementToString(((Statement) state_1));
+                        String _StatementToString = this.StatementToString(((Statement) state));
                         res = (_res_10 + _StatementToString);
                       }
                       String _res_11 = res;
@@ -165,9 +156,9 @@ public class UduvGenerator extends AbstractGenerator {
                       if ((s instanceof Commentary)) {
                         String _res_12 = res;
                         String _initialeValue = ((Commentary)s).getInitialeValue();
-                        String _plus_4 = ("\'\'\'" + _initialeValue);
-                        String _plus_5 = (_plus_4 + "\'\'\'");
-                        res = (_res_12 + _plus_5);
+                        String _plus = ("\'\'\'" + _initialeValue);
+                        String _plus_1 = (_plus + "\'\'\'");
+                        res = (_res_12 + _plus_1);
                       }
                     }
                   }
@@ -292,64 +283,119 @@ public class UduvGenerator extends AbstractGenerator {
     String res = "";
     if ((l instanceof ForLoop)) {
       String _res = res;
-      Comparaison _loopCondition = ((ForLoop)l).getLoopCondition();
+      Condition _loopCondition = ((ForLoop)l).getLoopCondition();
       String _ExpressionToString = this.ExpressionToString(((Expression) _loopCondition));
       String _plus = (("for" + " (") + _ExpressionToString);
       String _plus_1 = (_plus + ") ");
       String _plus_2 = (_plus_1 + ":");
       String _plus_3 = (_plus_2 + "\n");
       res = (_res + _plus_3);
+      int _indentation = this.indentation;
+      this.indentation = (_indentation + 1);
       EList<Statement> _statement = ((ForLoop)l).getStatement();
       for (final Statement s : _statement) {
         String _res_1 = res;
         String _StatementToString = this.StatementToString(((Statement) s));
-        String _plus_4 = ("\t" + _StatementToString);
-        res = (_res_1 + _plus_4);
+        res = (_res_1 + _StatementToString);
       }
+      int _indentation_1 = this.indentation;
+      this.indentation = (_indentation_1 - 1);
     }
     if ((l instanceof WhileLoop)) {
       String _res_2 = res;
-      Comparaison _loopCondition_1 = ((WhileLoop)l).getLoopCondition();
+      Condition _loopCondition_1 = ((WhileLoop)l).getLoopCondition();
       String _ExpressionToString_1 = this.ExpressionToString(((Expression) _loopCondition_1));
-      String _plus_5 = (("while" + " (") + _ExpressionToString_1);
-      String _plus_6 = (_plus_5 + ") ");
-      String _plus_7 = (_plus_6 + ":");
-      String _plus_8 = (_plus_7 + "\n");
-      res = (_res_2 + _plus_8);
+      String _plus_4 = (("while" + " (") + _ExpressionToString_1);
+      String _plus_5 = (_plus_4 + ") ");
+      String _plus_6 = (_plus_5 + ":");
+      String _plus_7 = (_plus_6 + "\n");
+      res = (_res_2 + _plus_7);
+      int _indentation_2 = this.indentation;
+      this.indentation = (_indentation_2 + 1);
       EList<Statement> _statement_1 = ((WhileLoop)l).getStatement();
       for (final Statement s_1 : _statement_1) {
         String _res_3 = res;
         String _StatementToString_1 = this.StatementToString(((Statement) s_1));
-        String _plus_9 = ("\t" + _StatementToString_1);
-        res = (_res_3 + _plus_9);
+        res = (_res_3 + _StatementToString_1);
       }
+      int _indentation_3 = this.indentation;
+      this.indentation = (_indentation_3 - 1);
     }
     return res;
   }
   
-  public String BinaryOperationToString(final BinaryOperation b) {
+  public String IfToString(final If i) {
     String res = "";
-    if ((b instanceof Assignement)) {
-      String _res = res;
-      String _ExpressionToString = this.ExpressionToString(((Assignement)b).getLeft());
-      String _plus = (_ExpressionToString + "=");
-      String _ExpressionToString_1 = this.ExpressionToString(((Assignement)b).getRight());
-      String _plus_1 = (_plus + _ExpressionToString_1);
-      res = (_res + _plus_1);
-    } else {
-      if ((b instanceof Calcul)) {
-        String _res_1 = res;
-        String _CalculToString = this.CalculToString(((Calcul) b));
-        res = (_res_1 + _CalculToString);
+    String _res = res;
+    Condition _condition = i.getCondition();
+    String _ExpressionToString = this.ExpressionToString(((Expression) _condition));
+    String _plus = (("if" + " (") + _ExpressionToString);
+    String _plus_1 = (_plus + ") ");
+    String _plus_2 = (_plus_1 + ":");
+    String _plus_3 = (_plus_2 + "\n");
+    res = (_res + _plus_3);
+    int _indentation = this.indentation;
+    this.indentation = (_indentation + 1);
+    EList<Statement> _statement = i.getStatement();
+    for (final Statement state : _statement) {
+      String _res_1 = res;
+      String _StatementToString = this.StatementToString(((Statement) state));
+      res = (_res_1 + _StatementToString);
+    }
+    int _indentation_1 = this.indentation;
+    this.indentation = (_indentation_1 - 1);
+    return res;
+  }
+  
+  public String BinaryOperationToString(final BinaryOperation b) {
+    String _xblockexpression = null;
+    {
+      String res = "";
+      if ((b instanceof Assignement)) {
+        String _res = res;
+        String _ExpressionToString = this.ExpressionToString(((Assignement)b).getLeft());
+        String _plus = (_ExpressionToString + "=");
+        String _ExpressionToString_1 = this.ExpressionToString(((Assignement)b).getRight());
+        String _plus_1 = (_plus + _ExpressionToString_1);
+        res = (_res + _plus_1);
       } else {
-        if ((b instanceof Comparaison)) {
-          String _res_2 = res;
-          String _ComparaisonToString = this.ComparaisonToString(((Comparaison) b));
-          res = (_res_2 + _ComparaisonToString);
+        if ((b instanceof Calcul)) {
+          String _res_1 = res;
+          String _CalculToString = this.CalculToString(((Calcul) b));
+          res = (_res_1 + _CalculToString);
+        } else {
+          if ((b instanceof Comparaison)) {
+            String _res_2 = res;
+            String _ComparaisonToString = this.ComparaisonToString(((Comparaison) b));
+            res = (_res_2 + _ComparaisonToString);
+          }
         }
       }
+      String _xifexpression = null;
+      if ((b instanceof And)) {
+        String _res_3 = res;
+        String _ExpressionToString_2 = this.ExpressionToString(((And)b).getLeft());
+        String _plus_2 = (_ExpressionToString_2 + " and ");
+        String _ExpressionToString_3 = this.ExpressionToString(((And)b).getRight());
+        String _plus_3 = (_plus_2 + _ExpressionToString_3);
+        _xifexpression = res = (_res_3 + _plus_3);
+      } else {
+        String _xifexpression_1 = null;
+        if ((b instanceof Or)) {
+          String _res_4 = res;
+          String _ExpressionToString_4 = this.ExpressionToString(((Or)b).getLeft());
+          String _plus_4 = (_ExpressionToString_4 + " or ");
+          String _ExpressionToString_5 = this.ExpressionToString(((Or)b).getRight());
+          String _plus_5 = (_plus_4 + _ExpressionToString_5);
+          _xifexpression_1 = res = (_res_4 + _plus_5);
+        } else {
+          return res;
+        }
+        _xifexpression = _xifexpression_1;
+      }
+      _xblockexpression = _xifexpression;
     }
-    return res;
+    return _xblockexpression;
   }
   
   public String CalculToString(final Calcul c) {
@@ -770,7 +816,8 @@ public class UduvGenerator extends AbstractGenerator {
             String _res_3 = res;
             String _portID_3 = ((GetColor)se).getSensor().getPortID();
             String _plus_3 = ("colorSensor" + _portID_3);
-            res = (_res_3 + _plus_3);
+            String _plus_4 = (_plus_3 + ".color_name");
+            res = (_res_3 + _plus_4);
           }
         }
       }

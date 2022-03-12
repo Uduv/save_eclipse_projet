@@ -202,6 +202,12 @@ public class ChangeIntensityItemProvider extends ActuatorStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
 				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
+				LegolanguagePrFactory.eINSTANCE.createAnd()));
+
+		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_INTENSITY__INTENSITY,
+				LegolanguagePrFactory.eINSTANCE.createOr()));
 	}
 
 }

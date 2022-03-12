@@ -993,6 +993,52 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.And} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AndItemProvider andItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.And}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAndAdapter() {
+		if (andItemProvider == null) {
+			andItemProvider = new AndItemProvider(this);
+		}
+
+		return andItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Or} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OrItemProvider orItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Or}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOrAdapter() {
+		if (orItemProvider == null) {
+			orItemProvider = new OrItemProvider(this);
+		}
+
+		return orItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1171,6 +1217,10 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			getPositionItemProvider.dispose();
 		if (getGyroItemProvider != null)
 			getGyroItemProvider.dispose();
+		if (andItemProvider != null)
+			andItemProvider.dispose();
+		if (orItemProvider != null)
+			orItemProvider.dispose();
 	}
 
 }

@@ -18,7 +18,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WhileLoop" eSuperTypes="#//Loop">
     <eStructuralFeatures xsi:type="ecore:EReference" name="loopCondition" lowerBound="1"
-        eType="#//Comparaison" containment="true"/>
+        eType="#//Condition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="#//Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryOperation" abstract="true" eSuperTypes="#//Expression">
@@ -28,7 +28,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Substarction" eSuperTypes="#//Calcul"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Comparaison" abstract="true" eSuperTypes="#//BinaryOperation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Comparaison" abstract="true" eSuperTypes="#//BinaryOperation #//Condition"/>
   <eClassifiers xsi:type="ecore:EClass" name="GT" eSuperTypes="#//Comparaison"/>
   <eClassifiers xsi:type="ecore:EClass" name="Assignement" eSuperTypes="#//BinaryOperation"/>
   <eClassifiers xsi:type="ecore:EClass" name="LeInteger" eSuperTypes="#//Variable">
@@ -40,7 +40,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="LT" eSuperTypes="#//Comparaison"/>
   <eClassifiers xsi:type="ecore:EClass" name="ForLoop" eSuperTypes="#//Loop">
     <eStructuralFeatures xsi:type="ecore:EReference" name="loopCondition" lowerBound="1"
-        eType="#//Comparaison" containment="true"/>
+        eType="#//Condition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Print" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statement" upperBound="-1"
@@ -69,7 +69,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Multiplication" eSuperTypes="#//Calcul"/>
   <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
-        eType="#//Comparaison" containment="true"/>
+        eType="#//Condition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statement" upperBound="-1"
         eType="#//Statement" containment="true"/>
   </eClassifiers>
@@ -124,8 +124,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Go" eSuperTypes="#//ActuatorStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="speed" lowerBound="1" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="duration" lowerBound="1"
-        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="duration" eType="#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChangeAngle" eSuperTypes="#//ActuatorStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="angle" lowerBound="1" eType="#//Expression"
@@ -151,8 +151,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//Direction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="speed" lowerBound="1" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="duration" lowerBound="1"
-        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="duration" eType="#//Expression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Shoot" eSuperTypes="#//ActuatorStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="force" lowerBound="1" eType="#//Expression"
@@ -189,4 +189,7 @@
         eType="#//GyroSensor"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SensorExpression" abstract="true" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="And" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true" eSuperTypes="#//BinaryOperation"/>
 </ecore:EPackage>

@@ -137,6 +137,10 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createGetPosition();
 		case LegolanguagePrPackage.GET_GYRO:
 			return createGetGyro();
+		case LegolanguagePrPackage.AND:
+			return createAnd();
+		case LegolanguagePrPackage.OR:
+			return createOr();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -578,6 +582,26 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	public GetGyro createGetGyro() {
 		GetGyroImpl getGyro = new GetGyroImpl();
 		return getGyro;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public And createAnd() {
+		AndImpl and = new AndImpl();
+		return and;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Or createOr() {
+		OrImpl or = new OrImpl();
+		return or;
 	}
 
 	/**

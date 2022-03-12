@@ -382,6 +382,24 @@ public interface LegolanguagePrFactory extends EFactory {
 	GetGyro createGetGyro();
 
 	/**
+	 * Returns a new object of class '<em>And</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>And</em>'.
+	 * @generated
+	 */
+	And createAnd();
+
+	/**
+	 * Returns a new object of class '<em>Or</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Or</em>'.
+	 * @generated
+	 */
+	Or createOr();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

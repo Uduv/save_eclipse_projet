@@ -4,7 +4,7 @@
 package fr.univcotedazur.l3ia.legolanguage.xtext.formatting2;
 
 import com.google.inject.Inject;
-import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
+import fr.univcotedazur.l3ia.langagecompilation.Condition;
 import fr.univcotedazur.l3ia.langagecompilation.Program;
 import fr.univcotedazur.l3ia.langagecompilation.Statement;
 import fr.univcotedazur.l3ia.langagecompilation.WhileLoop;
@@ -35,7 +35,7 @@ public class UduvFormatter extends AbstractFormatter2 {
     for (final Statement statement : _statement) {
       document.<Statement>format(statement);
     }
-    document.<Comparaison>format(whileLoop.getLoopCondition());
+    document.<Condition>format(whileLoop.getLoopCondition());
   }
   
   public void format(final Object whileLoop, final IFormattableDocument document) {
