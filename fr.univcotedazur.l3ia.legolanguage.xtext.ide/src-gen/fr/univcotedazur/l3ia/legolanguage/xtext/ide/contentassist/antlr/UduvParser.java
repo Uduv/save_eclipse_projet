@@ -45,10 +45,8 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActuatorAccess().getAlternatives(), "rule__Actuator__Alternatives");
 			builder.put(grammarAccess.getMotorAccess().getAlternatives(), "rule__Motor__Alternatives");
 			builder.put(grammarAccess.getRotativeMotorAccess().getAlternatives(), "rule__RotativeMotor__Alternatives");
-			builder.put(grammarAccess.getLoopAccess().getAlternatives(), "rule__Loop__Alternatives");
 			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getColorAccess().getAlternatives(), "rule__Color__Alternatives");
 			builder.put(grammarAccess.getDirectionAccess().getAlternatives(), "rule__Direction__Alternatives");
 			builder.put(grammarAccess.getProgramAccess().getGroup(), "rule__Program__Group__0");
 			builder.put(grammarAccess.getRobotDeclarationAccess().getGroup(), "rule__RobotDeclaration__Group__0");
@@ -56,7 +54,6 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCommentaryAccess().getGroup(), "rule__Commentary__Group__0");
 			builder.put(grammarAccess.getIfAccess().getGroup(), "rule__If__Group__0");
 			builder.put(grammarAccess.getWhileLoopAccess().getGroup(), "rule__WhileLoop__Group__0");
-			builder.put(grammarAccess.getForLoopAccess().getGroup(), "rule__ForLoop__Group__0");
 			builder.put(grammarAccess.getAdditionAccess().getGroup(), "rule__Addition__Group__0");
 			builder.put(grammarAccess.getSubstarctionAccess().getGroup(), "rule__Substarction__Group__0");
 			builder.put(grammarAccess.getDivisionAccess().getGroup(), "rule__Division__Group__0");
@@ -85,11 +82,8 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEIntAccess().getGroup(), "rule__EInt__Group__0");
 			builder.put(grammarAccess.getEFloatAccess().getGroup(), "rule__EFloat__Group__0");
 			builder.put(grammarAccess.getWheelAccess().getGroup(), "rule__Wheel__Group__0");
-			builder.put(grammarAccess.getWheelAccess().getGroup_4(), "rule__Wheel__Group_4__0");
 			builder.put(grammarAccess.getArmAccess().getGroup(), "rule__Arm__Group__0");
-			builder.put(grammarAccess.getArmAccess().getGroup_5(), "rule__Arm__Group_5__0");
 			builder.put(grammarAccess.getLedAccess().getGroup(), "rule__Led__Group__0");
-			builder.put(grammarAccess.getLedAccess().getGroup_5(), "rule__Led__Group_5__0");
 			builder.put(grammarAccess.getShootLauncherAccess().getGroup(), "rule__ShootLauncher__Group__0");
 			builder.put(grammarAccess.getColorSensorAccess().getGroup(), "rule__ColorSensor__Group__0");
 			builder.put(grammarAccess.getLaserSensorAccess().getGroup(), "rule__LaserSensor__Group__0");
@@ -97,9 +91,7 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGyroSensorAccess().getGroup(), "rule__GyroSensor__Group__0");
 			builder.put(grammarAccess.getTurnAccess().getGroup(), "rule__Turn__Group__0");
 			builder.put(grammarAccess.getGoAccess().getGroup(), "rule__Go__Group__0");
-			builder.put(grammarAccess.getGoAccess().getGroup_4(), "rule__Go__Group_4__0");
 			builder.put(grammarAccess.getChangeAngleAccess().getGroup(), "rule__ChangeAngle__Group__0");
-			builder.put(grammarAccess.getChangeAngleAccess().getGroup_4(), "rule__ChangeAngle__Group_4__0");
 			builder.put(grammarAccess.getChangeIntensityAccess().getGroup(), "rule__ChangeIntensity__Group__0");
 			builder.put(grammarAccess.getShootAccess().getGroup(), "rule__Shoot__Group__0");
 			builder.put(grammarAccess.getGetColorAccess().getGroup(), "rule__GetColor__Group__0");
@@ -109,7 +101,6 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAndAccess().getGroup(), "rule__And__Group__0");
 			builder.put(grammarAccess.getAndAccess().getGroup_3(), "rule__And__Group_3__0");
 			builder.put(grammarAccess.getOrAccess().getGroup(), "rule__Or__Group__0");
-			builder.put(grammarAccess.getOrAccess().getGroup_3(), "rule__Or__Group_3__0");
 			builder.put(grammarAccess.getFQNAccess().getGroup(), "rule__FQN__Group__0");
 			builder.put(grammarAccess.getFQNAccess().getGroup_1(), "rule__FQN__Group_1__0");
 			builder.put(grammarAccess.getProgramAccess().getStatementAssignment_1(), "rule__Program__StatementAssignment_1");
@@ -123,8 +114,6 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getIfAccess().getStatementAssignment_3(), "rule__If__StatementAssignment_3");
 			builder.put(grammarAccess.getWhileLoopAccess().getLoopConditionAssignment_1(), "rule__WhileLoop__LoopConditionAssignment_1");
 			builder.put(grammarAccess.getWhileLoopAccess().getStatementAssignment_3(), "rule__WhileLoop__StatementAssignment_3");
-			builder.put(grammarAccess.getForLoopAccess().getLoopConditionAssignment_1(), "rule__ForLoop__LoopConditionAssignment_1");
-			builder.put(grammarAccess.getForLoopAccess().getStatementAssignment_3(), "rule__ForLoop__StatementAssignment_3");
 			builder.put(grammarAccess.getAdditionAccess().getLeftAssignment_1(), "rule__Addition__LeftAssignment_1");
 			builder.put(grammarAccess.getAdditionAccess().getRightAssignment_3(), "rule__Addition__RightAssignment_3");
 			builder.put(grammarAccess.getSubstarctionAccess().getLeftAssignment_1(), "rule__Substarction__LeftAssignment_1");
@@ -158,13 +147,10 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPrintAccess().getStatementAssignment_3(), "rule__Print__StatementAssignment_3");
 			builder.put(grammarAccess.getVariableProxyAccess().getVariableAssignment(), "rule__VariableProxy__VariableAssignment");
 			builder.put(grammarAccess.getWheelAccess().getPortIDAssignment_3(), "rule__Wheel__PortIDAssignment_3");
-			builder.put(grammarAccess.getWheelAccess().getSpeedAssignment_4_1(), "rule__Wheel__SpeedAssignment_4_1");
 			builder.put(grammarAccess.getArmAccess().getNameAssignment_2(), "rule__Arm__NameAssignment_2");
 			builder.put(grammarAccess.getArmAccess().getPortIDAssignment_4(), "rule__Arm__PortIDAssignment_4");
-			builder.put(grammarAccess.getArmAccess().getAngleAssignment_5_1(), "rule__Arm__AngleAssignment_5_1");
 			builder.put(grammarAccess.getLedAccess().getNameAssignment_2(), "rule__Led__NameAssignment_2");
 			builder.put(grammarAccess.getLedAccess().getPortIDAssignment_4(), "rule__Led__PortIDAssignment_4");
-			builder.put(grammarAccess.getLedAccess().getBrightAssignment_5_1(), "rule__Led__BrightAssignment_5_1");
 			builder.put(grammarAccess.getShootLauncherAccess().getNameAssignment_2(), "rule__ShootLauncher__NameAssignment_2");
 			builder.put(grammarAccess.getShootLauncherAccess().getPortIDAssignment_4(), "rule__ShootLauncher__PortIDAssignment_4");
 			builder.put(grammarAccess.getColorSensorAccess().getNameAssignment_2(), "rule__ColorSensor__NameAssignment_2");
@@ -177,15 +163,11 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGyroSensorAccess().getPortIDAssignment_4(), "rule__GyroSensor__PortIDAssignment_4");
 			builder.put(grammarAccess.getTurnAccess().getRobotAssignment_0(), "rule__Turn__RobotAssignment_0");
 			builder.put(grammarAccess.getTurnAccess().getDirectionAssignment_3(), "rule__Turn__DirectionAssignment_3");
-			builder.put(grammarAccess.getTurnAccess().getAngleAssignment_5(), "rule__Turn__AngleAssignment_5");
-			builder.put(grammarAccess.getTurnAccess().getSpeedAssignment_7(), "rule__Turn__SpeedAssignment_7");
-			builder.put(grammarAccess.getTurnAccess().getDurationAssignment_9(), "rule__Turn__DurationAssignment_9");
+			builder.put(grammarAccess.getTurnAccess().getSpeedAssignment_5(), "rule__Turn__SpeedAssignment_5");
 			builder.put(grammarAccess.getGoAccess().getRobotAssignment_0(), "rule__Go__RobotAssignment_0");
 			builder.put(grammarAccess.getGoAccess().getSpeedAssignment_3(), "rule__Go__SpeedAssignment_3");
-			builder.put(grammarAccess.getGoAccess().getDurationAssignment_4_1(), "rule__Go__DurationAssignment_4_1");
 			builder.put(grammarAccess.getChangeAngleAccess().getRobotAssignment_0(), "rule__ChangeAngle__RobotAssignment_0");
 			builder.put(grammarAccess.getChangeAngleAccess().getAngleAssignment_3(), "rule__ChangeAngle__AngleAssignment_3");
-			builder.put(grammarAccess.getChangeAngleAccess().getSpeedAssignment_4_1(), "rule__ChangeAngle__SpeedAssignment_4_1");
 			builder.put(grammarAccess.getChangeIntensityAccess().getRobotAssignment_0(), "rule__ChangeIntensity__RobotAssignment_0");
 			builder.put(grammarAccess.getChangeIntensityAccess().getIntensityAssignment_3(), "rule__ChangeIntensity__IntensityAssignment_3");
 			builder.put(grammarAccess.getShootAccess().getRobotAssignment_0(), "rule__Shoot__RobotAssignment_0");
@@ -197,7 +179,7 @@ public class UduvParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAndAccess().getLeftAssignment_2(), "rule__And__LeftAssignment_2");
 			builder.put(grammarAccess.getAndAccess().getRightAssignment_3_1(), "rule__And__RightAssignment_3_1");
 			builder.put(grammarAccess.getOrAccess().getLeftAssignment_2(), "rule__Or__LeftAssignment_2");
-			builder.put(grammarAccess.getOrAccess().getRightAssignment_3_1(), "rule__Or__RightAssignment_3_1");
+			builder.put(grammarAccess.getOrAccess().getRightAssignment_4(), "rule__Or__RightAssignment_4");
 		}
 	}
 	

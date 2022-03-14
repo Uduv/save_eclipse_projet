@@ -15,7 +15,6 @@ import fr.univcotedazur.l3ia.langagecompilation.Commentary;
 import fr.univcotedazur.l3ia.langagecompilation.Division;
 import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.Exponential;
-import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.GPSSensor;
 import fr.univcotedazur.l3ia.langagecompilation.GT;
 import fr.univcotedazur.l3ia.langagecompilation.GTEqual;
@@ -105,9 +104,6 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case LegolanguagePrPackage.EXPONENTIAL:
 				sequence_Exponential(context, (Exponential) semanticObject); 
-				return; 
-			case LegolanguagePrPackage.FOR_LOOP:
-				sequence_ForLoop(context, (ForLoop) semanticObject); 
 				return; 
 			case LegolanguagePrPackage.GPS_SENSOR:
 				sequence_GPSSensor(context, (GPSSensor) semanticObject); 
@@ -260,10 +256,19 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Arm returns Arm
 	 *
 	 * Constraint:
-	 *     (name=ID portID=EString angle=EInt?)
+	 *     (name=ID portID=EString)
 	 */
 	protected void sequence_Arm(ISerializationContext context, Arm semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR__PORT_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR__PORT_ID));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getArmAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getArmAccess().getPortIDEStringParserRuleCall_4_0(), semanticObject.getPortID());
+		feeder.finish();
 	}
 	
 	
@@ -298,10 +303,19 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ChangeAngle returns ChangeAngle
 	 *
 	 * Constraint:
-	 *     (robot=[Robot|ID] angle=Expression speed=Expression?)
+	 *     (robot=[Robot|ID] angle=Expression)
 	 */
 	protected void sequence_ChangeAngle(ISerializationContext context, ChangeAngle semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR_STATEMENT__ROBOT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR_STATEMENT__ROBOT));
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getChangeAngleAccess().getRobotRobotIDTerminalRuleCall_0_0_1(), semanticObject.eGet(LegolanguagePrPackage.Literals.ACTUATOR_STATEMENT__ROBOT, false));
+		feeder.accept(grammarAccess.getChangeAngleAccess().getAngleExpressionParserRuleCall_3_0(), semanticObject.getAngle());
+		feeder.finish();
 	}
 	
 	
@@ -434,20 +448,6 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		feeder.accept(grammarAccess.getExponentialAccess().getLeftExpressionParserRuleCall_1_0(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getExponentialAccess().getRightExpressionParserRuleCall_3_0(), semanticObject.getRight());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Statement returns ForLoop
-	 *     Loop returns ForLoop
-	 *     ForLoop returns ForLoop
-	 *
-	 * Constraint:
-	 *     (loopCondition=Condition statement+=Statement*)
-	 */
-	protected void sequence_ForLoop(ISerializationContext context, ForLoop semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -599,10 +599,19 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Go returns Go
 	 *
 	 * Constraint:
-	 *     (robot=[Robot|ID] speed=Expression duration=Expression?)
+	 *     (robot=[Robot|ID] speed=Expression)
 	 */
 	protected void sequence_Go(ISerializationContext context, Go semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR_STATEMENT__ROBOT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR_STATEMENT__ROBOT));
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.GO__SPEED) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.GO__SPEED));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGoAccess().getRobotRobotIDTerminalRuleCall_0_0_1(), semanticObject.eGet(LegolanguagePrPackage.Literals.ACTUATOR_STATEMENT__ROBOT, false));
+		feeder.accept(grammarAccess.getGoAccess().getSpeedExpressionParserRuleCall_3_0(), semanticObject.getSpeed());
+		feeder.finish();
 	}
 	
 	
@@ -766,10 +775,19 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Led returns Led
 	 *
 	 * Constraint:
-	 *     (name=ID portID=EString bright=EInt?)
+	 *     (name=ID portID=EString)
 	 */
 	protected void sequence_Led(ISerializationContext context, Led semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.STATEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR__PORT_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR__PORT_ID));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLedAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLedAccess().getPortIDEStringParserRuleCall_4_0(), semanticObject.getPortID());
+		feeder.finish();
 	}
 	
 	
@@ -804,10 +822,19 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Or returns Or
 	 *
 	 * Constraint:
-	 *     (left=Expression right=Expression?)
+	 *     (left=Expression right=Expression)
 	 */
 	protected void sequence_Or(ISerializationContext context, Or semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__LEFT));
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.BINARY_OPERATION__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOrAccess().getLeftExpressionParserRuleCall_2_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getOrAccess().getRightExpressionParserRuleCall_4_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
@@ -928,7 +955,7 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Turn returns Turn
 	 *
 	 * Constraint:
-	 *     (robot=[Robot|ID] direction=Direction angle=Expression speed=Expression duration=Expression)
+	 *     (robot=[Robot|ID] direction=Direction speed=Expression)
 	 */
 	protected void sequence_Turn(ISerializationContext context, Turn semanticObject) {
 		if (errorAcceptor != null) {
@@ -936,19 +963,13 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR_STATEMENT__ROBOT));
 			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.TURN__DIRECTION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.TURN__DIRECTION));
-			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.TURN__ANGLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.TURN__ANGLE));
 			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.TURN__SPEED) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.TURN__SPEED));
-			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.TURN__DURATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.TURN__DURATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getTurnAccess().getRobotRobotIDTerminalRuleCall_0_0_1(), semanticObject.eGet(LegolanguagePrPackage.Literals.ACTUATOR_STATEMENT__ROBOT, false));
 		feeder.accept(grammarAccess.getTurnAccess().getDirectionDirectionEnumRuleCall_3_0(), semanticObject.getDirection());
-		feeder.accept(grammarAccess.getTurnAccess().getAngleExpressionParserRuleCall_5_0(), semanticObject.getAngle());
-		feeder.accept(grammarAccess.getTurnAccess().getSpeedExpressionParserRuleCall_7_0(), semanticObject.getSpeed());
-		feeder.accept(grammarAccess.getTurnAccess().getDurationExpressionParserRuleCall_9_0(), semanticObject.getDuration());
+		feeder.accept(grammarAccess.getTurnAccess().getSpeedExpressionParserRuleCall_5_0(), semanticObject.getSpeed());
 		feeder.finish();
 	}
 	
@@ -982,10 +1003,16 @@ public class UduvSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Wheel returns Wheel
 	 *
 	 * Constraint:
-	 *     (portID=EString speed=EInt?)
+	 *     portID=EString
 	 */
 	protected void sequence_Wheel(ISerializationContext context, Wheel semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR__PORT_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LegolanguagePrPackage.Literals.ACTUATOR__PORT_ID));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getWheelAccess().getPortIDEStringParserRuleCall_3_0(), semanticObject.getPortID());
+		feeder.finish();
 	}
 	
 	

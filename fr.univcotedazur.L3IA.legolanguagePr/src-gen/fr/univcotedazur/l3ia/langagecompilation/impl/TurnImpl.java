@@ -23,25 +23,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.TurnImpl#getAngle <em>Angle</em>}</li>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.TurnImpl#getDirection <em>Direction</em>}</li>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.TurnImpl#getSpeed <em>Speed</em>}</li>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.TurnImpl#getDuration <em>Duration</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TurnImpl extends ActuatorStatementImpl implements Turn {
-	/**
-	 * The cached value of the '{@link #getAngle() <em>Angle</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAngle()
-	 * @generated
-	 * @ordered
-	 */
-	protected Expression angle;
-
 	/**
 	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -73,16 +61,6 @@ public class TurnImpl extends ActuatorStatementImpl implements Turn {
 	protected Expression speed;
 
 	/**
-	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDuration()
-	 * @generated
-	 * @ordered
-	 */
-	protected Expression duration;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -99,56 +77,6 @@ public class TurnImpl extends ActuatorStatementImpl implements Turn {
 	@Override
 	protected EClass eStaticClass() {
 		return LegolanguagePrPackage.Literals.TURN;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Expression getAngle() {
-		return angle;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAngle(Expression newAngle, NotificationChain msgs) {
-		Expression oldAngle = angle;
-		angle = newAngle;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					LegolanguagePrPackage.TURN__ANGLE, oldAngle, newAngle);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAngle(Expression newAngle) {
-		if (newAngle != angle) {
-			NotificationChain msgs = null;
-			if (angle != null)
-				msgs = ((InternalEObject) angle).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.TURN__ANGLE, null, msgs);
-			if (newAngle != null)
-				msgs = ((InternalEObject) newAngle).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.TURN__ANGLE, null, msgs);
-			msgs = basicSetAngle(newAngle, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.TURN__ANGLE, newAngle,
-					newAngle));
 	}
 
 	/**
@@ -228,65 +156,11 @@ public class TurnImpl extends ActuatorStatementImpl implements Turn {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getDuration() {
-		return duration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDuration(Expression newDuration, NotificationChain msgs) {
-		Expression oldDuration = duration;
-		duration = newDuration;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					LegolanguagePrPackage.TURN__DURATION, oldDuration, newDuration);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDuration(Expression newDuration) {
-		if (newDuration != duration) {
-			NotificationChain msgs = null;
-			if (duration != null)
-				msgs = ((InternalEObject) duration).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.TURN__DURATION, null, msgs);
-			if (newDuration != null)
-				msgs = ((InternalEObject) newDuration).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.TURN__DURATION, null, msgs);
-			msgs = basicSetDuration(newDuration, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.TURN__DURATION, newDuration,
-					newDuration));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case LegolanguagePrPackage.TURN__ANGLE:
-			return basicSetAngle(null, msgs);
 		case LegolanguagePrPackage.TURN__SPEED:
 			return basicSetSpeed(null, msgs);
-		case LegolanguagePrPackage.TURN__DURATION:
-			return basicSetDuration(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -299,14 +173,10 @@ public class TurnImpl extends ActuatorStatementImpl implements Turn {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case LegolanguagePrPackage.TURN__ANGLE:
-			return getAngle();
 		case LegolanguagePrPackage.TURN__DIRECTION:
 			return getDirection();
 		case LegolanguagePrPackage.TURN__SPEED:
 			return getSpeed();
-		case LegolanguagePrPackage.TURN__DURATION:
-			return getDuration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -319,17 +189,11 @@ public class TurnImpl extends ActuatorStatementImpl implements Turn {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case LegolanguagePrPackage.TURN__ANGLE:
-			setAngle((Expression) newValue);
-			return;
 		case LegolanguagePrPackage.TURN__DIRECTION:
 			setDirection((Direction) newValue);
 			return;
 		case LegolanguagePrPackage.TURN__SPEED:
 			setSpeed((Expression) newValue);
-			return;
-		case LegolanguagePrPackage.TURN__DURATION:
-			setDuration((Expression) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -343,17 +207,11 @@ public class TurnImpl extends ActuatorStatementImpl implements Turn {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case LegolanguagePrPackage.TURN__ANGLE:
-			setAngle((Expression) null);
-			return;
 		case LegolanguagePrPackage.TURN__DIRECTION:
 			setDirection(DIRECTION_EDEFAULT);
 			return;
 		case LegolanguagePrPackage.TURN__SPEED:
 			setSpeed((Expression) null);
-			return;
-		case LegolanguagePrPackage.TURN__DURATION:
-			setDuration((Expression) null);
 			return;
 		}
 		super.eUnset(featureID);
@@ -367,14 +225,10 @@ public class TurnImpl extends ActuatorStatementImpl implements Turn {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case LegolanguagePrPackage.TURN__ANGLE:
-			return angle != null;
 		case LegolanguagePrPackage.TURN__DIRECTION:
 			return direction != DIRECTION_EDEFAULT;
 		case LegolanguagePrPackage.TURN__SPEED:
 			return speed != null;
-		case LegolanguagePrPackage.TURN__DURATION:
-			return duration != null;
 		}
 		return super.eIsSet(featureID);
 	}

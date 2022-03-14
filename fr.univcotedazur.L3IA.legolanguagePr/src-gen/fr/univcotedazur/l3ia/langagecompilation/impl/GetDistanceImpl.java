@@ -5,9 +5,12 @@ package fr.univcotedazur.l3ia.langagecompilation.impl;
 import fr.univcotedazur.l3ia.langagecompilation.GetDistance;
 import fr.univcotedazur.l3ia.langagecompilation.LaserSensor;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

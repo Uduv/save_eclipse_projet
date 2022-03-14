@@ -3,18 +3,12 @@
 package fr.univcotedazur.l3ia.langagecompilation.provider;
 
 import fr.univcotedazur.l3ia.langagecompilation.Arm;
-import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.Arm} object.
@@ -44,24 +38,8 @@ public class ArmItemProvider extends RotativeMotorItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAnglePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Angle feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAnglePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Arm_angle_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Arm_angle_feature", "_UI_Arm_type"),
-						LegolanguagePrPackage.Literals.ARM__ANGLE, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -108,12 +86,6 @@ public class ArmItemProvider extends RotativeMotorItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Arm.class)) {
-		case LegolanguagePrPackage.ARM__ANGLE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 

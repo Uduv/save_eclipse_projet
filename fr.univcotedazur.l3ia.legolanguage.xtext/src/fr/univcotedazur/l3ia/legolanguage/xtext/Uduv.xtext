@@ -23,8 +23,6 @@ RobotDeclaration returns Robot:
 ;
 
 
-
-
 Expression returns Expression:
 	 VariableProxy  | BinaryOperation | Variable | SensorExpression ;
 	
@@ -80,7 +78,7 @@ Commentary returns Commentary:
 	'\'\'\'';
 
 Loop returns Loop : 
-	WhileLoop | ForLoop  ; 
+	WhileLoop   ; 
 
 If returns If :
 	'if'
@@ -99,13 +97,6 @@ WhileLoop returns WhileLoop:
 		
 	'}';
 
-ForLoop returns ForLoop:
-	'for'
-	loopCondition=Condition
-	'{'
-		(statement+=Statement)*
-		
-	'}';
 
 Addition returns Addition:
 	'('
@@ -209,7 +200,7 @@ LeBoolean returns LeBoolean:
 		 initialeValue=EBoolean
 		;
 
-LeFloat returns LeFloat:
+LeFloat returns LeFloat: 
 	{LeFloat}
 	('float' name=EString '=')?
 		 initialeValue= EFloat 
@@ -243,7 +234,6 @@ Wheel returns Wheel :
 	'wheel' 
 	'on'
 	portID=EString
-	("=" speed=EInt)?
 ;
 
 
@@ -253,7 +243,6 @@ Arm returns Arm :
 	name=ID 
 	'on'
 	portID=EString
-	("=" angle=EInt)?
 ; 
 
 
@@ -263,7 +252,6 @@ Led returns Led:
 	name=ID 
 	'on'
 	portID=EString
-	("=" bright=EInt)?
 ;
 
  
@@ -317,9 +305,7 @@ Turn returns Turn :
 	robot=[Robot|ID]
 	'turn' '('
 	direction=Direction ","
-	angle=Expression ","
-	speed=Expression (","
-	duration=Expression)?
+	speed=Expression 
 	')'
 ;
 
@@ -327,7 +313,6 @@ Go returns Go :
 	robot=[Robot|ID]
 	'go' '('
 	speed=Expression 
-	("," duration=Expression)?
 	')'
 ;
 
@@ -335,7 +320,6 @@ ChangeAngle returns ChangeAngle :
 	robot=[Robot|ID]
 	'changeAngle' '('
 	angle=Expression
-	(',' speed=Expression)?
 	
 	')'
 ;
@@ -382,16 +366,13 @@ And returns And :
 ;
 
 Or returns Or :
-	{Or}
+	{Or} 
     '('(left=Expression)
-    ('or' right=Expression)?
+    'or' right=Expression
     ')'
 
 ;
 
-enum Color:
-	Rouge = "rouge" | Bleu = "bleu" | Jaune = "jaune"
-; 
 
 enum Direction:
 	left= "left" | right = "right"

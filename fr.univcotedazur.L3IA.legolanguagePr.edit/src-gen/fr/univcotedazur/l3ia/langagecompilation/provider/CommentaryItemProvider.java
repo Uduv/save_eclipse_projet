@@ -187,9 +187,6 @@ public class CommentaryItemProvider extends StatementItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createForLoop()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createPrint()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.COMMENTARY__STATEMENT,

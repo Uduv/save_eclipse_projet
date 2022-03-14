@@ -234,17 +234,6 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case LegolanguagePrPackage.FOR_LOOP: {
-			ForLoop forLoop = (ForLoop) theEObject;
-			T result = caseForLoop(forLoop);
-			if (result == null)
-				result = caseLoop(forLoop);
-			if (result == null)
-				result = caseStatement(forLoop);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case LegolanguagePrPackage.PRINT: {
 			Print print = (Print) theEObject;
 			T result = casePrint(print);
@@ -964,21 +953,6 @@ public class LegolanguagePrSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLT(LT object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>For Loop</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>For Loop</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseForLoop(ForLoop object) {
 		return null;
 	}
 

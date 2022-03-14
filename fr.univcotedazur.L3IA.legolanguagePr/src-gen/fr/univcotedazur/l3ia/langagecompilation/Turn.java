@@ -11,10 +11,8 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Turn#getAngle <em>Angle</em>}</li>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Turn#getDirection <em>Direction</em>}</li>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Turn#getSpeed <em>Speed</em>}</li>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.Turn#getDuration <em>Duration</em>}</li>
  * </ul>
  *
  * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getTurn()
@@ -22,28 +20,6 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @generated
  */
 public interface Turn extends ActuatorStatement {
-	/**
-	 * Returns the value of the '<em><b>Angle</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Angle</em>' containment reference.
-	 * @see #setAngle(Expression)
-	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getTurn_Angle()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	Expression getAngle();
-
-	/**
-	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.Turn#getAngle <em>Angle</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Angle</em>' containment reference.
-	 * @see #getAngle()
-	 * @generated
-	 */
-	void setAngle(Expression value);
-
 	/**
 	 * Returns the value of the '<em><b>Direction</b></em>' attribute.
 	 * The literals are from the enumeration {@link fr.univcotedazur.l3ia.langagecompilation.Direction}.
@@ -90,27 +66,5 @@ public interface Turn extends ActuatorStatement {
 	 * @generated
 	 */
 	void setSpeed(Expression value);
-
-	/**
-	 * Returns the value of the '<em><b>Duration</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Duration</em>' containment reference.
-	 * @see #setDuration(Expression)
-	 * @see fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage#getTurn_Duration()
-	 * @model containment="true"
-	 * @generated
-	 */
-	Expression getDuration();
-
-	/**
-	 * Sets the value of the '{@link fr.univcotedazur.l3ia.langagecompilation.Turn#getDuration <em>Duration</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Duration</em>' containment reference.
-	 * @see #getDuration()
-	 * @generated
-	 */
-	void setDuration(Expression value);
 
 } // Turn

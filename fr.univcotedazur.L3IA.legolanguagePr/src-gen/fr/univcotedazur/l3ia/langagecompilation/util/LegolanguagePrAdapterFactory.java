@@ -137,11 +137,6 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseForLoop(ForLoop object) {
-			return createForLoopAdapter();
-		}
-
-		@Override
 		public Adapter casePrint(Print object) {
 			return createPrintAdapter();
 		}
@@ -558,20 +553,6 @@ public class LegolanguagePrAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLTAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link fr.univcotedazur.l3ia.langagecompilation.ForLoop <em>For Loop</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see fr.univcotedazur.l3ia.langagecompilation.ForLoop
-	 * @generated
-	 */
-	public Adapter createForLoopAdapter() {
 		return null;
 	}
 

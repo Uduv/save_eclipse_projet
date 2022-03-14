@@ -19,7 +19,6 @@ package fr.univcotedazur.l3ia.langagecompilation;
  * @generated
  */
 public interface GetColor extends SensorExpression {
-
 	/**
 	 * Returns the value of the '<em><b>Sensor</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -41,4 +40,5 @@ public interface GetColor extends SensorExpression {
 	 * @generated
 	 */
 	void setSensor(ColorSensor value);
+
 } // GetColor

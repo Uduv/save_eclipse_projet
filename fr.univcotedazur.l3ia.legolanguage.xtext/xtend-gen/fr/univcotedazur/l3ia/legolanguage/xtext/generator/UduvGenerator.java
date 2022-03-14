@@ -22,7 +22,6 @@ import fr.univcotedazur.l3ia.langagecompilation.Division;
 import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.Exponential;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
-import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.GPSSensor;
 import fr.univcotedazur.l3ia.langagecompilation.GT;
 import fr.univcotedazur.l3ia.langagecompilation.GTEqual;
@@ -89,7 +88,7 @@ public class UduvGenerator extends AbstractGenerator {
     }
     String _name = prog.getName();
     String _plus = (_name + ".py");
-    fsa.generateFile(_plus, ("#!/usr/bin/env python3\n# Import Libraries\nimport time\nimport math\nfrom ev3dev2.motor import *\nfrom ev3dev2.sound import Sound\nfrom ev3dev2.button import Button\nfrom ev3dev2.sensor import *\nfrom ev3dev2.sensor.lego import *\nfrom ev3dev2.sensor.virtual import *\n\n" + fileContent));
+    fsa.generateFile(_plus, ("#!/usr/bin/env python3\n# Import Libraries\nimport time\nimport math\nfrom ev3dev2.motor import *\nfrom ev3dev2.sound import Sound\nfrom ev3dev2.button import Button\nfrom ev3dev2.sensor import *\nfrom ev3dev2.sensor.lego import *\nfrom ev3dev2.sensor.virtual import *\n\n\n#Veuillez brancher la roue gauche sur OUTPUT_1 et roue droite sur OUTPUT_2\n\n" + fileContent));
   }
   
   private int indentation = 0;
@@ -281,18 +280,18 @@ public class UduvGenerator extends AbstractGenerator {
   
   public String LoopToString(final Loop l) {
     String res = "";
-    if ((l instanceof ForLoop)) {
+    if ((l instanceof WhileLoop)) {
       String _res = res;
-      Condition _loopCondition = ((ForLoop)l).getLoopCondition();
+      Condition _loopCondition = ((WhileLoop)l).getLoopCondition();
       String _ExpressionToString = this.ExpressionToString(((Expression) _loopCondition));
-      String _plus = (("for" + " (") + _ExpressionToString);
+      String _plus = (("while" + " (") + _ExpressionToString);
       String _plus_1 = (_plus + ") ");
       String _plus_2 = (_plus_1 + ":");
       String _plus_3 = (_plus_2 + "\n");
       res = (_res + _plus_3);
       int _indentation = this.indentation;
       this.indentation = (_indentation + 1);
-      EList<Statement> _statement = ((ForLoop)l).getStatement();
+      EList<Statement> _statement = ((WhileLoop)l).getStatement();
       for (final Statement s : _statement) {
         String _res_1 = res;
         String _StatementToString = this.StatementToString(((Statement) s));
@@ -300,26 +299,6 @@ public class UduvGenerator extends AbstractGenerator {
       }
       int _indentation_1 = this.indentation;
       this.indentation = (_indentation_1 - 1);
-    }
-    if ((l instanceof WhileLoop)) {
-      String _res_2 = res;
-      Condition _loopCondition_1 = ((WhileLoop)l).getLoopCondition();
-      String _ExpressionToString_1 = this.ExpressionToString(((Expression) _loopCondition_1));
-      String _plus_4 = (("while" + " (") + _ExpressionToString_1);
-      String _plus_5 = (_plus_4 + ") ");
-      String _plus_6 = (_plus_5 + ":");
-      String _plus_7 = (_plus_6 + "\n");
-      res = (_res_2 + _plus_7);
-      int _indentation_2 = this.indentation;
-      this.indentation = (_indentation_2 + 1);
-      EList<Statement> _statement_1 = ((WhileLoop)l).getStatement();
-      for (final Statement s_1 : _statement_1) {
-        String _res_3 = res;
-        String _StatementToString_1 = this.StatementToString(((Statement) s_1));
-        res = (_res_3 + _StatementToString_1);
-      }
-      int _indentation_3 = this.indentation;
-      this.indentation = (_indentation_3 - 1);
     }
     return res;
   }
@@ -662,73 +641,50 @@ public class UduvGenerator extends AbstractGenerator {
     if ((rs instanceof Go)) {
       String _res = res;
       String _portID = ((Go)rs).getRobot().getLeftWheel().getPortID();
-      String _plus = ("steering_drive = MoveSteering(" + _portID);
+      String _plus = ("MoveSteering(" + _portID);
       String _plus_1 = (_plus + ",");
       String _portID_1 = ((Go)rs).getRobot().getRightWheel().getPortID();
       String _plus_2 = (_plus_1 + _portID_1);
-      String _plus_3 = (_plus_2 + ") ,");
-      res = (_res + _plus_3);
-      String _res_1 = res;
+      String _plus_3 = (_plus_2 + ").on(");
+      String _plus_4 = (_plus_3 + "0, ");
       Expression _speed = ((Go)rs).getSpeed();
       String _ExpressionToString = this.ExpressionToString(((Expression) _speed));
-      String _plus_4 = (("steering_drive.on_for_rotations(" + "0, ") + _ExpressionToString);
-      String _plus_5 = (_plus_4 + ", ");
-      Expression _duration = ((Go)rs).getDuration();
-      String _ExpressionToString_1 = this.ExpressionToString(((Expression) _duration));
-      String _plus_6 = (_plus_5 + _ExpressionToString_1);
-      String _plus_7 = (_plus_6 + ")");
-      res = (_res_1 + _plus_7);
+      String _plus_5 = (_plus_4 + _ExpressionToString);
+      String _plus_6 = (_plus_5 + ")");
+      res = (_res + _plus_6);
     }
     if ((rs instanceof Turn)) {
       boolean _equals = ((Turn)rs).getDirection().equals(Direction.LEFT);
       if (_equals) {
-        String _res_2 = res;
+        String _res_1 = res;
         String _portID_2 = ((Turn)rs).getRobot().getLeftWheel().getPortID();
-        String _plus_8 = ("steering_drive = MoveSteering(" + _portID_2);
-        String _plus_9 = (_plus_8 + ",");
+        String _plus_7 = ("MoveSteering(" + _portID_2);
+        String _plus_8 = (_plus_7 + ",");
         String _portID_3 = ((Turn)rs).getRobot().getRightWheel().getPortID();
-        String _plus_10 = (_plus_9 + _portID_3);
-        String _plus_11 = (_plus_10 + ") ,");
-        res = (_res_2 + _plus_11);
-        String _res_3 = res;
-        Expression _angle = ((Turn)rs).getAngle();
-        String _ExpressionToString_2 = this.ExpressionToString(((Expression) _angle));
-        String _plus_12 = (("steering_drive.on_for_rotations(" + "-") + _ExpressionToString_2);
-        String _plus_13 = (_plus_12 + ", ");
+        String _plus_9 = (_plus_8 + _portID_3);
+        String _plus_10 = (_plus_9 + ").on(");
+        String _plus_11 = (_plus_10 + "-90, ");
         Expression _speed_1 = ((Turn)rs).getSpeed();
-        String _ExpressionToString_3 = this.ExpressionToString(((Expression) _speed_1));
-        String _plus_14 = (_plus_13 + _ExpressionToString_3);
-        String _plus_15 = (_plus_14 + ", ");
-        Expression _duration_1 = ((Turn)rs).getDuration();
-        String _ExpressionToString_4 = this.ExpressionToString(((Expression) _duration_1));
-        String _plus_16 = (_plus_15 + _ExpressionToString_4);
-        String _plus_17 = (_plus_16 + ")");
-        res = (_res_3 + _plus_17);
+        String _ExpressionToString_1 = this.ExpressionToString(((Expression) _speed_1));
+        String _plus_12 = (_plus_11 + _ExpressionToString_1);
+        String _plus_13 = (_plus_12 + ")");
+        res = (_res_1 + _plus_13);
       } else {
         boolean _equals_1 = ((Turn)rs).getDirection().equals(Direction.RIGHT);
         if (_equals_1) {
-          String _res_4 = res;
+          String _res_2 = res;
           String _portID_4 = ((Turn)rs).getRobot().getLeftWheel().getPortID();
-          String _plus_18 = ("steering_drive = MoveSteering(" + _portID_4);
-          String _plus_19 = (_plus_18 + ",");
+          String _plus_14 = ("MoveSteering(" + _portID_4);
+          String _plus_15 = (_plus_14 + ",");
           String _portID_5 = ((Turn)rs).getRobot().getRightWheel().getPortID();
-          String _plus_20 = (_plus_19 + _portID_5);
-          String _plus_21 = (_plus_20 + ") ,");
-          res = (_res_4 + _plus_21);
-          String _res_5 = res;
-          Expression _angle_1 = ((Turn)rs).getAngle();
-          String _ExpressionToString_5 = this.ExpressionToString(((Expression) _angle_1));
-          String _plus_22 = (("steering_drive.on_for_rotations(" + "") + _ExpressionToString_5);
-          String _plus_23 = (_plus_22 + ", ");
+          String _plus_16 = (_plus_15 + _portID_5);
+          String _plus_17 = (_plus_16 + ").on(");
+          String _plus_18 = (_plus_17 + "90, ");
           Expression _speed_2 = ((Turn)rs).getSpeed();
-          String _ExpressionToString_6 = this.ExpressionToString(((Expression) _speed_2));
-          String _plus_24 = (_plus_23 + _ExpressionToString_6);
-          String _plus_25 = (_plus_24 + ", ");
-          Expression _duration_2 = ((Turn)rs).getDuration();
-          String _ExpressionToString_7 = this.ExpressionToString(((Expression) _duration_2));
-          String _plus_26 = (_plus_25 + _ExpressionToString_7);
-          String _plus_27 = (_plus_26 + ")");
-          res = (_res_5 + _plus_27);
+          String _ExpressionToString_2 = this.ExpressionToString(((Expression) _speed_2));
+          String _plus_19 = (_plus_18 + _ExpressionToString_2);
+          String _plus_20 = (_plus_19 + ")");
+          res = (_res_2 + _plus_20);
         }
       }
     }
@@ -736,54 +692,50 @@ public class UduvGenerator extends AbstractGenerator {
     for (final Actuator act : _actuator) {
       if ((rs instanceof ChangeAngle)) {
         if ((act instanceof Arm)) {
-          String _res_6 = res;
+          String _res_3 = res;
           String _portID_6 = ((Arm)act).getPortID();
-          String _plus_28 = ("armMotor" + _portID_6);
-          String _plus_29 = (_plus_28 + ".on_for_degrees(");
-          Expression _speed_3 = ((ChangeAngle)rs).getSpeed();
-          String _ExpressionToString_8 = this.ExpressionToString(((Expression) _speed_3));
-          String _plus_30 = (_plus_29 + _ExpressionToString_8);
-          String _plus_31 = (_plus_30 + ", ");
-          Expression _angle_2 = ((ChangeAngle)rs).getAngle();
-          String _ExpressionToString_9 = this.ExpressionToString(((Expression) _angle_2));
-          String _plus_32 = (_plus_31 + _ExpressionToString_9);
-          String _plus_33 = (_plus_32 + ")");
-          res = (_res_6 + _plus_33);
+          String _plus_21 = ("armMotor" + _portID_6);
+          String _plus_22 = (_plus_21 + ".on_for_degrees(20,");
+          Expression _angle = ((ChangeAngle)rs).getAngle();
+          String _ExpressionToString_3 = this.ExpressionToString(((Expression) _angle));
+          String _plus_23 = (_plus_22 + _ExpressionToString_3);
+          String _plus_24 = (_plus_23 + ")");
+          res = (_res_3 + _plus_24);
         }
       } else {
         if ((rs instanceof ChangeIntensity)) {
           if ((act instanceof Led)) {
-            String _res_7 = res;
+            String _res_4 = res;
             String _portID_7 = ((Led)act).getPortID();
-            String _plus_34 = ("ledMotor" + _portID_7);
-            String _plus_35 = (_plus_34 + ".intensity(");
+            String _plus_25 = ("ledMotor" + _portID_7);
+            String _plus_26 = (_plus_25 + ".intensity(");
             Expression _intensity = ((ChangeIntensity)rs).getIntensity();
-            String _ExpressionToString_10 = this.ExpressionToString(((Expression) _intensity));
-            String _plus_36 = (_plus_35 + _ExpressionToString_10);
-            String _plus_37 = (_plus_36 + ")");
-            res = (_res_7 + _plus_37);
+            String _ExpressionToString_4 = this.ExpressionToString(((Expression) _intensity));
+            String _plus_27 = (_plus_26 + _ExpressionToString_4);
+            String _plus_28 = (_plus_27 + ")");
+            res = (_res_4 + _plus_28);
           }
         } else {
           if ((rs instanceof Shoot)) {
             if ((act instanceof ShootLauncher)) {
-              String _res_8 = res;
+              String _res_5 = res;
               String _portID_8 = ((ShootLauncher)act).getPortID();
-              String _plus_38 = ("shootMotor" + _portID_8);
-              String _plus_39 = (_plus_38 + ".on_for_position(-");
+              String _plus_29 = ("shootMotor" + _portID_8);
+              String _plus_30 = (_plus_29 + ".on_for_rotations(100,-");
               Expression _force = ((Shoot)rs).getForce();
-              String _ExpressionToString_11 = this.ExpressionToString(((Expression) _force));
-              String _plus_40 = (_plus_39 + _ExpressionToString_11);
-              String _plus_41 = (_plus_40 + ") , ");
-              res = (_res_8 + _plus_41);
-              String _res_9 = res;
+              String _ExpressionToString_5 = this.ExpressionToString(((Expression) _force));
+              String _plus_31 = (_plus_30 + _ExpressionToString_5);
+              String _plus_32 = (_plus_31 + ") , ");
+              res = (_res_5 + _plus_32);
+              String _res_6 = res;
               String _portID_9 = ((ShootLauncher)act).getPortID();
-              String _plus_42 = ("shootMotor" + _portID_9);
-              String _plus_43 = (_plus_42 + ".on_for_position(");
+              String _plus_33 = ("shootMotor" + _portID_9);
+              String _plus_34 = (_plus_33 + ".on_for_rotations(100,");
               Expression _force_1 = ((Shoot)rs).getForce();
-              String _ExpressionToString_12 = this.ExpressionToString(((Expression) _force_1));
-              String _plus_44 = (_plus_43 + _ExpressionToString_12);
-              String _plus_45 = (_plus_44 + ")");
-              res = (_res_9 + _plus_45);
+              String _ExpressionToString_6 = this.ExpressionToString(((Expression) _force_1));
+              String _plus_35 = (_plus_34 + _ExpressionToString_6);
+              String _plus_36 = (_plus_35 + ")");
+              res = (_res_6 + _plus_36);
             }
           }
         }

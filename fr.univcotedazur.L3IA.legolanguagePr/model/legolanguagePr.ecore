@@ -38,10 +38,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialeValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LT" eSuperTypes="#//Comparaison"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ForLoop" eSuperTypes="#//Loop">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="loopCondition" lowerBound="1"
-        eType="#//Condition" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Print" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statement" upperBound="-1"
         eType="#//Statement" containment="true"/>
@@ -93,44 +89,27 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="portID" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ColorSensor" eSuperTypes="#//Sensor">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LaserSensor" eSuperTypes="#//Sensor">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="distance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="0"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColorSensor" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LaserSensor" eSuperTypes="#//Sensor"/>
   <eClassifiers xsi:type="ecore:EClass" name="RotativeMotor" abstract="true" eSuperTypes="#//Motor"/>
   <eClassifiers xsi:type="ecore:EClass" name="ShootLauncher" eSuperTypes="#//Motor"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Led" eSuperTypes="#//Actuator">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bright" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="50"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Led" eSuperTypes="#//Actuator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Motor" abstract="true" eSuperTypes="#//Actuator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Wheel" eSuperTypes="#//RotativeMotor">
     <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
       <details key="archetype" value="Role"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="speed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="10"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Arm" eSuperTypes="#//RotativeMotor">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="45"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arm" eSuperTypes="#//RotativeMotor"/>
   <eClassifiers xsi:type="ecore:EClass" name="ActuatorStatement" abstract="true" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="robot" lowerBound="1" eType="#//Robot"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Go" eSuperTypes="#//ActuatorStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="speed" lowerBound="1" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="duration" eType="#//Expression"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChangeAngle" eSuperTypes="#//ActuatorStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="angle" lowerBound="1" eType="#//Expression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="speed" lowerBound="1" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChangeIntensity" eSuperTypes="#//ActuatorStatement">
@@ -146,12 +125,8 @@
         eType="#//LaserSensor"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Turn" eSuperTypes="#//ActuatorStatement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="angle" lowerBound="1" eType="#//Expression"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//Direction"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="speed" lowerBound="1" eType="#//Expression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="duration" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Shoot" eSuperTypes="#//ActuatorStatement">
@@ -165,21 +140,8 @@
   <eClassifiers xsi:type="ecore:EEnum" name="Side">
     <eLiterals name="LITERAL0"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GyroSensor" eSuperTypes="#//Sensor">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="angle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="0"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GPSSensor" eSuperTypes="#//Sensor">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coord_x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="0"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coord_y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
-        defaultValueLiteral="0"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Color">
-    <eLiterals name="Rouge"/>
-    <eLiterals name="Bleu" value="1"/>
-    <eLiterals name="Jaune" value="2"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GyroSensor" eSuperTypes="#//Sensor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GPSSensor" eSuperTypes="#//Sensor"/>
   <eClassifiers xsi:type="ecore:EClass" name="GetPosition" eSuperTypes="#//SensorExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sensor" lowerBound="1"
         eType="#//GPSSensor"/>

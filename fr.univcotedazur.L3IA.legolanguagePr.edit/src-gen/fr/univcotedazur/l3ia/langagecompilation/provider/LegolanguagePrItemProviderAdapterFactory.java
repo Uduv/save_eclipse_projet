@@ -257,29 +257,6 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.ForLoop} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ForLoopItemProvider forLoopItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link fr.univcotedazur.l3ia.langagecompilation.ForLoop}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createForLoopAdapter() {
-		if (forLoopItemProvider == null) {
-			forLoopItemProvider = new ForLoopItemProvider(this);
-		}
-
-		return forLoopItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link fr.univcotedazur.l3ia.langagecompilation.Print} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1153,8 +1130,6 @@ public class LegolanguagePrItemProviderAdapterFactory extends LegolanguagePrAdap
 			leStringItemProvider.dispose();
 		if (ltItemProvider != null)
 			ltItemProvider.dispose();
-		if (forLoopItemProvider != null)
-			forLoopItemProvider.dispose();
 		if (printItemProvider != null)
 			printItemProvider.dispose();
 		if (variableProxyItemProvider != null)

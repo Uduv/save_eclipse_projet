@@ -1194,31 +1194,17 @@ ruleLoop returns [EObject current=null]
 @after {
 	leaveRule();
 }:
-	(
-		{
-			/* */
-		}
-		{
-			newCompositeNode(grammarAccess.getLoopAccess().getWhileLoopParserRuleCall_0());
-		}
-		this_WhileLoop_0=ruleWhileLoop
-		{
-			$current = $this_WhileLoop_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			/* */
-		}
-		{
-			newCompositeNode(grammarAccess.getLoopAccess().getForLoopParserRuleCall_1());
-		}
-		this_ForLoop_1=ruleForLoop
-		{
-			$current = $this_ForLoop_1.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
+	{
+		/* */
+	}
+	{
+		newCompositeNode(grammarAccess.getLoopAccess().getWhileLoopParserRuleCall());
+	}
+	this_WhileLoop_0=ruleWhileLoop
+	{
+		$current = $this_WhileLoop_0.current;
+		afterParserOrEnumRuleCall();
+	}
 ;
 
 // Entry rule entryRuleIf
@@ -1355,75 +1341,6 @@ ruleWhileLoop returns [EObject current=null]
 		otherlv_4='}'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getWhileLoopAccess().getRightCurlyBracketKeyword_4());
-		}
-	)
-;
-
-// Entry rule entryRuleForLoop
-entryRuleForLoop returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getForLoopRule()); }
-	iv_ruleForLoop=ruleForLoop
-	{ $current=$iv_ruleForLoop.current; }
-	EOF;
-
-// Rule ForLoop
-ruleForLoop returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='for'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getForLoopAccess().getForKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getForLoopAccess().getLoopConditionConditionParserRuleCall_1_0());
-				}
-				lv_loopCondition_1_0=ruleCondition
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getForLoopRule());
-					}
-					set(
-						$current,
-						"loopCondition",
-						lv_loopCondition_1_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Condition");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getForLoopAccess().getLeftCurlyBracketKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getForLoopAccess().getStatementStatementParserRuleCall_3_0());
-				}
-				lv_statement_3_0=ruleStatement
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getForLoopRule());
-					}
-					add(
-						$current,
-						"statement",
-						lv_statement_3_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Statement");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_4='}'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getForLoopAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -2786,31 +2703,6 @@ ruleWheel returns [EObject current=null]
 				}
 			)
 		)
-		(
-			otherlv_4='='
-			{
-				newLeafNode(otherlv_4, grammarAccess.getWheelAccess().getEqualsSignKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getWheelAccess().getSpeedEIntParserRuleCall_4_1_0());
-					}
-					lv_speed_5_0=ruleEInt
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getWheelRule());
-						}
-						set(
-							$current,
-							"speed",
-							lv_speed_5_0,
-							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EInt");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
 	)
 ;
 
@@ -2885,31 +2777,6 @@ ruleArm returns [EObject current=null]
 				}
 			)
 		)
-		(
-			otherlv_5='='
-			{
-				newLeafNode(otherlv_5, grammarAccess.getArmAccess().getEqualsSignKeyword_5_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getArmAccess().getAngleEIntParserRuleCall_5_1_0());
-					}
-					lv_angle_6_0=ruleEInt
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getArmRule());
-						}
-						set(
-							$current,
-							"angle",
-							lv_angle_6_0,
-							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EInt");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
 	)
 ;
 
@@ -2984,31 +2851,6 @@ ruleLed returns [EObject current=null]
 				}
 			)
 		)
-		(
-			otherlv_5='='
-			{
-				newLeafNode(otherlv_5, grammarAccess.getLedAccess().getEqualsSignKeyword_5_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getLedAccess().getBrightEIntParserRuleCall_5_1_0());
-					}
-					lv_bright_6_0=ruleEInt
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getLedRule());
-						}
-						set(
-							$current,
-							"bright",
-							lv_bright_6_0,
-							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.EInt");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
 	)
 ;
 
@@ -3448,32 +3290,9 @@ ruleTurn returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTurnAccess().getAngleExpressionParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getTurnAccess().getSpeedExpressionParserRuleCall_5_0());
 				}
-				lv_angle_5_0=ruleExpression
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTurnRule());
-					}
-					set(
-						$current,
-						"angle",
-						lv_angle_5_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_6=','
-		{
-			newLeafNode(otherlv_6, grammarAccess.getTurnAccess().getCommaKeyword_6());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getTurnAccess().getSpeedExpressionParserRuleCall_7_0());
-				}
-				lv_speed_7_0=ruleExpression
+				lv_speed_5_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTurnRule());
@@ -3481,38 +3300,15 @@ ruleTurn returns [EObject current=null]
 					set(
 						$current,
 						"speed",
-						lv_speed_7_0,
+						lv_speed_5_0,
 						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_8=','
+		otherlv_6=')'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getTurnAccess().getCommaKeyword_8());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getTurnAccess().getDurationExpressionParserRuleCall_9_0());
-				}
-				lv_duration_9_0=ruleExpression
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTurnRule());
-					}
-					set(
-						$current,
-						"duration",
-						lv_duration_9_0,
-						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_10=')'
-		{
-			newLeafNode(otherlv_10, grammarAccess.getTurnAccess().getRightParenthesisKeyword_10());
+			newLeafNode(otherlv_6, grammarAccess.getTurnAccess().getRightParenthesisKeyword_6());
 		}
 	)
 ;
@@ -3576,34 +3372,9 @@ ruleGo returns [EObject current=null]
 				}
 			)
 		)
-		(
-			otherlv_4=','
-			{
-				newLeafNode(otherlv_4, grammarAccess.getGoAccess().getCommaKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getGoAccess().getDurationExpressionParserRuleCall_4_1_0());
-					}
-					lv_duration_5_0=ruleExpression
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getGoRule());
-						}
-						set(
-							$current,
-							"duration",
-							lv_duration_5_0,
-							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_6=')'
+		otherlv_4=')'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getGoAccess().getRightParenthesisKeyword_5());
+			newLeafNode(otherlv_4, grammarAccess.getGoAccess().getRightParenthesisKeyword_4());
 		}
 	)
 ;
@@ -3667,34 +3438,9 @@ ruleChangeAngle returns [EObject current=null]
 				}
 			)
 		)
-		(
-			otherlv_4=','
-			{
-				newLeafNode(otherlv_4, grammarAccess.getChangeAngleAccess().getCommaKeyword_4_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getChangeAngleAccess().getSpeedExpressionParserRuleCall_4_1_0());
-					}
-					lv_speed_5_0=ruleExpression
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getChangeAngleRule());
-						}
-						set(
-							$current,
-							"speed",
-							lv_speed_5_0,
-							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		otherlv_6=')'
+		otherlv_4=')'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getChangeAngleAccess().getRightParenthesisKeyword_5());
+			newLeafNode(otherlv_4, grammarAccess.getChangeAngleAccess().getRightParenthesisKeyword_4());
 		}
 	)
 ;
@@ -4161,34 +3907,32 @@ ruleOr returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_3='or'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getOrAccess().getOrKeyword_3());
+		}
 		(
-			otherlv_3='or'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getOrAccess().getOrKeyword_3_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getOrAccess().getRightExpressionParserRuleCall_3_1_0());
+				{
+					newCompositeNode(grammarAccess.getOrAccess().getRightExpressionParserRuleCall_4_0());
+				}
+				lv_right_4_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getOrRule());
 					}
-					lv_right_4_0=ruleExpression
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getOrRule());
-						}
-						set(
-							$current,
-							"right",
-							lv_right_4_0,
-							"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"right",
+						lv_right_4_0,
+						"fr.univcotedazur.l3ia.legolanguage.xtext.Uduv.Expression");
+					afterParserOrEnumRuleCall();
+				}
 			)
-		)?
+		)
 		otherlv_5=')'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getOrAccess().getRightParenthesisKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getOrAccess().getRightParenthesisKeyword_5());
 		}
 	)
 ;

@@ -94,15 +94,6 @@ public interface LegolanguagePrFactory extends EFactory {
 	LT createLT();
 
 	/**
-	 * Returns a new object of class '<em>For Loop</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>For Loop</em>'.
-	 * @generated
-	 */
-	ForLoop createForLoop();
-
-	/**
 	 * Returns a new object of class '<em>Print</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

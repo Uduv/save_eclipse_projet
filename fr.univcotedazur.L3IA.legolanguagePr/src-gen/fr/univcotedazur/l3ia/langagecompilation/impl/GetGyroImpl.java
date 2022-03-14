@@ -7,8 +7,10 @@ import fr.univcotedazur.l3ia.langagecompilation.GyroSensor;
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**

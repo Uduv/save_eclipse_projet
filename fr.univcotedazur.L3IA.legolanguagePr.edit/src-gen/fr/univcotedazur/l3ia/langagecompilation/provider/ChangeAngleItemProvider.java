@@ -62,7 +62,6 @@ public class ChangeAngleItemProvider extends ActuatorStatementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE);
-			childrenFeatures.add(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED);
 		}
 		return childrenFeatures;
 	}
@@ -127,7 +126,6 @@ public class ChangeAngleItemProvider extends ActuatorStatementItemProvider {
 
 		switch (notification.getFeatureID(ChangeAngle.class)) {
 		case LegolanguagePrPackage.CHANGE_ANGLE__ANGLE:
-		case LegolanguagePrPackage.CHANGE_ANGLE__SPEED:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -210,93 +208,6 @@ public class ChangeAngleItemProvider extends ActuatorStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE,
 				LegolanguagePrFactory.eINSTANCE.createOr()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createGT()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createAssignement()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createLeInteger()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createLeString()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createLT()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createVariableProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createEqual()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createLeBoolean()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createLeFloat()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createAddition()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createDivision()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createExponential()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createMultiplication()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createGTEqual()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createGetColor()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createGetDistance()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createGetPosition()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createAnd()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED,
-				LegolanguagePrFactory.eINSTANCE.createOr()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == LegolanguagePrPackage.Literals.CHANGE_ANGLE__ANGLE
-				|| childFeature == LegolanguagePrPackage.Literals.CHANGE_ANGLE__SPEED;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2",
-					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

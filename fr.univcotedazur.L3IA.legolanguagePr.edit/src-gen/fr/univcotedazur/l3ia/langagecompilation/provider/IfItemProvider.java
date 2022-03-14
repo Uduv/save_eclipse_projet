@@ -187,9 +187,6 @@ public class IfItemProvider extends StatementItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createForLoop()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createPrint()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.IF__STATEMENT,

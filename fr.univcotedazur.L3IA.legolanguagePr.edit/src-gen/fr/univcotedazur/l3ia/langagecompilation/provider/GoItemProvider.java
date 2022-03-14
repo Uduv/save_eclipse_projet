@@ -62,7 +62,6 @@ public class GoItemProvider extends ActuatorStatementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(LegolanguagePrPackage.Literals.GO__SPEED);
-			childrenFeatures.add(LegolanguagePrPackage.Literals.GO__DURATION);
 		}
 		return childrenFeatures;
 	}
@@ -126,7 +125,6 @@ public class GoItemProvider extends ActuatorStatementItemProvider {
 
 		switch (notification.getFeatureID(Go.class)) {
 		case LegolanguagePrPackage.GO__SPEED:
-		case LegolanguagePrPackage.GO__DURATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -209,93 +207,6 @@ public class GoItemProvider extends ActuatorStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__SPEED,
 				LegolanguagePrFactory.eINSTANCE.createOr()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createSubstarction()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createGT()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createAssignement()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createLeInteger()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createLeString()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createLT()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createVariableProxy()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createEqual()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createLeBoolean()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createLeFloat()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createAddition()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createDivision()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createExponential()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createMultiplication()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createGTEqual()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createLTEqual()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createGetColor()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createGetDistance()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createGetPosition()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createGetGyro()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createAnd()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.GO__DURATION,
-				LegolanguagePrFactory.eINSTANCE.createOr()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == LegolanguagePrPackage.Literals.GO__SPEED
-				|| childFeature == LegolanguagePrPackage.Literals.GO__DURATION;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2",
-					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

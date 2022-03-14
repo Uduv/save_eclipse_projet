@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.GoImpl#getSpeed <em>Speed</em>}</li>
- *   <li>{@link fr.univcotedazur.l3ia.langagecompilation.impl.GoImpl#getDuration <em>Duration</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,16 +37,6 @@ public class GoImpl extends ActuatorStatementImpl implements Go {
 	 * @ordered
 	 */
 	protected Expression speed;
-
-	/**
-	 * The cached value of the '{@link #getDuration() <em>Duration</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDuration()
-	 * @generated
-	 * @ordered
-	 */
-	protected Expression duration;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,63 +111,11 @@ public class GoImpl extends ActuatorStatementImpl implements Go {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getDuration() {
-		return duration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDuration(Expression newDuration, NotificationChain msgs) {
-		Expression oldDuration = duration;
-		duration = newDuration;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					LegolanguagePrPackage.GO__DURATION, oldDuration, newDuration);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDuration(Expression newDuration) {
-		if (newDuration != duration) {
-			NotificationChain msgs = null;
-			if (duration != null)
-				msgs = ((InternalEObject) duration).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.GO__DURATION, null, msgs);
-			if (newDuration != null)
-				msgs = ((InternalEObject) newDuration).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - LegolanguagePrPackage.GO__DURATION, null, msgs);
-			msgs = basicSetDuration(newDuration, msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LegolanguagePrPackage.GO__DURATION, newDuration,
-					newDuration));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case LegolanguagePrPackage.GO__SPEED:
 			return basicSetSpeed(null, msgs);
-		case LegolanguagePrPackage.GO__DURATION:
-			return basicSetDuration(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -193,8 +130,6 @@ public class GoImpl extends ActuatorStatementImpl implements Go {
 		switch (featureID) {
 		case LegolanguagePrPackage.GO__SPEED:
 			return getSpeed();
-		case LegolanguagePrPackage.GO__DURATION:
-			return getDuration();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -209,9 +144,6 @@ public class GoImpl extends ActuatorStatementImpl implements Go {
 		switch (featureID) {
 		case LegolanguagePrPackage.GO__SPEED:
 			setSpeed((Expression) newValue);
-			return;
-		case LegolanguagePrPackage.GO__DURATION:
-			setDuration((Expression) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -228,9 +160,6 @@ public class GoImpl extends ActuatorStatementImpl implements Go {
 		case LegolanguagePrPackage.GO__SPEED:
 			setSpeed((Expression) null);
 			return;
-		case LegolanguagePrPackage.GO__DURATION:
-			setDuration((Expression) null);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -245,8 +174,6 @@ public class GoImpl extends ActuatorStatementImpl implements Go {
 		switch (featureID) {
 		case LegolanguagePrPackage.GO__SPEED:
 			return speed != null;
-		case LegolanguagePrPackage.GO__DURATION:
-			return duration != null;
 		}
 		return super.eIsSet(featureID);
 	}

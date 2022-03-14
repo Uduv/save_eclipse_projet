@@ -165,9 +165,6 @@ public class PrintItemProvider extends StatementItemProvider {
 				LegolanguagePrFactory.eINSTANCE.createLT()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
-				LegolanguagePrFactory.eINSTANCE.createForLoop()));
-
-		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,
 				LegolanguagePrFactory.eINSTANCE.createPrint()));
 
 		newChildDescriptors.add(createChildParameter(LegolanguagePrPackage.Literals.PRINT__STATEMENT,

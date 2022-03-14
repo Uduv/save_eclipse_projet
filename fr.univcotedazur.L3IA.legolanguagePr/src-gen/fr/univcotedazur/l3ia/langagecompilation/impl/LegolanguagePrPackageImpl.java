@@ -12,7 +12,6 @@ import fr.univcotedazur.l3ia.langagecompilation.BinaryOperation;
 import fr.univcotedazur.l3ia.langagecompilation.Calcul;
 import fr.univcotedazur.l3ia.langagecompilation.ChangeAngle;
 import fr.univcotedazur.l3ia.langagecompilation.ChangeIntensity;
-import fr.univcotedazur.l3ia.langagecompilation.Color;
 import fr.univcotedazur.l3ia.langagecompilation.ColorSensor;
 import fr.univcotedazur.l3ia.langagecompilation.Commentary;
 import fr.univcotedazur.l3ia.langagecompilation.Comparaison;
@@ -22,7 +21,6 @@ import fr.univcotedazur.l3ia.langagecompilation.Division;
 import fr.univcotedazur.l3ia.langagecompilation.Equal;
 import fr.univcotedazur.l3ia.langagecompilation.Exponential;
 import fr.univcotedazur.l3ia.langagecompilation.Expression;
-import fr.univcotedazur.l3ia.langagecompilation.ForLoop;
 import fr.univcotedazur.l3ia.langagecompilation.GPSSensor;
 import fr.univcotedazur.l3ia.langagecompilation.GTEqual;
 import fr.univcotedazur.l3ia.langagecompilation.GetColor;
@@ -176,13 +174,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * @generated
 	 */
 	private EClass ltEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass forLoopEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -486,13 +477,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	private EEnum sideEEnum = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum colorEEnum = null;
-
-	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -773,24 +757,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 */
 	public EClass getLT() {
 		return ltEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getForLoop() {
-		return forLoopEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getForLoop_LoopCondition() {
-		return (EReference) forLoopEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1086,26 +1052,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getColorSensor_Color() {
-		return (EAttribute) colorSensorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getLaserSensor() {
 		return laserSensorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLaserSensor_Distance() {
-		return (EAttribute) laserSensorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1167,26 +1115,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getWheel_Speed() {
-		return (EAttribute) wheelEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getArm() {
 		return armEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getArm_Angle() {
-		return (EAttribute) armEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1230,15 +1160,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getGo_Duration() {
-		return (EReference) goEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getChangeAngle() {
 		return changeAngleEClass;
 	}
@@ -1250,15 +1171,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 */
 	public EReference getChangeAngle_Angle() {
 		return (EReference) changeAngleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getChangeAngle_Speed() {
-		return (EReference) changeAngleEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1329,17 +1241,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTurn_Angle() {
-		return (EReference) turnEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getTurn_Direction() {
-		return (EAttribute) turnEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) turnEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1348,16 +1251,7 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * @generated
 	 */
 	public EReference getTurn_Speed() {
-		return (EReference) turnEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTurn_Duration() {
-		return (EReference) turnEClass.getEStructuralFeatures().get(3);
+		return (EReference) turnEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1392,35 +1286,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getGyroSensor_Angle() {
-		return (EAttribute) gyroSensorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getGPSSensor() {
 		return gpsSensorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getGPSSensor_Coord_x() {
-		return (EAttribute) gpsSensorEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getGPSSensor_Coord_y() {
-		return (EAttribute) gpsSensorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1518,15 +1385,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getColor() {
-		return colorEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public LegolanguagePrFactory getLegolanguagePrFactory() {
 		return (LegolanguagePrFactory) getEFactoryInstance();
 	}
@@ -1589,9 +1447,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		ltEClass = createEClass(LT);
 
-		forLoopEClass = createEClass(FOR_LOOP);
-		createEReference(forLoopEClass, FOR_LOOP__LOOP_CONDITION);
-
 		printEClass = createEClass(PRINT);
 		createEReference(printEClass, PRINT__STATEMENT);
 
@@ -1641,10 +1496,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		createEAttribute(sensorEClass, SENSOR__PORT_ID);
 
 		colorSensorEClass = createEClass(COLOR_SENSOR);
-		createEAttribute(colorSensorEClass, COLOR_SENSOR__COLOR);
 
 		laserSensorEClass = createEClass(LASER_SENSOR);
-		createEAttribute(laserSensorEClass, LASER_SENSOR__DISTANCE);
 
 		rotativeMotorEClass = createEClass(ROTATIVE_MOTOR);
 
@@ -1656,21 +1509,17 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		motorEClass = createEClass(MOTOR);
 
 		wheelEClass = createEClass(WHEEL);
-		createEAttribute(wheelEClass, WHEEL__SPEED);
 
 		armEClass = createEClass(ARM);
-		createEAttribute(armEClass, ARM__ANGLE);
 
 		actuatorStatementEClass = createEClass(ACTUATOR_STATEMENT);
 		createEReference(actuatorStatementEClass, ACTUATOR_STATEMENT__ROBOT);
 
 		goEClass = createEClass(GO);
 		createEReference(goEClass, GO__SPEED);
-		createEReference(goEClass, GO__DURATION);
 
 		changeAngleEClass = createEClass(CHANGE_ANGLE);
 		createEReference(changeAngleEClass, CHANGE_ANGLE__ANGLE);
-		createEReference(changeAngleEClass, CHANGE_ANGLE__SPEED);
 
 		changeIntensityEClass = createEClass(CHANGE_INTENSITY);
 		createEReference(changeIntensityEClass, CHANGE_INTENSITY__INTENSITY);
@@ -1682,20 +1531,15 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		createEReference(getDistanceEClass, GET_DISTANCE__SENSOR);
 
 		turnEClass = createEClass(TURN);
-		createEReference(turnEClass, TURN__ANGLE);
 		createEAttribute(turnEClass, TURN__DIRECTION);
 		createEReference(turnEClass, TURN__SPEED);
-		createEReference(turnEClass, TURN__DURATION);
 
 		shootEClass = createEClass(SHOOT);
 		createEReference(shootEClass, SHOOT__FORCE);
 
 		gyroSensorEClass = createEClass(GYRO_SENSOR);
-		createEAttribute(gyroSensorEClass, GYRO_SENSOR__ANGLE);
 
 		gpsSensorEClass = createEClass(GPS_SENSOR);
-		createEAttribute(gpsSensorEClass, GPS_SENSOR__COORD_X);
-		createEAttribute(gpsSensorEClass, GPS_SENSOR__COORD_Y);
 
 		getPositionEClass = createEClass(GET_POSITION);
 		createEReference(getPositionEClass, GET_POSITION__SENSOR);
@@ -1714,7 +1558,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		// Create enums
 		directionEEnum = createEEnum(DIRECTION);
 		sideEEnum = createEEnum(SIDE);
-		colorEEnum = createEEnum(COLOR);
 	}
 
 	/**
@@ -1764,7 +1607,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		leIntegerEClass.getESuperTypes().add(this.getVariable());
 		leStringEClass.getESuperTypes().add(this.getVariable());
 		ltEClass.getESuperTypes().add(this.getComparaison());
-		forLoopEClass.getESuperTypes().add(this.getLoop());
 		printEClass.getESuperTypes().add(this.getStatement());
 		variableProxyEClass.getESuperTypes().add(this.getExpression());
 		equalEClass.getESuperTypes().add(this.getComparaison());
@@ -1875,11 +1717,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEClass(ltEClass, fr.univcotedazur.l3ia.langagecompilation.LT.class, "LT", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(forLoopEClass, ForLoop.class, "ForLoop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getForLoop_LoopCondition(), this.getCondition(), null, "loopCondition", null, 1, 1,
-				ForLoop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(printEClass, Print.class, "Print", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPrint_Statement(), this.getStatement(), null, "statement", null, 0, -1, Print.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
@@ -1962,13 +1799,9 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		initEClass(colorSensorEClass, ColorSensor.class, "ColorSensor", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getColorSensor_Color(), this.getColor(), "color", null, 0, 1, ColorSensor.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(laserSensorEClass, LaserSensor.class, "LaserSensor", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLaserSensor_Distance(), ecorePackage.getEInt(), "distance", "0", 0, 1, LaserSensor.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(rotativeMotorEClass, RotativeMotor.class, "RotativeMotor", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1983,12 +1816,8 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEClass(motorEClass, Motor.class, "Motor", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(wheelEClass, Wheel.class, "Wheel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWheel_Speed(), ecorePackage.getEInt(), "speed", "10", 0, 1, Wheel.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(armEClass, Arm.class, "Arm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getArm_Angle(), ecorePackage.getEInt(), "angle", "45", 0, 1, Arm.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actuatorStatementEClass, ActuatorStatement.class, "ActuatorStatement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -2000,16 +1829,10 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 		initEReference(getGo_Speed(), this.getExpression(), null, "speed", null, 1, 1, Go.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getGo_Duration(), this.getExpression(), null, "duration", null, 0, 1, Go.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 
 		initEClass(changeAngleEClass, ChangeAngle.class, "ChangeAngle", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChangeAngle_Angle(), this.getExpression(), null, "angle", null, 1, 1, ChangeAngle.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getChangeAngle_Speed(), this.getExpression(), null, "speed", null, 1, 1, ChangeAngle.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2032,17 +1855,11 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(turnEClass, Turn.class, "Turn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTurn_Angle(), this.getExpression(), null, "angle", null, 1, 1, Turn.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEAttribute(getTurn_Direction(), this.getDirection(), "direction", null, 0, 1, Turn.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTurn_Speed(), this.getExpression(), null, "speed", null, 1, 1, Turn.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEReference(getTurn_Duration(), this.getExpression(), null, "duration", null, 0, 1, Turn.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(shootEClass, Shoot.class, "Shoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getShoot_Force(), this.getExpression(), null, "force", null, 1, 1, Shoot.class, !IS_TRANSIENT,
@@ -2051,15 +1868,9 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		initEClass(gyroSensorEClass, GyroSensor.class, "GyroSensor", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGyroSensor_Angle(), ecorePackage.getEInt(), "angle", "0", 0, 1, GyroSensor.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gpsSensorEClass, GPSSensor.class, "GPSSensor", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGPSSensor_Coord_x(), ecorePackage.getEInt(), "coord_x", "0", 0, 1, GPSSensor.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGPSSensor_Coord_y(), ecorePackage.getEInt(), "coord_y", "0", 0, 1, GPSSensor.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(getPositionEClass, GetPosition.class, "GetPosition", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -2089,11 +1900,6 @@ public class LegolanguagePrPackageImpl extends EPackageImpl implements Legolangu
 
 		initEEnum(sideEEnum, Side.class, "Side");
 		addEEnumLiteral(sideEEnum, Side.LITERAL0);
-
-		initEEnum(colorEEnum, Color.class, "Color");
-		addEEnumLiteral(colorEEnum, Color.ROUGE);
-		addEEnumLiteral(colorEEnum, Color.BLEU);
-		addEEnumLiteral(colorEEnum, Color.JAUNE);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -29,7 +29,6 @@ import fr.univcotedazur.l3ia.langagecompilation.GT
 import fr.univcotedazur.l3ia.langagecompilation.LT
 import fr.univcotedazur.l3ia.langagecompilation.Equal
 import fr.univcotedazur.l3ia.langagecompilation.Loop
-import fr.univcotedazur.l3ia.langagecompilation.ForLoop
 import fr.univcotedazur.l3ia.langagecompilation.WhileLoop
 import fr.univcotedazur.l3ia.langagecompilation.Print
 import fr.univcotedazur.l3ia.langagecompilation.Commentary
@@ -89,7 +88,8 @@ from ev3dev2.sound import Sound
 from ev3dev2.button import Button
 from ev3dev2.sensor import *
 from ev3dev2.sensor.lego import *
-from ev3dev2.sensor.virtual import *\n\n' + fileContent )
+from ev3dev2.sensor.virtual import *
+\n\n#Veuillez brancher la roue gauche sur OUTPUT_1 et roue droite sur OUTPUT_2\n\n' + fileContent )
 	}
 	var indentation = 0
 	
@@ -206,16 +206,7 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 	
 	def String LoopToString(Loop l){
 		var res = ''
-		if(l instanceof ForLoop){
-			res += 'for' + ' (' + ExpressionToString(l.loopCondition as Expression) + ') ' +':' + '\n'
-			indentation += 1 
-			for ( s : l.statement ) {
-				res += StatementToString(s as Statement)
-			} 
-			indentation -= 1
-		}
 		if(l instanceof WhileLoop){
-			
 			res += 'while' + ' ('+ ExpressionToString(l.loopCondition as Expression) + ') ' +':' + '\n'
 			indentation += 1 
 			for ( s : l.statement ) {
@@ -227,12 +218,12 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 	}
 	
 	def String IfToString(If i) {
-		var res = ''
-		res += 'if' + ' ('+ ExpressionToString(i.condition as Expression) + ') ' +':' + '\n'
-		indentation += 1 
-		for ( state : i.statement ) {
-			res +=  StatementToString(state as Statement)
-			}
+	var res = ''
+	res += 'if' + ' ('+ ExpressionToString(i.condition as Expression) + ') ' +':' + '\n'
+	indentation += 1 
+	for ( state : i.statement ) {
+		res +=  StatementToString(state as Statement)
+		}
 	indentation -= 1 
 	return res 
 	
@@ -376,23 +367,20 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 	def String ActuatorStatementToString(ActuatorStatement rs){
 		var res = ''
 		if (rs instanceof Go){
-			res += 'steering_drive = MoveSteering(' + rs.robot.leftWheel.portID + "," + rs.robot.rightWheel.portID+') ,'
-			res += 'steering_drive.on_for_rotations(' +"0, "+ExpressionToString(rs.speed as Expression) + ', ' +ExpressionToString(rs.duration as Expression) + ')'
+			res += 'MoveSteering(' + rs.robot.leftWheel.portID + "," + rs.robot.rightWheel.portID+').on(' +"0, "+ExpressionToString(rs.speed as Expression) + ')'
 			}
 			if (rs instanceof Turn){
 				if (rs.direction.equals(Direction.LEFT) ){
-					res += 'steering_drive = MoveSteering(' + rs.robot.leftWheel.portID + "," + rs.robot.rightWheel.portID+') ,'
-					res += 'steering_drive.on_for_rotations(' + "-"+ExpressionToString(rs.angle as Expression) +', ' +ExpressionToString(rs.speed as Expression) + ', ' +ExpressionToString(rs.duration as Expression) + ')'
+					res += 'MoveSteering(' + rs.robot.leftWheel.portID + "," + rs.robot.rightWheel.portID+').on(' +"-90, "+ExpressionToString(rs.speed as Expression) + ')'
 					}else
 				if (rs.direction.equals(Direction.RIGHT) ){
-					res += 'steering_drive = MoveSteering(' + rs.robot.leftWheel.portID + "," + rs.robot.rightWheel.portID+') ,'
-					res += 'steering_drive.on_for_rotations(' + ""+ExpressionToString(rs.angle as Expression) +', ' +ExpressionToString(rs.speed as Expression) + ', ' +ExpressionToString(rs.duration as Expression) + ')'
+					res += 'MoveSteering(' + rs.robot.leftWheel.portID + "," + rs.robot.rightWheel.portID+').on(' +"90, "+ExpressionToString(rs.speed as Expression) + ')'
 				}
 			}
 		for (act : rs.robot.actuator){
 			if (rs instanceof ChangeAngle){
 				if (act instanceof Arm){
-					res+= "armMotor"+ act.portID + ".on_for_degrees("+ ExpressionToString(rs.speed as Expression) +', '+ExpressionToString(rs.angle as Expression)+')'
+					res+= "armMotor"+ act.portID + ".on_for_degrees(20,"+ExpressionToString(rs.angle as Expression)+')'
 				}
 			}else
 			if ( rs instanceof ChangeIntensity){
@@ -402,8 +390,8 @@ from ev3dev2.sensor.virtual import *\n\n' + fileContent )
 			}else
 			if( rs instanceof Shoot){
 				if (act instanceof ShootLauncher ){
-					res += "shootMotor"+ act.portID +  ".on_for_position(-"+ ExpressionToString(rs.force as Expression) +') , '
-					res += "shootMotor"+ act.portID +  ".on_for_position("+ ExpressionToString(rs.force as Expression) +')'
+					res += "shootMotor"+ act.portID +  ".on_for_rotations(100,-"+ ExpressionToString(rs.force as Expression) +') , '
+					res += "shootMotor"+ act.portID +  ".on_for_rotations(100,"+ ExpressionToString(rs.force as Expression) +')'
 				}
 			}
 			

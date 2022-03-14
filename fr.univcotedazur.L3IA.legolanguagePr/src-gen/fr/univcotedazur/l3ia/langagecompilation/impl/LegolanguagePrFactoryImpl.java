@@ -73,8 +73,6 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createLeString();
 		case LegolanguagePrPackage.LT:
 			return createLT();
-		case LegolanguagePrPackage.FOR_LOOP:
-			return createForLoop();
 		case LegolanguagePrPackage.PRINT:
 			return createPrint();
 		case LegolanguagePrPackage.VARIABLE_PROXY:
@@ -158,8 +156,6 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return createDirectionFromString(eDataType, initialValue);
 		case LegolanguagePrPackage.SIDE:
 			return createSideFromString(eDataType, initialValue);
-		case LegolanguagePrPackage.COLOR:
-			return createColorFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -177,8 +173,6 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 			return convertDirectionToString(eDataType, instanceValue);
 		case LegolanguagePrPackage.SIDE:
 			return convertSideToString(eDataType, instanceValue);
-		case LegolanguagePrPackage.COLOR:
-			return convertColorToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -262,16 +256,6 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	public LT createLT() {
 		LTImpl lt = new LTImpl();
 		return lt;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ForLoop createForLoop() {
-		ForLoopImpl forLoop = new ForLoopImpl();
-		return forLoop;
 	}
 
 	/**
@@ -645,28 +629,6 @@ public class LegolanguagePrFactoryImpl extends EFactoryImpl implements Legolangu
 	 * @generated
 	 */
 	public String convertSideToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Color createColorFromString(EDataType eDataType, String initialValue) {
-		Color result = Color.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertColorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

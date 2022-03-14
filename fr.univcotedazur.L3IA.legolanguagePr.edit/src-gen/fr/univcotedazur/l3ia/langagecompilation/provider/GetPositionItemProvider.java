@@ -3,8 +3,8 @@
 package fr.univcotedazur.l3ia.langagecompilation.provider;
 
 import fr.univcotedazur.l3ia.langagecompilation.GetPosition;
-
 import fr.univcotedazur.l3ia.langagecompilation.LegolanguagePrPackage;
+
 import java.util.Collection;
 import java.util.List;
 

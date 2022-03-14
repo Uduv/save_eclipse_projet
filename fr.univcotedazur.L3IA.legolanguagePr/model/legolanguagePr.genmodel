@@ -18,11 +18,6 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="legolanguagePr.ecore#//Side">
       <genEnumLiterals ecoreEnumLiteral="legolanguagePr.ecore#//Side/LITERAL0"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="legolanguagePr.ecore#//Color">
-      <genEnumLiterals ecoreEnumLiteral="legolanguagePr.ecore#//Color/Rouge"/>
-      <genEnumLiterals ecoreEnumLiteral="legolanguagePr.ecore#//Color/Bleu"/>
-      <genEnumLiterals ecoreEnumLiteral="legolanguagePr.ecore#//Color/Jaune"/>
-    </genEnums>
     <genClasses ecoreClass="legolanguagePr.ecore#//Program">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Program/statement"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Program/name"/>
@@ -54,9 +49,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//LeString/initialeValue"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//LT"/>
-    <genClasses ecoreClass="legolanguagePr.ecore#//ForLoop">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//ForLoop/loopCondition"/>
-    </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//Print">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Print/statement"/>
     </genClasses>
@@ -97,34 +89,22 @@
     <genClasses ecoreClass="legolanguagePr.ecore#//Sensor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Sensor/portID"/>
     </genClasses>
-    <genClasses ecoreClass="legolanguagePr.ecore#//ColorSensor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//ColorSensor/color"/>
-    </genClasses>
-    <genClasses ecoreClass="legolanguagePr.ecore#//LaserSensor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//LaserSensor/distance"/>
-    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//ColorSensor"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//LaserSensor"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//RotativeMotor"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//ShootLauncher"/>
-    <genClasses ecoreClass="legolanguagePr.ecore#//Led">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Led/bright"/>
-    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Led"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//Motor"/>
-    <genClasses ecoreClass="legolanguagePr.ecore#//Wheel">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Wheel/speed"/>
-    </genClasses>
-    <genClasses ecoreClass="legolanguagePr.ecore#//Arm">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Arm/angle"/>
-    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Wheel"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//Arm"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//ActuatorStatement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//ActuatorStatement/robot"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//Go">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Go/speed"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Go/duration"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//ChangeAngle">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//ChangeAngle/angle"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//ChangeAngle/speed"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//ChangeIntensity">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//ChangeIntensity/intensity"/>
@@ -136,21 +116,14 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//GetDistance/sensor"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//Turn">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Turn/angle"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//Turn/direction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Turn/speed"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Turn/duration"/>
     </genClasses>
     <genClasses ecoreClass="legolanguagePr.ecore#//Shoot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//Shoot/force"/>
     </genClasses>
-    <genClasses ecoreClass="legolanguagePr.ecore#//GyroSensor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//GyroSensor/angle"/>
-    </genClasses>
-    <genClasses ecoreClass="legolanguagePr.ecore#//GPSSensor">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//GPSSensor/coord_x"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute legolanguagePr.ecore#//GPSSensor/coord_y"/>
-    </genClasses>
+    <genClasses ecoreClass="legolanguagePr.ecore#//GyroSensor"/>
+    <genClasses ecoreClass="legolanguagePr.ecore#//GPSSensor"/>
     <genClasses ecoreClass="legolanguagePr.ecore#//GetPosition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference legolanguagePr.ecore#//GetPosition/sensor"/>
     </genClasses>
